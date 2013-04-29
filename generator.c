@@ -2,7 +2,7 @@
 #include <math.h>
 #include "stb_image.inc"
 
-#define SCALE 128
+#define SCALE 64
 
 static const char *font_name = NULL;
 
@@ -224,17 +224,18 @@ void gen_hor_grays ()
 
 void gen_gray (GString *str, int mod)
 {
+#if 1
   int i;
   int no = 0;
-  for (i = 0; i < SCALE; i++)
+  for (i = 0; i < SCALE - 7; i++)
   {
     no ++;
     if (no % mod == 0)
     {
       g_string_append_printf (str, "    <contour>\n");
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i+5);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+5, 0);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i+7);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7, 0);
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   0);
       g_string_append_printf (str, "    </contour>\n");
     }
@@ -247,13 +248,29 @@ void gen_gray (GString *str, int mod)
     {
       g_string_append_printf (str, "    <contour>\n");
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE,   i);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE,   i-5);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i-5, SCALE);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE,   i-7);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i-7, SCALE);
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   SCALE);
       g_string_append_printf (str, "    </contour>\n");
     }
   }
-
+#else
+  int i;
+  int no = 0;
+  for (i = 0; i < SCALE - 7; i++)
+  {
+    no ++;
+    if (no % mod == 0)
+    {
+      g_string_append_printf (str, "    <contour>\n");
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i+7);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+7);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+0);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i);
+      g_string_append_printf (str, "    </contour>\n");
+    }
+  }
+#endif
 }
 
 void gen_dia_grays ()
@@ -265,7 +282,7 @@ void gen_dia_grays ()
   g_string_append_printf (str, "<glyph name=\"bright\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
-  gen_gray (str, 9);
+  gen_gray (str, 13);
 
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
@@ -278,7 +295,7 @@ void gen_dia_grays ()
   g_string_append_printf (str, "<glyph name=\"dark\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
-  gen_gray (str, 7);
+  gen_gray (str, 11);
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
   sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "dark");
