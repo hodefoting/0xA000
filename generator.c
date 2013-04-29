@@ -13,7 +13,10 @@ int stride;
 
 static char ufo_path[2048];
 
-const char *glyphs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+const char *glyphs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+"æøåÆØÅ";
+
+gunichar *uglyphs = NULL;
 
 GString *contents_plist = NULL;
 
@@ -22,9 +25,9 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   GString *str = g_string_new ("");
   int x, y;
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", glyphs[glyph_no]);
+  g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", uglyphs[glyph_no]);
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", (x1-x0+1) * SCALE);
-  g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", glyphs[glyph_no]);
+  g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", uglyphs[glyph_no]);
   g_string_append_printf (str, "  <outline>\n");
   for (y = y0; y <= y1; y++)
     {
@@ -47,11 +50,11 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
  g_string_append_printf (str, "  </outline>\n");
  g_string_append_printf (str, "</glyph>\n");
  char buf[1024];
- sprintf (buf, "%s/glyphs/%X.glif", ufo_path, glyphs[glyph_no]);
+ sprintf (buf, "%s/glyphs/%X.glif", ufo_path, uglyphs[glyph_no]);
  g_file_set_contents (buf, str->str, str->len, NULL);
  g_string_free (str, TRUE);
 
- g_string_append_printf (contents_plist, "<key>%X</key><string>%X.glif</string>\n", glyphs[glyph_no], glyphs[glyph_no]);
+ g_string_append_printf (contents_plist, "<key>%X</key><string>%X.glif</string>\n", uglyphs[glyph_no], uglyphs[glyph_no]);
 }
 
 void gen_blocks ();
@@ -66,6 +69,8 @@ int main (int argc, char **argv)
       fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname>\n", argv[0]);
       return -1;
     }
+
+  uglyphs = g_utf8_to_ucs4 (glyphs, -1, NULL, NULL, NULL);
 
   font_name = argv[2];
   sprintf (ufo_path, "%s.ufo", font_name);
