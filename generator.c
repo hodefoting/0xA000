@@ -2,7 +2,7 @@
 #include <math.h>
 #include "stb_image.inc"
 
-#define SCALE 64
+#define SCALE 512
 
 static const char *font_name = NULL;
 
@@ -143,9 +143,9 @@ void gen_solid_block ()
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
   g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1 + 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 0, SCALE * 1 + 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 0, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
   g_string_append_printf (str, "  </outline>\n");
@@ -157,120 +157,40 @@ void gen_solid_block ()
   g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
 }
 
-void gen_hor_grays ()
-{
-  char buf[1024];
-  GString *str;
-  str = g_string_new ("");
-  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"bright\" format=\"1\">\n");
-  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <outline>\n");
-  int i;
-  for (i = 0; i < SCALE; i++)
-  {
-    if (i % 3 == 0)
-    {
-      g_string_append_printf (str, "    <contour>\n");
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i+1);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+1);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+0);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i);
-      g_string_append_printf (str, "    </contour>\n");
-    }
-  }
-
-  g_string_append_printf (str, "  </outline>\n");
-  g_string_append_printf (str, "</glyph>\n");
-  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "bright");
-  g_file_set_contents (buf, str->str, str->len, NULL);
-  g_string_free (str, TRUE);
-
-  str = g_string_new ("");
-  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"dark\" format=\"1\">\n");
-  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <outline>\n");
-  for (i = 0; i < SCALE; i++)
-  {
-    if (i % 2)
-    {
-      g_string_append_printf (str, "    <contour>\n");
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i+1);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+1);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+0);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i);
-      g_string_append_printf (str, "    </contour>\n");
-    }
-  }
-  g_string_append_printf (str, "  </outline>\n");
-  g_string_append_printf (str, "</glyph>\n");
-  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "dark");
-  g_file_set_contents (buf, str->str, str->len, NULL);
-  g_string_free (str, TRUE);
-
-  g_string_append_printf (contents_plist, "<key>dark</key><string>dark.glif</string>\n");
-  g_string_append_printf (contents_plist, "<key>bright</key><string>bright.glif</string>\n");
-}
-
-#if foo
-   -----i-- i+1
-   |
-   |
-   i
-
-   i+1
-#endif
-
 void gen_gray (GString *str, int mod)
 {
-#if 1
   int i;
   int no = 0;
-  for (i = 0; i < SCALE - 7; i++)
+  for (i = 0; i < SCALE * 2; i++)
   {
     no ++;
     if (no % mod == 0)
     {
       g_string_append_printf (str, "    <contour>\n");
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i+7);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7, 0);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   0);
-      g_string_append_printf (str, "    </contour>\n");
-    }
-  }
+        if (i < SCALE)
+          {
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   0);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i);
+          }
+        else
+          {
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE, i - SCALE);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - SCALE, SCALE);
+          }
 
-  for (i = SCALE; i > 0; i--)
-  {
-    no++;
-    if (no % mod == 0)
-    {
-      g_string_append_printf (str, "    <contour>\n");
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE,   i);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE,   i-7);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i-7, SCALE);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   SCALE);
+        if (i+7 < SCALE)
+          {
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i+7);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7, 0);
+          }
+        else
+          {
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - SCALE, SCALE);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE, i+7 - SCALE);
+          }
       g_string_append_printf (str, "    </contour>\n");
     }
   }
-#else
-  int i;
-  int no = 0;
-  for (i = 0; i < SCALE - 7; i++)
-  {
-    no ++;
-    if (no % mod == 0)
-    {
-      g_string_append_printf (str, "    <contour>\n");
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i+7);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+7);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+0);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i);
-      g_string_append_printf (str, "    </contour>\n");
-    }
-  }
-#endif
 }
 
 void gen_dia_grays ()
@@ -282,7 +202,7 @@ void gen_dia_grays ()
   g_string_append_printf (str, "<glyph name=\"bright\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
-  gen_gray (str, 13);
+  gen_gray (str, 17);
 
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
@@ -309,7 +229,6 @@ void gen_dia_grays ()
 void gen_blocks ()
 {
   gen_solid_block ();
-//  gen_hor_grays ();
   gen_dia_grays ();
 }
 
