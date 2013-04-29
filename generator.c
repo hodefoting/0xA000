@@ -140,9 +140,9 @@ void gen_blocks ()
   g_string_append_printf (str, "  <unicode hex=\"0703\"/>\n");
   g_string_append_printf (str, "  <outline>\n");
   g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1 + 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 1, SCALE * 1 + 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1 + 2);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 2, SCALE * 1 + 2);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 2, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
   g_string_append_printf (str, "  </outline>\n");
@@ -200,7 +200,6 @@ void gen_blocks ()
   sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "dark");
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
-
 
   g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>dark</key><string>dark.glif</string>\n");
