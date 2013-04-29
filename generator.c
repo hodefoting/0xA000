@@ -2,7 +2,7 @@
 #include <math.h>
 #include "stb_image.inc"
 
-#define SCALE 10
+#define SCALE 128
 
 static const char *font_name = NULL;
 
@@ -142,7 +142,6 @@ void gen_blocks ()
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"solid\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <unicode hex=\"0703\"/>\n");
   g_string_append_printf (str, "  <outline>\n");
   g_string_append_printf (str, "    <contour>\n");
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1 + 0);
@@ -160,7 +159,6 @@ void gen_blocks ()
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"bright\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <unicode hex=\"0121\"/>\n");
   g_string_append_printf (str, "  <outline>\n");
   int i;
   for (i = 0; i < SCALE; i++)
@@ -186,7 +184,6 @@ void gen_blocks ()
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"dark\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <unicode hex=\"0122\"/>\n");
   g_string_append_printf (str, "  <outline>\n");
   for (i = 0; i < SCALE; i++)
   {
@@ -223,84 +220,22 @@ void gen_fontinfo (int glyph_height)
   g_string_append_printf (str, "<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n");
   g_string_append_printf (str, "<plist version=\"1.0\">\n");
   g_string_append_printf (str, "    <dict>\n");
-  g_string_append_printf (str, "	<key>familyName</key>\n");
-  g_string_append_printf (str, "	<string>%s</string>\n", font_name);
-  g_string_append_printf (str, "	<key>styleName</key>\n");
-  g_string_append_printf (str, "	<string>AA</string>\n");
   g_string_append_printf (str, "	<key>copyright</key>\n");
   g_string_append_printf (str, "	<string>OEyvind Kolaas pippin@gimp.org</string>\n");
   g_string_append_printf (str, "	<key>unitsPerEm</key>\n");
   g_string_append_printf (str, "	<integer>%i</integer>\n", SCALE * glyph_height);
-  g_string_append_printf (str, "	<key>xHeight</key>\n");
-  g_string_append_printf (str, "	<integer>192</integer>\n");
-  g_string_append_printf (str, "	<key>capHeight</key>\n");
-  g_string_append_printf (str, "	<integer>320</integer>\n");
-  g_string_append_printf (str, "	<key>ascender</key>\n");
-  g_string_append_printf (str, "	<integer>800</integer>\n");
-  g_string_append_printf (str, "	<key>descender</key>\n");
-  g_string_append_printf (str, "	<integer>-200</integer>\n");
-  g_string_append_printf (str, "	<key>italicAngle</key>\n");
-  g_string_append_printf (str, "	<real>0</real>\n");
-  g_string_append_printf (str, "	<key>note</key>\n");
-  g_string_append_printf (str, "	<string></string>\n");
-  g_string_append_printf (str, "	<key>openTypeHeadCreated</key>\n");
-  g_string_append_printf (str, "	<string>2013/03/29 02:59:45</string>\n");
   g_string_append_printf (str, "	<key>openTypeNameLicenseURL</key>\n");
   g_string_append_printf (str, "	<string>http://scripts.sil.org/OFL</string>\n");
   g_string_append_printf (str, "	<key>openTypeNameVersion</key>\n");
-  g_string_append_printf (str, "	<string>Version 01.000</string>\n");
-  g_string_append_printf (str, "	<key>openTypeOS2Panose</key>\n");
-  g_string_append_printf (str, "	<array>\n");
-  g_string_append_printf (str, "		<integer>2</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>6</integer>\n");
-  g_string_append_printf (str, "		<integer>3</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "	</array>\n");
-  g_string_append_printf (str, "	<key>openTypeOS2WidthClass</key>\n");
-  g_string_append_printf (str, "	<integer>5</integer>\n");
-  g_string_append_printf (str, "	<key>openTypeOS2WeightClass</key>\n");
-  g_string_append_printf (str, "	<integer>500</integer>\n");
-  g_string_append_printf (str, "	<key>openTypeOS2VendorID</key>\n");
-  g_string_append_printf (str, "	<string>PfEd</string>\n");
-  g_string_append_printf (str, "	<key>openTypeOS2FamilyClass</key>\n");
-  g_string_append_printf (str, "	<array>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "	</array>\n");
-  g_string_append_printf (str, "	<key>openTypeOS2Type</key>\n");
-  g_string_append_printf (str, "	<array>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>1</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "		<integer>0</integer>\n");
-  g_string_append_printf (str, "	</array>\n");
+  g_string_append_printf (str, "	<string>Version 0.1</string>\n");
   g_string_append_printf (str, "	<key>postscriptFontName</key>\n");
   g_string_append_printf (str, "	<string>%s</string>\n", font_name);
   g_string_append_printf (str, "	<key>postscriptFullName</key>\n");
   g_string_append_printf (str, "	<string>%s</string>\n", font_name);
   g_string_append_printf (str, "	<key>postscriptWeightName</key>\n");
-  g_string_append_printf (str, "	<string>Regular</string>\n");
+  g_string_append_printf (str, "	<string>Medium</string>\n");
   g_string_append_printf (str, "    </dict>\n");
   g_string_append_printf (str, "</plist>\n");
-
 
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
