@@ -2,7 +2,7 @@
 #include <math.h>
 #include "stb_image.inc"
 
-#define SCALE 16
+#define SCALE 10
 
 static const char *font_name = NULL;
 
@@ -140,9 +140,9 @@ void gen_blocks ()
   g_string_append_printf (str, "  <unicode hex=\"0703\"/>\n");
   g_string_append_printf (str, "  <outline>\n");
   g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1 + 2);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 2, SCALE * 1 + 2);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 2, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1 + 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 0, SCALE * 1 + 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + 0, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
   g_string_append_printf (str, "  </outline>\n");
@@ -165,7 +165,7 @@ void gen_blocks ()
       g_string_append_printf (str, "    <contour>\n");
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i+1);
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+1);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+0);
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i);
       g_string_append_printf (str, "    </contour>\n");
     }
@@ -190,7 +190,7 @@ void gen_blocks ()
       g_string_append_printf (str, "    <contour>\n");
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i+1);
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+1);
-        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i);
+        g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, i+0);
         g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, i);
       g_string_append_printf (str, "    </contour>\n");
     }
