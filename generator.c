@@ -132,8 +132,7 @@ int main (int argc, char **argv)
   return 0;
 }
 
-
-void gen_blocks ()
+void gen_solid_block ()
 {
  char buf[1024];
   GString *str;
@@ -155,6 +154,13 @@ void gen_blocks ()
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
+  g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
+}
+
+void gen_hor_grays ()
+{
+  char buf[1024];
+  GString *str;
   str = g_string_new ("");
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"bright\" format=\"1\">\n");
@@ -203,10 +209,14 @@ void gen_blocks ()
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
-  g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>dark</key><string>dark.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>bright</key><string>bright.glif</string>\n");
+}
 
+void gen_blocks ()
+{
+  gen_solid_block ();
+  gen_hor_grays ();
 }
 
 void gen_fontinfo (int glyph_height)
