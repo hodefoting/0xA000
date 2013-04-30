@@ -5,6 +5,7 @@
 #define SCALE 512
 
 static const char *font_name = NULL;
+static const char *font_type = NULL;
 
 
 int rw, rh;
@@ -14,16 +15,24 @@ int stride;
 static char ufo_path[2048];
 
 const char *glyphs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-"æøåÆØÅ";
+"æøåÆØÅ\0";
 
 gunichar *uglyphs = NULL;
+glong n_glyphs;
 
 GString *contents_plist = NULL;
 
 void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 {
-  GString *str = g_string_new ("");
+  GString *str;
   int x, y;
+
+  if (glyph_no >= n_glyphs)
+    return;
+  str = g_string_new ("");
+
+  fprintf (stderr, "%c %d\n", uglyphs[glyph_no], uglyphs[glyph_no]);
+
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", uglyphs[glyph_no]);
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", (x1-x0+1) * SCALE);
@@ -64,15 +73,16 @@ int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
 
-  if (argc != 3)
+  if (argc != 4)
     {
       fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname>\n", argv[0]);
       return -1;
     }
 
-  uglyphs = g_utf8_to_ucs4 (glyphs, -1, NULL, NULL, NULL);
+  uglyphs = g_utf8_to_ucs4 (glyphs, -1, &n_glyphs, NULL, NULL);
 
   font_name = argv[2];
+  font_type = argv[3];
   sprintf (ufo_path, "%s.ufo", font_name);
   char buf[2048];
   sprintf (buf, "mkdir %s > /dev/null 2>&1", ufo_path); system (buf);
@@ -256,7 +266,7 @@ void gen_fontinfo (int glyph_height)
   g_string_append_printf (str, "	<key>postscriptFullName</key>\n");
   g_string_append_printf (str, "	<string>%s</string>\n", font_name);
   g_string_append_printf (str, "	<key>postscriptWeightName</key>\n");
-  g_string_append_printf (str, "	<string>Medium</string>\n");
+  g_string_append_printf (str, "	<string>%s</string>\n", font_type);
   g_string_append_printf (str, "    </dict>\n");
   g_string_append_printf (str, "</plist>\n");
 
