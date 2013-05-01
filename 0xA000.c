@@ -16,7 +16,7 @@ int stride;
 static char ufo_path[2048];
 
 const char *glyphs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-  "æøåÆØÅ€¡Ññ£čšžČŠŽ©\0";
+  "æøåÆØÅ€¡Ññ£čšžČŠŽ©";
 
 gunichar *uglyphs = NULL;
 glong n_glyphs;
@@ -76,9 +76,9 @@ int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
 
-  if (argc != 5)
+  if (argc != 6)
     {
-      fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname> <yshift>\n", argv[0]);
+      fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname> <yshift> <glyphs>\n", argv[0]);
       return -1;
     }
 
@@ -86,6 +86,7 @@ int main (int argc, char **argv)
 
   font_name = argv[2];
   font_type = argv[3];
+  glyphs    = argv[4];
   y_shift = atoi(argv[4]);
 
   fprintf (stderr," {%i}\n", y_shift);
