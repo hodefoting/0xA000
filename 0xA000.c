@@ -6,6 +6,7 @@
 
 static const char *font_name = NULL;
 static const char *font_type = NULL;
+static int   y_shift = 0;
 
 
 int rw, rh;
@@ -15,7 +16,7 @@ int stride;
 static char ufo_path[2048];
 
 const char *glyphs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-  "æøåÆØÅ€¡Ññ£\0";
+  "æøåÆØÅ€¡Ññ£čšžČŠŽ©\0";
 
 gunichar *uglyphs = NULL;
 glong n_glyphs;
@@ -33,7 +34,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
     return;
   str = g_string_new ("");
 
-  fprintf (stderr, "%c %d\n", uglyphs[glyph_no], uglyphs[glyph_no]);
+  //fprintf (stderr, "%c %d\n", uglyphs[glyph_no], uglyphs[glyph_no]);
 
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", uglyphs[glyph_no]);
@@ -46,7 +47,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
         {
           int u, v;
           u = x - x0;
-          v = y1 - y -1;
+          v = y1 - y -1 + y_shift;
           unsigned char *pix = &fb[stride * y+x*4];
           if (*pix < 32)
             g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
@@ -75,9 +76,9 @@ int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
 
-  if (argc != 4)
+  if (argc != 5)
     {
-      fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname>\n", argv[0]);
+      fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname> <yshift>\n", argv[0]);
       return -1;
     }
 
@@ -85,6 +86,10 @@ int main (int argc, char **argv)
 
   font_name = argv[2];
   font_type = argv[3];
+  y_shift = atoi(argv[4]);
+
+  fprintf (stderr," {%i}\n", y_shift);
+
   sprintf (ufo_path, "%s.ufo", font_name);
   char buf[2048];
   sprintf (buf, "mkdir %s > /dev/null 2>&1", ufo_path); system (buf);
