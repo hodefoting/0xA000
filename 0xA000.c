@@ -219,7 +219,7 @@ void gen_dia_grays ()
   g_string_append_printf (str, "<glyph name=\"bright\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
-  gen_gray (str, 17);
+  gen_gray (str, 21);
 
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
