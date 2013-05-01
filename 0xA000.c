@@ -15,7 +15,7 @@ int stride;
 static char ufo_path[2048];
 
 const char *glyphs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-"æøåÆØÅ\0";
+  "æøåÆØÅ€¡Ññ£\0";
 
 gunichar *uglyphs = NULL;
 glong n_glyphs;
@@ -26,6 +26,8 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 {
   GString *str;
   int x, y;
+  x0++;
+  x1++;
 
   if (glyph_no >= n_glyphs)
     return;
