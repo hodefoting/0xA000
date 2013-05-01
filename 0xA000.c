@@ -2,12 +2,11 @@
 #include <math.h>
 #include "stb_image.inc"
 
-#define SCALE 512
+#define SCALE 1024
 
 static const char *font_name = NULL;
 static const char *font_type = NULL;
 static int   y_shift = 0;
-
 
 int rw, rh;
 unsigned char *fb;
@@ -41,24 +40,45 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", (x1-x0+1) * SCALE);
   g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", uglyphs[glyph_no]);
   g_string_append_printf (str, "  <outline>\n");
+
   for (y = y0; y <= y1; y++)
-    {
-      for (x = x0; x <= x1; x++)
-        {
-          int u, v;
-          u = x - x0;
-          v = y1 - y -1 + y_shift;
-          unsigned char *pix = &fb[stride * y+x*4];
-          if (*pix < 32)
-            g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
-          else if (*pix < 120)
-            g_string_append_printf (str, "  <component base=\"dark\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
-          else if (*pix < 240)
-            g_string_append_printf (str, "  <component base=\"bright\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
-          else
-            ;
-        }
-    }
+    for (x = x0; x <= x1; x++)
+      {
+        unsigned char *pix = &fb[stride * y+x*4];
+        int u = x - x0;
+        int v = y1 - y -1 + y_shift;
+        if (*pix < 32)
+          {
+#if 0
+
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0 + u * SCALE, SCALE * 1 + v * SCALE);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + u * SCALE, SCALE * 1 + v * SCALE);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + u * SCALE, SCALE * 0 + v * SCALE);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0 + u * SCALE, SCALE * 0 + v * SCALE);
+  g_string_append_printf (str, "    </contour>\n");
+#else
+          g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+#endif
+          }
+      }
+
+  for (y = y0; y <= y1; y++)
+    for (x = x0; x <= x1; x++)
+      {
+        unsigned char *pix = &fb[stride * y+x*4];
+        int u = x - x0;
+        int v = y1 - y -1 + y_shift;
+        if (*pix < 32)
+          /* g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); */
+          ;
+        else if (*pix < 120)
+          g_string_append_printf (str, "  <component base=\"dark\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
+        else if (*pix < 240)
+          g_string_append_printf (str, "  <component base=\"bright\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
+        else
+          ;
+      }
  g_string_append_printf (str, "  </outline>\n");
  g_string_append_printf (str, "</glyph>\n");
  char buf[1024];
@@ -179,32 +199,34 @@ void gen_gray (GString *str, int mod)
 {
   int i;
   int no = 0;
-  for (i = 0; i < SCALE * 2; i++)
+#define GO 4
+  for (i = -GO; i < SCALE * 2 + GO; i++)
   {
+
     no ++;
     if (no % mod == 0)
     {
       g_string_append_printf (str, "    <contour>\n");
         if (i < SCALE)
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   0);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   -GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", -GO,   i);
           }
         else
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE, i - SCALE);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - SCALE, SCALE);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE + GO, i - SCALE);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - SCALE, SCALE + GO);
           }
 
         if (i+7 < SCALE)
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0,   i+7);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7, 0);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", -GO,   i+7);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7, -GO);
           }
         else
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - SCALE, SCALE);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE, i+7 - SCALE);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - SCALE, SCALE + GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE + GO, i+7 - SCALE);
           }
       g_string_append_printf (str, "    </contour>\n");
     }
