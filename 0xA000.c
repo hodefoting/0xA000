@@ -10,9 +10,23 @@
 
 typedef struct _Mapping Mapping;
 
+enum {
+  C_BLANK=0,
+  C_SOLID,
+  C_DARK,
+  C_BRIGHT,
+  C_CNW,
+  C_CNE,
+  C_CSW,
+  C_CSE,
+  C_VE,
+  C_VW
+};
+
 struct _Mapping {
   gchar   ascii;
   gchar  *name;
+  int     type;
 };
 char *mem_read (char *start,
                 char *linebuf,
@@ -21,6 +35,16 @@ char *mem_read (char *start,
 static Mapping map[256]={{0,},};
 static int     mappings=0;
 
+static int map_pix (char pix)
+{
+  int i;
+  for (i = 0; i < mappings; i++)
+    if (map[i].ascii == pix)
+      return map[i].type;
+  return C_BLANK;
+}
+
+
 static const char *font_name = NULL;
 static const char *font_type = NULL;
 static int   y_shift = 0;
@@ -28,7 +52,7 @@ static int   y_shift = 0;
 static char *asc_source = NULL;
 
 int rw, rh;
-unsigned char *fb;
+unsigned int *fb;
 int stride;
 
 static char ufo_path[2048];
@@ -43,6 +67,8 @@ glong n_glyphs;
 GString *contents_plist = NULL;
 GString *str = NULL;
 
+int glyph_height;
+
 GString *ascii_font = NULL;
 
 void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
@@ -53,10 +79,15 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   x0++;
   x1++;
 
+
   if (glyph_no >= n_glyphs)
     return;
 
+  if (y1 - y0 > glyph_height)
+    glyph_height = y1 - y0;
+
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
+#if 0
   g_string_append_printf (ascii_font, "( %s )\n", utf8_chr);
 
   for (y = y0; y <= y1; y++)
@@ -78,6 +109,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
       g_string_append_printf (ascii_font, "\n");
     }
   g_string_append_printf (ascii_font, "\n");
+#endif
 
   str = g_string_new ("");
 
@@ -89,23 +121,24 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", uglyphs[glyph_no]);
   g_string_append_printf (str, "  <outline>\n");
 
+  if (1)
   for (y = y0; y <= y1; y++)
     for (x = x0; x <= x1; x++)
       {
-        unsigned char *pix = &fb[stride * y+x*4];
+        int *pix = &fb[stride * y+x];
         int u = x - x0;
         int v = y1 - y -1 + y_shift;
-        if (*pix < 32)
+        if (*pix == C_SOLID)
           {
-            if (y <y1 && fb[stride *(y+1)+x*4] < 32)
+            if (y <y1 && fb[stride *(y+1)+x] == C_SOLID)
               {
           g_string_append_printf (str, "  <component base=\"solidv\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
-          if (x <x1 && fb[stride *(y)+(x+1)*4] < 32)
+          if (x <x1 && fb[stride *(y)+(x+1)] == C_SOLID)
             g_string_append_printf (str, "  <component base=\"solidh\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
               }
             else
               {
-          if (x <x1 && fb[stride *(y)+(x+1)*4] < 32)
+          if (x <x1 && fb[stride *(y)+(x+1)] == C_SOLID)
             g_string_append_printf (str, "  <component base=\"solidh\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
           else
             g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
@@ -127,18 +160,22 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   for (y = y0; y <= y1; y++)
     for (x = x0; x <= x1; x++)
       {
-        unsigned char *pix = &fb[stride * y+x*4];
+        int *pix = &fb[stride * y+x];
         int u = x - x0;
         int v = y1 - y -1 + y_shift;
-        if (*pix < 32)
-          /* g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); */
-          ;
-        else if (*pix < 120)
-          g_string_append_printf (str, "  <component base=\"dark\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
-        else if (*pix < 240)
+
+        switch (*pix)
+          {
+            case C_SOLID:
+      //     g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+              break;
+            case C_DARK:
+              g_string_append_printf (str, "  <component base=\"dark\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
+            case C_BRIGHT:
           g_string_append_printf (str, "  <component base=\"bright\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
-        else
-          ;
+            default:
+              break;
+          }
       }
  g_string_append_printf (str, "  </outline>\n");
  g_string_append_printf (str, "</glyph>\n");
@@ -207,7 +244,7 @@ int main (int argc, char **argv)
   int y, x0;
   int glyph_no = 0;
 
-  stride = rw * 4;
+  //stride = rw * 4;
 
   contents_plist = g_string_new (
   "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -233,6 +270,23 @@ int main (int argc, char **argv)
           if (strchr (&linebuf[2], ' '))
             *strchr (&linebuf[2], ' ')=0;
           map[mappings].name = strdup (&linebuf[2]);
+          if (!strcmp (&linebuf[2], "blank"))
+            map[mappings].type = C_BLANK;
+          else if (!strcmp (&linebuf[2], "solid"))
+            map[mappings].type = C_SOLID;
+          else if (!strcmp (&linebuf[2], "bright"))
+            map[mappings].type = C_BRIGHT;
+          else if (!strcmp (&linebuf[2], "dark"))
+            map[mappings].type = C_DARK;
+          else if (!strcmp (&linebuf[2], "cne"))
+            map[mappings].type = C_CNE;
+          else if (!strcmp (&linebuf[2], "cnw"))
+            map[mappings].type = C_CNW;
+          else if (!strcmp (&linebuf[2], "cse"))
+            map[mappings].type = C_CSE;
+          else if (!strcmp (&linebuf[2], "csw"))
+            map[mappings].type = C_CSW;
+          mappings++;
         }
     } while (p);
 
@@ -253,7 +307,7 @@ int main (int argc, char **argv)
             {
               if (maxy>0)
                 {
-                  gen_glyph (0, 0, 0, maxx, maxy);
+                 gen_glyph (0, 0, 0, maxx, maxy + 1);
                 }
               maxx = 0;
               maxy = 0;
@@ -263,17 +317,18 @@ int main (int argc, char **argv)
               if (uglyphs)
                 free (uglyphs);
   uglyphs = g_utf8_to_ucs4 (glyphs, -1, &n_glyphs, NULL, NULL);
-              fb = g_malloc0 (256*256);
+              if (fb)
+                free (fb);
+              fb = g_malloc0 (256*256 * sizeof(int));
               printf ("%i\n", uglyphs[0]);
               stride = 256;
-              free (fb);
             }
           else
             {
               int x;
               for (x = 0; linebuf[x]; x ++)
                 {
-                  fb[maxy * stride + x] = linebuf[x];
+                  fb[maxy * stride + x + 1] = map_pix (linebuf[x]);
                   if (x>maxx)
                     maxx=x;
                 }
@@ -287,6 +342,7 @@ int main (int argc, char **argv)
       }
   }
 
+#if 0
   /* determine glyph height */
   for (y0 = 0; y0 < rh && fb[rw * 4 * y0]==255; y0++);
   for (y1 = y0; y1 < rh && fb[rw * 4 * y0]<32; y1++);
@@ -308,13 +364,14 @@ int main (int argc, char **argv)
           glyph_no++;
         }
     }
+#endif
   gen_blocks ();
  
   g_string_append (contents_plist, "</dict>\n</plist>\n");
   sprintf (buf, "%s/glyphs/contents.plist", ufo_path);
   g_file_set_contents (buf, contents_plist->str, contents_plist->len, NULL);
 
-  gen_fontinfo (y1-y0);
+  gen_fontinfo (glyph_height); //y1-y0);
 
   g_file_set_contents ("font.asc", ascii_font->str, ascii_font->len, NULL);
 

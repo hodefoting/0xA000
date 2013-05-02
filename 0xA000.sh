@@ -9,4 +9,4 @@ glyphs=" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcd
 rm -rf $family.ufo
 ./0xA000 $PNG $family $variant $baselineoffset "$glyphs"
 ./fontconvert $family.ufo -t
-rm -rf $family.ufo
+#rm -rf $family.ufo
