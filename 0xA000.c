@@ -4,35 +4,41 @@
 #include <stdio.h>
 #include <string.h>
 
-//#include "stb_image.inc"
+  //#include "stb_image.inc"
 
 #define SCALE 512
 
-typedef struct _Mapping Mapping;
 
-enum {
-  C_BLANK=0,
-  C_SOLID,
-  C_DARK,
-  C_BRIGHT,
-  C_CNW,
-  C_CNE,
-  C_CSW,
-  C_CSE,
-  C_VE,
-  C_VW
-};
+#define OVERLAPSOLID 1
 
-struct _Mapping {
-  gchar   ascii;
-  gchar  *name;
-  int     type;
-};
-char *mem_read (char *start,
-                char *linebuf,
-                int  *len);
 
-static Mapping map[256]={{0,},};
+  typedef struct _Mapping Mapping;
+
+  enum {
+    C_BLANK=0,
+    C_SOLID,
+    C_DARK,
+    C_BRIGHT,
+    C_CNW,
+    C_CNE,
+    C_CSW,
+    C_CSE,
+    C_VE,
+    C_VW,
+    C_VN,
+    C_VS
+  };
+
+  struct _Mapping {
+    gchar   ascii;
+    gchar  *name;
+    int     type;
+  };
+  char *mem_read (char *start,
+                  char *linebuf,
+                  int  *len);
+
+  static Mapping map[256]={{0,},};
 static int     mappings=0;
 
 static int map_pix (char pix)
@@ -95,7 +101,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", uglyphs[glyph_no]);
   g_string_append_printf (str, "  <outline>\n");
 
-  if (1)
+#if OVERLAP_SOLID
   for (y = y0; y <= y1; y++)
     for (x = x0; x <= x1; x++)
       {
@@ -119,6 +125,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
               }
           }
       }
+#endif
 
   for (y = y0; y <= y1; y++)
     for (x = x0; x <= x1; x++)
@@ -126,19 +133,30 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
         int *pix = &fb[stride * y+x];
         int u = x - x0;
         int v = y1 - y -1 + y_shift;
+        const char *component = NULL;
 
         switch (*pix)
           {
-            case C_SOLID:
-      //     g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
-              break;
-            case C_DARK:
-              g_string_append_printf (str, "  <component base=\"dark\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
-            case C_BRIGHT:
-          g_string_append_printf (str, "  <component base=\"bright\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE);
-            default:
-              break;
+            case C_SOLID: 
+#if !OVERLAP_SOLID
+              component = "solid";
+#endif
+            break;
+
+            case C_CNE: component = "cne"; break;
+            case C_CNW: component = "cnw"; break;
+            case C_CSE: component = "cse"; break;
+            case C_CSW: component = "csw"; break;
+            case C_VE:  component = "ve"; break;
+            case C_VW:  component = "vw"; break;
+            case C_VS:  component = "vs"; break;
+            case C_VN:  component = "vn"; break;
+            case C_DARK:  component = "dark"; break;
+            case C_BRIGHT: component = "bright"; break;
+            case C_BLANK: component = NULL;
           }
+        if (component)
+          g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", component, u * SCALE, v * SCALE);
       }
  g_string_append_printf (str, "  </outline>\n");
  g_string_append_printf (str, "</glyph>\n");
@@ -247,6 +265,14 @@ int main (int argc, char **argv)
             map[mappings].type = C_CSE;
           else if (!strcmp (&linebuf[2], "csw"))
             map[mappings].type = C_CSW;
+          else if (!strcmp (&linebuf[2], "ve"))
+            map[mappings].type = C_VE;
+          else if (!strcmp (&linebuf[2], "vw"))
+            map[mappings].type = C_VW;
+          else if (!strcmp (&linebuf[2], "vn"))
+            map[mappings].type = C_VN;
+          else if (!strcmp (&linebuf[2], "vs"))
+            map[mappings].type = C_VS;
           mappings++;
         }
     } while (p);
@@ -316,6 +342,174 @@ int main (int argc, char **argv)
   return 0;
 }
 
+
+void gen_corner_block ()
+{
+ char buf[1024];
+ const char *name;
+
+  GString *str;
+  str = g_string_new ("");
+  name = "cne";
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  //g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+  name = "cnw";
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  //g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+  name = "csw";
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  //g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+
+  name = "cse";
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  //g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+
+  name = "ve";
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+  name = "vw";
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+
+  name = "vn";
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+
+  name = "vs";
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+}
+
 void gen_solid_block ()
 {
  char buf[1024];
@@ -346,8 +540,8 @@ void gen_solid_block ()
   g_string_append_printf (str, "    <contour>\n");
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * -1 * 0.1));
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, (int)(SCALE * -1 * 0.1));
+    g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * -1));
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, (int)(SCALE * -1));
   g_string_append_printf (str, "    </contour>\n");
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
@@ -455,6 +649,7 @@ void gen_dia_grays ()
 void gen_blocks ()
 {
   gen_solid_block ();
+  gen_corner_block ();
   gen_dia_grays ();
 }
 
