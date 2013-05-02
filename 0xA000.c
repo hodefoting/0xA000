@@ -49,6 +49,20 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
         int v = y1 - y -1 + y_shift;
         if (*pix < 32)
           {
+            if (y <y1 && fb[stride *(y+1)+x*4] < 32)
+              {
+          g_string_append_printf (str, "  <component base=\"solidv\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+          if (x <x1 && fb[stride *(y)+(x+1)*4] < 32)
+            g_string_append_printf (str, "  <component base=\"solidh\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+              }
+            else
+              {
+          if (x <x1 && fb[stride *(y)+(x+1)*4] < 32)
+            g_string_append_printf (str, "  <component base=\"solidh\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+          else
+            g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+              }
+
 #if 0
 
   g_string_append_printf (str, "    <contour>\n");
@@ -58,7 +72,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0 + u * SCALE, SCALE * 0 + v * SCALE);
   g_string_append_printf (str, "    </contour>\n");
 #else
-          g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
 #endif
           }
       }
@@ -175,7 +188,6 @@ void gen_solid_block ()
  char buf[1024];
   GString *str;
   str = g_string_new ("");
-
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"solid\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
@@ -192,7 +204,44 @@ void gen_solid_block ()
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
+
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"solidv\" format=\"1\">\n");
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * -1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * -1);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "solidv");
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"solidh\" format=\"1\">\n");
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "    <contour>\n");
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 2, SCALE * 1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 2, SCALE * 0);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    </contour>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "solidh");
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+
   g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
+  g_string_append_printf (contents_plist, "<key>solidv</key><string>solidv.glif</string>\n");
+  g_string_append_printf (contents_plist, "<key>solidh</key><string>solidh.glif</string>\n");
 }
 
 void gen_gray (GString *str, int mod)
