@@ -2,7 +2,7 @@
 #include <math.h>
 #include "stb_image.inc"
 
-#define SCALE 1024
+#define SCALE 512
 
 static const char *font_name = NULL;
 static const char *font_type = NULL;
@@ -14,23 +14,52 @@ int stride;
 
 static char ufo_path[2048];
 
-const char *glyphs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+const char *glyphs =
+" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
   "æøåÆØÅ€¡Ññ£čšžČŠŽ©";
 
 gunichar *uglyphs = NULL;
 glong n_glyphs;
 
 GString *contents_plist = NULL;
+GString *str = NULL;
+
+GString *ascii_font = NULL;
 
 void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 {
   GString *str;
+  gchar utf8_chr[8]={0,0,0,0,};
   int x, y;
   x0++;
   x1++;
 
   if (glyph_no >= n_glyphs)
     return;
+
+  g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
+  g_string_append_printf (ascii_font, "( %s )\n", utf8_chr);
+
+  for (y = y0; y <= y1; y++)
+    {
+      for (x = x0; x <= x1; x++)
+        {
+          unsigned char *pix = &fb[stride * y+x*4];
+          int u = x - x0;
+          int v = y1 - y -1 + y_shift;
+          if (*pix < 32)
+            g_string_append_printf (ascii_font, "8");
+          else if (*pix < 120)
+            g_string_append_printf (ascii_font, "7");
+          else if (*pix < 240)
+            g_string_append_printf (ascii_font, "+");
+          else
+            g_string_append_printf (ascii_font, ".");
+        }
+      g_string_append_printf (ascii_font, "\n");
+    }
+  g_string_append_printf (ascii_font, "\n");
+
   str = g_string_new ("");
 
   //fprintf (stderr, "%c %d\n", uglyphs[glyph_no], uglyphs[glyph_no]);
@@ -122,7 +151,14 @@ int main (int argc, char **argv)
   glyphs    = argv[4];
   y_shift = atoi(argv[4]);
 
-  fprintf (stderr," {%i}\n", y_shift);
+  ascii_font = g_string_new ("");
+
+  g_string_append_printf (ascii_font,
+      ". blank    # period\n"
+      "8 solid    # eight\n"
+      "7 dark     # seven\n"
+      "+ bright   # plus\n"
+      "\n");
 
   sprintf (ufo_path, "%s.ufo", font_name);
   char buf[2048];
@@ -180,6 +216,8 @@ int main (int argc, char **argv)
 
   gen_fontinfo (y1-y0);
 
+  g_file_set_contents ("font.asc", ascii_font->str, ascii_font->len, NULL);
+
   return 0;
 }
 
@@ -213,8 +251,8 @@ void gen_solid_block ()
   g_string_append_printf (str, "    <contour>\n");
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * -1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * -1);
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * -1 * 0.1));
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, (int)(SCALE * -1 * 0.1));
   g_string_append_printf (str, "    </contour>\n");
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
@@ -248,34 +286,38 @@ void gen_gray (GString *str, int mod)
 {
   int i;
   int no = 0;
-#define GO 4
-  for (i = -GO; i < SCALE * 2 + GO; i++)
+
+#define GO 8
+#define NSCALE  (SCALE + GO * 2)
+
+
+  for (i = 0; i < NSCALE * 2; i++)
   {
 
     no ++;
     if (no % mod == 0)
     {
       g_string_append_printf (str, "    <contour>\n");
-        if (i < SCALE)
+        if (i < NSCALE)
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i,   -GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", -GO,   i);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - GO,   0 - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0 - GO,   i - GO);
           }
         else
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE + GO, i - SCALE);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - SCALE, SCALE + GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", NSCALE - GO, i - NSCALE - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - NSCALE - GO, NSCALE - GO);
           }
 
-        if (i+7 < SCALE)
+        if (i+7 < NSCALE)
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", -GO,   i+7);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7, -GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0 - GO,   i+7 - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - GO, 0 - GO);
           }
         else
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - SCALE, SCALE + GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE + GO, i+7 - SCALE);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - NSCALE - GO, NSCALE - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", NSCALE - GO, i+7 - NSCALE - GO);
           }
       g_string_append_printf (str, "    </contour>\n");
     }
