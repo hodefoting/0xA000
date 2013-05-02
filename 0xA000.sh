@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PNG=regular.png
+PNG=regular.asc
 family=0xA000
 variant=Medium
 baselineoffset=0

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PNG=mono.png
+PNG=mono.asc
 family=0xA000
 variant=Mono
 baselineoffset=0

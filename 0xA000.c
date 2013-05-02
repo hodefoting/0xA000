@@ -1,12 +1,31 @@
 #include <glib.h>
 #include <math.h>
-#include "stb_image.inc"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+//#include "stb_image.inc"
 
 #define SCALE 512
+
+typedef struct _Mapping Mapping;
+
+struct _Mapping {
+  gchar   ascii;
+  gchar  *name;
+};
+char *mem_read (char *start,
+                char *linebuf,
+                int  *len);
+
+static Mapping map[256]={{0,},};
+static int     mappings=0;
 
 static const char *font_name = NULL;
 static const char *font_type = NULL;
 static int   y_shift = 0;
+
+static char *asc_source = NULL;
 
 int rw, rh;
 unsigned char *fb;
@@ -134,6 +153,8 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 void gen_blocks ();
 void gen_fontinfo (int glyph_height);
 
+
+
 int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
@@ -172,9 +193,17 @@ int main (int argc, char **argv)
 "<plist version=\"1.0\"> <dict> <key>creator</key> <string>org.gimp.pippin</string> <key>formatVersion</key> <integer>2</integer> </dict> </plist>", -1, NULL);
 
 
+#if 0
   fb = stbi_load (argv[1], &rw, &rh, NULL, 4);
   if (!fb)
     return 0;
+#else
+  if (!g_file_get_contents (argv[1], &asc_source, NULL, NULL))
+    {
+      fprintf (stderr, "failed to load ascii font\n");
+      return -1;
+    }
+#endif
   int y, x0;
   int glyph_no = 0;
 
@@ -186,6 +215,77 @@ int main (int argc, char **argv)
 "\"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n"
 "<plist version=\"1.0\">\n"
 "<dict>\n");
+
+  /* read mapping table */
+
+  {
+    char linebuf[1024];
+    int len;
+    char *p = asc_source;
+
+    do {
+      p = mem_read (p, linebuf, &len);
+      if (len)
+        {
+          if (linebuf[0] == '!' && linebuf[1] == '!')
+            goto mappings_done;
+          map[mappings].ascii = linebuf[0];
+          if (strchr (&linebuf[2], ' '))
+            *strchr (&linebuf[2], ' ')=0;
+          map[mappings].name = strdup (&linebuf[2]);
+        }
+    } while (p);
+
+  mappings_done:
+    if (0);
+
+    int lineno = 0;
+    int gotone = 0;
+
+    int maxx = 0;
+    int maxy = 0;
+
+    do {
+      p = mem_read (p, linebuf, &len);
+      if (len)
+        {
+          if (linebuf[0] == '(' && linebuf[1] == ' ')
+            {
+              if (maxy>0)
+                {
+                  gen_glyph (0, 0, 0, maxx, maxy);
+                }
+              maxx = 0;
+              maxy = 0;
+              glyph_no = 0;
+              lineno = 0;
+              glyphs = &linebuf[2];
+              if (uglyphs)
+                free (uglyphs);
+  uglyphs = g_utf8_to_ucs4 (glyphs, -1, &n_glyphs, NULL, NULL);
+              fb = g_malloc0 (256*256);
+              printf ("%i\n", uglyphs[0]);
+              stride = 256;
+              free (fb);
+            }
+          else
+            {
+              int x;
+              for (x = 0; linebuf[x]; x ++)
+                {
+                  fb[maxy * stride + x] = linebuf[x];
+                  if (x>maxx)
+                    maxx=x;
+                }
+              maxy++;
+            }
+        }
+    } while (p);
+    if (maxy>0)
+      {
+        gen_glyph (0, 0, 0, maxx, maxy);
+      }
+  }
 
   /* determine glyph height */
   for (y0 = 0; y0 < rh && fb[rw * 4 * y0]==255; y0++);
@@ -393,4 +493,45 @@ void gen_fontinfo (int glyph_height)
 
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
+}
+
+
+char *mem_read (char *start,
+                char *linebuf,
+                int  *len)
+{
+    int  int_len;
+    char *p = start;
+    if (!len)
+      len = &int_len;
+    *len = 0;
+    for (p = start; *p ;p++)
+      {
+        switch (*p)
+         {
+           case '#':
+            while (*p && *p!='\n')p++;
+            if (*p == '\n') p--;
+             break;
+           case '\n':
+             {
+               linebuf[*len]=0;
+               return p+1;
+             }
+             break;
+           case '\\':
+             p++;
+             if (*p)
+               {
+                 linebuf[(*len)++]=*p;
+               }
+             else
+               p--;
+             break;
+           default:
+             linebuf[(*len)++]=*p;
+             break;
+         }
+      }
+  return NULL;
 }
