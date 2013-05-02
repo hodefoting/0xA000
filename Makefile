@@ -3,7 +3,7 @@ BIN_LD_FLAGS = -lm
 
 CFLAGS += -O2 -g
 all: 0xA000.ttf 0xA000-Mono.ttf
-%.ttf: %.sh 0xA000
+%.ttf: %.sh 0xA000 *.asc
 	./$<
 
 clean: clean-too
