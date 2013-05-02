@@ -4,8 +4,8 @@ PNG=regular.asc
 family=0xA000
 variant=Medium
 baselineoffset=0
-glyphs=" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~"
 
+glyphs=" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_\`abcdefghijklmnopqrstuvwxyz{|}~ æøåÆØÅ€¡Ññ£čšžČŠŽ©";
 rm -rf $family.ufo
 ./0xA000 $PNG $family $variant $baselineoffset "$glyphs"
 ./fontconvert $family.ufo -t

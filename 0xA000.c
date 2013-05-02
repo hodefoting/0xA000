@@ -84,36 +84,10 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
     return;
 
   if (y1 - y0 > glyph_height)
-    glyph_height = y1 - y0;
+    glyph_height = y1 - y0 - 1;
 
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
-#if 0
-  g_string_append_printf (ascii_font, "( %s )\n", utf8_chr);
-
-  for (y = y0; y <= y1; y++)
-    {
-      for (x = x0; x <= x1; x++)
-        {
-          unsigned char *pix = &fb[stride * y+x*4];
-          int u = x - x0;
-          int v = y1 - y -1 + y_shift;
-          if (*pix < 32)
-            g_string_append_printf (ascii_font, "8");
-          else if (*pix < 120)
-            g_string_append_printf (ascii_font, "7");
-          else if (*pix < 240)
-            g_string_append_printf (ascii_font, "+");
-          else
-            g_string_append_printf (ascii_font, ".");
-        }
-      g_string_append_printf (ascii_font, "\n");
-    }
-  g_string_append_printf (ascii_font, "\n");
-#endif
-
   str = g_string_new ("");
-
-  //fprintf (stderr, "%c %d\n", uglyphs[glyph_no], uglyphs[glyph_no]);
 
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", uglyphs[glyph_no]);
@@ -143,17 +117,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
           else
             g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
               }
-
-#if 0
-
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0 + u * SCALE, SCALE * 1 + v * SCALE);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + u * SCALE, SCALE * 1 + v * SCALE);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1 + u * SCALE, SCALE * 0 + v * SCALE);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0 + u * SCALE, SCALE * 0 + v * SCALE);
-  g_string_append_printf (str, "    </contour>\n");
-#else
-#endif
           }
       }
 
@@ -244,8 +207,6 @@ int main (int argc, char **argv)
   int y, x0;
   int glyph_no = 0;
 
-  //stride = rw * 4;
-
   contents_plist = g_string_new (
   "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 "<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\"\n"
@@ -307,7 +268,7 @@ int main (int argc, char **argv)
             {
               if (maxy>0)
                 {
-                 gen_glyph (0, 0, 0, maxx, maxy + 1);
+                  gen_glyph (0, 0, 0, maxx, maxy-1);
                 }
               maxx = 0;
               maxy = 0;
@@ -338,40 +299,17 @@ int main (int argc, char **argv)
     } while (p);
     if (maxy>0)
       {
-        gen_glyph (0, 0, 0, maxx, maxy);
+        gen_glyph (0, 0, 0, maxx, maxy-1);
       }
   }
 
-#if 0
-  /* determine glyph height */
-  for (y0 = 0; y0 < rh && fb[rw * 4 * y0]==255; y0++);
-  for (y1 = y0; y1 < rh && fb[rw * 4 * y0]<32; y1++);
-  y1--;
-
-  printf ("rw: %d rh: %d y0: %d y1: %d\n", rw, rh, y0, y1);
-
-  /* iterate through glyphs as delimited on first scanline */
-  for (x0 = 0; x0 < rw; x0++)
-    {
-      if (fb[x0 * 4] < 255)
-        {
-          int x1;
-          for (x1 = x0+1; fb[x1 * 4] == 255; x1++);
-          x1--;
-          if (x1 > rw)
-            break;
-          gen_glyph (glyph_no, x0, y0, x1, y1);
-          glyph_no++;
-        }
-    }
-#endif
   gen_blocks ();
  
   g_string_append (contents_plist, "</dict>\n</plist>\n");
   sprintf (buf, "%s/glyphs/contents.plist", ufo_path);
   g_file_set_contents (buf, contents_plist->str, contents_plist->len, NULL);
 
-  gen_fontinfo (glyph_height); //y1-y0);
+  gen_fontinfo (glyph_height+1);
 
   g_file_set_contents ("font.asc", ascii_font->str, ascii_font->len, NULL);
 
