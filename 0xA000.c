@@ -9,7 +9,7 @@
 #define SCALE 512
 
 
-#define OVERLAPSOLID 1
+#define OVERLAP_SOLID 1
 
 
   typedef struct _Mapping Mapping;
@@ -95,6 +95,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 
   if (y1 - y0 > glyph_height)
     glyph_height = y1 - y0 - 1;
+  printf ("%i\n", glyph_height);
 
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
   str = g_string_new ("");
