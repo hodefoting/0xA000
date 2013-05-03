@@ -95,7 +95,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 
   if (y1 - y0 > glyph_height)
     glyph_height = y1 - y0 - 1;
-  printf ("%i\n", glyph_height);
 
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
   str = g_string_new ("");
@@ -324,7 +323,6 @@ int main (int argc, char **argv)
               if (fb)
                 free (fb);
               fb = g_malloc0 (256*256 * sizeof(int));
-              printf ("%i\n", uglyphs[0]);
               stride = 256;
             }
           else
@@ -520,7 +518,7 @@ void gen_corner_block ()
   //g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   //
   g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * 1), (int)(SCALE * 0.5523));
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * 0.5523), 0);//(int)(SCALE * 0.5523));
+  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * 0.5523), 0);
   //
   g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
@@ -645,7 +643,7 @@ void gen_solid_block ()
   g_string_append_printf (str, "    <contour>\n");
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-    g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * -1));
+  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * -1));
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, (int)(SCALE * -1));
   g_string_append_printf (str, "    </contour>\n");
   g_string_append_printf (str, "  </outline>\n");
