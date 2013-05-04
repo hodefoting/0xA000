@@ -192,13 +192,17 @@ void import_includes (char **asc_source)
       {
         if (g_str_has_prefix (linebuf, "include "))
         {
+          if (1)
+          {
           char *read = NULL;
           g_file_get_contents (&linebuf[strlen("include ")], &read, NULL, NULL);
           if (read)
             {
               g_string_append_printf (new, "%s", read);
+          fprintf (stderr, "!%s!\n", read);
               g_free (read);
             }
+          }
         }
         else
         {
