@@ -1,0 +1,15 @@
+@font-face { font-family: '0xA000'; src: url('0xA000-Pixelated.ttf'); }
+@font-face { font-family: '0xA000-Sans'; src: url('0xA000-Sans.ttf'); }
+@font-face { font-family: '0xA000-Mono'; src: url('0xA000-Mono.ttf'); }
+@font-face { font-family: '0xA000-MonoSans'; src: url('0xA000-MonoSans.ttf'); }
+@font-face { font-family: '0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf'); }
+body {font-family: '0xA000'; font-size: 20px;}
+small {font-size :5px;}
+tt,pre {font-family: '0xA000-Mono'; }
+h1   {font-size: 3em; font-weight: normal; margin: 0.5em 0 0.25em}
+h2   {font-size: 2em; font-weight: normal; margin: 0}
+body {margin: 0 auto; }
+.content {margin-left: 16em;margin-right:15em;
+  min-width: 26em; max-width: 42em;
+}
+.copy { text-align: right;}
