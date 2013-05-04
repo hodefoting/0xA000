@@ -4,15 +4,11 @@
 #include <stdio.h>
 #include <string.h>
 
-  //#include "stb_image.inc"
-
 #define SCALE 512
-
 
 #define OVERLAP_SOLID 1
 
-
-  typedef struct _Mapping Mapping;
+typedef struct _Mapping Mapping;
 
   enum {
     C_BLANK=0,
@@ -717,7 +713,7 @@ void gen_gray (GString *str, int mod)
   int i;
   int no = 0;
 
-#define GO 8
+#define GO 4
 #define NSCALE  (SCALE + GO * 2)
 
 
