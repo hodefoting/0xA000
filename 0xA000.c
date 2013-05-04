@@ -179,7 +179,37 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 void gen_blocks ();
 void gen_fontinfo (int glyph_height);
 
+void import_includes (char **asc_source)
+{
+  GString *new = g_string_new ("");
+  char linebuf[1024];
+  int len;
+  char *p = *asc_source;
 
+  do {
+    p = mem_read (p, linebuf, &len);
+    if (p)
+      {
+        if (g_str_has_prefix (linebuf, "include "))
+        {
+          char *read = NULL;
+          g_file_get_contents (&linebuf[strlen("include ")], &read, NULL, NULL);
+          if (read)
+            {
+              g_string_append_printf (new, "%s", read);
+              g_free (read);
+            }
+        }
+        else
+        {
+          g_string_append_printf (new, "%s\n", linebuf);
+        }
+      }
+  } while (p);
+
+  *asc_source = new->str;
+  g_string_free (new, FALSE);
+}
 
 int main (int argc, char **argv)
 {
@@ -230,6 +260,10 @@ int main (int argc, char **argv)
       return -1;
     }
 #endif
+
+/* import includes */
+  import_includes (&asc_source);
+
   int y, x0;
   int glyph_no = 0;
 
@@ -350,7 +384,7 @@ int main (int argc, char **argv)
   sprintf (buf, "%s/glyphs/contents.plist", ufo_path);
   g_file_set_contents (buf, contents_plist->str, contents_plist->len, NULL);
 
-  gen_fontinfo (glyph_height+1);
+  gen_fontinfo (glyph_height);
 
   g_file_set_contents ("font.asc", ascii_font->str, ascii_font->len, NULL);
 
@@ -787,6 +821,7 @@ void gen_fontinfo (int glyph_height)
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 }
+
 
 
 char *mem_read (char *start,
