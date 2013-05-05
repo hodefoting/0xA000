@@ -63,9 +63,7 @@ int stride;
 
 static char ufo_path[2048];
 
-const char *glyphs =
-" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-  "æøåÆØÅ€¡Ññ£čšžČŠŽ©";
+const char *glyphs = "";
 
 gunichar *uglyphs = NULL;
 glong n_glyphs;
@@ -195,7 +193,6 @@ void import_includes (char **asc_source)
           if (read)
             {
               g_string_append_printf (new, "%s", read);
-          fprintf (stderr, "!%s!\n", read);
               g_free (read);
             }
           }
@@ -215,17 +212,17 @@ int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
 
-  if (argc != 6)
+  if (argc != 5)
     {
-      fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname> <yshift> <glyphs>\n", argv[0]);
+      fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname> <yshift>\n", argv[0]);
       return -1;
     }
 
-  uglyphs = g_utf8_to_ucs4 (glyphs, -1, &n_glyphs, NULL, NULL);
+  uglyphs = NULL;
 
   font_name = argv[2];
   font_type = argv[3];
-  glyphs    = argv[4];
+  glyphs    = NULL;
   y_shift = atoi(argv[4]);
 
   ascii_font = g_string_new ("");
