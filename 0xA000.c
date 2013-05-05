@@ -214,7 +214,7 @@ int main (int argc, char **argv)
 
   if (argc != 5)
     {
-      fprintf (stderr, "Usage: %s <fontimage.png> <outputfontname> <yshift>\n", argv[0]);
+      fprintf (stderr, "Usage: %s <fontsource.asc> <outputfontname> <yshift>\n", argv[0]);
       return -1;
     }
 
