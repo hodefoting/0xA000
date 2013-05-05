@@ -7,9 +7,11 @@ body {font-family: '0xA000'; font-size: 20px;}
 small {font-size :5px;}
 tt,pre {font-family: '0xA000-Mono'; }
 h1   {font-size: 3em; font-weight: normal; margin: 0.5em 0 0.25em}
-h2   {font-size: 2em; font-weight: normal; margin: 0}
+h2   {font-size: 2em; font-weight: normal; margin: 0 0 0 0}
 body {margin: 0 auto; }
-.content {margin-left: 16em;margin-right:15em;
-  min-width: 26em; max-width: 42em;
+.content {margin-left: 15em;margin-right:5em;margin-top: 1em;
+  min-width: 30em; max-width: 60em;
 }
+a { color: #333377; text-decoration:none}
+a:hover { text-decoration: underline }
 .copy { text-align: right;}
