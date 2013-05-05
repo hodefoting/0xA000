@@ -503,11 +503,11 @@ void gen_corner_block ()
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
   g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", 0,(int)(SCALE*0.5523));//(int)(SCALE * 0.5523), SCALE * 1);
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE*(1.0-0.5523)),SCALE);//SCALE * 1,             (int)(SCALE * 0.5423));
+  g_string_append_printf (str, "    <point type='line'  x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
+  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", 0,(int)(SCALE*(1-0.5523)));
+  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE*(1-0.5523)),SCALE);
   g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
   g_string_append_printf (str, "    <point type='line'  x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line'  x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
@@ -523,12 +523,12 @@ void gen_corner_block ()
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
   g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
 
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * (1.0-0.5523)),0);
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", 0,(int)(SCALE * (1.0-0.5523)));
+  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * (1.0-0.5523)),    0);
+  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", 0,    (int)(SCALE * (1.0-0.5523)));
+  g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
 
   //g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
