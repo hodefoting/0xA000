@@ -50,6 +50,7 @@ static int map_pix (char pix)
   return C_BLANK;
 }
 
+static int   author_mode = 0;
 
 static const char *font_name = NULL;
 static const char *font_type = NULL;
@@ -75,6 +76,32 @@ int glyph_height;
 
 GString *ascii_font = NULL;
 
+void gen_ref_glyph (Mapping *mapping, int xw, int xh)
+{
+  GString *str;
+  str = g_string_new ("");
+
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", mapping->ascii);
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", (xw) * SCALE);
+  g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", mapping->ascii);
+  g_string_append_printf (str, "  <outline>\n");
+
+  g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"0\" yOffset=\"0\" xScale=\"%d\" yScale=\"%d\"/>\n",
+       mapping->name, xw, xh);
+  fprintf (stderr, "%c = %s\n", mapping->ascii, mapping->name);
+
+
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  char buf[1024];
+  sprintf (buf, "%s/glyphs/%X.glif", ufo_path, mapping->ascii);
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+
+  //g_string_append_printf (contents_plist, "<key>%X</key><string>%X.glif</string>\n", uglyphs[glyph_no], uglyphs[glyph_no]);
+}
+
 void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 {
   GString *str;
@@ -82,7 +109,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   int x, y;
   x0++;
   x1++;
-
 
   if (glyph_no >= n_glyphs)
     return;
@@ -153,8 +179,8 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
             case C_VW:  component = "vw"; break;
             case C_VS:  component = "vs"; break;
             case C_VN:  component = "vn"; break;
-            case C_DARK:  component = "dark"; break;
-            case C_BRIGHT: component = "bright"; break;
+            case C_DARK:  component = "strong"; break;
+            case C_BRIGHT: component = "light"; break;
             case C_BLANK: component = NULL;
           }
         if (component)
@@ -212,9 +238,9 @@ int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
 
-  if (argc != 5)
+  if (argc != 6)
     {
-      fprintf (stderr, "Usage: %s <fontsource.asc> <outputfontname> <yshift>\n", argv[0]);
+      fprintf (stderr, "Usage: %s <fontsource.asc> <outputfontname> <yshift> <authormode>\n", argv[0]);
       return -1;
     }
 
@@ -224,14 +250,15 @@ int main (int argc, char **argv)
   font_type = argv[3];
   glyphs    = NULL;
   y_shift = atoi(argv[4]);
+  author_mode = atoi(argv[5]);
 
   ascii_font = g_string_new ("");
 
   g_string_append_printf (ascii_font,
       ". blank    # period\n"
       "8 solid    # eight\n"
-      "7 dark     # seven\n"
-      "+ bright   # plus\n"
+      "7 strong     # seven\n"
+      "+ light   # plus\n"
       "\n");
 
   sprintf (ufo_path, "%s.ufo", font_name);
@@ -292,9 +319,9 @@ int main (int argc, char **argv)
             map[mappings].type = C_BLANK;
           else if (!strcmp (&linebuf[2], "solid"))
             map[mappings].type = C_SOLID;
-          else if (!strcmp (&linebuf[2], "bright"))
+          else if (!strcmp (&linebuf[2], "light"))
             map[mappings].type = C_BRIGHT;
-          else if (!strcmp (&linebuf[2], "dark"))
+          else if (!strcmp (&linebuf[2], "strong"))
             map[mappings].type = C_DARK;
           else if (!strcmp (&linebuf[2], "cne"))
             map[mappings].type = C_CNE;
@@ -373,9 +400,19 @@ int main (int argc, char **argv)
       {
         gen_glyph (0, 0, 0, maxx, maxy-1);
       }
-  }
 
   gen_blocks ();
+
+  if (author_mode)
+    {
+      int i;
+      for (i = 0; map[i].ascii; i++)
+        {
+          gen_ref_glyph (&map[i], maxy, maxy);
+        }
+    }
+
+  }
  
   g_string_append (contents_plist, "</dict>\n</plist>\n");
   sprintf (buf, "%s/glyphs/contents.plist", ufo_path);
@@ -665,6 +702,16 @@ void gen_solid_block ()
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"blank\" format=\"1\">\n");
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "blank");
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
 
   str = g_string_new ("");
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -700,6 +747,7 @@ void gen_solid_block ()
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
+  g_string_append_printf (contents_plist, "<key>blank</key><string>blank.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>solidv</key><string>solidv.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>solidh</key><string>solidh.glif</string>\n");
@@ -751,31 +799,31 @@ void gen_dia_grays ()
   GString *str;
   str = g_string_new ("");
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"bright\" format=\"1\">\n");
+  g_string_append_printf (str, "<glyph name=\"light\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
   gen_gray (str, 21);
 
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
-  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "bright");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "light");
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
   str = g_string_new ("");
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"dark\" format=\"1\">\n");
+  g_string_append_printf (str, "<glyph name=\"strong\" format=\"1\">\n");
   g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
   g_string_append_printf (str, "  <outline>\n");
   gen_gray (str, 11);
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
-  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "dark");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "strong");
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
-  g_string_append_printf (contents_plist, "<key>dark</key><string>dark.glif</string>\n");
-  g_string_append_printf (contents_plist, "<key>bright</key><string>bright.glif</string>\n");
+  g_string_append_printf (contents_plist, "<key>strong</key><string>strong.glif</string>\n");
+  g_string_append_printf (contents_plist, "<key>light</key><string>light.glif</string>\n");
 }
 
 void gen_blocks ()

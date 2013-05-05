@@ -6,6 +6,6 @@ variant=Medium
 baselineoffset=0
 
 rm -rf $family.ufo
-./0xA000 $PNG $family $variant $baselineoffset
+./0xA000 $PNG $family $variant $baselineoffset 0
 ./fontconvert $family.ufo -t
 #rm -rf $family.ufo
