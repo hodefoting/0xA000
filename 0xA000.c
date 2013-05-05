@@ -713,10 +713,8 @@ void gen_gray (GString *str, int mod)
 #define GO 4
 #define NSCALE  (SCALE + GO * 2)
 
-
   for (i = 0; i < NSCALE * 2; i++)
   {
-
     no ++;
     if (no % mod == 0)
     {
@@ -792,7 +790,6 @@ void gen_fontinfo (int glyph_height)
   char buf[2048];
   sprintf (buf, "%s/fontinfo.plist", ufo_path);
   GString *str = g_string_new ("");
-
 
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n");
