@@ -14,6 +14,7 @@ typedef struct _Mapping Mapping;
     C_BLANK=0,
     C_SOLID,
     C_DARK,
+    C_MEDIUM,
     C_BRIGHT,
     C_CNW,
     C_CNE,
@@ -98,8 +99,6 @@ void gen_ref_glyph (Mapping *mapping, int xw, int xh)
   sprintf (buf, "%s/glyphs/%X.glif", ufo_path, mapping->ascii);
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
-
-  //g_string_append_printf (contents_plist, "<key>%X</key><string>%X.glif</string>\n", uglyphs[glyph_no], uglyphs[glyph_no]);
 }
 
 void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
@@ -180,6 +179,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
             case C_VS:  component = "vs"; break;
             case C_VN:  component = "vn"; break;
             case C_DARK:  component = "strong"; break;
+            case C_MEDIUM:  component = "medium"; break;
             case C_BRIGHT: component = "light"; break;
             case C_BLANK: component = NULL;
           }
@@ -323,6 +323,8 @@ int main (int argc, char **argv)
             map[mappings].type = C_BRIGHT;
           else if (!strcmp (&linebuf[2], "strong"))
             map[mappings].type = C_DARK;
+          else if (!strcmp (&linebuf[2], "medium"))
+            map[mappings].type = C_MEDIUM;
           else if (!strcmp (&linebuf[2], "cne"))
             map[mappings].type = C_CNE;
           else if (!strcmp (&linebuf[2], "cnw"))
@@ -408,7 +410,7 @@ int main (int argc, char **argv)
       int i;
       for (i = 0; map[i].ascii; i++)
         {
-          gen_ref_glyph (&map[i], maxy, maxy);
+          gen_ref_glyph (&map[i], maxy-1, maxy-1);
         }
     }
 
@@ -822,7 +824,21 @@ void gen_dia_grays ()
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 
+
+  str = g_string_new ("");
+  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+  g_string_append_printf (str, "<glyph name=\"medium\" format=\"1\">\n");
+  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
+  g_string_append_printf (str, "  <outline>\n");
+  gen_gray (str, 14);
+  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "</glyph>\n");
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "medium");
+  g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+
   g_string_append_printf (contents_plist, "<key>strong</key><string>strong.glif</string>\n");
+  g_string_append_printf (contents_plist, "<key>medium</key><string>medium.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>light</key><string>light.glif</string>\n");
 }
 
