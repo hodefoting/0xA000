@@ -5,7 +5,7 @@
 body {font-family: '0xA000-Sans'; font-size: 20px;}
 p {line-height: 1.6em;}
 small {font-size :5px;}
-tt,pre {font-family: '0xA000-Mono'; }
+tt,pre {font-family: '0xA000-MonoSans'; }
 h1   {font-size: 3em; font-weight: normal; margin: 0.5em 0 0.25em}
 h2   {font-size: 2em; font-weight: normal; margin: 0 0 0 0}
 body {margin: 0 auto; }
