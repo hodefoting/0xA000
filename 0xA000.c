@@ -13,9 +13,9 @@ typedef struct _Mapping Mapping;
   enum {
     C_BLANK=0,
     C_SOLID,
-    C_DARK,
+    C_STRONG,
     C_MEDIUM,
-    C_BRIGHT,
+    C_LIGHT,
     C_CNW,
     C_CNE,
     C_CSW,
@@ -178,9 +178,9 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
             case C_VW:  component = "vw"; break;
             case C_VS:  component = "vs"; break;
             case C_VN:  component = "vn"; break;
-            case C_DARK:  component = "strong"; break;
+            case C_STRONG:  component = "strong"; break;
             case C_MEDIUM:  component = "medium"; break;
-            case C_BRIGHT: component = "light"; break;
+            case C_LIGHT: component = "light"; break;
             case C_BLANK: component = NULL;
           }
         if (component)
@@ -320,9 +320,9 @@ int main (int argc, char **argv)
           else if (!strcmp (&linebuf[2], "solid"))
             map[mappings].type = C_SOLID;
           else if (!strcmp (&linebuf[2], "light"))
-            map[mappings].type = C_BRIGHT;
+            map[mappings].type = C_LIGHT;
           else if (!strcmp (&linebuf[2], "strong"))
-            map[mappings].type = C_DARK;
+            map[mappings].type = C_STRONG;
           else if (!strcmp (&linebuf[2], "medium"))
             map[mappings].type = C_MEDIUM;
           else if (!strcmp (&linebuf[2], "cne"))
