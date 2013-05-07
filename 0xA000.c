@@ -77,27 +77,37 @@ int glyph_height;
 
 GString *ascii_font = NULL;
 
-void gen_ref_glyph (Mapping *mapping, int xw, int xh)
+void write_glyph (const char *name, int advance,
+                  unsigned long unicode,
+                  const char *inner_outline)
 {
   GString *str;
   str = g_string_new ("");
 
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", mapping->ascii);
-  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", (xw) * SCALE);
-  g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", mapping->ascii);
+  g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
+  g_string_append_printf (str, "  <advance width=\"%d\"/>\n", advance);
+  if (unicode>= 0)
+    g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", unicode);
   g_string_append_printf (str, "  <outline>\n");
-
-  g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"0\" yOffset=\"0\" xScale=\"%d\" yScale=\"%d\"/>\n",
-       mapping->name, xw, xh);
-  fprintf (stderr, "%c = %s\n", mapping->ascii, mapping->name);
-
-
+  g_string_append_printf (str, "%s", inner_outline);
   g_string_append_printf (str, "  </outline>\n");
   g_string_append_printf (str, "</glyph>\n");
   char buf[1024];
-  sprintf (buf, "%s/glyphs/%X.glif", ufo_path, mapping->ascii);
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
   g_file_set_contents (buf, str->str, str->len, NULL);
+  g_string_free (str, TRUE);
+}
+
+void gen_ref_glyph (Mapping *mapping, int xw, int xh)
+{
+  GString *str;
+  char name[8];
+  sprintf (name, "%X", mapping->ascii);
+  str = g_string_new ("");
+  g_string_append_printf (str, "<component base=\"%s\" xOffset=\"0\" yOffset=\"0\" xScale=\"%d\" yScale=\"%d\"/>\n",
+       mapping->name, xw, xh);
+  write_glyph (name, (xw) * SCALE, mapping->ascii, str->str);
   g_string_free (str, TRUE);
 }
 
@@ -114,15 +124,12 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 
   if (y1 - y0 > glyph_height)
     glyph_height = y1 - y0 - 1;
+  char name[8];
+  sprintf (name, "%X", uglyphs[glyph_no]);
 
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
   str = g_string_new ("");
 
-  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"%X\" format=\"1\">\n", uglyphs[glyph_no]);
-  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", (x1-x0+1) * SCALE);
-  g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", uglyphs[glyph_no]);
-  g_string_append_printf (str, "  <outline>\n");
 
 #if OVERLAP_SOLID
   for (y = y0; y <= y1; y++)
@@ -186,14 +193,10 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
         if (component)
           g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", component, u * SCALE, v * SCALE);
       }
- g_string_append_printf (str, "  </outline>\n");
- g_string_append_printf (str, "</glyph>\n");
- char buf[1024];
- sprintf (buf, "%s/glyphs/%X.glif", ufo_path, uglyphs[glyph_no]);
- g_file_set_contents (buf, str->str, str->len, NULL);
- g_string_free (str, TRUE);
 
- g_string_append_printf (contents_plist, "<key>%X</key><string>%X.glif</string>\n", uglyphs[glyph_no], uglyphs[glyph_no]);
+  write_glyph (name, (x1-x0+1) * SCALE, uglyphs[glyph_no], str->str);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>%X</key><string>%X.glif</string>\n", uglyphs[glyph_no], uglyphs[glyph_no]);
 }
 
 void gen_blocks ();
