@@ -221,7 +221,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 
   write_glyph (name, (x1-x0+1) * SCALE, uglyphs[glyph_no], str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%X</key><string>%X.glif</string>\n", uglyphs[glyph_no], uglyphs[glyph_no]);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 }
 
 void gen_blocks ();
