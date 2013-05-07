@@ -36,6 +36,30 @@ struct _Mapping {
   int     type;
 };
 
+const char *mapping2str (int type)
+{
+  switch (type) {
+    case C_SOLID:   return "solid";
+    case C_CNE:     return "cne";
+    case C_CNW:     return "cnw";
+    case C_CSE:     return "cse";
+    case C_CSW:     return "csw";
+    case C_LNE:     return "lne";
+    case C_LNW:     return "lnw";
+    case C_LSE:     return "lse";
+    case C_LSW:     return "lsw";
+    case C_VE:      return "ve";
+    case C_VW:      return "vw";
+    case C_VS:      return "vs";
+    case C_VN:      return "vn";
+    case C_STRONG:  return "strong";
+    case C_MEDIUM:  return "medium";
+    case C_LIGHT:   return "light";
+    case C_BLANK:   return NULL;
+  }
+  return NULL;
+}
+
 int resolve_mapping_str (const char *str)
 {
        if (!strcmp (str, "blank")) return C_BLANK;
@@ -186,30 +210,11 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
         int v = y1 - y -1 + y_shift;
         const char *component = NULL;
 
-        switch (*pix)
-          {
-            case C_SOLID: 
-#if !OVERLAP_SOLID
-              component = "solid";
+        component = mapping2str (*pix);
+#if OVERLAP_SOLID
+        if (*pix == C_SOLID) component = NULL;
 #endif
-            break;
-            case C_CNE:     component = "cne"; break;
-            case C_CNW:     component = "cnw"; break;
-            case C_CSE:     component = "cse"; break;
-            case C_CSW:     component = "csw"; break;
-            case C_LNE:     component = "lne"; break;
-            case C_LNW:     component = "lnw"; break;
-            case C_LSE:     component = "lse"; break;
-            case C_LSW:     component = "lsw"; break;
-            case C_VE:      component = "ve"; break;
-            case C_VW:      component = "vw"; break;
-            case C_VS:      component = "vs"; break;
-            case C_VN:      component = "vn"; break;
-            case C_STRONG:  component = "strong"; break;
-            case C_MEDIUM:  component = "medium"; break;
-            case C_LIGHT:   component = "light"; break;
-            case C_BLANK:   component = NULL;
-          }
+
         if (component)
           g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", component, u * SCALE, v * SCALE);
       }
