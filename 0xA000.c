@@ -676,48 +676,30 @@ void gen_gray (GString *str, int mod)
 void gen_dia_grays ()
 {
   char buf[1024];
+  const char *name;
   GString *str;
+  name = "light";
   str = g_string_new ("");
-  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"light\" format=\"1\">\n");
-  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <outline>\n");
   gen_gray (str, 21);
-
-  g_string_append_printf (str, "  </outline>\n");
-  g_string_append_printf (str, "</glyph>\n");
-  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "light");
-  g_file_set_contents (buf, str->str, str->len, NULL);
+  write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
-
-  str = g_string_new ("");
-  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"strong\" format=\"1\">\n");
-  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <outline>\n");
-  gen_gray (str, 11);
-  g_string_append_printf (str, "  </outline>\n");
-  g_string_append_printf (str, "</glyph>\n");
-  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "strong");
-  g_file_set_contents (buf, str->str, str->len, NULL);
-  g_string_free (str, TRUE);
-
-
-  str = g_string_new ("");
-  g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-  g_string_append_printf (str, "<glyph name=\"medium\" format=\"1\">\n");
-  g_string_append_printf (str, "  <advance width=\"%i\"/>\n", SCALE);
-  g_string_append_printf (str, "  <outline>\n");
-  gen_gray (str, 14);
-  g_string_append_printf (str, "  </outline>\n");
-  g_string_append_printf (str, "</glyph>\n");
-  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, "medium");
-  g_file_set_contents (buf, str->str, str->len, NULL);
-  g_string_free (str, TRUE);
-
-  g_string_append_printf (contents_plist, "<key>strong</key><string>strong.glif</string>\n");
-  g_string_append_printf (contents_plist, "<key>medium</key><string>medium.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>light</key><string>light.glif</string>\n");
+
+  name = "strong";
+  str = g_string_new ("");
+  gen_gray (str, 11);
+  write_glyph (name, SCALE, -1, str->str);
+  g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>strong</key><string>strong.glif</string>\n");
+
+
+  name = "medium";
+  str = g_string_new ("");
+  gen_gray (str, 14);
+  write_glyph (name, SCALE, -1, str->str);
+  g_string_free (str, TRUE);
+  str = g_string_new ("");
+  g_string_append_printf (contents_plist, "<key>medium</key><string>medium.glif</string>\n");
 }
 
 void gen_blocks ()
