@@ -2,7 +2,7 @@
 @font-face {font-family:'0xA000-Mono';     src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-MonoSans'; src: url('0xA000-MonoSans.ttf');}
 @font-face {font-family:'0xA000-Pixelated';src: url('0xA000-Pixelated.ttf');}
-body       {font-family: '0xA000-Sans'; font-size: 20px;
+body       {font-family: '0xA000-Sans'; font-size: 15px;
             background-color: #fafffa;}
 tt, pre    {font-family: '0xA000-MonoSans'; }
 p          {line-height: 160%;}
@@ -21,6 +21,8 @@ a { color: #182; text-decoration:none}
 a:hover    { text-decoration: underline }
 .selected, .faces>a.selected  { color: #000;
                               text-decoration: underline;}
+.sans      {font-family: '0xA000-Sans';}
+.monosans  {font-family: '0xA000-MonoSans';}
 .copy      { text-align: right;}
 .content   {margin-left: 200px;margin-right:180px;margin-top: 1em;
             min-width: 20em; max-width: 45em;

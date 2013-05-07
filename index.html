@@ -3,7 +3,12 @@
     <title>0xA000 Font Family</title>
     <style type='text/css'>
       @import url('0xA000.css');
-      body {font-family: '0xA000-Sans'; font-size: 15px;}
+      body    {font-family: '0xA000-Pixelated'; font-size: 15px;}
+      tt, pre {font-family: '0xA000-Mono'; }
+
+
+li:before  {content: "• "; position: relative -1em; overflow: visible;
+            margin-left: -1.5em;}
   </style></head>
   <body spellcheck='false'>
 
@@ -16,7 +21,7 @@
       '>
       <div style='font-size:5px; padding-bottom:0.5em;color:#333;'>5px</div>
       <div style='font-size:10px;color:#444'>10px</div>
-      <div style='font-size:15px:color:#555'>15px</div>
+      <div style='font-size:15px;color:#555'>15px</div>
       <div style='font-size:20px;color:#666'>20px</div>
       <div style='font-size:25px;color:#777'>25px</div>
       <div style='font-size:30px;color:#888'>30px</div>
@@ -43,32 +48,44 @@
 
     <div contenteditable='true' style='padding:0em;'>
       <p>
-      <span style="font-family:'0xA000-Pixelated'">The <span
-          style="font-family:'0xA000-Sans'">shapes</span> for the glyphs in this font have been designed with the
-        constraints of which graytone level pixels </span> are used when
-      rendering at a particular size (5px),
-      the result is a font that also is crisp at multiples of that size.
+      <span>The <span class='sans'>shapes</span> for the glyphs in
+        this font have been designed with <span class='sans'>the</span>
+        constraint of being dechifferable
+        <span class='sans'>with lowercase rendered 3 pixels high.</span>
       </p>
-      <p>Being crisp at such a size; should mean the glyphs would be
-      discernable also with low acuity vision/renderings.</p>
-      <p>
-      <small>
-         ­!"\#$%&amp;'‘“’”‚„()+,¸-–—÷±¯)·./∕0123456789:;&lt;‹«=&gt;›»?¿@ABCÇčDÐEÈÉÊËFGĜHĤIÌÍÎÏJĴKLMNñOÖØŐÒÓÔÕPQRŘSþÞßŠŚŜŞTUŨŮŬŬÙÚÛÜVWXY¥ÝZŽ[\\]^ˆ_`aáàâãäåbc¢çčĈĉdeèéêëfgĝhĥiıì´íîïĵjklmnÑ•oðøòóôõöőpqrřsśšŝştuũůŭùúûüµvwx×yýÿzž{|¦}~˜œæŒÆÀÁÂÃÄÅ€¡£©®§☠☃¶°¤ºª¹½⁄¼¾²³⁴¬¨◢◣◤◥▙█▓░</small>
-      </p>
+
+      <ul>
+        <li>List of bullets
+        <ul>
+          <li>foo</li>
+          <li>bar</li>
+        </ul>
+          </li>
+          <li>ooo</li>
+      </ul>
+
+
+      <pre>#include &lt;stdio.h&gt; /* The monospace */
+
+int main (int argc, char *argv[])
+{
+  return 42;
+}
+      </pre>
     </div>
 
     <div>
       <a href='0xA000-Pixelated.ttf'
         style="font-family:'0xA000-Pixelated'">0xA000-Pixelated.ttf</a>
       <br/>
+      <a href='0xA000-Mono.ttf'
+        style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
+      <br/>
       <a href='0xA000-Sans.ttf'
         style="font-family:'0xA000-Sans'">0xA000-Sans.ttf</a>
       <br/>
       <a href='0xA000-MonoSans.ttf'
         style="font-family:'0xA000-MonoSans'">0xA000-MonoSans.ttf</a>
-      <br/>
-      <a href='0xA000-Mono.ttf'
-        style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
     </div>
 
     <small>
