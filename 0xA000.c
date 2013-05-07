@@ -10,36 +10,36 @@
 
 typedef struct _Mapping Mapping;
 
-  enum {
-    C_BLANK=0,
-    C_SOLID,
-    C_STRONG,
-    C_MEDIUM,
-    C_LIGHT,
-    C_CNW,
-    C_CNE,
-    C_CSW,
-    C_CSE,
-    C_LNW,
-    C_LNE,
-    C_LSW,
-    C_LSE,
-    C_VE,
-    C_VW,
-    C_VN,
-    C_VS
-  };
+enum {
+  C_BLANK=0,
+  C_SOLID,
+  C_STRONG,
+  C_MEDIUM,
+  C_LIGHT,
+  C_CNW,
+  C_CNE,
+  C_CSW,
+  C_CSE,
+  C_LNW,
+  C_LNE,
+  C_LSW,
+  C_LSE,
+  C_VE,
+  C_VW,
+  C_VN,
+  C_VS
+};
 
-  struct _Mapping {
-    gchar   ascii;
-    gchar  *name;
-    int     type;
-  };
-  char *mem_read (char *start,
-                  char *linebuf,
-                  int  *len);
+struct _Mapping {
+  gchar   ascii;
+  gchar  *name;
+  int     type;
+};
+char *mem_read (char *start,
+                char *linebuf,
+                int  *len);
 
-  static Mapping map[256]={{0,},};
+static Mapping map[256]={{0,},};
 static int     mappings=0;
 
 static int map_pix (char pix)
