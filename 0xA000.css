@@ -27,3 +27,50 @@ a:hover    { text-decoration: underline }
 .content   {margin-left: 200px;margin-right:180px;margin-top: 1em;
             min-width: 20em; max-width: 45em;
            }
+
+div.glyph {
+  display: block-inline; float: left;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border: 2px solid gray;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
+ .label  {
+   margin:0;
+   padding-top:0.3em;
+   background: #eee;
+ }
+ .unicode { margin:0; padding-left:0.2em;
+ }
+ .reference {
+   font-family: Sans, Droid, Helvetica;
+   margin: 0;
+   padding-right: 0.5em;
+   padding-left: 0.5em;
+   float: right;
+ }
+ .label2  {
+   margin: 0;
+   padding: 0;
+   background: #eee;
+   padding-top: 1px;
+   padding-left: 0.2em;
+ }
+ .rendering {
+   font-size: 50px;
+   color: black;
+   padding-top: 0.25em;
+   padding-left: 0.5em;
+   padding-right: 0.25em;
+   padding-bottom: 0.1em;
+   margin: 0;
+ }
+
+div.glyphs {
+  border: 1px solid red;
+}
+
+div.clear {
+  clear: both;
+}
