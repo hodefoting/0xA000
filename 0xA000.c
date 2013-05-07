@@ -101,7 +101,7 @@ void gen_ref_glyph (Mapping *mapping, int xw, int xh)
   g_string_free (str, TRUE);
 }
 
-void gen_glyph in(int glyph_no, int x0, int y0, int x1, int y1)
+void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 {
   GString *str;
   gchar utf8_chr[8]={0,0,0,0,};
