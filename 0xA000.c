@@ -35,6 +35,29 @@ struct _Mapping {
   gchar  *name;
   int     type;
 };
+
+int resolve_mapping_str (const char *str)
+{
+       if (!strcmp (str, "blank")) return C_BLANK;
+  else if (!strcmp (str, "solid")) return C_SOLID;
+  else if (!strcmp (str, "light")) return C_LIGHT;
+  else if (!strcmp (str, "strong")) return C_STRONG;
+  else if (!strcmp (str, "medium")) return C_MEDIUM;
+  else if (!strcmp (str, "cne")) return C_CNE;
+  else if (!strcmp (str, "cnw")) return C_CNW;
+  else if (!strcmp (str, "cse")) return C_CSE;
+  else if (!strcmp (str, "csw")) return C_CSW;
+  else if (!strcmp (str, "lne")) return C_LNE;
+  else if (!strcmp (str, "lnw")) return C_LNW;
+  else if (!strcmp (str, "lse")) return C_LSE;
+  else if (!strcmp (str, "lsw")) return C_LSW;
+  else if (!strcmp (str, "ve")) return C_VE;
+  else if (!strcmp (str, "vw")) return C_VW;
+  else if (!strcmp (str, "vn")) return C_VN;
+  else if (!strcmp (str, "vs")) return C_VS;
+  return 0;
+}
+
 char *mem_read (char *start,
                 char *linebuf,
                 int  *len);
@@ -172,23 +195,22 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
               component = "solid";
 #endif
             break;
-
-            case C_CNE: component = "cne"; break;
-            case C_CNW: component = "cnw"; break;
-            case C_CSE: component = "cse"; break;
-            case C_CSW: component = "csw"; break;
-            case C_LNE: component = "lne"; break;
-            case C_LNW: component = "lnw"; break;
-            case C_LSE: component = "lse"; break;
-            case C_LSW: component = "lsw"; break;
-            case C_VE:  component = "ve"; break;
-            case C_VW:  component = "vw"; break;
-            case C_VS:  component = "vs"; break;
-            case C_VN:  component = "vn"; break;
+            case C_CNE:     component = "cne"; break;
+            case C_CNW:     component = "cnw"; break;
+            case C_CSE:     component = "cse"; break;
+            case C_CSW:     component = "csw"; break;
+            case C_LNE:     component = "lne"; break;
+            case C_LNW:     component = "lnw"; break;
+            case C_LSE:     component = "lse"; break;
+            case C_LSW:     component = "lsw"; break;
+            case C_VE:      component = "ve"; break;
+            case C_VW:      component = "vw"; break;
+            case C_VS:      component = "vs"; break;
+            case C_VN:      component = "vn"; break;
             case C_STRONG:  component = "strong"; break;
             case C_MEDIUM:  component = "medium"; break;
-            case C_LIGHT: component = "light"; break;
-            case C_BLANK: component = NULL;
+            case C_LIGHT:   component = "light"; break;
+            case C_BLANK:   component = NULL;
           }
         if (component)
           g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", component, u * SCALE, v * SCALE);
@@ -318,40 +340,8 @@ int main (int argc, char **argv)
           if (strchr (&linebuf[2], ' '))
             *strchr (&linebuf[2], ' ')=0;
           map[mappings].name = strdup (&linebuf[2]);
-          if (!strcmp (&linebuf[2], "blank"))
-            map[mappings].type = C_BLANK;
-          else if (!strcmp (&linebuf[2], "solid"))
-            map[mappings].type = C_SOLID;
-          else if (!strcmp (&linebuf[2], "light"))
-            map[mappings].type = C_LIGHT;
-          else if (!strcmp (&linebuf[2], "strong"))
-            map[mappings].type = C_STRONG;
-          else if (!strcmp (&linebuf[2], "medium"))
-            map[mappings].type = C_MEDIUM;
-          else if (!strcmp (&linebuf[2], "cne"))
-            map[mappings].type = C_CNE;
-          else if (!strcmp (&linebuf[2], "cnw"))
-            map[mappings].type = C_CNW;
-          else if (!strcmp (&linebuf[2], "cse"))
-            map[mappings].type = C_CSE;
-          else if (!strcmp (&linebuf[2], "csw"))
-            map[mappings].type = C_CSW;
-          else if (!strcmp (&linebuf[2], "lne"))
-            map[mappings].type = C_LNE;
-          else if (!strcmp (&linebuf[2], "lnw"))
-            map[mappings].type = C_LNW;
-          else if (!strcmp (&linebuf[2], "lse"))
-            map[mappings].type = C_LSE;
-          else if (!strcmp (&linebuf[2], "lsw"))
-            map[mappings].type = C_LSW;
-          else if (!strcmp (&linebuf[2], "ve"))
-            map[mappings].type = C_VE;
-          else if (!strcmp (&linebuf[2], "vw"))
-            map[mappings].type = C_VW;
-          else if (!strcmp (&linebuf[2], "vn"))
-            map[mappings].type = C_VN;
-          else if (!strcmp (&linebuf[2], "vs"))
-            map[mappings].type = C_VS;
+          map[mappings].type = resolve_mapping_str (&linebuf[2]);
+
           mappings++;
         }
     } while (p);
