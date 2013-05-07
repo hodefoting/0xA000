@@ -148,7 +148,7 @@ void gen_ref_glyph (Mapping *mapping, int xw, int xh)
 {
   GString *str;
   char name[8];
-  sprintf (name, "%X", mapping->ascii);
+  sprintf (name, "%04X", mapping->ascii);
   str = g_string_new ("");
   g_string_append_printf (str, "<component base=\"%s\" xOffset=\"0\" yOffset=\"0\" xScale=\"%d\" yScale=\"%d\"/>\n",
        mapping->name, xw, xh);
@@ -170,7 +170,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   if (y1 - y0 > glyph_height)
     glyph_height = y1 - y0 - 1;
   char name[8];
-  sprintf (name, "%X", uglyphs[glyph_no]);
+  sprintf (name, "%04X", uglyphs[glyph_no]);
 
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
   str = g_string_new ("");

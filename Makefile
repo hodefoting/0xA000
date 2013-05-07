@@ -17,6 +17,9 @@ all: 0xA000-Mono.ttf \
 %.html: %.content head.html
 	cat head.html neck.html $< end.html > $@
 
+Glyphs.content: Glyphs.content.sh
+	./$< > $@
+
 clean: clean-too
 clean-too:
 	rm -rf *.ttf *.ufo
