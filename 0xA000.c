@@ -760,7 +760,7 @@ void gen_gray (GString *str, int mod)
   int i;
   int no = 0;
 
-#define GO 4
+#define GO 2
 #define NSCALE  (SCALE + GO * 2)
 
   for (i = 0; i < NSCALE * 2; i++)

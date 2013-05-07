@@ -2,10 +2,11 @@
 @font-face {font-family:'0xA000-Mono';     src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-MonoSans'; src: url('0xA000-MonoSans.ttf');}
 @font-face {font-family:'0xA000-Pixelated';src: url('0xA000-Pixelated.ttf');}
-body       {font-family: '0xA000-Sans'; font-size: 20px;}
+body       {font-family: '0xA000-Sans'; font-size: 20px;
+            background-color: #fafffa;}
 tt, pre    {font-family: '0xA000-MonoSans'; }
-p          {line-height: 1.6em;}
-small      {font-size  :  5px;}
+p          {line-height: 160%;}
+small      {font-size  :  5px;line-height:150%;}
 h1         {font-size  :  3em; font-weight: normal; margin: 0.5em 0 0.25em}
 h2         {font-size  :  2em; font-weight: normal; margin: 0 0 0 0}
 h3,h4      {font-size  :1.5em; font-weight: normal; margin: 0 0 0 0}
@@ -13,12 +14,16 @@ li         {list-style-type: none; list-style: none; }
 li:before  {content: "• "; position: relative -1em; overflow: visible;
             margin-left: -1.5em;}
 
+div        {margin-top: 1.0em;}
 body       {margin: 0 auto; }
-
+.waterfall div {margin: 0;padding:0}
 a { color: #333377; text-decoration:none}
 a:hover    { text-decoration: underline }
-
+.faces a {   border: 2px solid transparent;}
+.selected,
+.faces a   { padding: 2px; padding-bottom: 0; }
+.selected, .faces a.selected  { border: 2px solid black;}
 .copy      { text-align: right;}
-.content   {margin-left: 180px;margin-right:180px;margin-top: 1em;
-            min-width: 30em; max-width: 60em;
+.content   {margin-left: 200px;margin-right:180px;margin-top: 1em;
+            min-width: 20em; max-width: 45em;
            }
