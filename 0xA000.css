@@ -1,19 +1,24 @@
-@font-face { font-family: '0xA000-Sans'; src: url('0xA000-Sans.ttf'); }
-@font-face { font-family: '0xA000-Mono'; src: url('0xA000-Mono.ttf'); }
-@font-face { font-family: '0xA000-MonoSans'; src: url('0xA000-MonoSans.ttf'); }
-@font-face { font-family: '0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf'); }
-body {font-family: '0xA000-Sans'; font-size: 20px;}
-p {line-height: 1.6em;}
-small {font-size :5px;}
-tt,pre {font-family: '0xA000-MonoSans'; }
-h1   {font-size: 3em; font-weight: normal; margin: 0.5em 0 0.25em}
-h2   {font-size: 2em; font-weight: normal; margin: 0 0 0 0}
-body {margin: 0 auto; }
-.content {margin-left: 180px;margin-right:180px;margin-top: 1em;
-  min-width: 30em; max-width: 60em;
-}
-li { list-style-type: none; list-style: none; }
-li:before { content: "• "; position: relative -1em; overflow: visible; margin-left: -1.5em;}
+@font-face {font-family:'0xA000-Sans';     src: url('0xA000-Sans.ttf');}
+@font-face {font-family:'0xA000-Mono';     src: url('0xA000-Mono.ttf');}
+@font-face {font-family:'0xA000-MonoSans'; src: url('0xA000-MonoSans.ttf');}
+@font-face {font-family:'0xA000-Pixelated';src: url('0xA000-Pixelated.ttf');}
+body       {font-family: '0xA000-Sans'; font-size: 20px;}
+tt, pre    {font-family: '0xA000-MonoSans'; }
+p          {line-height: 1.6em;}
+small      {font-size  :  5px;}
+h1         {font-size  :  3em; font-weight: normal; margin: 0.5em 0 0.25em}
+h2         {font-size  :  2em; font-weight: normal; margin: 0 0 0 0}
+h3,h4      {font-size  :1.5em; font-weight: normal; margin: 0 0 0 0}
+li         {list-style-type: none; list-style: none; }
+li:before  {content: "• "; position: relative -1em; overflow: visible;
+            margin-left: -1.5em;}
+
+body       {margin: 0 auto; }
+
 a { color: #333377; text-decoration:none}
-a:hover { text-decoration: underline }
-.copy { text-align: right;}
+a:hover    { text-decoration: underline }
+
+.copy      { text-align: right;}
+.content   {margin-left: 180px;margin-right:180px;margin-top: 1em;
+            min-width: 30em; max-width: 60em;
+           }
