@@ -98,8 +98,6 @@ GString *str = NULL;
 
 int glyph_height;
 
-GString *ascii_font = NULL;
-
 void write_glyph (const char *name, int advance,
                   unsigned long unicode,
                   const char *inner_outline)
@@ -277,15 +275,6 @@ int main (int argc, char **argv)
   y_shift = atoi(argv[4]);
   author_mode = atoi(argv[5]);
 
-  ascii_font = g_string_new ("");
-
-  g_string_append_printf (ascii_font,
-      ". blank    # period\n"
-      "8 solid    # eight\n"
-      "7 strong     # seven\n"
-      "+ light   # plus\n"
-      "\n");
-
   sprintf (ufo_path, "%s.ufo", font_name);
   char buf[2048];
   sprintf (buf, "mkdir %s > /dev/null 2>&1", ufo_path); system (buf);
@@ -406,16 +395,12 @@ int main (int argc, char **argv)
           gen_ref_glyph (&map[i], maxy-1, maxy-1);
         }
     }
-
   }
  
   g_string_append (contents_plist, "</dict>\n</plist>\n");
   sprintf (buf, "%s/glyphs/contents.plist", ufo_path);
   g_file_set_contents (buf, contents_plist->str, contents_plist->len, NULL);
-
   gen_fontinfo (glyph_height);
-
-  g_file_set_contents ("font.asc", ascii_font->str, ascii_font->len, NULL);
 
   return 0;
 }
