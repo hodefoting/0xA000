@@ -1,43 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html><head>
-    <title>0xA000 Font Family</title>
-    <style type='text/css'>
-      @import url('0xA000.css');
-      body    {font-family: '0xA000-Pixelated'; font-size: 10px;}
-      tt, pre {font-family: '0xA000-Mono'; }
-      h1 {font-size: 45px;}
-/*h1         {font-size  :  3em; font-weight: normal; margin: 0.5em 0
-  0.25em}*/
-      .faces {font-size: 15px;}
-
-
-li:before  {content: "• "; position: relative -1em; overflow: visible;
-            margin-left: -1.5em;}
-  </style></head>
-  <body spellcheck='false'>
-
-    <div class='waterfall' style='
-      position:absolute;
-      top:  2em;
-      left: 2em;
-      width:20em;
-      z-index: -1;
-      '>
-      <div style='font-size:5px; padding-bottom:0.5em;color:#333;'>5px</div>
-      <div style='font-size:10px;color:#444'>10px</div>
-      <div style='font-size:15px;color:#555'>15px</div>
-      <div style='font-size:20px;color:#666'>20px</div>
-      <div style='font-size:25px;color:#777'>25px</div>
-      <div style='font-size:30px;color:#888'>30px</div>
-      <div style='font-size:35px;color:#999'>35px</div>
-      <div style='font-size:40px;color:#aaa'>40px</div>
-      <div style='font-size:45px;color:#bbb'>45px</div>
-      <div style='font-size:50px;color:#ccc'>50px</div>
-      <div style='font-size:100px;color:#ddd;'>100px</div>
-    </div>
-
-    <div class='content'>
-
     <h1><a class='selected' href='index.html'>0xA000</a></h1>
     <div class='faces' style="font-family:'0xA000-Sans'">
       <a href='Pixelated.html'
@@ -98,13 +58,3 @@ int main (<span class='monosans'>int argc, char *argv</span>[])
       <a href='0xA000-MonoSans.ttf'
         style="font-family:'0xA000-MonoSans'">0xA000-MonoSans.ttf</a>
     </div>
-
-  <div class='copy'>
-     2013 &copy; <a href='http://pippin.gimp.org/'>&Oslash;yvind Kol&aring;s</a>
-    fonts licensed under <a
-       href='http://scripts.sil.org/OFL'>OFL</a>
- </div>
- </div>
-
-</body>
-</html>
