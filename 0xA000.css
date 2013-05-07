@@ -17,12 +17,10 @@ li:before  {content: "• "; position: relative -1em; overflow: visible;
 div        {margin-top: 1.0em;}
 body       {margin: 0 auto; }
 .waterfall div {margin: 0;padding:0}
-a { color: #333377; text-decoration:none}
+a { color: #182; text-decoration:none}
 a:hover    { text-decoration: underline }
-.faces a {   border: 2px solid transparent;}
-.selected,
-.faces a   { padding: 2px; padding-bottom: 0; }
-.selected, .faces a.selected  { border: 2px solid black;}
+.selected, .faces>a.selected  { color: #000;
+                              text-decoration: underline;}
 .copy      { text-align: right;}
 .content   {margin-left: 200px;margin-right:180px;margin-top: 1em;
             min-width: 20em; max-width: 45em;
