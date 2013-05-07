@@ -47,31 +47,35 @@ li:before  {content: "• "; position: relative -1em; overflow: visible;
     </div>
 
     <div contenteditable='true' style='padding:0em;'>
+      <h2><span class='sans'>Hi-fidelity</span> low-PPI simulator</h2>
       <p>
       <span>The <span class='sans'>shapes</span> for the glyphs in
-        this font have been designed with <span class='sans'>the</span>
-        constraint of being dechifferable
-        <span class='sans'>with lowercase rendered 3 pixels high.</span>
+        this font have been designed within <span class='sans'>the</span>
+        constraints of legibility
+        <span class='sans'>when lowercase is rendered 3 pixels high.</span>
       </p>
 
       <ul>
-        <li>List of bullets
-        <ul>
-          <li>foo</li>
-          <li>bar</li>
+        <li>Useful for typesetting compact text</li>
+        <ul class='sans'>
+          <li>NB this page is editable; so you can experiment typing with
+          the typeface yourself.
+          </li>
+          <li>TTFs of all the various fonts used in this document are linked
+          at the bottom.</li>
         </ul>
           </li>
-          <li>ooo</li>
+          <li>These ordered lists use the &bullet; (Bullet) character from the font.</li>
       </ul>
 
 
-      <pre>#include &lt;stdio.h&gt; /* The monospace */
+      <pre>#include &lt;<span class='monosans'>stdio.h&gt; /* The mono</span>space version works
+                      <span class='monosans'>in some </span>terminals  */
 
-int main (int argc, char *argv[])
+int main (<span class='monosans'>int argc, char *argv</span>[])
 {
-  return 42;
-}
-      </pre>
+  return 4<span class='monosans'>2;</span>
+}</pre>
     </div>
 
     <div>
@@ -88,12 +92,10 @@ int main (int argc, char *argv[])
         style="font-family:'0xA000-MonoSans'">0xA000-MonoSans.ttf</a>
     </div>
 
-    <small>
-      <div class='copy'>
-        2013 &copy; &Oslash;yvind Kol&aring;s&nbsp;&nbsp;<a
-            href='http://pippin.gimp.org/'>http://pippin.gimp.org/</a>
-        </small>
-  </div>
+  <div class='copy'>
+     2013 &copy; <a href='http://pippin.gimp.org/'>&Oslash;yvind Kol&aring;s</a>
+ </div>
+ </div>
 
 </body>
 </html>
