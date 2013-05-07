@@ -9,9 +9,11 @@ tt,pre {font-family: '0xA000-MonoSans'; }
 h1   {font-size: 3em; font-weight: normal; margin: 0.5em 0 0.25em}
 h2   {font-size: 2em; font-weight: normal; margin: 0 0 0 0}
 body {margin: 0 auto; }
-.content {margin-left: 15em;margin-right:5em;margin-top: 1em;
+.content {margin-left: 180px;margin-right:180px;margin-top: 1em;
   min-width: 30em; max-width: 60em;
 }
+li { list-style-type: none; list-style: none; }
+li:before { content: "• "; position: relative -1em; overflow: visible; margin-left: -1.5em;}
 a { color: #333377; text-decoration:none}
 a:hover { text-decoration: underline }
 .copy { text-align: right;}
