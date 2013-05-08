@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define SCALE 512
+int SCALE=512;
 
 int overlap_solid=1;
 
@@ -12,7 +12,8 @@ typedef struct _Mapping Mapping;
 
 enum {
   C_BLANK=0,
-  C_SOLID,
+  C_SOLID
+  /*
   C_STRONG,
   C_MEDIUM,
   C_LIGHT,
@@ -27,8 +28,7 @@ enum {
   C_VE,
   C_VW,
   C_VN,
-  C_VS,
-  C_USER_START
+  C_VS*/
 };
 
 struct _Mapping {
@@ -36,6 +36,27 @@ struct _Mapping {
   gchar  *name;
   int     type;
 };
+
+typedef struct Catalog {
+  gchar *name;
+  int    type;
+} Catalog;
+
+static Catalog catalog[256]={{0,},};
+static int     n_catalog = 0;
+
+int catalog_add (const gchar *name)
+{
+  int i;
+  for (i = 0; i < n_catalog; i++)
+    if (!strcmp (name, catalog[i].name))
+      {
+        fprintf (stderr, "%s already exists!\n");
+        return i;
+      }
+  catalog[n_catalog++].name = g_strdup (name);
+  return i;
+}
 
 static Mapping map[256]={{0,},};
 static int     mappings=0;
@@ -63,7 +84,6 @@ void add_component (const char *component_name)
   finalize_component ();
   component_name_tmp = g_strdup (component_name);
   component_str = g_string_new ("<contour>\n");
-  fprintf (stderr, "component [%s]\n", component_name);
 }
 
 void add_point (const char *component_name, char type, float x, float y)
@@ -87,53 +107,22 @@ void add_point (const char *component_name, char type, float x, float y)
 
 void add_subpath (void)
 {
-  fprintf (stderr, "subpath\n");
+  g_string_append_printf (component_str, "</contour><contour>");
 }
-
 
 const char *mapping2str (int type)
 {
-  switch (type) {
-    case C_SOLID:   return "solid";
-    case C_CNE:     return "cne";
-    case C_CNW:     return "cnw";
-    case C_CSE:     return "cse";
-    case C_CSW:     return "csw";
-    case C_LNE:     return "lne";
-    case C_LNW:     return "lnw";
-    case C_LSE:     return "lse";
-    case C_LSW:     return "lsw";
-    case C_VE:      return "ve";
-    case C_VW:      return "vw";
-    case C_VS:      return "vs";
-    case C_VN:      return "vn";
-    case C_STRONG:  return "strong";
-    case C_MEDIUM:  return "medium";
-    case C_LIGHT:   return "light";
-    case C_BLANK:   return NULL;
-  }
+  if (type < n_catalog)
+    return catalog[type].name;
   return NULL;
 }
 
 int resolve_mapping_str (const char *str)
 {
-       if (!strcmp (str, "blank")) return C_BLANK;
-  else if (!strcmp (str, "solid")) return C_SOLID;
-  else if (!strcmp (str, "light")) return C_LIGHT;
-  else if (!strcmp (str, "strong")) return C_STRONG;
-  else if (!strcmp (str, "medium")) return C_MEDIUM;
-  else if (!strcmp (str, "cne")) return C_CNE;
-  else if (!strcmp (str, "cnw")) return C_CNW;
-  else if (!strcmp (str, "cse")) return C_CSE;
-  else if (!strcmp (str, "csw")) return C_CSW;
-  else if (!strcmp (str, "lne")) return C_LNE;
-  else if (!strcmp (str, "lnw")) return C_LNW;
-  else if (!strcmp (str, "lse")) return C_LSE;
-  else if (!strcmp (str, "lsw")) return C_LSW;
-  else if (!strcmp (str, "ve")) return C_VE;
-  else if (!strcmp (str, "vw")) return C_VW;
-  else if (!strcmp (str, "vn")) return C_VN;
-  else if (!strcmp (str, "vs")) return C_VS;
+  int i;
+  for (i = 0; i < n_catalog; i++)
+    if (!strcmp (str, catalog[i].name))
+      return i;
   return 0;
 }
 
@@ -334,6 +323,10 @@ void import_includes (char **asc_source)
         {
           overlap_solid = atoi (&linebuf[strlen("overlap_solid ")]);
         }
+        else if (g_str_has_prefix (linebuf, "scale "))
+        {
+          SCALE = atoi (&linebuf[strlen("scale ")]);
+        }
         else if (g_str_has_prefix (linebuf, "variant "))
         {
           font_variant = g_strdup (&linebuf[strlen("variant ")]);
@@ -395,6 +388,7 @@ int main (int argc, char **argv)
 "<plist version=\"1.0\">\n"
 "<dict>\n");
 
+  gen_blocks ();
   /* read mapping table */
 
   {
@@ -496,7 +490,6 @@ int main (int argc, char **argv)
         gen_glyph (0, 0, 0, maxx, maxy-1);
       }
 
-  gen_blocks ();
 
   if (author_mode)
     {
@@ -520,6 +513,8 @@ void write_component (const char *name, const char *curve_xml)
 {
   write_glyph (name, SCALE, -1, curve_xml);
   g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+  fprintf (stderr, "%i %s\n", catalog_add (name), name);
 }
 
 void gen_corner_block ()
@@ -615,7 +610,6 @@ void gen_corner_block ()
   write_component (name, str->str);
   g_string_free (str, TRUE);
 
-
   name = "cse";
   str = g_string_new ("");
   g_string_append_printf (str, "    <contour>\n");
@@ -680,12 +674,16 @@ void gen_corner_block ()
   g_string_free (str, TRUE);
 }
 
-
-
 void gen_solid_block ()
 {
  const char *name;
   GString *str;
+
+  name = "blank";
+  str = g_string_new ("");
+  write_component (name, str->str);
+  g_string_free (str, TRUE);
+
   name = "solid";
   str = g_string_new ("");
   g_string_append_printf (str, "    <contour>\n");
@@ -698,10 +696,6 @@ void gen_solid_block ()
 
   g_string_free (str, TRUE);
 
-  name = "blank";
-  str = g_string_new ("");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
 
   name = "solidv";
   str = g_string_new ("");
@@ -794,6 +788,7 @@ void gen_dia_grays ()
 void gen_blocks ()
 {
   gen_solid_block ();
+
   gen_corner_block ();
   gen_dia_grays ();
 }
