@@ -9,6 +9,7 @@ all: 0xA000-Mono.ttf \
 		 0xA000-MonoSansA.ttf \
 		 Contribute.html \
 		 Glyphs.html \
+		 Tech.html \
 		 index.html
 	
 %.ttf: %.sh 0xA000 *.asc

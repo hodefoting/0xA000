@@ -8,6 +8,8 @@
         style="font-family:'0xA000-Mono'">Mono</a>
       <a href='MonoSans.html'
         style="font-family:'0xA000-MonoSans'">MonoSans</a>
+      <a href='Tech.html'
+        style="font-family:'0xA000-Sans'">Tech</a>
     </div>
 
     <div contenteditable='true' style='padding:0em;'>
@@ -19,30 +21,13 @@
         <span class='sans'>when lowercase is rendered 3 pixels high.</span>
       </p>
 
-      <ul>
-        <li>Can be used for typesetting tiny compact text</li>
-        <li>Provides a retro blocky pixel text</li>
-        <li>Compact files, each TTF is smaller than 64kb containing ASCII + Latin1
-        converage ++</li>
-        <li>TTFs of all the various fonts used in this document are linked
-          at the bottom.</li>
-        <li class='sans'>NB this page is editable; so you can experiment typing with
-          the typeface yourself.</li>
-        <li>This list use the &bullet; (Bullet) character from the font.</li>
-        <li>The font's are designed to be legible without any hinting
-        required at sizes which are a multiple of 5px. With hinting; things
-        might work better or worse for sizes in between.</li>
-
-      </ul>
-
-
-      <pre>#include &lt;<span class='monosans'>stdio.h&gt; /* The mono</span>space version works
-                      <span class='monosans'>in some </span>terminals  */
-
-int main (<span class='monosans'>int argc, char *argv</span>[])
-{
-  return 4<span class='monosans'>2;</span>
-}</pre>
+      <pre>&lt;<span style='color:#949'>style</span> type=<span style='color:#339'>'text/css'</span>&gt;
+                          <span style='color:gray'>/* <span
+style='color:red'>NB:</span> this example text is editable! */</span>
+  <span style='color:#949'>@font-face</span> {font-family:<span style='color:#339'>'0xA000-Sans'</span>; src: <span style='color:#339'>url(</span>'<a
+  href='0xA000-Sans.ttf'>0xA000-Sans.ttf</a>'<span style='color:#339'>)</span>;}
+  <span class='monosans'><span style='color:#949'>body</span>       {font-family:<span style='color:#339'>'0xA000-Sans'</span>; font-size: <span style='color:#339'>15px</span>;}
+&lt;/<span style='color:#949'>style</span>&gt;</span></pre>
     </div>
 
     <div>
