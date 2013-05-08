@@ -224,6 +224,25 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 void gen_blocks ();
 void gen_fontinfo (int glyph_height);
 
+static void str_chomp (char *string)
+{
+  char *p;
+  
+  /* trim comment */
+  p = strchr (string, '#');
+  if (p)
+   *p = '\0';
+
+  /* trim trailing spaces, */
+  p = &string[strlen(string)-1];
+  p--;
+  while (p && p>string && *p == ' ')
+    {
+      *p = '\0';
+      p--;
+    }
+}
+
 void import_includes (char **asc_source)
 {
   GString *new = g_string_new ("");
@@ -238,21 +257,8 @@ void import_includes (char **asc_source)
         if (g_str_has_prefix (linebuf, "include "))
         {
           char *read = NULL;
-          char *p;
-        
-          /* trim comment */
-          p = strchr (linebuf, '#');
-          if (p)
-           *p = '\0';
 
-          /* trim trailing spaces, */
-          p = &linebuf[strlen(linebuf)-1];
-          p--;
-          while (p && p>linebuf && *p == ' ')
-            {
-              *p = '\0';
-              p--;
-            }
+          str_chomp (linebuf);
 
           g_file_get_contents (&linebuf[strlen("include ")], &read, NULL, NULL);
           if (read)
