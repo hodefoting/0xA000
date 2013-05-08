@@ -2,7 +2,7 @@
 
 
 <h2>How the font was created</h2>
-<p>The font started out as a <a href='0xA000-original.png'>drawing from GIMP using black and two levels of
+<p>The font started out as a <a href='original.png'>drawing from GIMP using black and two levels of
 gray.</a> The original ascii shapes from this drawing are now maintained in
  a <a href='5px.asc.html'>ascii-art like text-file based source form</a>.
 </p>
