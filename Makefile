@@ -2,8 +2,10 @@ BIN_PKGMODULES=glib-2.0
 
 CFLAGS += -O2 -g
 all: 0xA000-Mono.ttf      \
-	   0xA000-Pixelated.ttf \
 		 0xA000-Sans.ttf      \
+	   0xA000-Pixelated.ttf \
+	   0xA000-Dots.ttf \
+		 0xA000-MonoDots.ttf  \
 		 0xA000-MonoSans.ttf  \
 		 0xA000-MonoSansA.ttf \
 		 \
@@ -19,7 +21,7 @@ all: 0xA000-Mono.ttf      \
 	cat head.html neck.html $< end.html > $@
 
 # this also relies on all ufo dirs existing.
-Glyphs.content: Glyphs.content.sh
+Glyphs.content: Glyphs.content.sh UnicodeData.txt
 	./$< > $@
 
 clean: clean-too
@@ -27,7 +29,7 @@ clean-too:
 	rm -rf *.ttf *.ufo
 
 UnicodeData.txt:
-	wget http://unicode// #XXX
+	wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
 
 include .mm/magic
 include .mm/bin

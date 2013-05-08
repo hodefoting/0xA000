@@ -2,6 +2,7 @@
 @font-face {font-family:'0xA000-Mono';     src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-MonoSans'; src: url('0xA000-MonoSans.ttf');}
 @font-face {font-family:'0xA000-Pixelated';src: url('0xA000-Pixelated.ttf');}
+@font-face {font-family:'0xA000-Dots';     src: url('0xA000-Dots.ttf');}
 body       {font-family: '0xA000-Sans'; font-size: 15px;
             background-color: #eeeeee;}
 tt, pre    {font-family: '0xA000-MonoSans'; }
@@ -57,11 +58,12 @@ div.glyph {
    padding-left: 0.2em;
  }
 
-.rendering-pixelated,
-.rendering-mono,
-.rendering-monosans,
-.rendering-reference,
-.rendering-sans {
+.rendering-Pixelated,
+.rendering-Mono,
+.rendering-Monosans,
+.rendering-Reference,
+.rendering-Dots,
+.rendering-Sans {
    font-size: 50px;
    color: black;
    margin-top: 0.25em;
@@ -85,6 +87,9 @@ div.glyph {
  }
  .rendering-Sans {
    font-family: '0xA000-Sans';
+ }
+ .rendering-Dots {
+   font-family: '0xA000-Dots';
  }
 
 div.glyphs {
