@@ -370,6 +370,7 @@ int main (int argc, char **argv)
 
     do {
       p = mem_read (p, linebuf, &len);
+      //str_chomp (linebuf);
       if (len)
         {
           if (linebuf[0] == '(' && linebuf[1] == ' ')
