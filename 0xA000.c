@@ -5,10 +5,7 @@
 #include <string.h>
 
 int SCALE=512;
-
 int overlap_solid=1;
-
-typedef struct _Mapping Mapping;
 
 /* we expect to find these, in this order at the beginning of the
  * palette
@@ -18,18 +15,13 @@ enum {
   C_SOLID
 };
 
-struct _Mapping {
-  gchar   ascii;
+typedef struct Mapping {
   gchar  *name;
   int     type;
-};
+  gchar   ascii;
+} Mapping;
 
-typedef struct Catalog {
-  gchar *name;
-  int    type;
-} Catalog;
-
-static Catalog catalog[256]={{0,},};
+static Mapping catalog[256]={{0,},};
 static int     n_catalog = 0;
 
 int catalog_add (const gchar *name)
@@ -572,6 +564,7 @@ void gen_gray (GString *str, int step, int mod)
   }
 }
 
+/* XXX: the invocation of these should move to the font itself */
 void gen_dia_grays ()
 {
   int step = 7;
