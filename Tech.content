@@ -32,6 +32,9 @@ the following way of defining a tile-component based font:
 <span class='cmt'># for mono variant to show up.</span>
 <em>variant</em> Sans
 
+
+<em>include</em> <a href='#components.asc'>components.asc</a>
+
 <span class='cmt'># include the full palette, using grayscale or</span>
 <span class='cmt'># other mappings here will yield various effects.</span>
 <em>include</em> <a href='#palette.asc'>palette.asc</a>
@@ -41,6 +44,24 @@ the following way of defining a tile-component based font:
 <em>include</em> <a href='#5px.asc'>5px.asc</a>         <span class='cmt'># contains letter shapes</span>
 <em>include</em> 5px-drawing.asc <span class='cmt'># contains box-drawing chars</span>
 </pre>
+
+<h3><a name='components.asc'>components.asc</a></h3>
+<pre><span class='cmt'># custom vector components are defined like thus,
+# they need to be defined before the mappings using them</span>
+
+{ lne
+L 0 1
+L 1 0
+L 0 0
+
+{ cne
+L 0 1
+c 0.5523 1
+c 1 0.5523
+C 1 0
+L 0 0
+</pre>
+
 
 <h3><a name='palette.asc'>palette.asc</a></h3>
 <pre><span class='cmt'># The palette file defines which shapes are used for which
@@ -103,6 +124,5 @@ makes any terminal text editor a WYSIWYG tool.
 <h2>Todo</h2>
 <p>Some hinting would be good, for To Ts T. and LT</p>
 <p>Make component-inlining an option</p>
-<p>Only include used components in font-file, bringing down the size further.</p>
 
 </ul>
