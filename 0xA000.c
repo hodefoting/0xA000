@@ -40,14 +40,49 @@ struct _Mapping {
 static Mapping map[256]={{0,},};
 static int     mappings=0;
 
+gchar *component_name_tmp = NULL;
+GString *component_str = NULL;
+
+void write_component (const char *name, const char *curve_xml);
+
+void finalize_component (void)
+{
+  if (!component_name_tmp)
+    return;
+  g_string_append_printf (component_str, "</contour>\n");
+
+  write_component (component_name_tmp, component_str->str);
+  g_free (component_name_tmp);
+  g_string_free (component_str, TRUE);
+  component_name_tmp = NULL;
+  component_str = NULL;
+}
+
 void add_component (const char *component_name)
 {
+  finalize_component ();
+  component_name_tmp = g_strdup (component_name);
+  component_str = g_string_new ("<contour>\n");
   fprintf (stderr, "component [%s]\n", component_name);
 }
 
 void add_point (const char *component_name, char type, float x, float y)
 {
-  fprintf (stderr, "%c point (%f %f)\n", type, x, y);
+  g_assert (component_str);
+  switch (type)
+    {
+      case 'L':
+        g_string_append_printf (component_str,
+            "    <point type='line' x='%d' y='%d'/>\n",
+            (int)(SCALE * x), (int)(SCALE * y));
+      break;
+      case 'C':
+        g_string_append_printf (component_str,
+            "    <point type='curve' x='%d' y='%d'/>\n",
+            (int)(SCALE * x), (int)(SCALE * y));
+      break;
+        break;
+    }
 }
 
 void add_subpath (void)
@@ -395,6 +430,7 @@ int main (int argc, char **argv)
 
 
             default:
+              finalize_component ();
               map[mappings].ascii = linebuf[0];
               if (strchr (&linebuf[2], ' '))
                 *strchr (&linebuf[2], ' ')=0;
@@ -402,7 +438,6 @@ int main (int argc, char **argv)
               map[mappings].type = resolve_mapping_str (&linebuf[2]);
               mappings++;
           }
-
         }
     } while (p);
 
@@ -477,13 +512,11 @@ int main (int argc, char **argv)
   return 0;
 }
 
-
 void write_component (const char *name, const char *curve_xml)
 {
   write_glyph (name, SCALE, -1, curve_xml);
   g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 }
-
 
 void gen_corner_block ()
 {
