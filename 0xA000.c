@@ -347,15 +347,30 @@ int main (int argc, char **argv)
       p = mem_read (p, linebuf, &len);
       if (len)
         {
+
+
           if (linebuf[0] == '!' && linebuf[1] == '!')
             goto mappings_done;
-          map[mappings].ascii = linebuf[0];
-          if (strchr (&linebuf[2], ' '))
-            *strchr (&linebuf[2], ' ')=0;
-          map[mappings].name = strdup (&linebuf[2]);
-          map[mappings].type = resolve_mapping_str (&linebuf[2]);
 
-          mappings++;
+          switch (linebuf[0])
+          {
+            case '{': /* new component definition */
+            case 'L': /* line-to */
+            case 'c': /* curve-to */
+            case 'C': /* curve-to */
+            case 'Z': /* new sub-path */
+              break;
+
+
+            default:
+              map[mappings].ascii = linebuf[0];
+              if (strchr (&linebuf[2], ' '))
+                *strchr (&linebuf[2], ' ')=0;
+              map[mappings].name = strdup (&linebuf[2]);
+              map[mappings].type = resolve_mapping_str (&linebuf[2]);
+              mappings++;
+          }
+
         }
     } while (p);
 

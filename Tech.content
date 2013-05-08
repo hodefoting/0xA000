@@ -1,11 +1,8 @@
-<h1><a href='index.html'>0xA000</a></h1>
+<h1 class='sans'><a href='index.html'>0xA000</a></h1>
 
-
-<h2><a href='Glyphs.html'>Glyph Overview</a>
-</h2>
-<p>Overview page, with all four variants; along with a generic Sans</p>
-
-<h2>How the font was created</h2>
+<h2>Behind the scenes tech-peek at how the fonts were created</h2>
+<p>The <a href='Glyphs.html'>Glyph Gallery Page</a> shows all the
+glyphs in the fonts side by side.</p>
 
 <p>The PNG file made in GIMP containing the first anti-aliased AA set for this
 font.</p>
@@ -15,10 +12,11 @@ font.</p>
 </div>
 
 <p>
-A tool was written for generating fonts from the PNG directly.
+A tool was written for generating fonts from the PNG file; "parsing" the
+marks in the first row and column for glyph dimensions, since it was
+dealing with pixels and reading a PNG - the tool started out as C code.
 </p>
 
-<h2>ASCII Art Source</h2>
 <p>The tool that generated fonts from PNG was temporarily refactored to spit
 out an ascii art version of the font, that format has since evolved into
 the following way of defining a tile-component based font:
@@ -28,45 +26,43 @@ the following way of defining a tile-component based font:
 <pre><span class='cmt'># The format supports comments</span></span>
 <span class='cmt'># 0xA000 will generate a 0xA000-Sans.ufo</span>
 <span class='cmt'># file, which can yield a TTF.</span>
-fontname 0xA000-Sans
+<em>fontname</em> 0xA000-Sans
 
 <span class='cmt'># Gets encoded in the font, seems to be needed</span>
 <span class='cmt'># for mono variant to show up.</span>
-variant Sans
+<em>variant</em> Sans
 
 <span class='cmt'># include the full palette, using grayscale or</span>
 <span class='cmt'># other mappings here will yield various effects.</span>
-include <a href='#palette.asc'>palette.asc</a>
+<em>include</em> <a href='#palette.asc'>palette.asc</a>
 
 <em>!!</em> <span class='cmt'># this marks the start of glyphs</span>
 
-include <a href='#5px.asc'>5px.asc</a>         <span class='cmt'># contains
-letter shapes</span>
-include 5px-drawing.asc <span class='cmt'># contains box-drawing chars</span>
+<em>include</em> <a href='#5px.asc'>5px.asc</a>         <span class='cmt'># contains letter shapes</span>
+<em>include</em> 5px-drawing.asc <span class='cmt'># contains box-drawing chars</span>
 </pre>
 
 <h3><a name='palette.asc'>palette.asc</a></h3>
 <pre><span class='cmt'># The palette file defines which shapes are used for which
 # ascii char in glyph drawings.</span>
 
-. blank    <span class='cmt'>#   0% The possible tile names</span>
-+ light    <span class='cmt'>#  25% are hard-coded in 0xA000.c</span>
-H medium   <span class='cmt'>#  50%</span>
-9 strong   <span class='cmt'>#  75%</span>
-8 solid    <span class='cmt'># 100% </span>
-
-p cse      <span class='cmt'># cs = curve south east</span>
-q csw
-b cne
-d cnw
-7 lse      <span class='cmt'># lse = line south east</span>
-` lsw    
-a lnw   
-e lne      <span class='cmt'># h - might be better</span>
-&lt; ve       <span class='cmt'># ve = v facing east</span>
-&gt; vw
-V vn
-n vs
+<em>.</em> blank    <span class='cmt'>#   0% The possible tile names</span>
+<em>+</em> light    <span class='cmt'>#  25% are hard-coded in 0xA000.c</span>
+<em>H</em> medium   <span class='cmt'>#  50%</span>
+<em>9</em> strong   <span class='cmt'>#  75%</span>
+<em>8</em> solid    <span class='cmt'># 100% </span>
+<em>p</em> cse      <span class='cmt'># cs = curve south east</span>
+<em>q</em> csw
+<em>b</em> cne
+<em>d</em> cnw
+<em>7</em> lse      <span class='cmt'># lse = line south east</span>
+<em>`</em> lsw    
+<em>a</em> lnw   
+<em>e</em> lne      <span class='cmt'># h - might be better</span>
+<em>&lt;</em> ve       <span class='cmt'># ve = v facing east</span>
+<em>&gt;</em> vw
+<em>V</em> vn
+<em>n</em> vs
 </pre>
 
 <h3><a name='5px.asc'>5px.asc</a></h3>
@@ -98,20 +94,17 @@ a8.
 <img src='terminal-font-source.png' width='140px' />
 </div>
 
-If authormode appears on a line by itself before the !! line, a special
+If <em>authormode</em> appears on a line by itself before the !! line, a special
 font with the ascii codes used for components replaced by large versions
 of the components themselves is generated. Using such a font in a terminal
-gives <a href='terminal-font-source.png'>live preview authoring in
-text-editors</a>.
+makes any terminal text editor a WYSIWYG tool.
 </p>
 
-
-
 <h2>Todo</h2>
-<p>Some hinting pairs would be good, for To Ts T. and LT</p>
-<p>Permit configuring font to generate outlines instead of excessive use of
-components.</p>
-<p>Configure (some) components, rather than hard-code them.</p>
+<p>Specify scale</p>
+<p>Some hinting would be good, for To Ts T. and LT</p>
+<p>Make component-inlining an option</p>
+<p>Define vector components in file, rather than hard-code them.</p>
 <p>Only include used components in font-file, bringing down the size further.</p>
 
 </ul>

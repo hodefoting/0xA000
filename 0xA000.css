@@ -10,10 +10,13 @@ small      {font-size  :  5px;line-height:150%;}
 h1         {font-size  :  3em; font-weight: normal; margin: 0.5em 0 0.25em}
 h2         {font-size  :  2em; font-weight: normal; margin: 1.0em 0 0 0}
 h3,h4      {font-size  :1.5em; font-weight: normal; margin: 0 0 0 0}
+
 li         {list-style-type: none; list-style: none; }
 li:before  {content: "• "; position: relative -1em; overflow: visible;
             margin-left: -1.5em;}
-em         {font-style: normal; color: red;}
+ul         {padding-left: 1em}
+
+em         {font-style: normal; color: #909;}
 div        {margin-top: 1.0em;}
 body       {margin: 0 auto; }
 .waterfall div {margin: 0;padding:0}
