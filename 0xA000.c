@@ -238,6 +238,22 @@ void import_includes (char **asc_source)
         if (g_str_has_prefix (linebuf, "include "))
         {
           char *read = NULL;
+          char *p;
+        
+          /* trim comment */
+          p = strchr (linebuf, '#');
+          if (p)
+           *p = '\0';
+
+          /* trim trailing spaces, */
+          p = &linebuf[strlen(linebuf)-1];
+          p--;
+          while (p && p>linebuf && *p == ' ')
+            {
+              *p = '\0';
+              p--;
+            }
+
           g_file_get_contents (&linebuf[strlen("include ")], &read, NULL, NULL);
           if (read)
             {
