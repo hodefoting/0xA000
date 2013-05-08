@@ -1,5 +1,4 @@
 BIN_PKGMODULES=glib-2.0
-BIN_LD_FLAGS = -lm
 
 CFLAGS += -O2 -g
 all: 0xA000-Mono.ttf      \
