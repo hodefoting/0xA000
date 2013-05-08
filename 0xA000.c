@@ -6,6 +6,8 @@
 
 int SCALE=512;
 int overlap_solid=1;
+static int   author_mode = 0;
+static int   y_shift = 0;
 
 /* we expect to find these, in this order at the beginning of the
  * palette
@@ -23,6 +25,22 @@ typedef struct Mapping {
 
 static Mapping catalog[256]={{0,},};
 static int     n_catalog = 0;
+
+const char *mapping2str (int type)
+{
+  if (type < n_catalog)
+    return catalog[type].name;
+  return NULL;
+}
+
+int resolve_mapping_str (const char *str)
+{
+  int i;
+  for (i = 0; i < n_catalog; i++)
+    if (!strcmp (str, catalog[i].name))
+      return i;
+  return 0;
+}
 
 int catalog_add (const gchar *name)
 {
@@ -94,22 +112,6 @@ void add_subpath (void)
   g_string_append_printf (component_str, "</contour><contour>");
 }
 
-const char *mapping2str (int type)
-{
-  if (type < n_catalog)
-    return catalog[type].name;
-  return NULL;
-}
-
-int resolve_mapping_str (const char *str)
-{
-  int i;
-  for (i = 0; i < n_catalog; i++)
-    if (!strcmp (str, catalog[i].name))
-      return i;
-  return 0;
-}
-
 char *mem_read (char *start,
                 char *linebuf,
                 int  *len);
@@ -124,11 +126,9 @@ static int map_pix (char pix)
   return C_BLANK;
 }
 
-static int   author_mode = 0;
 
 static const char *font_name = NULL;
 static const char *font_variant = NULL;
-static int   y_shift = 0;
 
 static char *asc_source = NULL;
 
