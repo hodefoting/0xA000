@@ -1,24 +1,79 @@
 <h1><a href='index.html'>0xA000</a></h1>
 
 
+<h2><a href='Glyphs.html'>Glyph Overview</a>
+</h2>
+<p>Overview page, with all four variants; along with a generic Sans</p>
+
 <h2>How the font was created</h2>
 
-<p>
-</p>
-
-<h2><a href='original.png'>Original PNG</a></h2>
 <p>The PNG file made in GIMP containing the first anti-aliased AA set for this
-font. A tool was written for generating fonts from the PNG directly.
+font.</p>
+
+<div style='overflow:hidden'>
+<img src='original.png' />
+</div>
+
+<p>
+A tool was written for generating fonts from the PNG directly.
 </p>
 
-<h2><a href='5px.asc.html'>ASCII Art Source</a></h2>
+<h2>ASCII Art Source</h2>
 <p>The tool that generated fonts from PNG was temporarily refactored to spit
-out an ascii art version of the font, that format has since evolved to support
-configurable tiles.
+out an ascii art version of the font, that format has since evolved into
+the following way of defining a tile-component based font:
 </p>
 
-<p>Non-empty lines are ignored, an each glyph looks like this: </p>
-<pre>( X )
+<h3><a name='Sans.asc'>Sans.asc</a></h3>
+<pre><span class='cmt'># The format supports comments</span></span>
+<span class='cmt'># 0xA000 will generate a 0xA000-Sans.ufo</span>
+<span class='cmt'># file, which can yield a TTF.</span>
+fontname=0xA000-Sans
+
+<span class='cmt'># Gets encoded in the font, seems to be needed</span>
+<span class='cmt'># for mono variant to show up.</span>
+variant=Sans
+
+<span class='cmt'># include the full palette, using grayscale or</span>
+<span class='cmt'># other mappings here will yield various effects.</span>
+include <a href='#palette.asc'>palette.asc</a>
+
+<em>!!</em> <span class='cmt'># this marks the start of glyphs</span>
+
+include <a href='#5px.asc'>5px.asc</a>         <span class='cmt'># contains
+letter shapes</span>
+include 5px-drawing.asc <span class='cmt'># contains box-drawing chars</span>
+</pre>
+
+<h3><a name='palette.asc'>palette.asc</a></h3>
+<pre><span class='cmt'># The palette file defines which shapes are to</span>
+<span class='cmt'># be used for which ascii char in the encoding.</span>
+
+. blank
+8 solid
+9 strong
+H medium
++ light
+p cse     
+q csw
+b cne
+d cnw
+7 lse     
+` lsw    
+a lnw   
+e lne
+< ve
+> vw
+V vn
+n vs
+</pre>
+
+<h3><a name='5px.asc'>5px.asc</a></h3>
+
+<pre><span class='cmt'># this is just an excerpt, link
+# to more complete version: <a href='5px.asc.html'>5px.asc</a></span>
+
+<em>( X )</em>
 8..8.
 `ea7.
 .><..
@@ -26,8 +81,24 @@ a7`e.
 8..8.
 .....
 .....
+
+<em>( 1 )</em>
+...
+a8.
+.8.
+.8.
+ 8.
+...
+...
+
 </pre>
 
+If authormode appears on a line by itself before the !! line, a special
+font with the ascii codes used for components replaced by large versions
+of the components themselves is generated. Using such a font in a terminal
+gives <a href='terminal-font-source.png'>live preview authoring in
+text-editors</a>.
+</p>
 
 <p>The text source is transformed into UFO xml files. Each glyph is
 assembled using components referring to the possible tiles used in each
@@ -35,12 +106,7 @@ glyph. Similar to how many fonts assemble <em>&aacute;</em>
 from an <em>a</em> and a <em>&acute;</em>.
 </p>
 
-<h2><a href='terminal-font-source.png'>Font design in VIM</a></h2>
-<p>Using a custom font for font-design, inside VIM in a terminal.</p>
 
-<h2><a href='Glyphs.html'>Glyph Overview</a>
-</h2>
-<p>Overview page, with all four variants; along with a generic Sans</p>
 
 <h2>Todo</h2>
 <p>Some hinting pairs would be good, for To Ts T. and LT</p>

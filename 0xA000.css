@@ -90,3 +90,5 @@ div.glyphs {
 div.clear {
   clear: both;
 }
+
+span.cmt {color: gray;}
