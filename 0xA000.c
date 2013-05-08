@@ -127,6 +127,7 @@ void write_glyph (const char *name, int advance,
                   const char *inner_outline)
 {
   GString *str;
+  char buf[1024];
   str = g_string_new ("");
 
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -134,11 +135,8 @@ void write_glyph (const char *name, int advance,
   g_string_append_printf (str, "  <advance width=\"%d\"/>\n", advance);
   if (unicode>= 0)
     g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", unicode);
-  g_string_append_printf (str, "  <outline>\n");
-  g_string_append_printf (str, "%s", inner_outline);
-  g_string_append_printf (str, "  </outline>\n");
+  g_string_append_printf (str, "  <outline>%s</outline>\n", inner_outline);
   g_string_append_printf (str, "</glyph>\n");
-  char buf[1024];
   sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
@@ -174,7 +172,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
   str = g_string_new ("");
-
 
 #if OVERLAP_SOLID
   for (y = y0; y <= y1; y++)
@@ -599,11 +596,13 @@ void gen_solid_block ()
   g_string_append_printf (str, "    </contour>\n");
   write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
 
   name = "blank";
   str = g_string_new ("");
   write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>blank</key><string>blank.glif</string>\n");
 
   name = "solidv";
   str = g_string_new ("");
@@ -615,6 +614,7 @@ void gen_solid_block ()
   g_string_append_printf (str, "    </contour>\n");
   write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
+  g_string_append_printf (contents_plist, "<key>solidv</key><string>solidv.glif</string>\n");
 
   name = "solidh";
   str = g_string_new ("");
@@ -626,14 +626,10 @@ void gen_solid_block ()
   g_string_append_printf (str, "    </contour>\n");
   write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
-
-  g_string_append_printf (contents_plist, "<key>blank</key><string>blank.glif</string>\n");
-  g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
-  g_string_append_printf (contents_plist, "<key>solidv</key><string>solidv.glif</string>\n");
   g_string_append_printf (contents_plist, "<key>solidh</key><string>solidh.glif</string>\n");
 }
 
-void gen_gray (GString *str, int mod)
+void gen_gray (GString *str, int step, int mod)
 {
   int i;
   int no = 0;
@@ -658,15 +654,15 @@ void gen_gray (GString *str, int mod)
             g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - NSCALE - GO, NSCALE - GO);
           }
 
-        if (i+7 < NSCALE)
+        if (i+step < NSCALE)
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0 - GO,   i+7 - GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - GO, 0 - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0 - GO,   i+step - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+step - GO, 0 - GO);
           }
         else
           {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+7 - NSCALE - GO, NSCALE - GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", NSCALE - GO, i+7 - NSCALE - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+step - NSCALE - GO, NSCALE - GO);
+            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", NSCALE - GO, i+step - NSCALE - GO);
           }
       g_string_append_printf (str, "    </contour>\n");
     }
@@ -675,27 +671,27 @@ void gen_gray (GString *str, int mod)
 
 void gen_dia_grays ()
 {
+  int step = 7;
   char buf[1024];
   const char *name;
   GString *str;
   name = "light";
   str = g_string_new ("");
-  gen_gray (str, 21);
+  gen_gray (str, step, 21);
   write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
   g_string_append_printf (contents_plist, "<key>light</key><string>light.glif</string>\n");
 
   name = "strong";
   str = g_string_new ("");
-  gen_gray (str, 11);
+  gen_gray (str, step, 11);
   write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
   g_string_append_printf (contents_plist, "<key>strong</key><string>strong.glif</string>\n");
 
-
   name = "medium";
   str = g_string_new ("");
-  gen_gray (str, 14);
+  gen_gray (str, step, 14);
   write_glyph (name, SCALE, -1, str->str);
   g_string_free (str, TRUE);
   str = g_string_new ("");
@@ -739,8 +735,6 @@ void gen_fontinfo (int glyph_height)
   g_file_set_contents (buf, str->str, str->len, NULL);
   g_string_free (str, TRUE);
 }
-
-
 
 char *mem_read (char *start,
                 char *linebuf,

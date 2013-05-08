@@ -21,6 +21,8 @@
         <span class='sans'>when lowercase is rendered 3 pixels high.</span>
       </p>
 
+      <p>The following illustrates the monospace variant, and how one can use
+      a TTF file from CSS:</p>
       <pre>&lt;<span style='color:#949'>style</span> type=<span style='color:#339'>'text/css'</span>&gt;
                           <span style='color:gray'>/* <span
 style='color:red'>NB:</span> this example text is editable! */</span>
