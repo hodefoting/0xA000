@@ -237,8 +237,6 @@ void import_includes (char **asc_source)
       {
         if (g_str_has_prefix (linebuf, "include "))
         {
-          if (1)
-          {
           char *read = NULL;
           g_file_get_contents (&linebuf[strlen("include ")], &read, NULL, NULL);
           if (read)
@@ -246,7 +244,14 @@ void import_includes (char **asc_source)
               g_string_append_printf (new, "%s", read);
               g_free (read);
             }
-          }
+        }
+        else if (g_str_has_prefix (linebuf, "authormode"))
+        {
+          author_mode = 1;
+        }
+        else if (g_str_has_prefix (linebuf, "y_shift="))
+        {
+          y_shift = atoi (&linebuf[strlen("y_shift=")]);
         }
         else
         {
@@ -263,9 +268,9 @@ int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
 
-  if (argc != 6)
+  if (argc != 4)
     {
-      fprintf (stderr, "Usage: %s <fontsource.asc> <outputfontname> <yshift> <authormode>\n", argv[0]);
+      fprintf (stderr, "Usage: %s <fontsource.asc> <outputfontname>\n", argv[0]);
       return -1;
     }
 
@@ -274,8 +279,6 @@ int main (int argc, char **argv)
   font_name = argv[2];
   font_type = argv[3];
   glyphs    = NULL;
-  y_shift = atoi(argv[4]);
-  author_mode = atoi(argv[5]);
 
   sprintf (ufo_path, "%s.ufo", font_name);
   char buf[2048];
