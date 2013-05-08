@@ -6,7 +6,7 @@
 
 #define SCALE 512
 
-#define OVERLAP_SOLID 1
+int overlap_solid=1;
 
 typedef struct _Mapping Mapping;
 
@@ -226,7 +226,7 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
   str = g_string_new ("");
 
-#if OVERLAP_SOLID
+  if (overlap_solid)
   for (y = y0; y <= y1; y++)
     for (x = x0; x <= x1; x++)
       {
@@ -250,7 +250,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
               }
           }
       }
-#endif
 
   for (y = y0; y <= y1; y++)
     for (x = x0; x <= x1; x++)
@@ -261,9 +260,10 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
         const char *component = NULL;
 
         component = mapping2str (*pix);
-#if OVERLAP_SOLID
-        if (*pix == C_SOLID) component = NULL;
-#endif
+        if (overlap_solid)
+        {
+          if (*pix == C_SOLID) component = NULL;
+        }
 
         if (component)
           g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", component, u * SCALE, v * SCALE);
@@ -330,13 +330,17 @@ void import_includes (char **asc_source)
         {
           y_shift = atoi (&linebuf[strlen("y_shift ")]);
         }
+        else if (g_str_has_prefix (linebuf, "overlap_solid "))
+        {
+          overlap_solid = atoi (&linebuf[strlen("overlap_solid ")]);
+        }
         else if (g_str_has_prefix (linebuf, "variant "))
         {
           font_variant = g_strdup (&linebuf[strlen("variant ")]);
         }
         else if (g_str_has_prefix (linebuf, "fontname "))
         {
-          font_name= g_strdup (&linebuf[strlen("fontname ")]);
+          font_name = g_strdup (&linebuf[strlen("fontname ")]);
         }
         else
         {
