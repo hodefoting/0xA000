@@ -73,7 +73,7 @@ void add_component (const char *component_name)
   component_str = g_string_new ("<contour>\n");
 }
 
-void add_point (const char *component_name, char type, float x, float y)
+void add_point (char type, float x, float y)
 {
   g_assert (component_str);
   switch (type)
@@ -81,6 +81,11 @@ void add_point (const char *component_name, char type, float x, float y)
       case 'L':
         g_string_append_printf (component_str,
             "    <point type='line' x='%d' y='%d'/>\n",
+            (int)(SCALE * x), (int)(SCALE * y));
+      break;
+      case 'c':
+        g_string_append_printf (component_str,
+            "    <point x='%d' y='%d'/>\n",
             (int)(SCALE * x), (int)(SCALE * y));
       break;
       case 'C':
@@ -406,7 +411,7 @@ int main (int argc, char **argv)
                 int type;
                 float x, y;
                 sscanf (&linebuf[0], "%c %f %f", &type, &x, &y);
-                add_point (&linebuf[2], type, x, y);
+                add_point (type, x, y);
                 break;
               }
             case 'Z': /* new sub-path */
@@ -506,48 +511,25 @@ void write_component (const char *name, const char *curve_xml)
 
 void gen_solid_block ()
 {
- const char *name;
-  GString *str;
+  write_component ("blank", "");
+  add_component ("solid");
+  add_point ('L', 0, 1);
+  add_point ('L', 1, 1);
+  add_point ('L', 1, 0);
+  add_point ('L', 0, 0);
 
-  name = "blank";
-  str = g_string_new ("");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
+  add_component ("solidv");
+  add_point ('L', 0, 1);
+  add_point ('L', 1, 1);
+  add_point ('L', 1, -1);
+  add_point ('L', 0, -1);
 
-  name = "solid";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-
-  g_string_free (str, TRUE);
-
-
-  name = "solidv";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * -1));
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, (int)(SCALE * -1));
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "solidh";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 2, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 2, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
+  add_component ("solidh");
+  add_point ('L', 0, 1);
+  add_point ('L', 2, 1);
+  add_point ('L', 2, 0);
+  add_point ('L', 0, 0);
+  finalize_component ();
 }
 
 void gen_gray (GString *str, int step, int mod)
@@ -618,7 +600,6 @@ void gen_dia_grays ()
 void gen_blocks ()
 {
   gen_solid_block ();
-
   gen_dia_grays ();
 }
 
