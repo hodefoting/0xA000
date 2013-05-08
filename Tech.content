@@ -2,31 +2,51 @@
 
 
 <h2>How the font was created</h2>
-<p>The font started out as a <a href='original.png'>drawing from GIMP using black and two levels of
-gray.</a> The original ascii shapes from this drawing are now maintained in
- a <a href='5px.asc.html'>ascii-art like text-file based source form</a>.
+
+<p>
 </p>
+
+<h2><a href='original.png'>Original PNG</a></h2>
+<p>The PNG file made in GIMP containing the first anti-aliased AA set for this
+font. A tool was written for generating fonts from the PNG directly.
+</p>
+
+<h2><a href='5px.asc.html'>ASCII Art Source</a></h2>
+<p>The tool that generated fonts from PNG was temporarily refactored to spit
+out an ascii art version of the font, that format has since evolved to support
+configurable tiles.
+</p>
+
+<p>Non-empty lines are ignored, an each glyph looks like this: </p>
+<pre>( X )
+8..8.
+`ea7.
+.><..
+a7`e.
+8..8.
+.....
+.....
+</pre>
 
 
 <p>The text source is transformed into UFO xml files. Each glyph is
 assembled using components referring to the possible tiles used in each
 glyph. Similar to how many fonts assemble <em>&aacute;</em>
 from an <em>a</em> and a <em>&acute;</em>.
-<p>
-source outline fonts using a
-library of components that are reused from a grid of pointers in each
-glyph. This component system is the same that is used in many fonts to compose
-combined characters like &aacute;. The output of this program is a UFO file
-structure - that can be turned into a TTF with fontforge.
 </p>
 
+<h2><a href='terminal-font-source.png'>Font design in VIM</a></h2>
+<p>Using a custom font for font-design, inside VIM in a terminal.</p>
+
 <h2><a href='Glyphs.html'>Glyph Overview</a>
-</h2>Shows all the glyphs for all the variants in one page.
+</h2>
+<p>Overview page, with all four variants; along with a generic Sans</p>
 
 <h2>Todo</h2>
-<ul>
-  <li>A few hinting pairs would be good, like To, Ts and T.</li>
-  <li>Write filled in outlines instead of using components. (file-size
-  balloons; but rendering performance might be better.)</li>
+<p>Some hinting pairs would be good, for To Ts T. and LT</p>
+<p>Permit configuring font to generate outlines instead of excessive use of
+components.</p>
+<p>Configure (some) components, rather than hard-code them.</p>
+<p>Only include used components in font-file, bringing down the size further.</p>
 
 </ul>
