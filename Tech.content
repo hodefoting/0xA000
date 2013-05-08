@@ -101,10 +101,8 @@ makes any terminal text editor a WYSIWYG tool.
 </p>
 
 <h2>Todo</h2>
-<p>Specify scale</p>
 <p>Some hinting would be good, for To Ts T. and LT</p>
 <p>Make component-inlining an option</p>
-<p>Define vector components in file, rather than hard-code them.</p>
 <p>Only include used components in font-file, bringing down the size further.</p>
 
 </ul>

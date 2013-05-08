@@ -10,25 +10,12 @@ int overlap_solid=1;
 
 typedef struct _Mapping Mapping;
 
+/* we expect to find these, in this order at the beginning of the
+ * palette
+ */
 enum {
   C_BLANK=0,
   C_SOLID
-  /*
-  C_STRONG,
-  C_MEDIUM,
-  C_LIGHT,
-  C_CNW,
-  C_CNE,
-  C_CSW,
-  C_CSE,
-  C_LNW,
-  C_LNE,
-  C_LSW,
-  C_LSE,
-  C_VE,
-  C_VW,
-  C_VN,
-  C_VS*/
 };
 
 struct _Mapping {
@@ -522,53 +509,6 @@ void gen_corner_block ()
  const char *name;
 
   GString *str;
-  str = g_string_new ("");
-  name = "lne";
-
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-
-  name = "lnw";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "lsw";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "lse";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-
- /*******/
 
   str = g_string_new ("");
   name = "cne";
