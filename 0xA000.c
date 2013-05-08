@@ -271,17 +271,17 @@ void import_includes (char **asc_source)
         {
           author_mode = 1;
         }
-        else if (g_str_has_prefix (linebuf, "y_shift="))
+        else if (g_str_has_prefix (linebuf, "y_shift "))
         {
-          y_shift = atoi (&linebuf[strlen("y_shift=")]);
+          y_shift = atoi (&linebuf[strlen("y_shift ")]);
         }
-        else if (g_str_has_prefix (linebuf, "variant="))
+        else if (g_str_has_prefix (linebuf, "variant "))
         {
-          font_variant = g_strdup (&linebuf[strlen("variant=")]);
+          font_variant = g_strdup (&linebuf[strlen("variant ")]);
         }
-        else if (g_str_has_prefix (linebuf, "fontname="))
+        else if (g_str_has_prefix (linebuf, "fontname "))
         {
-          font_name= g_strdup (&linebuf[strlen("fontname=")]);
+          font_name= g_strdup (&linebuf[strlen("fontname ")]);
         }
         else
         {

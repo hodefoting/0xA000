@@ -26,5 +26,8 @@ clean: clean-too
 clean-too:
 	rm -rf *.ttf *.ufo
 
+UnicodeData.txt:
+	wget http://unicode// #XXX
+
 include .mm/magic
 include .mm/bin

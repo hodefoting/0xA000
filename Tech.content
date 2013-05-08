@@ -28,11 +28,11 @@ the following way of defining a tile-component based font:
 <pre><span class='cmt'># The format supports comments</span></span>
 <span class='cmt'># 0xA000 will generate a 0xA000-Sans.ufo</span>
 <span class='cmt'># file, which can yield a TTF.</span>
-fontname=0xA000-Sans
+fontname 0xA000-Sans
 
 <span class='cmt'># Gets encoded in the font, seems to be needed</span>
 <span class='cmt'># for mono variant to show up.</span>
-variant=Sans
+variant Sans
 
 <span class='cmt'># include the full palette, using grayscale or</span>
 <span class='cmt'># other mappings here will yield various effects.</span>
@@ -46,24 +46,25 @@ include 5px-drawing.asc <span class='cmt'># contains box-drawing chars</span>
 </pre>
 
 <h3><a name='palette.asc'>palette.asc</a></h3>
-<pre><span class='cmt'># The palette file defines which shapes are to</span>
-<span class='cmt'># be used for which ascii char in the encoding.</span>
+<pre><span class='cmt'># The palette file defines which shapes are used for which
+# ascii char in glyph drawings.</span>
 
-. blank
-8 solid
-9 strong
-H medium
-+ light
-p cse     
+. blank    <span class='cmt'>#   0% The possible tile names</span>
++ light    <span class='cmt'>#  25% are hard-coded in 0xA000.c</span>
+H medium   <span class='cmt'>#  50%</span>
+9 strong   <span class='cmt'>#  75%</span>
+8 solid    <span class='cmt'># 100% </span>
+
+p cse      <span class='cmt'># cs = curve south east</span>
 q csw
 b cne
 d cnw
-7 lse     
+7 lse      <span class='cmt'># lse = line south east</span>
 ` lsw    
 a lnw   
-e lne
-< ve
-> vw
+e lne      <span class='cmt'># h - might be better</span>
+&lt; ve       <span class='cmt'># ve = v facing east</span>
+&gt; vw
 V vn
 n vs
 </pre>
@@ -93,17 +94,15 @@ a8.
 
 </pre>
 
+<div style='overflow:hidden; float:right; padding-left: 2em; clear: both;'>
+<img src='terminal-font-source.png' width='140px' />
+</div>
+
 If authormode appears on a line by itself before the !! line, a special
 font with the ascii codes used for components replaced by large versions
 of the components themselves is generated. Using such a font in a terminal
 gives <a href='terminal-font-source.png'>live preview authoring in
 text-editors</a>.
-</p>
-
-<p>The text source is transformed into UFO xml files. Each glyph is
-assembled using components referring to the possible tiles used in each
-glyph. Similar to how many fonts assemble <em>&aacute;</em>
-from an <em>a</em> and a <em>&acute;</em>.
 </p>
 
 
