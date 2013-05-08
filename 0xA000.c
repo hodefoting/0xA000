@@ -347,7 +347,7 @@ int main (int argc, char **argv)
       fprintf (stderr, "failed to load ascii font\n");
       return -1;
     }
-/* import includes */
+
   import_includes (&asc_source);
 
   uglyphs = NULL;
@@ -504,116 +504,6 @@ void write_component (const char *name, const char *curve_xml)
   fprintf (stderr, "%i %s\n", catalog_add (name), name);
 }
 
-void gen_corner_block ()
-{
- const char *name;
-
-  GString *str;
-
-  str = g_string_new ("");
-  name = "cne";
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * 0.5523), SCALE * 1);
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * 0.5423));
-  
-  g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "cnw";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line'  x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", 0,(int)(SCALE*(1-0.5523)));
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE*(1-0.5523)),SCALE);
-  g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line'  x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "csw";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * (1.0-0.5523)),    0);
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", 0,    (int)(SCALE * (1.0-0.5523)));
-  g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "cse";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * 1), (int)(SCALE * 0.5523));
-  g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * 0.5523), 0);
-  g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-
-  name = "ve";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "vw";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-
-  name = "vn";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-
-  name = "vs";
-  str = g_string_new ("");
-  g_string_append_printf (str, "    <contour>\n");
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
-  g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
-  g_string_append_printf (str, "    </contour>\n");
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-}
-
 void gen_solid_block ()
 {
  const char *name;
@@ -708,13 +598,13 @@ void gen_dia_grays ()
   GString *str;
   name = "light";
   str = g_string_new ("");
-  gen_gray (str, step, 21);
+  gen_gray (str, step, 18);
   write_component (name, str->str);
   g_string_free (str, TRUE);
 
   name = "strong";
   str = g_string_new ("");
-  gen_gray (str, step, 11);
+  gen_gray (str, step, 10);
   write_component (name, str->str);
   g_string_free (str, TRUE);
 
@@ -729,7 +619,6 @@ void gen_blocks ()
 {
   gen_solid_block ();
 
-  gen_corner_block ();
   gen_dia_grays ();
 }
 
