@@ -27,7 +27,8 @@ enum {
   C_VE,
   C_VW,
   C_VN,
-  C_VS
+  C_VS,
+  C_USER_START
 };
 
 struct _Mapping {
@@ -35,6 +36,25 @@ struct _Mapping {
   gchar  *name;
   int     type;
 };
+
+static Mapping map[256]={{0,},};
+static int     mappings=0;
+
+void add_component (const char *component_name)
+{
+  fprintf (stderr, "component [%s]\n", component_name);
+}
+
+void add_point (const char *component_name, char type, float x, float y)
+{
+  fprintf (stderr, "%c point (%f %f)\n", type, x, y);
+}
+
+void add_subpath (void)
+{
+  fprintf (stderr, "subpath\n");
+}
+
 
 const char *mapping2str (int type)
 {
@@ -86,8 +106,6 @@ char *mem_read (char *start,
                 char *linebuf,
                 int  *len);
 
-static Mapping map[256]={{0,},};
-static int     mappings=0;
 
 static int map_pix (char pix)
 {
@@ -217,9 +235,11 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
       }
 
   write_glyph (name, (x1-x0+1) * SCALE, uglyphs[glyph_no], str->str);
-  g_string_free (str, TRUE);
   g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+  g_string_free (str, TRUE);
 }
+
 
 void gen_blocks ();
 void gen_fontinfo (int glyph_height);
@@ -355,10 +375,22 @@ int main (int argc, char **argv)
           switch (linebuf[0])
           {
             case '{': /* new component definition */
+              {
+                add_component (&linebuf[2]);
+                break;
+              }
             case 'L': /* line-to */
             case 'c': /* curve-to */
             case 'C': /* curve-to */
+              {
+                int type;
+                float x, y;
+                sscanf (&linebuf[0], "%c %f %f", &type, &x, &y);
+                add_point (&linebuf[2], type, x, y);
+                break;
+              }
             case 'Z': /* new sub-path */
+              add_subpath ();
               break;
 
 
@@ -446,9 +478,15 @@ int main (int argc, char **argv)
 }
 
 
+void write_component (const char *name, const char *curve_xml)
+{
+  write_glyph (name, SCALE, -1, curve_xml);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+}
+
+
 void gen_corner_block ()
 {
- char buf[1024];
  const char *name;
 
   GString *str;
@@ -461,9 +499,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
 
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
 
   name = "lnw";
@@ -474,9 +511,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
 
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
   name = "lsw";
   str = g_string_new ("");
@@ -486,9 +522,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
 
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
   name = "lse";
   str = g_string_new ("");
@@ -497,10 +532,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
-
 
 
  /*******/
@@ -516,10 +549,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
-
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
   name = "cnw";
   str = g_string_new ("");
@@ -530,9 +561,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 1);
   g_string_append_printf (str, "    <point type='line'  x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
   name = "csw";
   str = g_string_new ("");
@@ -545,9 +575,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 1);
 
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
 
   name = "cse";
@@ -559,9 +588,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point x='%d' y='%d'/>\n", (int)(SCALE * 0.5523), 0);
   g_string_append_printf (str, "    <point type='curve' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
 
   name = "ve";
@@ -573,9 +601,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
   name = "vw";
   str = g_string_new ("");
@@ -586,9 +613,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
 
   name = "vn";
@@ -600,9 +626,8 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 
 
   name = "vs";
@@ -614,14 +639,14 @@ void gen_corner_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE / 2, SCALE / 2 );
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
 }
+
+
 
 void gen_solid_block ()
 {
- char buf[1024];
  const char *name;
   GString *str;
   name = "solid";
@@ -632,15 +657,14 @@ void gen_solid_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
+
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>solid</key><string>solid.glif</string>\n");
 
   name = "blank";
   str = g_string_new ("");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>blank</key><string>blank.glif</string>\n");
 
   name = "solidv";
   str = g_string_new ("");
@@ -650,9 +674,8 @@ void gen_solid_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 1, (int)(SCALE * -1));
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, (int)(SCALE * -1));
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>solidv</key><string>solidv.glif</string>\n");
 
   name = "solidh";
   str = g_string_new ("");
@@ -662,9 +685,8 @@ void gen_solid_block ()
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 2, SCALE * 0);
   g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", SCALE * 0, SCALE * 0);
   g_string_append_printf (str, "    </contour>\n");
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>solidh</key><string>solidh.glif</string>\n");
 }
 
 void gen_gray (GString *str, int step, int mod)
@@ -716,24 +738,20 @@ void gen_dia_grays ()
   name = "light";
   str = g_string_new ("");
   gen_gray (str, step, 21);
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>light</key><string>light.glif</string>\n");
 
   name = "strong";
   str = g_string_new ("");
   gen_gray (str, step, 11);
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  g_string_append_printf (contents_plist, "<key>strong</key><string>strong.glif</string>\n");
 
   name = "medium";
   str = g_string_new ("");
   gen_gray (str, step, 14);
-  write_glyph (name, SCALE, -1, str->str);
+  write_component (name, str->str);
   g_string_free (str, TRUE);
-  str = g_string_new ("");
-  g_string_append_printf (contents_plist, "<key>medium</key><string>medium.glif</string>\n");
 }
 
 void gen_blocks ()
