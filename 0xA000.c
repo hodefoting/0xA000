@@ -101,7 +101,7 @@ static int map_pix (char pix)
 static int   author_mode = 0;
 
 static const char *font_name = NULL;
-static const char *font_type = NULL;
+static const char *font_variant = NULL;
 static int   y_shift = 0;
 
 static char *asc_source = NULL;
@@ -253,6 +253,14 @@ void import_includes (char **asc_source)
         {
           y_shift = atoi (&linebuf[strlen("y_shift=")]);
         }
+        else if (g_str_has_prefix (linebuf, "variant="))
+        {
+          font_variant = g_strdup (&linebuf[strlen("variant=")]);
+        }
+        else if (g_str_has_prefix (linebuf, "fontname="))
+        {
+          font_name= g_strdup (&linebuf[strlen("fontname=")]);
+        }
         else
         {
           g_string_append_printf (new, "%s\n", linebuf);
@@ -268,16 +276,20 @@ int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
 
-  if (argc != 4)
+  if (argc != 2)
     {
-      fprintf (stderr, "Usage: %s <fontsource.asc> <outputfontname>\n", argv[0]);
+      fprintf (stderr, "Usage: %s <fontsource.asc>\n", argv[0]);
       return -1;
     }
+  if (!g_file_get_contents (argv[1], &asc_source, NULL, NULL))
+    {
+      fprintf (stderr, "failed to load ascii font\n");
+      return -1;
+    }
+/* import includes */
+  import_includes (&asc_source);
 
   uglyphs = NULL;
-
-  font_name = argv[2];
-  font_type = argv[3];
   glyphs    = NULL;
 
   sprintf (ufo_path, "%s.ufo", font_name);
@@ -291,21 +303,6 @@ int main (int argc, char **argv)
 "<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n"
 "<plist version=\"1.0\"> <dict> <key>creator</key> <string>org.gimp.pippin</string> <key>formatVersion</key> <integer>2</integer> </dict> </plist>", -1, NULL);
 
-
-#if 0
-  fb = stbi_load (argv[1], &rw, &rh, NULL, 4);
-  if (!fb)
-    return 0;
-#else
-  if (!g_file_get_contents (argv[1], &asc_source, NULL, NULL))
-    {
-      fprintf (stderr, "failed to load ascii font\n");
-      return -1;
-    }
-#endif
-
-/* import includes */
-  import_includes (&asc_source);
 
   int y, x0;
   int glyph_no = 0;
@@ -731,7 +728,7 @@ void gen_fontinfo (int glyph_height)
   g_string_append_printf (str, "	<key>postscriptFullName</key>\n");
   g_string_append_printf (str, "	<string>%s</string>\n", font_name);
   g_string_append_printf (str, "	<key>postscriptWeightName</key>\n");
-  g_string_append_printf (str, "	<string>%s</string>\n", font_type);
+  g_string_append_printf (str, "	<string>%s</string>\n", font_variant);
   g_string_append_printf (str, "    </dict>\n");
   g_string_append_printf (str, "</plist>\n");
 

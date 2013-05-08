@@ -12,8 +12,8 @@ all: 0xA000-Mono.ttf \
 		 Tech.html \
 		 index.html
 	
-%.ttf: %.sh 0xA000 *.asc
-	./$<
+0xA000-%.ttf: %.asc 0xA000 *.asc
+	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
 %.html: %.content head.html
 	cat head.html neck.html $< end.html > $@

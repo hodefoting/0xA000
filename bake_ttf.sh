@@ -1,9 +1,8 @@
 #!/bin/sh
-
-PNG=MonoSans.asc
 family=0xA000
-variant=MonoSans
+variant=$1
 
+input=$variant.asc
 rm -rf $family-$variant.ufo
-./0xA000 $PNG $family-$variant $variant
+./0xA000 $input
 ./fontconvert $family-$variant.ufo -t

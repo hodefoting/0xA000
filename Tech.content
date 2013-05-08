@@ -1,0 +1,33 @@
+<h1><a href='index.html'>0xA000</a></h1>
+
+
+
+<h2>How the font was created</h2>
+<p>The font started out as a <a href='0xA000-original.png'>drawing from GIMP using black and two levels of
+gray.</a> The original ascii shapes from this drawing are now maintained in
+ a <a href='5px.asc.html'>ascii-art like text-file based source form</a>.
+</p>
+
+
+<p>The text source is transformed into UFO xml files. Each glyph is
+assembled using components referring to the possible tiles used in each
+glyph. Similar to how many fonts assemble <em>&aacute;</em>
+from an <em>a</em> and a <em>&acute;</em>.
+<p>
+source outline fonts using a
+library of components that are reused from a grid of pointers in each
+glyph. This component system is the same that is used in many fonts to compose
+combined characters like &aacute;. The output of this program is a UFO file
+structure - that can be turned into a TTF with fontforge.
+</p>
+
+<h2><a href='Glyphs.html'>Glyph Overview</a>
+</h2>Shows all the glyphs for all the variants in one page.
+
+<h2>Todo</h2>
+<ul>
+  <li>A few hinting pairs would be good, like To, Ts and T.</li>
+  <li>Write filled in outlines instead of using components. (file-size
+  balloons; but rendering performance might be better.)</li>
+
+</ul>
