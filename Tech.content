@@ -122,7 +122,7 @@ of the components themselves is generated. Using such a font in a terminal
 makes any terminal text editor a WYSIWYG tool.
 </p>
 
-<h2>Todo</h2>
+<h2 style='clear:both;'>Todo</h2>
 <p>Some hinting would be good, for To Ts T. and LT</p>
 <p>Make component-inlining an option</p>
 

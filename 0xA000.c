@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int SCALE=512;
+int SCALE=256;
 int overlap_solid=1;
 static int   author_mode = 0;
 static int   y_shift = 0;
@@ -115,7 +115,8 @@ void add_subpath (void)
 void add_gray_block (float fill_ratio, float paramA, float paramB)
 {
   int step = 7;
-  int mod = step + step * fill_ratio;
+  fill_ratio = 1.0 - fill_ratio;
+  int mod = step + step * 3.0*fill_ratio;
   float scale = SCALE;
   int i;
   int no = 0;
