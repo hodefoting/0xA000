@@ -107,6 +107,17 @@ void add_point (char type, float x, float y)
     }
 }
 
+void add_gray_block (float fill_ratio, int param)
+{
+  write_component ("blank", "");
+  add_component ("solid");
+
+  add_point ('L', 0, 0.5 + fill_ratio/2);
+  add_point ('L', 1, 0.5 + fill_ratio/2);
+  add_point ('L', 1, 0.5 - fill_ratio/2);
+  add_point ('L', 0, 0.5 - fill_ratio/2);
+}
+
 void add_subpath (void)
 {
   g_string_append_printf (component_str, "</contour><contour>");
@@ -409,6 +420,15 @@ int main (int argc, char **argv)
             case 'Z': /* new sub-path */
               add_subpath ();
               break;
+            case 'G':
+              {
+                int arg;
+                float ratio;
+                sscanf (&linebuf[0], "%f %i", &ratio, &arg);
+                add_gray_block (ratio, arg);
+                break;
+              }
+              break;
 
 
             default:
@@ -497,8 +517,6 @@ void write_component (const char *name, const char *curve_xml)
 {
   write_glyph (name, SCALE, -1, curve_xml);
   g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
-
-  fprintf (stderr, "%i %s\n", catalog_add (name), name);
 }
 
 void gen_solid_block ()
