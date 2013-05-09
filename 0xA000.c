@@ -289,7 +289,13 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
       }
 
   write_glyph (name, (x1-x0+1) * SCALE, uglyphs[glyph_no], str->str);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+
+  {
+    char buf[1024];
+    sprintf (buf, "<key>%s</key>", name);
+    if (!strstr (contents_plist->str, buf))
+    g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+  }
 
   g_string_free (str, TRUE);
 }
