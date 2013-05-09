@@ -100,3 +100,8 @@ div.clear {
 }
 
 span.cmt {color: gray;}
+
+[contenteditable="true"]:active, [contenteditable="true"]:focus{
+    outline:none;
+}
+
