@@ -117,24 +117,13 @@ void add_gray_block (float fill_ratio, float paramA, float paramB)
   int step = 7;
   int mod = step + step * fill_ratio;
   float scale = SCALE;
-#if 0
-
-  add_point ('L', 0, 0.5 + fill_ratio/2);
-  add_point ('L', 1, 0.5 + fill_ratio/2);
-  add_point ('L', 1, 0.5 - fill_ratio/2);
-  add_point ('L', 0, 0.5 - fill_ratio/2);
-#endif
-
   int i;
   int no = 0;
-
 #define GO 2
 #define NSCALE  (SCALE + GO * 2)
-
   int again = 0;
   for (i = 0; i < NSCALE * 2; i++)
   {
-
     no ++;
     if (no % mod == 0)
     {
@@ -164,7 +153,6 @@ void add_gray_block (float fill_ratio, float paramA, float paramB)
           }
     }
   }
-
 #undef GO
 #undef NSCALE
 }
@@ -355,26 +343,22 @@ void import_includes (char **asc_source)
         {
           author_mode = 1;
         }
-        else if (g_str_has_prefix (linebuf, "y_shift "))
-        {
-          y_shift = atoi (&linebuf[strlen("y_shift ")]);
-        }
-        else if (g_str_has_prefix (linebuf, "overlap_solid "))
-        {
-          overlap_solid = atoi (&linebuf[strlen("overlap_solid ")]);
-        }
-        else if (g_str_has_prefix (linebuf, "scale "))
-        {
-          SCALE = atoi (&linebuf[strlen("scale ")]);
-        }
-        else if (g_str_has_prefix (linebuf, "variant "))
-        {
-          font_variant = g_strdup (&linebuf[strlen("variant ")]);
-        }
-        else if (g_str_has_prefix (linebuf, "fontname "))
-        {
-          font_name = g_strdup (&linebuf[strlen("fontname ")]);
-        }
+
+#define PARSE_INT(var, prefix) \
+        else if (g_str_has_prefix (linebuf, prefix)) \
+          var = atoi (&linebuf[strlen(prefix)]);
+#define PARSE_STRING(var, prefix) \
+        else if (g_str_has_prefix (linebuf, prefix)) \
+          var = g_strdup (&linebuf[strlen(prefix)]);
+
+        PARSE_INT (y_shift,         "y_shift ")
+        PARSE_INT (overlap_solid,   "overlap_solid ")
+        PARSE_INT (SCALE,           "scale")
+        PARSE_STRING (font_variant, "variant ")
+        PARSE_STRING (font_name,    "fontname ")
+
+#undef PARSE_INT
+#undef PARSE_STRING
         else
         {
           g_string_append_printf (new, "%s\n", linebuf);
