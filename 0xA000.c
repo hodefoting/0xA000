@@ -335,14 +335,13 @@ void import_includes (char **asc_source)
           g_file_get_contents (&linebuf[strlen("include ")], &read, NULL, NULL);
           if (read)
             {
+              import_includes (&read);
               g_string_append_printf (new, "%s", read);
               g_free (read);
             }
         }
         else if (g_str_has_prefix (linebuf, "authormode"))
-        {
           author_mode = 1;
-        }
 
 #define PARSE_INT(var, prefix) \
         else if (g_str_has_prefix (linebuf, prefix)) \
