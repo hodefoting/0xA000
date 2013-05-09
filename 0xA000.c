@@ -107,17 +107,66 @@ void add_point (char type, float x, float y)
     }
 }
 
+void add_subpath (void)
+{
+  g_string_append_printf (component_str, "</contour><contour>");
+}
+
 void add_gray_block (float fill_ratio, float paramA, float paramB)
 {
+  int step = 7;
+  int mod = step + step * fill_ratio;
+  float scale = SCALE;
+#if 0
+
   add_point ('L', 0, 0.5 + fill_ratio/2);
   add_point ('L', 1, 0.5 + fill_ratio/2);
   add_point ('L', 1, 0.5 - fill_ratio/2);
   add_point ('L', 0, 0.5 - fill_ratio/2);
-}
+#endif
 
-void add_subpath (void)
-{
-  g_string_append_printf (component_str, "</contour><contour>");
+  int i;
+  int no = 0;
+
+#define GO 2
+#define NSCALE  (SCALE + GO * 2)
+
+  int again = 0;
+  for (i = 0; i < NSCALE * 2; i++)
+  {
+
+    no ++;
+    if (no % mod == 0)
+    {
+        if (again)
+          add_subpath ();
+        again = 1;
+        if (i < NSCALE)
+          {
+            add_point ('L', (i - GO)/scale,  (0 - GO)/scale);
+            add_point ('L', (0 - GO)/scale,  (i - GO)/scale);
+          }
+        else
+          {
+            add_point ('L', (NSCALE - GO)/scale, (i - NSCALE - GO)/scale);
+            add_point ('L', (i - NSCALE - GO)/scale, (NSCALE - GO)/scale);
+          }
+
+        if (i+step < NSCALE)
+          {
+            add_point ('L', (0 - GO)/scale,   (i+step - GO)/scale);
+            add_point ('L', (i+step - GO)/scale, (0 - GO)/scale);
+          }
+        else
+          {
+            add_point ('L', (i+step - NSCALE - GO)/scale, (NSCALE - GO)/scale);
+            add_point ('L', (NSCALE - GO)/scale, (i+step - NSCALE - GO)/scale);
+          }
+    }
+  }
+
+#undef GO
+#undef NSCALE
 }
 
 char *mem_read (char *start,
@@ -257,7 +306,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 }
 
 
-void gen_blocks ();
 void gen_fontinfo (int glyph_height);
 
 static void str_chomp (char *string)
@@ -338,6 +386,37 @@ void import_includes (char **asc_source)
   g_string_free (new, FALSE);
 }
 
+void write_component (const char *name, const char *curve_xml)
+{
+  write_glyph (name, SCALE, -1, curve_xml);
+  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
+  catalog_add (name);
+}
+
+void gen_components ()
+{
+  write_component ("blank", "");
+  add_component ("solid");
+  add_point ('L', 0, 1);
+  add_point ('L', 1, 1);
+  add_point ('L', 1, 0);
+  add_point ('L', 0, 0);
+
+  add_component ("solidv");
+  add_point ('L', 0, 1);
+  add_point ('L', 1, 1);
+  add_point ('L', 1, -1);
+  add_point ('L', 0, -1);
+
+  add_component ("solidh");
+  add_point ('L', 0, 1);
+  add_point ('L', 2, 1);
+  add_point ('L', 2, 0);
+  add_point ('L', 0, 0);
+  finalize_component ();
+}
+
+
 int main (int argc, char **argv)
 {
   int y0 = 0, y1 = 0;
@@ -380,7 +459,7 @@ int main (int argc, char **argv)
 "<plist version=\"1.0\">\n"
 "<dict>\n");
 
-  gen_blocks ();
+  gen_components (); /* add components which always are present */
   /* read mapping table */
 
   {
@@ -508,108 +587,6 @@ int main (int argc, char **argv)
   gen_fontinfo (glyph_height);
 
   return 0;
-}
-
-void write_component (const char *name, const char *curve_xml)
-{
-  write_glyph (name, SCALE, -1, curve_xml);
-  g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
-  catalog_add (name);
-}
-
-void gen_solid_block ()
-{
-  write_component ("blank", "");
-  add_component ("solid");
-  add_point ('L', 0, 1);
-  add_point ('L', 1, 1);
-  add_point ('L', 1, 0);
-  add_point ('L', 0, 0);
-
-  add_component ("solidv");
-  add_point ('L', 0, 1);
-  add_point ('L', 1, 1);
-  add_point ('L', 1, -1);
-  add_point ('L', 0, -1);
-
-  add_component ("solidh");
-  add_point ('L', 0, 1);
-  add_point ('L', 2, 1);
-  add_point ('L', 2, 0);
-  add_point ('L', 0, 0);
-  finalize_component ();
-}
-
-void gen_gray (GString *str, int step, int mod)
-{
-  int i;
-  int no = 0;
-
-#define GO 2
-#define NSCALE  (SCALE + GO * 2)
-
-  for (i = 0; i < NSCALE * 2; i++)
-  {
-    no ++;
-    if (no % mod == 0)
-    {
-      g_string_append_printf (str, "    <contour>\n");
-        if (i < NSCALE)
-          {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - GO,   0 - GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0 - GO,   i - GO);
-          }
-        else
-          {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", NSCALE - GO, i - NSCALE - GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i - NSCALE - GO, NSCALE - GO);
-          }
-
-        if (i+step < NSCALE)
-          {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", 0 - GO,   i+step - GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+step - GO, 0 - GO);
-          }
-        else
-          {
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", i+step - NSCALE - GO, NSCALE - GO);
-            g_string_append_printf (str, "    <point type='line' x='%d' y='%d'/>\n", NSCALE - GO, i+step - NSCALE - GO);
-          }
-      g_string_append_printf (str, "    </contour>\n");
-    }
-  }
-}
-
-/* XXX: the invocation of these should move to the font itself */
-void gen_dia_grays ()
-{
-  int step = 7;
-  char buf[1024];
-  const char *name;
-  GString *str;
-  name = "light";
-  str = g_string_new ("");
-  gen_gray (str, step, 18);
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "strong";
-  str = g_string_new ("");
-  gen_gray (str, step, 10);
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-
-  name = "medium";
-  str = g_string_new ("");
-  gen_gray (str, step, 14);
-  write_component (name, str->str);
-  g_string_free (str, TRUE);
-}
-
-void gen_blocks ()
-{
-  gen_solid_block ();
-  gen_dia_grays ();
 }
 
 void gen_fontinfo (int glyph_height)
