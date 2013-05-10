@@ -1,8 +1,6 @@
 <h1 class='sans'><a href='index.html'>0xA000</a></h1>
 
 <h2>Behind the scenes tech-peek at how the fonts were created</h2>
-<p>The <a href='Glyphs.html'>Glyph Gallery Page</a> shows all the
-glyphs in the fonts side by side.</p>
 
 <p>The PNG file made in GIMP containing the first anti-aliased AA set for this
 font.</p>

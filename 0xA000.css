@@ -1,7 +1,7 @@
 @font-face {font-family:'0xA000-Regular';     src: url('0xA000-Regular.ttf');}
 @font-face {font-family:'0xA000-Mono'; src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-Pixelated-Mono';     src: url('0xA000-Pixelated-Mono.ttf');}
-@font-face {font-family:'0xA000-Pixelated';src: url('0xA000-Pixelated-Regular.ttf');}
+@font-face {font-family:'0xA000-Pixelated-Regular';src: url('0xA000-Pixelated-Regular.ttf');}
 @font-face {font-family:'0xA000-Dots-Regular';     src: url('0xA000-Dots-Regular.ttf');}
 @font-face {font-family:'0xA000-Dots-Mono';     src: url('0xA000-Dots-Mono.ttf');}
 body       {font-family: '0xA000-Regular'; font-size: 15px;
@@ -27,8 +27,8 @@ a:hover    { text-decoration: underline }
                               text-decoration: underline;}
 .sans      {font-family: '0xA000-Regular';}
 .monosans  {font-family: '0xA000-Mono';}
-.copy      { text-align: right;}
-.content   {margin-left: 200px;margin-right:180px;margin-top: 1em;
+.copy      { text-align: right; margin-bottom: 4em;margin-top: 3em;}
+.content   {margin-left: 200px;margin-right:20px;margin-top: 1em;
             min-width: 20em; max-width: 45em;
            }
 
@@ -58,11 +58,12 @@ div.glyph {
    padding-left: 0.2em;
  }
 
-.rendering-Pixelated,
+.rendering-Pixelated-Regular,
 .rendering-Pixelated-Mono,
 .rendering-Mono,
 .rendering-Reference,
 .rendering-Dots-Regular,
+.rendering-Dots-Mono,
 .rendering-Regular {
    font-size: 50px;
    color: black;
@@ -76,8 +77,8 @@ div.glyph {
  .rendering-Reference {
    font-family: 'Sans';
  }
- .rendering-Pixelated {
-   font-family: '0xA000-Pixelated';
+ .rendering-Pixelated-Regular {
+   font-family: '0xA000-Pixelated-Regular';
  }
  .rendering-Pixelated-Mono {
    font-family: '0xA000-Pixelated-Mono';
@@ -90,6 +91,9 @@ div.glyph {
  }
  .rendering-Dots-Regular {
    font-family: '0xA000-Dots-Regular';
+ }
+ .rendering-Dots-Mono {
+   font-family: '0xA000-Dots-Mono';
  }
 
 div.glyphs {
@@ -104,4 +108,5 @@ span.cmt {color: gray;}
 [contenteditable="true"]:active, [contenteditable="true"]:focus{
     outline:none;
 }
+
 

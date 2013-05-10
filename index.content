@@ -1,16 +1,24 @@
     <h1><a class='selected' href='index.html'>0xA000</a></h1>
+
+    <!--
     <div class='faces' style="font-family:'0xA000-Regular'">
+      <a href='Regular.html'
+        style="font-family:'0xA000-Regular'">Regular</a>
       <a href='Pixelated.html'
-        style="font-family:'0xA000-Pixelated'">Pixelated</a>
-      <a href='Sans.html'
-        style="font-family:'0xA000-Regular'">Sans</a>
+        style="font-family:'0xA000-Pixelated-Regular'">Pixelated</a>
+      <a href='Dots.html'
+        style="font-family:'0xA000-Dots-Regular'">Dots</a>
+
+      <a href='Mono.html'
+        style="font-family:'0xA000-Mono'">Mono</a>
       <a href='Mono.html'
         style="font-family:'0xA000-Pixelated-Mono'">Mono</a>
-      <a href='MonoSans.html'
-        style="font-family:'0xA000-Mono'">MonoSans</a>
+      <a href='MonoDots.html'
+        style="font-family:'0xA000-Dots-Mono'">Mono</a>
       <a href='Tech.html'
         style="font-family:'0xA000-Regular'">Tech</a>
     </div>
+    -->
 
     <div contenteditable='true' style='padding:0em;'>
       <h2><span class='sans'>Hi-fidelity</span> low-PPI simulator</h2>
@@ -21,10 +29,8 @@
         <span class='sans'>when lowercase is rendered 3 pixels high.</span>
       </p>
 
-      <p>The following illustrates the monospace variant, and how one can use
-      a TTF file from CSS:</p>
       <pre>&lt;<span style='color:#949'>style</span> type=<span style='color:#339'>'text/css'</span>&gt;
-                          <span style='color:gray'>/* <span
+  <span style='color:gray'>/* <span
 style='color:red'>NB:</span> this example text is editable! */</span>
   <span style='color:#949'>@font-face</span> {font-family:<span style='color:#339'>'0xA000-Regular'</span>; src: <span style='color:#339'>url(</span>'<a
   href='0xA000-Sans.ttf'>0xA000-Sans.ttf</a>'<span style='color:#339'>)</span>;}
@@ -33,15 +39,38 @@ style='color:red'>NB:</span> this example text is editable! */</span>
     </div>
 
     <div>
-      <a href='0xA000-Pixelated.ttf'
-        style="font-family:'0xA000-Pixelated'">0xA000-Pixelated.ttf</a>
+
+<p>
+    The 0xA000 family contains of quite a few fonts; here are their download
+    links, typeset in themselves:
+</p>
+
+<div style='font-size: 15px;'>
+
+      <a href='0xA000-Regular.ttf'
+        style="font-family:'0xA000-Regular'">0xA000-Regular.ttf</a>
       <br/>
       <a href='0xA000-Mono.ttf'
-        style="font-family:'0xA000-Pixelated-Mono'">0xA000-Mono.ttf</a>
+        style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
       <br/>
-      <a href='0xA000-Sans.ttf'
-        style="font-family:'0xA000-Regular'">0xA000-Sans.ttf</a>
+
+      <a href='0xA000-Pixelated-Regular.ttf'
+        style="font-family:'0xA000-Pixelated-Regular'">0xA000-Pixelated-Regular.ttf</a>
       <br/>
-      <a href='0xA000-MonoSans.ttf'
-        style="font-family:'0xA000-Mono'">0xA000-MonoSans.ttf</a>
-    </div>
+      <a href='0xA000-Pixelated-Mono.ttf'
+        style="font-family:'0xA000-Pixelated-Mono'">0xA000-Pixelated-Mono.ttf</a>
+      <br/>
+
+      <a href='0xA000-Dots-Regular.ttf'
+        style="font-family:'0xA000-Dots-Regular'">0xA000-Dots-Regular.ttf</a>
+      <br/>
+      <a href='0xA000-Dots-Mono.ttf'
+        style="font-family:'0xA000-Dots-Mono'">0xA000-Dots-Mono.ttf</a>
+      <br/>
+</div>
+
+<p>You might also want to look at the <a href='Glyphs.html'>Glyphs Gallery</a>
+which shows all the glyphs/shapes of the font family in variants.</p>
+
+<p>There is also a page with <a href='Tech.html'>more technical background</a>
+for those interested in how these fonts are/were made.</p>

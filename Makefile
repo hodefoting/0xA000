@@ -9,7 +9,6 @@ all: 0xA000-Regular.ttf    \
 		 0xA000-Dots-Mono.ttf \
 		 0xA000-Edit-Mono.ttf \
 		 \
-		 Contribute.html      \
 		 Glyphs.html          \
 		 Tech.html            \
 		 index.html

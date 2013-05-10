@@ -15,10 +15,9 @@ for a in `ls *.ufo/glyphs -1 | sort | uniq | sed s/\.glif//`; do
         <span class='name'>$description</span>
       </div>
       <span class='rendering-Mono'>&#x$a;</span>
-      <span class='rendering-MonoSans'>&#x$a;</span>
-      <span class='rendering-Pixelated'>&#x$a;</span>
-      <span class='rendering-Sans'>&#x$a;</span>
-      <span class='rendering-Dots'>&#x$a;</span>
+      <span class='rendering-Regular'>&#x$a;</span>
+      <span class='rendering-Pixelated-Regular'>&#x$a;</span>
+      <span class='rendering-Dots-Regular'>&#x$a;</span>
       <span class='rendering-Reference'>&#x$a;</span>
     </div>"
   fi
