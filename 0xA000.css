@@ -4,7 +4,7 @@
 @font-face {font-family:'0xA000-Pixelated-Regular';src: url('0xA000-Pixelated-Regular.ttf');}
 @font-face {font-family:'0xA000-Dots-Regular';     src: url('0xA000-Dots-Regular.ttf');}
 @font-face {font-family:'0xA000-Dots-Mono';     src: url('0xA000-Dots-Mono.ttf');}
-body       {font-family: '0xA000-Regular'; font-size: 15px;
+body       {font-family: '0xA000-Regular'; font-size: 20px;
             background-color: #f7f7f7;}
 tt, pre    {font-family: '0xA000-Mono'; }
 small      {font-size  :  5px;line-height:100%;}

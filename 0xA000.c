@@ -120,7 +120,7 @@ void add_gray_block (float fill_ratio, float paramA, float paramB)
   float scale = SCALE;
   int i;
   int no = 0;
-#define GO 2
+#define GO 1
 #define NSCALE  (SCALE + GO * 2)
   int again = 0;
   for (i = 0; i < NSCALE * 2; i++)
