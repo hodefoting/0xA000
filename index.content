@@ -2,7 +2,8 @@
 
     <h1>0xA000</h1>
 
-      <h2><span class='sans'>Hi-fidelity</span> low-PPI simulator</h2>
+      <h2><span class='sans'>Hi-fidelity</span> low-PPI <span
+      class='monochrome'>simulator</span></h2>
       <p>
       <span>The <span class='sans'>shapes</span> for the glyphs in
         this font have been designed within <span class='sans'>the</span>
@@ -61,6 +62,13 @@
       <br/>
       <a href='0xA000-Dots-Mono.ttf'
         style="font-family:'0xA000-Dots-Mono'">0xA000-Dots-Mono.ttf</a>
+      <br/>
+
+      <a href='0xA000-Monochrome-Regular.ttf'
+        style="font-family:'0xA000-Monochrome-Regular'">0xA000-Monochrome-Regular.ttf</a>
+      <br/>
+      <a href='0xA000-Monochrome-Mono.ttf'
+        style="font-family:'0xA000-Monochrome-Mono'">0xA000-Monochrome-Mono.ttf</a>
       <br/>
 </div>
 

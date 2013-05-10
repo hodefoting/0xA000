@@ -4,6 +4,8 @@
 @font-face {font-family:'0xA000-Pixelated-Regular';src: url('0xA000-Pixelated-Regular.ttf');}
 @font-face {font-family:'0xA000-Dots-Regular';     src: url('0xA000-Dots-Regular.ttf');}
 @font-face {font-family:'0xA000-Dots-Mono';     src: url('0xA000-Dots-Mono.ttf');}
+@font-face {font-family:'0xA000-Monochrome-Regular';     src: url('0xA000-Monochrome-Regular.ttf');}
+@font-face {font-family:'0xA000-Monochrome-Mono';     src: url('0xA000-Monochrome-Mono.ttf');}
 body       {font-family: '0xA000-Regular'; font-size: 20px;
             background-color: #f7f7f7;}
 tt, pre    {font-family: '0xA000-Mono'; }
@@ -26,6 +28,7 @@ a:hover    { text-decoration: underline }
 .selected, .faces>a.selected  { color: #000;
                               text-decoration: underline;}
 .sans      {font-family: '0xA000-Regular';}
+.monochrome {font-family: '0xA000-Monochrome-Regular';}
 .monosans  {font-family: '0xA000-Mono';}
 .copy      { text-align: right; margin-bottom: 4em;margin-top: 3em;}
 .content   {margin-left: 200px;margin-right:20px;margin-top: 1em;

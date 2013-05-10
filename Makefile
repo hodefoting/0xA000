@@ -7,6 +7,8 @@ all: 0xA000-Regular.ttf    \
 	   0xA000-Pixelated-Mono.ttf \
 	   0xA000-Dots-Regular.ttf \
 		 0xA000-Dots-Mono.ttf \
+	   0xA000-Monochrome-Regular.ttf \
+	   0xA000-Monochrome-Mono.ttf \
 		 0xA000-Edit-Mono.ttf \
 		 \
 		 Glyphs.html          \

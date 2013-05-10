@@ -112,7 +112,7 @@ void add_subpath (void)
   g_string_append_printf (component_str, "</contour><contour>");
 }
 
-void add_gray_block (float fill_ratio, float paramA, float paramB)
+void add_gray_block_gray (float fill_ratio, float paramA, float paramB)
 {
   int step = 7;
   fill_ratio = 1.0 - fill_ratio;
@@ -156,6 +156,50 @@ void add_gray_block (float fill_ratio, float paramA, float paramB)
   }
 #undef GO
 #undef NSCALE
+}
+
+void add_scaled_point (int type, float x, float y, float scale)
+{
+  x -= 0.5;
+  y -= 0.5;
+  scale *= 1.5;
+  x *= scale;
+  y *= scale;
+
+  x += 0.5;
+  y += 0.5;
+
+  add_point (type,
+      x, 
+      y);
+}
+
+void add_gray_block_circle (float fill_ratio, float paramA, float paramB)
+{
+  float x, y;
+  add_scaled_point ('c', 0.11, 0.29, fill_ratio);
+  add_scaled_point ('c', 0.29, 0.11, fill_ratio);
+  add_scaled_point ('C', 0.50, 0.11, fill_ratio);
+  add_scaled_point ('c', 0.71, 0.11, fill_ratio);
+  add_scaled_point ('c', 0.89, 0.29, fill_ratio);
+  add_scaled_point ('C', 0.89, 0.50, fill_ratio);
+  add_scaled_point ('c', 0.89, 0.71, fill_ratio);
+  add_scaled_point ('c', 0.71, 0.89, fill_ratio);
+  add_scaled_point ('C', 0.50, 0.89, fill_ratio);
+  add_scaled_point ('c', 0.29, 0.89, fill_ratio);
+  add_scaled_point ('c', 0.11, 0.71, fill_ratio);
+  add_scaled_point ('C', 0.11, 0.50, fill_ratio);
+
+}
+
+void add_gray_block (float fill_ratio, float paramA, float paramB)
+{
+  int type = paramA;
+  switch (type)
+    {
+      case 1: add_gray_block_gray (fill_ratio, paramA, paramB);return;
+      case 2: add_gray_block_circle (fill_ratio, paramA, paramB);return;
+    }
 }
 
 char *mem_read (char *start,
