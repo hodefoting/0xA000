@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int SCALE=256;
+int SCALE=512;
 int overlap_solid=1;
 static int   author_mode = 0;
 static int   y_shift = 0;
@@ -236,11 +236,14 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 
   if (glyph_no >= n_glyphs)
     return;
-
-  if (y1 - y0 > glyph_height)
-    glyph_height = y1 - y0 - 1;
   char name[8];
   sprintf (name, "%04X", uglyphs[glyph_no]);
+
+  if (y1 - y0 - 1> glyph_height)
+    {
+      fprintf (stderr, "%s %i\n", name, glyph_height);
+      glyph_height = y1 - y0 - 1;
+    }
 
   g_unichar_to_utf8 (uglyphs[glyph_no], utf8_chr);
   str = g_string_new ("");
@@ -590,11 +593,25 @@ void gen_fontinfo (int glyph_height)
   g_string_append_printf (str, "<plist version=\"1.0\">\n");
   g_string_append_printf (str, "    <dict>\n");
   g_string_append_printf (str, "	<key>copyright</key>\n");
-  g_string_append_printf (str, "	<string>OEyvind Kolaas pippin@gimp.org</string>\n");
+  g_string_append_printf (str, "	<string>Copyright (c) 2013 OEyvind Kolaas (pippin@gimp.org)</string>\n");
   g_string_append_printf (str, "	<key>unitsPerEm</key>\n");
   g_string_append_printf (str, "	<integer>%i</integer>\n", SCALE * glyph_height);
+  g_string_append_printf (str, "	  <key>openTypeHheaLineGap</key> <integer>0</integer>\n");
+  g_string_append_printf (str, "	  <key>openTypeOS2TypoLineGap</key> <integer>0</integer>\n");
+
+  g_string_append_printf (str, "	  <key>openTypeHheaDescender</key> <integer>0</integer>\n");
+  g_string_append_printf (str, "	  <key>openTypeOS2WinDescent</key> <integer>0</integer>\n");
+  g_string_append_printf (str, "	  <key>descender</key> <integer>0</integer>\n");
+
+  g_string_append_printf (str, "	  <key>openTypeHheaAscender</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
+  g_string_append_printf (str, "	  <key>openTypeOS2WinAscent</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
+  g_string_append_printf (str, "	  <key>ascender</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
+
+
   g_string_append_printf (str, "	<key>openTypeNameLicenseURL</key>\n");
   g_string_append_printf (str, "	<string>http://scripts.sil.org/OFL</string>\n");
+  g_string_append_printf (str, "	<key>openTypeNameLicense</key>\n");
+  g_string_append_printf (str, "	<string>Licenced under the SIL Open Font License, Version 1.1, available with a FAQ at: http://scripts.sil.org/OFL</string>\n");
   g_string_append_printf (str, "	<key>openTypeNameVersion</key>\n");
   g_string_append_printf (str, "	<string>Version 0.1</string>\n");
   g_string_append_printf (str, "	<key>postscriptFontName</key>\n");
