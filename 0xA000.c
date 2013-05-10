@@ -603,9 +603,9 @@ void gen_fontinfo (int glyph_height)
   g_string_append_printf (str, "	  <key>openTypeOS2WinDescent</key> <integer>0</integer>\n");
   g_string_append_printf (str, "	  <key>descender</key> <integer>0</integer>\n");
 
-  g_string_append_printf (str, "	  <key>openTypeHheaAscender</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
-  g_string_append_printf (str, "	  <key>openTypeOS2WinAscent</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
-  g_string_append_printf (str, "	  <key>ascender</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
+  g_string_append_printf (str, "	  <key>openTypeHheaAscender</key> <integer>%i</integer>\n", SCALE * (glyph_height+2));
+  g_string_append_printf (str, "	  <key>openTypeOS2WinAscent</key> <integer>%i</integer>\n", SCALE * (glyph_height+2));
+  g_string_append_printf (str, "	  <key>ascender</key> <integer>%i</integer>\n", SCALE * (glyph_height+2));
 
 
   g_string_append_printf (str, "	<key>openTypeNameLicenseURL</key>\n");
