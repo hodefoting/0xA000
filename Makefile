@@ -5,6 +5,8 @@ all: 0xA000-Regular.ttf    \
 		 0xA000-Mono.ttf       \
 	   0xA000-Pixelated-Regular.ttf \
 	   0xA000-Pixelated-Mono.ttf \
+	   0xA000-Boxes-Regular.ttf \
+		 0xA000-Boxes-Mono.ttf \
 	   0xA000-Dots-Regular.ttf \
 		 0xA000-Dots-Mono.ttf \
 	   0xA000-Monochrome-Regular.ttf \
