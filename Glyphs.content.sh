@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "<h1><a href='Tech.html'>0xA000</a></h1>"
+echo "<h1><a href='Tech.html'>0xA000</a></h1><h2>Glyph Gallery</h2>"
 echo "<div class='glyphs'>"
 
 for a in `ls *.ufo/glyphs -1 | sort | uniq | sed s/\.glif//`; do
