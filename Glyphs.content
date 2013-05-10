@@ -45,20 +45,6 @@
 
     <div class='glyph'>
       <div class='label'>
-        <span class='reference'>&#x0023;</span>
-        <span class='unicode'> 0023 </span>
-        <span class='name'>NUMBER SIGN</span>
-      </div>
-      <span class='rendering-Mono'>&#x0023;</span>
-      <span class='rendering-MonoSans'>&#x0023;</span>
-      <span class='rendering-Pixelated'>&#x0023;</span>
-      <span class='rendering-Sans'>&#x0023;</span>
-      <span class='rendering-Dots'>&#x0023;</span>
-      <span class='rendering-Reference'>&#x0023;</span>
-    </div>
-
-    <div class='glyph'>
-      <div class='label'>
         <span class='reference'>&#x0024;</span>
         <span class='unicode'> 0024 </span>
         <span class='name'>DOLLAR SIGN</span>
@@ -2817,6 +2803,20 @@
 
     <div class='glyph'>
       <div class='label'>
+        <span class='reference'>&#x0141;</span>
+        <span class='unicode'> 0141 </span>
+        <span class='name'>LATIN CAPITAL LETTER L WITH STROKE</span>
+      </div>
+      <span class='rendering-Mono'>&#x0141;</span>
+      <span class='rendering-MonoSans'>&#x0141;</span>
+      <span class='rendering-Pixelated'>&#x0141;</span>
+      <span class='rendering-Sans'>&#x0141;</span>
+      <span class='rendering-Dots'>&#x0141;</span>
+      <span class='rendering-Reference'>&#x0141;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
         <span class='reference'>&#x0150;</span>
         <span class='unicode'> 0150 </span>
         <span class='name'>LATIN CAPITAL LETTER O WITH DOUBLE ACUTE</span>
@@ -3097,6 +3097,20 @@
 
     <div class='glyph'>
       <div class='label'>
+        <span class='reference'>&#x0178;</span>
+        <span class='unicode'> 0178 </span>
+        <span class='name'>LATIN CAPITAL LETTER Y WITH DIAERESIS</span>
+      </div>
+      <span class='rendering-Mono'>&#x0178;</span>
+      <span class='rendering-MonoSans'>&#x0178;</span>
+      <span class='rendering-Pixelated'>&#x0178;</span>
+      <span class='rendering-Sans'>&#x0178;</span>
+      <span class='rendering-Dots'>&#x0178;</span>
+      <span class='rendering-Reference'>&#x0178;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
         <span class='reference'>&#x017D;</span>
         <span class='unicode'> 017D </span>
         <span class='name'>LATIN CAPITAL LETTER Z WITH CARON</span>
@@ -3125,6 +3139,20 @@
 
     <div class='glyph'>
       <div class='label'>
+        <span class='reference'>&#x0192;</span>
+        <span class='unicode'> 0192 </span>
+        <span class='name'>LATIN SMALL LETTER F WITH HOOK</span>
+      </div>
+      <span class='rendering-Mono'>&#x0192;</span>
+      <span class='rendering-MonoSans'>&#x0192;</span>
+      <span class='rendering-Pixelated'>&#x0192;</span>
+      <span class='rendering-Sans'>&#x0192;</span>
+      <span class='rendering-Dots'>&#x0192;</span>
+      <span class='rendering-Reference'>&#x0192;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
         <span class='reference'>&#x02C6;</span>
         <span class='unicode'> 02C6 </span>
         <span class='name'>MODIFIER LETTER CIRCUMFLEX ACCENT</span>
@@ -3139,6 +3167,90 @@
 
     <div class='glyph'>
       <div class='label'>
+        <span class='reference'>&#x02C7;</span>
+        <span class='unicode'> 02C7 </span>
+        <span class='name'>CARON</span>
+      </div>
+      <span class='rendering-Mono'>&#x02C7;</span>
+      <span class='rendering-MonoSans'>&#x02C7;</span>
+      <span class='rendering-Pixelated'>&#x02C7;</span>
+      <span class='rendering-Sans'>&#x02C7;</span>
+      <span class='rendering-Dots'>&#x02C7;</span>
+      <span class='rendering-Reference'>&#x02C7;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x02C9;</span>
+        <span class='unicode'> 02C9 </span>
+        <span class='name'>MODIFIER LETTER MACRON</span>
+      </div>
+      <span class='rendering-Mono'>&#x02C9;</span>
+      <span class='rendering-MonoSans'>&#x02C9;</span>
+      <span class='rendering-Pixelated'>&#x02C9;</span>
+      <span class='rendering-Sans'>&#x02C9;</span>
+      <span class='rendering-Dots'>&#x02C9;</span>
+      <span class='rendering-Reference'>&#x02C9;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x02D8;</span>
+        <span class='unicode'> 02D8 </span>
+        <span class='name'>BREVE</span>
+      </div>
+      <span class='rendering-Mono'>&#x02D8;</span>
+      <span class='rendering-MonoSans'>&#x02D8;</span>
+      <span class='rendering-Pixelated'>&#x02D8;</span>
+      <span class='rendering-Sans'>&#x02D8;</span>
+      <span class='rendering-Dots'>&#x02D8;</span>
+      <span class='rendering-Reference'>&#x02D8;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x02D9;</span>
+        <span class='unicode'> 02D9 </span>
+        <span class='name'>DOT ABOVE</span>
+      </div>
+      <span class='rendering-Mono'>&#x02D9;</span>
+      <span class='rendering-MonoSans'>&#x02D9;</span>
+      <span class='rendering-Pixelated'>&#x02D9;</span>
+      <span class='rendering-Sans'>&#x02D9;</span>
+      <span class='rendering-Dots'>&#x02D9;</span>
+      <span class='rendering-Reference'>&#x02D9;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x02DA;</span>
+        <span class='unicode'> 02DA </span>
+        <span class='name'>RING ABOVE</span>
+      </div>
+      <span class='rendering-Mono'>&#x02DA;</span>
+      <span class='rendering-MonoSans'>&#x02DA;</span>
+      <span class='rendering-Pixelated'>&#x02DA;</span>
+      <span class='rendering-Sans'>&#x02DA;</span>
+      <span class='rendering-Dots'>&#x02DA;</span>
+      <span class='rendering-Reference'>&#x02DA;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x02DB;</span>
+        <span class='unicode'> 02DB </span>
+        <span class='name'>OGONEK</span>
+      </div>
+      <span class='rendering-Mono'>&#x02DB;</span>
+      <span class='rendering-MonoSans'>&#x02DB;</span>
+      <span class='rendering-Pixelated'>&#x02DB;</span>
+      <span class='rendering-Sans'>&#x02DB;</span>
+      <span class='rendering-Dots'>&#x02DB;</span>
+      <span class='rendering-Reference'>&#x02DB;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
         <span class='reference'>&#x02DC;</span>
         <span class='unicode'> 02DC </span>
         <span class='name'>SMALL TILDE</span>
@@ -3149,6 +3261,48 @@
       <span class='rendering-Sans'>&#x02DC;</span>
       <span class='rendering-Dots'>&#x02DC;</span>
       <span class='rendering-Reference'>&#x02DC;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x02DD;</span>
+        <span class='unicode'> 02DD </span>
+        <span class='name'>DOUBLE ACUTE ACCENT</span>
+      </div>
+      <span class='rendering-Mono'>&#x02DD;</span>
+      <span class='rendering-MonoSans'>&#x02DD;</span>
+      <span class='rendering-Pixelated'>&#x02DD;</span>
+      <span class='rendering-Sans'>&#x02DD;</span>
+      <span class='rendering-Dots'>&#x02DD;</span>
+      <span class='rendering-Reference'>&#x02DD;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x03A9;</span>
+        <span class='unicode'> 03A9 </span>
+        <span class='name'>GREEK CAPITAL LETTER OMEGA</span>
+      </div>
+      <span class='rendering-Mono'>&#x03A9;</span>
+      <span class='rendering-MonoSans'>&#x03A9;</span>
+      <span class='rendering-Pixelated'>&#x03A9;</span>
+      <span class='rendering-Sans'>&#x03A9;</span>
+      <span class='rendering-Dots'>&#x03A9;</span>
+      <span class='rendering-Reference'>&#x03A9;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x03C0;</span>
+        <span class='unicode'> 03C0 </span>
+        <span class='name'>GREEK SMALL LETTER PI</span>
+      </div>
+      <span class='rendering-Mono'>&#x03C0;</span>
+      <span class='rendering-MonoSans'>&#x03C0;</span>
+      <span class='rendering-Pixelated'>&#x03C0;</span>
+      <span class='rendering-Sans'>&#x03C0;</span>
+      <span class='rendering-Dots'>&#x03C0;</span>
+      <span class='rendering-Reference'>&#x03C0;</span>
     </div>
 
     <div class='glyph'>
@@ -3265,6 +3419,34 @@
 
     <div class='glyph'>
       <div class='label'>
+        <span class='reference'>&#x2020;</span>
+        <span class='unicode'> 2020 </span>
+        <span class='name'>DAGGER</span>
+      </div>
+      <span class='rendering-Mono'>&#x2020;</span>
+      <span class='rendering-MonoSans'>&#x2020;</span>
+      <span class='rendering-Pixelated'>&#x2020;</span>
+      <span class='rendering-Sans'>&#x2020;</span>
+      <span class='rendering-Dots'>&#x2020;</span>
+      <span class='rendering-Reference'>&#x2020;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2021;</span>
+        <span class='unicode'> 2021 </span>
+        <span class='name'>DOUBLE DAGGER</span>
+      </div>
+      <span class='rendering-Mono'>&#x2021;</span>
+      <span class='rendering-MonoSans'>&#x2021;</span>
+      <span class='rendering-Pixelated'>&#x2021;</span>
+      <span class='rendering-Sans'>&#x2021;</span>
+      <span class='rendering-Dots'>&#x2021;</span>
+      <span class='rendering-Reference'>&#x2021;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
         <span class='reference'>&#x2022;</span>
         <span class='unicode'> 2022 </span>
         <span class='name'>BULLET</span>
@@ -3289,6 +3471,34 @@
       <span class='rendering-Sans'>&#x2023;</span>
       <span class='rendering-Dots'>&#x2023;</span>
       <span class='rendering-Reference'>&#x2023;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2026;</span>
+        <span class='unicode'> 2026 </span>
+        <span class='name'>HORIZONTAL ELLIPSIS</span>
+      </div>
+      <span class='rendering-Mono'>&#x2026;</span>
+      <span class='rendering-MonoSans'>&#x2026;</span>
+      <span class='rendering-Pixelated'>&#x2026;</span>
+      <span class='rendering-Sans'>&#x2026;</span>
+      <span class='rendering-Dots'>&#x2026;</span>
+      <span class='rendering-Reference'>&#x2026;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2030;</span>
+        <span class='unicode'> 2030 </span>
+        <span class='name'>PER MILLE SIGN</span>
+      </div>
+      <span class='rendering-Mono'>&#x2030;</span>
+      <span class='rendering-MonoSans'>&#x2030;</span>
+      <span class='rendering-Pixelated'>&#x2030;</span>
+      <span class='rendering-Sans'>&#x2030;</span>
+      <span class='rendering-Dots'>&#x2030;</span>
+      <span class='rendering-Reference'>&#x2030;</span>
     </div>
 
     <div class='glyph'>
@@ -3363,6 +3573,118 @@
 
     <div class='glyph'>
       <div class='label'>
+        <span class='reference'>&#x2113;</span>
+        <span class='unicode'> 2113 </span>
+        <span class='name'>SCRIPT SMALL L</span>
+      </div>
+      <span class='rendering-Mono'>&#x2113;</span>
+      <span class='rendering-MonoSans'>&#x2113;</span>
+      <span class='rendering-Pixelated'>&#x2113;</span>
+      <span class='rendering-Sans'>&#x2113;</span>
+      <span class='rendering-Dots'>&#x2113;</span>
+      <span class='rendering-Reference'>&#x2113;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2122;</span>
+        <span class='unicode'> 2122 </span>
+        <span class='name'>TRADE MARK SIGN</span>
+      </div>
+      <span class='rendering-Mono'>&#x2122;</span>
+      <span class='rendering-MonoSans'>&#x2122;</span>
+      <span class='rendering-Pixelated'>&#x2122;</span>
+      <span class='rendering-Sans'>&#x2122;</span>
+      <span class='rendering-Dots'>&#x2122;</span>
+      <span class='rendering-Reference'>&#x2122;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x212E;</span>
+        <span class='unicode'> 212E </span>
+        <span class='name'>ESTIMATED SYMBOL</span>
+      </div>
+      <span class='rendering-Mono'>&#x212E;</span>
+      <span class='rendering-MonoSans'>&#x212E;</span>
+      <span class='rendering-Pixelated'>&#x212E;</span>
+      <span class='rendering-Sans'>&#x212E;</span>
+      <span class='rendering-Dots'>&#x212E;</span>
+      <span class='rendering-Reference'>&#x212E;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2202;</span>
+        <span class='unicode'> 2202 </span>
+        <span class='name'>PARTIAL DIFFERENTIAL</span>
+      </div>
+      <span class='rendering-Mono'>&#x2202;</span>
+      <span class='rendering-MonoSans'>&#x2202;</span>
+      <span class='rendering-Pixelated'>&#x2202;</span>
+      <span class='rendering-Sans'>&#x2202;</span>
+      <span class='rendering-Dots'>&#x2202;</span>
+      <span class='rendering-Reference'>&#x2202;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2206;</span>
+        <span class='unicode'> 2206 </span>
+        <span class='name'>INCREMENT</span>
+      </div>
+      <span class='rendering-Mono'>&#x2206;</span>
+      <span class='rendering-MonoSans'>&#x2206;</span>
+      <span class='rendering-Pixelated'>&#x2206;</span>
+      <span class='rendering-Sans'>&#x2206;</span>
+      <span class='rendering-Dots'>&#x2206;</span>
+      <span class='rendering-Reference'>&#x2206;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x220F;</span>
+        <span class='unicode'> 220F </span>
+        <span class='name'>N-ARY PRODUCT</span>
+      </div>
+      <span class='rendering-Mono'>&#x220F;</span>
+      <span class='rendering-MonoSans'>&#x220F;</span>
+      <span class='rendering-Pixelated'>&#x220F;</span>
+      <span class='rendering-Sans'>&#x220F;</span>
+      <span class='rendering-Dots'>&#x220F;</span>
+      <span class='rendering-Reference'>&#x220F;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2211;</span>
+        <span class='unicode'> 2211 </span>
+        <span class='name'>N-ARY SUMMATION</span>
+      </div>
+      <span class='rendering-Mono'>&#x2211;</span>
+      <span class='rendering-MonoSans'>&#x2211;</span>
+      <span class='rendering-Pixelated'>&#x2211;</span>
+      <span class='rendering-Sans'>&#x2211;</span>
+      <span class='rendering-Dots'>&#x2211;</span>
+      <span class='rendering-Reference'>&#x2211;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2212;</span>
+        <span class='unicode'> 2212 </span>
+        <span class='name'>MINUS SIGN</span>
+      </div>
+      <span class='rendering-Mono'>&#x2212;</span>
+      <span class='rendering-MonoSans'>&#x2212;</span>
+      <span class='rendering-Pixelated'>&#x2212;</span>
+      <span class='rendering-Sans'>&#x2212;</span>
+      <span class='rendering-Dots'>&#x2212;</span>
+      <span class='rendering-Reference'>&#x2212;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
         <span class='reference'>&#x2215;</span>
         <span class='unicode'> 2215 </span>
         <span class='name'>DIVISION SLASH</span>
@@ -3373,6 +3695,118 @@
       <span class='rendering-Sans'>&#x2215;</span>
       <span class='rendering-Dots'>&#x2215;</span>
       <span class='rendering-Reference'>&#x2215;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2219;</span>
+        <span class='unicode'> 2219 </span>
+        <span class='name'>BULLET OPERATOR</span>
+      </div>
+      <span class='rendering-Mono'>&#x2219;</span>
+      <span class='rendering-MonoSans'>&#x2219;</span>
+      <span class='rendering-Pixelated'>&#x2219;</span>
+      <span class='rendering-Sans'>&#x2219;</span>
+      <span class='rendering-Dots'>&#x2219;</span>
+      <span class='rendering-Reference'>&#x2219;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x221A;</span>
+        <span class='unicode'> 221A </span>
+        <span class='name'>SQUARE ROOT</span>
+      </div>
+      <span class='rendering-Mono'>&#x221A;</span>
+      <span class='rendering-MonoSans'>&#x221A;</span>
+      <span class='rendering-Pixelated'>&#x221A;</span>
+      <span class='rendering-Sans'>&#x221A;</span>
+      <span class='rendering-Dots'>&#x221A;</span>
+      <span class='rendering-Reference'>&#x221A;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x221E;</span>
+        <span class='unicode'> 221E </span>
+        <span class='name'>INFINITY</span>
+      </div>
+      <span class='rendering-Mono'>&#x221E;</span>
+      <span class='rendering-MonoSans'>&#x221E;</span>
+      <span class='rendering-Pixelated'>&#x221E;</span>
+      <span class='rendering-Sans'>&#x221E;</span>
+      <span class='rendering-Dots'>&#x221E;</span>
+      <span class='rendering-Reference'>&#x221E;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x222B;</span>
+        <span class='unicode'> 222B </span>
+        <span class='name'>INTEGRAL</span>
+      </div>
+      <span class='rendering-Mono'>&#x222B;</span>
+      <span class='rendering-MonoSans'>&#x222B;</span>
+      <span class='rendering-Pixelated'>&#x222B;</span>
+      <span class='rendering-Sans'>&#x222B;</span>
+      <span class='rendering-Dots'>&#x222B;</span>
+      <span class='rendering-Reference'>&#x222B;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2248;</span>
+        <span class='unicode'> 2248 </span>
+        <span class='name'>ALMOST EQUAL TO</span>
+      </div>
+      <span class='rendering-Mono'>&#x2248;</span>
+      <span class='rendering-MonoSans'>&#x2248;</span>
+      <span class='rendering-Pixelated'>&#x2248;</span>
+      <span class='rendering-Sans'>&#x2248;</span>
+      <span class='rendering-Dots'>&#x2248;</span>
+      <span class='rendering-Reference'>&#x2248;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2260;</span>
+        <span class='unicode'> 2260 </span>
+        <span class='name'>NOT EQUAL TO</span>
+      </div>
+      <span class='rendering-Mono'>&#x2260;</span>
+      <span class='rendering-MonoSans'>&#x2260;</span>
+      <span class='rendering-Pixelated'>&#x2260;</span>
+      <span class='rendering-Sans'>&#x2260;</span>
+      <span class='rendering-Dots'>&#x2260;</span>
+      <span class='rendering-Reference'>&#x2260;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2264;</span>
+        <span class='unicode'> 2264 </span>
+        <span class='name'>LESS-THAN OR EQUAL TO</span>
+      </div>
+      <span class='rendering-Mono'>&#x2264;</span>
+      <span class='rendering-MonoSans'>&#x2264;</span>
+      <span class='rendering-Pixelated'>&#x2264;</span>
+      <span class='rendering-Sans'>&#x2264;</span>
+      <span class='rendering-Dots'>&#x2264;</span>
+      <span class='rendering-Reference'>&#x2264;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2265;</span>
+        <span class='unicode'> 2265 </span>
+        <span class='name'>GREATER-THAN OR EQUAL TO</span>
+      </div>
+      <span class='rendering-Mono'>&#x2265;</span>
+      <span class='rendering-MonoSans'>&#x2265;</span>
+      <span class='rendering-Pixelated'>&#x2265;</span>
+      <span class='rendering-Sans'>&#x2265;</span>
+      <span class='rendering-Dots'>&#x2265;</span>
+      <span class='rendering-Reference'>&#x2265;</span>
     </div>
 
     <div class='glyph'>
@@ -3909,6 +4343,20 @@
 
     <div class='glyph'>
       <div class='label'>
+        <span class='reference'>&#x25CA;</span>
+        <span class='unicode'> 25CA </span>
+        <span class='name'>LOZENGE</span>
+      </div>
+      <span class='rendering-Mono'>&#x25CA;</span>
+      <span class='rendering-MonoSans'>&#x25CA;</span>
+      <span class='rendering-Pixelated'>&#x25CA;</span>
+      <span class='rendering-Sans'>&#x25CA;</span>
+      <span class='rendering-Dots'>&#x25CA;</span>
+      <span class='rendering-Reference'>&#x25CA;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
         <span class='reference'>&#x25E2;</span>
         <span class='unicode'> 25E2 </span>
         <span class='name'>BLACK LOWER RIGHT TRIANGLE</span>
@@ -3989,5 +4437,33 @@
       <span class='rendering-Sans'>&#x2620;</span>
       <span class='rendering-Dots'>&#x2620;</span>
       <span class='rendering-Reference'>&#x2620;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#xFB01;</span>
+        <span class='unicode'> FB01 </span>
+        <span class='name'>LATIN SMALL LIGATURE FI</span>
+      </div>
+      <span class='rendering-Mono'>&#xFB01;</span>
+      <span class='rendering-MonoSans'>&#xFB01;</span>
+      <span class='rendering-Pixelated'>&#xFB01;</span>
+      <span class='rendering-Sans'>&#xFB01;</span>
+      <span class='rendering-Dots'>&#xFB01;</span>
+      <span class='rendering-Reference'>&#xFB01;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#xFB02;</span>
+        <span class='unicode'> FB02 </span>
+        <span class='name'>LATIN SMALL LIGATURE FL</span>
+      </div>
+      <span class='rendering-Mono'>&#xFB02;</span>
+      <span class='rendering-MonoSans'>&#xFB02;</span>
+      <span class='rendering-Pixelated'>&#xFB02;</span>
+      <span class='rendering-Sans'>&#xFB02;</span>
+      <span class='rendering-Dots'>&#xFB02;</span>
+      <span class='rendering-Reference'>&#xFB02;</span>
     </div>
 </div>
