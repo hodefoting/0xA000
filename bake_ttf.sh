@@ -1,8 +1,5 @@
 #!/bin/sh
-family=0xA000
-variant=$1
 
-input=$variant.asc
-rm -rf $family-$variant.ufo
-./0xA000 $input
-./fontconvert $family-$variant.ufo -t
+rm -rf $1.ufo
+./0xA000 $1.asc
+./fontconvert $1.ufo -t

@@ -1,15 +1,15 @@
     <h1><a class='selected' href='index.html'>0xA000</a></h1>
-    <div class='faces' style="font-family:'0xA000-Sans'">
+    <div class='faces' style="font-family:'0xA000-Regular'">
       <a href='Pixelated.html'
         style="font-family:'0xA000-Pixelated'">Pixelated</a>
       <a href='Sans.html'
-        style="font-family:'0xA000-Sans'">Sans</a>
+        style="font-family:'0xA000-Regular'">Sans</a>
       <a href='Mono.html'
-        style="font-family:'0xA000-Mono'">Mono</a>
+        style="font-family:'0xA000-Pixelated-Mono'">Mono</a>
       <a href='MonoSans.html'
-        style="font-family:'0xA000-MonoSans'">MonoSans</a>
+        style="font-family:'0xA000-Mono'">MonoSans</a>
       <a href='Tech.html'
-        style="font-family:'0xA000-Sans'">Tech</a>
+        style="font-family:'0xA000-Regular'">Tech</a>
     </div>
 
     <div contenteditable='true' style='padding:0em;'>
@@ -26,9 +26,9 @@
       <pre>&lt;<span style='color:#949'>style</span> type=<span style='color:#339'>'text/css'</span>&gt;
                           <span style='color:gray'>/* <span
 style='color:red'>NB:</span> this example text is editable! */</span>
-  <span style='color:#949'>@font-face</span> {font-family:<span style='color:#339'>'0xA000-Sans'</span>; src: <span style='color:#339'>url(</span>'<a
+  <span style='color:#949'>@font-face</span> {font-family:<span style='color:#339'>'0xA000-Regular'</span>; src: <span style='color:#339'>url(</span>'<a
   href='0xA000-Sans.ttf'>0xA000-Sans.ttf</a>'<span style='color:#339'>)</span>;}
-  <span class='monosans'><span style='color:#949'>body</span>       {font-family:<span style='color:#339'>'0xA000-Sans'</span>; font-size: <span style='color:#339'>15px</span>;}
+  <span class='monosans'><span style='color:#949'>body</span>       {font-family:<span style='color:#339'>'0xA000-Regular'</span>; font-size: <span style='color:#339'>15px</span>;}
 &lt;/<span style='color:#949'>style</span>&gt;</span></pre>
     </div>
 
@@ -37,11 +37,11 @@ style='color:red'>NB:</span> this example text is editable! */</span>
         style="font-family:'0xA000-Pixelated'">0xA000-Pixelated.ttf</a>
       <br/>
       <a href='0xA000-Mono.ttf'
-        style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
+        style="font-family:'0xA000-Pixelated-Mono'">0xA000-Mono.ttf</a>
       <br/>
       <a href='0xA000-Sans.ttf'
-        style="font-family:'0xA000-Sans'">0xA000-Sans.ttf</a>
+        style="font-family:'0xA000-Regular'">0xA000-Sans.ttf</a>
       <br/>
       <a href='0xA000-MonoSans.ttf'
-        style="font-family:'0xA000-MonoSans'">0xA000-MonoSans.ttf</a>
+        style="font-family:'0xA000-Mono'">0xA000-MonoSans.ttf</a>
     </div>

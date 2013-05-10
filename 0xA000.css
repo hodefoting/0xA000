@@ -1,11 +1,12 @@
-@font-face {font-family:'0xA000-Sans';     src: url('0xA000-Sans.ttf');}
-@font-face {font-family:'0xA000-Mono';     src: url('0xA000-Mono.ttf');}
-@font-face {font-family:'0xA000-MonoSans'; src: url('0xA000-MonoSans.ttf');}
-@font-face {font-family:'0xA000-Pixelated';src: url('0xA000-Pixelated.ttf');}
-@font-face {font-family:'0xA000-Dots';     src: url('0xA000-Dots.ttf');}
-body       {font-family: '0xA000-Sans'; font-size: 15px;
+@font-face {font-family:'0xA000-Regular';     src: url('0xA000-Regular.ttf');}
+@font-face {font-family:'0xA000-Mono'; src: url('0xA000-Mono.ttf');}
+@font-face {font-family:'0xA000-Pixelated-Mono';     src: url('0xA000-Pixelated-Mono.ttf');}
+@font-face {font-family:'0xA000-Pixelated';src: url('0xA000-Pixelated-Regular.ttf');}
+@font-face {font-family:'0xA000-Dots-Regular';     src: url('0xA000-Dots-Regular.ttf');}
+@font-face {font-family:'0xA000-Dots-Mono';     src: url('0xA000-Dots-Mono.ttf');}
+body       {font-family: '0xA000-Regular'; font-size: 15px;
             background-color: #eeeeee;}
-tt, pre    {font-family: '0xA000-MonoSans'; }
+tt, pre    {font-family: '0xA000-Mono'; }
 small      {font-size  :  5px;line-height:100%;}
 h1         {font-size  :  3em; font-weight: normal; margin: 0.5em 0 0.25em}
 h2         {font-size  :  2em; font-weight: normal; margin: 1.0em 0 0 0}
@@ -24,15 +25,15 @@ a { color: #182; text-decoration:none}
 a:hover    { text-decoration: underline }
 .selected, .faces>a.selected  { color: #000;
                               text-decoration: underline;}
-.sans      {font-family: '0xA000-Sans';}
-.monosans  {font-family: '0xA000-MonoSans';}
+.sans      {font-family: '0xA000-Regular';}
+.monosans  {font-family: '0xA000-Mono';}
 .copy      { text-align: right;}
 .content   {margin-left: 200px;margin-right:180px;margin-top: 1em;
             min-width: 20em; max-width: 45em;
            }
 
 div.glyph {
-  font-family: '0xA000-Sans';
+  font-family: '0xA000-Regular';
   display: block;
   margin-left: 0.2em;
   margin-right: 0.2em;
@@ -58,11 +59,11 @@ div.glyph {
  }
 
 .rendering-Pixelated,
+.rendering-Pixelated-Mono,
 .rendering-Mono,
-.rendering-Monosans,
 .rendering-Reference,
-.rendering-Dots,
-.rendering-Sans {
+.rendering-Dots-Regular,
+.rendering-Regular {
    font-size: 50px;
    color: black;
    margin-top: 0.25em;
@@ -78,17 +79,17 @@ div.glyph {
  .rendering-Pixelated {
    font-family: '0xA000-Pixelated';
  }
+ .rendering-Pixelated-Mono {
+   font-family: '0xA000-Pixelated-Mono';
+ }
  .rendering-Mono {
    font-family: '0xA000-Mono';
  }
- .rendering-Monosans {
-   font-family: '0xA000-MonoSans';
+ .rendering-Regular {
+   font-family: '0xA000-Regular';
  }
- .rendering-Sans {
-   font-family: '0xA000-Sans';
- }
- .rendering-Dots {
-   font-family: '0xA000-Dots';
+ .rendering-Dots-Regular {
+   font-family: '0xA000-Dots-Regular';
  }
 
 div.glyphs {

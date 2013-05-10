@@ -1,20 +1,20 @@
 BIN_PKGMODULES=glib-2.0
 
 CFLAGS += -O2 -g
-all: 0xA000-Mono.ttf      \
-		 0xA000-Sans.ttf      \
-	   0xA000-Pixelated.ttf \
-	   0xA000-Dots.ttf \
-		 0xA000-MonoDots.ttf  \
-		 0xA000-MonoSans.ttf  \
-		 0xA000-MonoSansA.ttf \
+all: 0xA000-Regular.ttf    \
+		 0xA000-Mono.ttf       \
+	   0xA000-Pixelated-Regular.ttf \
+	   0xA000-Pixelated-Mono.ttf \
+	   0xA000-Dots-Regular.ttf \
+		 0xA000-Dots-Mono.ttf \
+		 0xA000-Edit-Mono.ttf \
 		 \
 		 Contribute.html      \
 		 Glyphs.html          \
 		 Tech.html            \
 		 index.html
 	
-0xA000-%.ttf: %.asc 0xA000 *.asc
+%.ttf: %.asc 0xA000 *.asc
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
 %.html: %.content head.html
