@@ -71,8 +71,9 @@ div.glyph {
 .rendering-Reference,
 .rendering-Dots-Regular,
 .rendering-Dots-Mono,
+.rendering-Boxes-Regular,
 .rendering-Regular {
-   font-size: 50px;
+   font-size: 40px;
    color: black;
    margin-top: 0.25em;
    margin-left: 0.5em;
@@ -98,6 +99,9 @@ div.glyph {
  }
  .rendering-Dots-Regular {
    font-family: '0xA000-Dots-Regular';
+ }
+ .rendering-Boxes-Regular {
+   font-family: '0xA000-Boxes-Regular';
  }
  .rendering-Dots-Mono {
    font-family: '0xA000-Dots-Mono';

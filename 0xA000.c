@@ -251,7 +251,7 @@ void write_glyph (const char *name, int advance,
   g_string_append_printf (str, "  <advance width=\"%d\"/>\n", advance);
   if (unicode>= 0)
     g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", unicode);
-  g_string_append_printf (str, "  <outline>%s</outline>\n", inner_outline);
+  g_string_append_printf (str, "  <outline>\n%s</outline>\n", inner_outline);
   g_string_append_printf (str, "</glyph>\n");
   sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
   g_file_set_contents (buf, str->str, str->len, NULL);
