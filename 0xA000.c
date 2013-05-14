@@ -183,6 +183,11 @@ void gen_ref_glyph (Mapping *mapping, int xw, int xh)
   g_string_free (str, TRUE);
 }
 
+static void glyph_add_component (GString *str, const char *name, int x, int y)
+{
+  g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", name, x * SCALE, y * SCALE); 
+}
+
 void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 {
   GString *str;
@@ -216,16 +221,16 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
           {
             if (y <y1 && fb[stride *(y+1)+x] == C_SOLID)
               {
-          g_string_append_printf (str, "  <component base=\"solidv\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
-          if (x <x1 && fb[stride *(y)+(x+1)] == C_SOLID)
-            g_string_append_printf (str, "  <component base=\"solidh\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+                glyph_add_component (str, "solidv", u, v);
+                if (x <x1 && fb[stride *(y)+(x+1)] == C_SOLID)
+                  glyph_add_component (str, "solidh", u, v);
               }
             else
               {
-          if (x <x1 && fb[stride *(y)+(x+1)] == C_SOLID)
-            g_string_append_printf (str, "  <component base=\"solidh\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
-          else
-            g_string_append_printf (str, "  <component base=\"solid\" xOffset=\"%d\" yOffset=\"%d\"/>\n", u * SCALE, v * SCALE); 
+                if (x <x1 && fb[stride *(y)+(x+1)] == C_SOLID)
+                  glyph_add_component (str, "solidh", u, v);
+                else
+                  glyph_add_component (str, "solid", u, v);
               }
           }
       }
@@ -238,14 +243,13 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
         int v = y1 - y -1 + y_shift;
         const char *component = NULL;
 
-        component = mapping2str (*pix);
-        if (overlap_solid)
-        {
-          if (*pix == C_SOLID) component = NULL;
-        }
+        if (overlap_solid && *pix == C_SOLID)
+          component = NULL;
+        else
+          component = mapping2str (*pix);
 
         if (component)
-          g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", component, u * SCALE, v * SCALE);
+          glyph_add_component (str, component, u, v);
       }
 
   write_glyph (name, (x1-x0+1) * SCALE, uglyphs[glyph_no], str->str);
@@ -259,7 +263,6 @@ void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
 
   g_string_free (str, TRUE);
 }
-
 
 void gen_fontinfo (int glyph_height);
 
