@@ -8,6 +8,7 @@ int SCALE=512;
 int overlap_solid=1;
 static int   author_mode = 0;
 static int   y_shift = 0;
+static int   inline_components = 0;
 
 /* we expect to find these, in this order at the beginning of the
  * palette
@@ -112,95 +113,7 @@ void add_subpath (void)
   g_string_append_printf (component_str, "</contour><contour>");
 }
 
-void add_gray_block_gray (float fill_ratio, float paramA, float paramB)
-{
-  int step = 7;
-  fill_ratio = 1.0 - fill_ratio;
-  int mod = step + step * 3.0*fill_ratio;
-  float scale = SCALE;
-  int i;
-  int no = 0;
-#define GO 1
-#define NSCALE  (SCALE + GO * 2)
-  int again = 0;
-  for (i = 0; i < NSCALE * 2; i++)
-  {
-    no ++;
-    if (no % mod == 0)
-    {
-        if (again)
-          add_subpath ();
-        again = 1;
-        if (i < NSCALE)
-          {
-            add_point ('L', (i - GO)/scale,  (0 - GO)/scale);
-            add_point ('L', (0 - GO)/scale,  (i - GO)/scale);
-          }
-        else
-          {
-            add_point ('L', (NSCALE - GO)/scale, (i - NSCALE - GO)/scale);
-            add_point ('L', (i - NSCALE - GO)/scale, (NSCALE - GO)/scale);
-          }
-
-        if (i+step < NSCALE)
-          {
-            add_point ('L', (0 - GO)/scale,   (i+step - GO)/scale);
-            add_point ('L', (i+step - GO)/scale, (0 - GO)/scale);
-          }
-        else
-          {
-            add_point ('L', (i+step - NSCALE - GO)/scale, (NSCALE - GO)/scale);
-            add_point ('L', (NSCALE - GO)/scale, (i+step - NSCALE - GO)/scale);
-          }
-    }
-  }
-#undef GO
-#undef NSCALE
-}
-
-void add_scaled_point (int type, float x, float y, float scale)
-{
-  x -= 0.5;
-  y -= 0.5;
-  scale *= 1.5;
-  x *= scale;
-  y *= scale;
-
-  x += 0.5;
-  y += 0.5;
-
-  add_point (type,
-      x, 
-      y);
-}
-
-void add_gray_block_circle (float fill_ratio, float paramA, float paramB)
-{
-  float x, y;
-  add_scaled_point ('c', 0.11, 0.29, fill_ratio);
-  add_scaled_point ('c', 0.29, 0.11, fill_ratio);
-  add_scaled_point ('C', 0.50, 0.11, fill_ratio);
-  add_scaled_point ('c', 0.71, 0.11, fill_ratio);
-  add_scaled_point ('c', 0.89, 0.29, fill_ratio);
-  add_scaled_point ('C', 0.89, 0.50, fill_ratio);
-  add_scaled_point ('c', 0.89, 0.71, fill_ratio);
-  add_scaled_point ('c', 0.71, 0.89, fill_ratio);
-  add_scaled_point ('C', 0.50, 0.89, fill_ratio);
-  add_scaled_point ('c', 0.29, 0.89, fill_ratio);
-  add_scaled_point ('c', 0.11, 0.71, fill_ratio);
-  add_scaled_point ('C', 0.11, 0.50, fill_ratio);
-
-}
-
-void add_gray_block (float fill_ratio, float paramA, float paramB)
-{
-  int type = paramA;
-  switch (type)
-    {
-      case 1: add_gray_block_gray (fill_ratio, paramA, paramB);return;
-      case 2: add_gray_block_circle (fill_ratio, paramA, paramB);return;
-    }
-}
+void add_gray_block (float fill_ratio, float paramA, float paramB);
 
 char *mem_read (char *start,
                 char *linebuf,
@@ -404,11 +317,12 @@ void import_includes (char **asc_source)
         else if (g_str_has_prefix (linebuf, prefix)) \
           var = g_strdup (&linebuf[strlen(prefix)]);
 
-        PARSE_INT (y_shift,         "y_shift ")
-        PARSE_INT (overlap_solid,   "overlap_solid ")
-        PARSE_INT (SCALE,           "scale")
-        PARSE_STRING (font_variant, "variant ")
-        PARSE_STRING (font_name,    "fontname ")
+        PARSE_INT (inline_components, "inline_components ")
+        PARSE_INT (y_shift,           "y_shift ")
+        PARSE_INT (overlap_solid,     "overlap_solid ")
+        PARSE_INT (SCALE,             "scale")
+        PARSE_STRING (font_variant,   "variant ")
+        PARSE_STRING (font_name,      "fontname ")
 
 #undef PARSE_INT
 #undef PARSE_STRING
@@ -709,4 +623,95 @@ char *mem_read (char *start,
          }
       }
   return NULL;
+}
+
+
+void add_gray_block_gray (float fill_ratio, float paramA, float paramB)
+{
+  int step = 7;
+  fill_ratio = 1.0 - fill_ratio;
+  int mod = step + step * 3.0*fill_ratio;
+  float scale = SCALE;
+  int i;
+  int no = 0;
+#define GO 1
+#define NSCALE  (SCALE + GO * 2)
+  int again = 0;
+  for (i = 0; i < NSCALE * 2; i++)
+  {
+    no ++;
+    if (no % mod == 0)
+    {
+        if (again)
+          add_subpath ();
+        again = 1;
+        if (i < NSCALE)
+          {
+            add_point ('L', (i - GO)/scale,  (0 - GO)/scale);
+            add_point ('L', (0 - GO)/scale,  (i - GO)/scale);
+          }
+        else
+          {
+            add_point ('L', (NSCALE - GO)/scale, (i - NSCALE - GO)/scale);
+            add_point ('L', (i - NSCALE - GO)/scale, (NSCALE - GO)/scale);
+          }
+
+        if (i+step < NSCALE)
+          {
+            add_point ('L', (0 - GO)/scale,   (i+step - GO)/scale);
+            add_point ('L', (i+step - GO)/scale, (0 - GO)/scale);
+          }
+        else
+          {
+            add_point ('L', (i+step - NSCALE - GO)/scale, (NSCALE - GO)/scale);
+            add_point ('L', (NSCALE - GO)/scale, (i+step - NSCALE - GO)/scale);
+          }
+    }
+  }
+#undef GO
+#undef NSCALE
+}
+
+void add_scaled_point (int type, float x, float y, float scale)
+{
+  x -= 0.5;
+  y -= 0.5;
+  scale *= 1.5;
+  x *= scale;
+  y *= scale;
+
+  x += 0.5;
+  y += 0.5;
+
+  add_point (type,
+      x, 
+      y);
+}
+
+void add_gray_block_circle (float fill_ratio, float paramA, float paramB)
+{
+  float x, y;
+  add_scaled_point ('c', 0.11, 0.29, fill_ratio);
+  add_scaled_point ('c', 0.29, 0.11, fill_ratio);
+  add_scaled_point ('C', 0.50, 0.11, fill_ratio);
+  add_scaled_point ('c', 0.71, 0.11, fill_ratio);
+  add_scaled_point ('c', 0.89, 0.29, fill_ratio);
+  add_scaled_point ('C', 0.89, 0.50, fill_ratio);
+  add_scaled_point ('c', 0.89, 0.71, fill_ratio);
+  add_scaled_point ('c', 0.71, 0.89, fill_ratio);
+  add_scaled_point ('C', 0.50, 0.89, fill_ratio);
+  add_scaled_point ('c', 0.29, 0.89, fill_ratio);
+  add_scaled_point ('c', 0.11, 0.71, fill_ratio);
+  add_scaled_point ('C', 0.11, 0.50, fill_ratio);
+
+}
+
+void add_gray_block (float fill_ratio, float paramA, float paramB)
+{
+  int type = paramA;
+  switch (type)
+    {
+      case 1: add_gray_block_gray (fill_ratio, paramA, paramB);return;
+      case 2: add_gray_block_circle (fill_ratio, paramA, paramB);return;
+    }
 }
