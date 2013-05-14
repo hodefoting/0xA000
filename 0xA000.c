@@ -98,7 +98,7 @@ void add_point (char type, float x, float y)
       break;
       case 'c':
         g_string_append_printf (component_str,
-            "    <point x='%d' y='%d'/>\n",
+            "    <point type='offcurve' x='%d' y='%d'/>\n",
             (int)(SCALE * x), (int)(SCALE * y));
       break;
       case 'C':
@@ -173,17 +173,43 @@ void write_glyph (const char *name, int advance,
   g_string_free (str, TRUE);
 }
 
-char *load_component_outline (const char *name)
+char *load_component_outline (const char *name, int xoffset, int yoffset)
 {
+  GString *str = g_string_new ("");
   char *data = NULL;
   char buf[1024];
+  int outline_count = 0;
+  int len;
 
   sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
   g_file_get_contents (buf, &data, NULL, NULL);
 
-  fprintf (stderr, data);
+  char *p = data;
 
-  return data;
+  do {
+    p = mem_read (p, buf, &len);
+    if (p)
+      {
+        if (strstr (buf, "outline"))
+          outline_count++;
+        else if (outline_count == 1)
+          {
+            if (strstr (buf, "contour"))
+              g_string_append_printf (str, "%s\n", buf);
+            else if (strstr (buf, "point"))
+              {
+                char type[64];
+                int x;
+                int y;
+                sscanf (buf, "    <point type='%s x='%d' y='%d'/>", &type, &x, &y);
+                type[strlen(type)-1]=0;
+                g_string_append_printf (str, "    <point type='%s' x='%d' y='%d'/>\n",  type, x + xoffset * SCALE, y + yoffset * SCALE);
+              }
+          }
+      }
+  } while (p);
+
+  return g_string_free (str, FALSE);
 }
 
 void gen_ref_glyph (Mapping *mapping, int xw, int xh)
@@ -204,9 +230,10 @@ static void glyph_add_component (GString *str, const char *name, int x, int y)
     return;
   if (inline_components)
     {
-      char *component = load_component_outline (name);
+      char *component = load_component_outline (name, x, y);
       g_assert (component);
-      free (component);
+      g_string_append_printf (str, "%s", component);
+      g_free (component);
     }
   else
     g_string_append_printf (str,
