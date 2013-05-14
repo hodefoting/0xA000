@@ -112,7 +112,7 @@ void add_point (char type, float x, float y)
 
 void add_subpath (void)
 {
-  g_string_append_printf (component_str, "</contour><contour>");
+  g_string_append_printf (component_str, "</contour>\n<contour>\n");
 }
 
 void add_gray_block (float fill_ratio, float paramA, float paramB);
