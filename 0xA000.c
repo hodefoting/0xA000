@@ -5,10 +5,12 @@
 #include <string.h>
 
 int SCALE=512;
-int overlap_solid=1;
-static int   author_mode = 0;
-static int   y_shift = 0;
-static int   inline_components = 0;
+static int overlap_solid=1;
+static int author_mode = 0;
+static int y_shift = 0;
+static int inline_components = 0;
+
+static int got_blank = -1; /* if this is non 0 we have a blank glyph! */
 
 /* we expect to find these, in this order at the beginning of the
  * palette
@@ -171,6 +173,19 @@ void write_glyph (const char *name, int advance,
   g_string_free (str, TRUE);
 }
 
+char *load_component_outline (const char *name)
+{
+  char *data = NULL;
+  char buf[1024];
+
+  sprintf (buf, "%s/glyphs/%s.glif", ufo_path, name);
+  g_file_get_contents (buf, &data, NULL, NULL);
+
+  fprintf (stderr, data);
+
+  return data;
+}
+
 void gen_ref_glyph (Mapping *mapping, int xw, int xh)
 {
   GString *str;
@@ -185,7 +200,18 @@ void gen_ref_glyph (Mapping *mapping, int xw, int xh)
 
 static void glyph_add_component (GString *str, const char *name, int x, int y)
 {
-  g_string_append_printf (str, "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n", name, x * SCALE, y * SCALE); 
+  if (!strcmp (name, "blank") && got_blank == 0)
+    return;
+  if (inline_components)
+    {
+      char *component = load_component_outline (name);
+      g_assert (component);
+      free (component);
+    }
+  else
+    g_string_append_printf (str,
+        "  <component base=\"%s\" xOffset=\"%d\" yOffset=\"%d\"/>\n",
+        name, x * SCALE, y * SCALE); 
 }
 
 void gen_glyph (int glyph_no, int x0, int y0, int x1, int y1)
@@ -345,6 +371,8 @@ void write_component (const char *name, const char *curve_xml)
   write_glyph (name, SCALE, -1, curve_xml);
   g_string_append_printf (contents_plist, "<key>%s</key><string>%s.glif</string>\n", name, name);
   catalog_add (name);
+  if (!strcmp (name, "blank"))
+    got_blank ++;
 }
 
 void gen_components ()
