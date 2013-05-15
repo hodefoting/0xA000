@@ -120,8 +120,13 @@ of the components themselves is generated. Using such a font in a terminal
 makes any terminal text editor a WYSIWYG tool.
 </p>
 
+<h2>Sources</h2>
+<p>If you find the above intriguing and would like to have a go at using it
+yourself.. the code for the tools generating these fonts is <a
+  href='http://github.com/hodefoting/0xA000/'>hosted at github</a>.
+</p>
+
 <h2 style='clear:both;'>Todo</h2>
 <p>Some hinting would be good, for To Ts T. and LT</p>
-<p>Make component-inlining an option</p>
 
 </ul>

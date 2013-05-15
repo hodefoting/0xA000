@@ -24,6 +24,7 @@ all: 0xA000-Regular.ttf    \
 	cat head.html neck.html $< end.html > $@
 
 # this also relies on all ufo dirs existing.
+# it has to be manually invoked
 Glyphs.content: Glyphs.content.sh UnicodeData.txt
 	./$< > $@
 

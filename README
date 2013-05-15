@@ -1,0 +1,18 @@
+0xA000 is a pixel/tile/component based font generator, as well as a
+font-family based on this. The tool itself is licensed under the ISC license;
+while the font it ships with is licensed under OFL.
+
+To see the generated fonts in action take a look at
+http://pippin.gimp.org/0xA000/
+
+Dependencies:
+  glib
+  font-forge with python bindings
+  make
+
+Just running "make" in the checkout of 0xA000 should generate all the fonts.
+
+I consider the 0xA000 sources themselves to be a side-effect of the actual
+font-design; and as such doesn't warrant very extensive documentation.
+See index.html and Tech.html for more information about the fonts themselves
+as well as how the format itself is used.
