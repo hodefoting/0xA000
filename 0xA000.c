@@ -628,6 +628,7 @@ void gen_fontinfo (int glyph_height)
   g_string_append_printf (str, "	<string>Copyright (c) 2013 OEyvind Kolaas (pippin@gimp.org)</string>\n");
   g_string_append_printf (str, "	<key>unitsPerEm</key>\n");
   g_string_append_printf (str, "	<integer>%i</integer>\n", SCALE * glyph_height);
+#if 0
   g_string_append_printf (str, "	  <key>openTypeHheaLineGap</key> <integer>0</integer>\n");
   g_string_append_printf (str, "	  <key>openTypeOS2TypoLineGap</key> <integer>0</integer>\n");
 
@@ -638,6 +639,7 @@ void gen_fontinfo (int glyph_height)
   g_string_append_printf (str, "	  <key>openTypeHheaAscender</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
   g_string_append_printf (str, "	  <key>openTypeOS2WinAscent</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
   g_string_append_printf (str, "	  <key>ascender</key> <integer>%i</integer>\n", SCALE * (glyph_height+1));
+#endif
 
 
   g_string_append_printf (str, "	<key>openTypeNameLicenseURL</key>\n");
