@@ -12,6 +12,7 @@ all: 0xA000-Regular.ttf    \
 	   0xA000-Monochrome-Regular.ttf \
 	   0xA000-Monochrome-Mono.ttf \
 		 0xA000-Edit-Mono.ttf \
+		 Beta-Regular.ttf \
 		 \
 		 Glyphs.html          \
 		 Tech.html            \
