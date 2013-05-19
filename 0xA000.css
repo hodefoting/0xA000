@@ -120,4 +120,6 @@ span.cmt {color: gray;}
     outline:none;
 }
 
-
+p {
+  letter-spacing: -0.15ex;
+}
