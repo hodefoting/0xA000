@@ -234,8 +234,8 @@ void gen_ref_glyph (Mapping *mapping, int xw, int xh)
   char name[8];
   sprintf (name, "%04X", mapping->ascii);
   str = g_string_new ("");
-  g_string_append_printf (str, "<component base=\"%s\" xOffset=\"0\" yOffset=\"0\" xScale=\"%d\" yScale=\"%d\"/>\n",
-       mapping->name, xw, xh);
+  g_string_append_printf (str, "<component base=\"%s\" xOffset=\"0\" yOffset=\"%d\" xScale=\"%d\" yScale=\"%d\"/>\n",
+       mapping->name, -SCALE, xw, xh);
   write_glyph (name, (xw) * SCALE, mapping->ascii, str->str);
   g_string_free (str, TRUE);
 }
@@ -601,7 +601,7 @@ int main (int argc, char **argv)
       int i;
       for (i = 0; map[i].ascii; i++)
         {
-          gen_ref_glyph (&map[i], maxy-1, maxy-1);
+          gen_ref_glyph (&map[i], maxy-2, maxy+1);
         }
     }
   }
