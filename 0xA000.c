@@ -42,7 +42,7 @@ typedef struct Mapping {
   gchar   ascii;
 } Mapping;
 
-static Mapping catalog[256]={{0,},};
+static Mapping catalog[512]={{0,},};
 static int     n_catalog = 0;
 
 const char *mapping2str (int type)
