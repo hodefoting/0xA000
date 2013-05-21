@@ -24,6 +24,7 @@ int SCALE=512;
 static int overlap_solid=1;
 static int author_mode = 0;
 static int y_shift = 0;
+static int rbearing_reduce = 0;
 static int inline_components = 0;
 
 static int got_blank = -1; /* if this is non 0 we have a blank glyph! */
@@ -179,7 +180,7 @@ void write_glyph (const char *name, int advance,
 
   g_string_append_printf (str, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   g_string_append_printf (str, "<glyph name=\"%s\" format=\"1\">\n", name);
-  g_string_append_printf (str, "  <advance width=\"%d\"/>\n", advance);
+  g_string_append_printf (str, "  <advance width=\"%d\"/>\n", advance - (rbearing_reduce?((int)(SCALE / rbearing_reduce)):0));
   if (unicode>= 0)
     g_string_append_printf (str, "  <unicode hex=\"%04X\"/>\n", unicode);
   g_string_append_printf (str, "  <outline>\n%s</outline>\n", inner_outline);
@@ -391,6 +392,7 @@ void import_includes (char **asc_source)
 
         PARSE_INT (inline_components, "inline_components ")
         PARSE_INT (y_shift,           "y_shift ")
+        PARSE_INT (rbearing_reduce,           "rbearing_reduce ")
         PARSE_INT (overlap_solid,     "overlap_solid ")
         PARSE_INT (SCALE,             "scale")
         PARSE_STRING (font_variant,   "variant ")
