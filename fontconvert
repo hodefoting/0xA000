@@ -61,8 +61,8 @@ filename = os.path.basename(fontname)
 basename, ext = os.path.splitext(filename)
 
 font.selection.all();
-font.removeOverlap();
-font.simplify();
+#font.removeOverlap();
+#font.simplify();
 
 
 print d
