@@ -11,7 +11,7 @@
         <span class='sans'>when lowercase is rendered 3 pixels high.</span>
       </p>
 
-      <small style='font-family: 0xA000-Regular; font-size: 7px'>The regular
+      <small><span class='sans'>The regular
         sans-serif font inspired by the pixel-grid renders well at it's target
         size, as well as sizes at least 2x larger, when rendered at the native
         size it is really at the limits of legibility; however it manages to
@@ -20,7 +20,7 @@
         between glyph shapes are not possible at this scale; reading also
         relies on word-shape recognition to work. Oh; and,. most of the
         text on this page is within a contenteditable DIV, making it possible
-        for you to experiment with your own text.
+        for you to experiment with your own text.</span>
       </small>
 
       <pre>&lt;<span style='color:#949'>style</span> type=<span style='color:#339'>'text/css'</span>&gt;
