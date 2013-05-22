@@ -2,44 +2,44 @@
 
     <h1>0xA000</h1>
 
-      <h2><span class='sans'>Hi-fidelity</span> low-PPI <span
-      class='monochrome'>simulator</span></h2>
+      <h2><span
+      class='monochrome'>Pixel inspired font-family</span></h2>
       <p>
       <span>The <span class='sans'>shapes</span> for the glyphs in
         this font have been designed within <span class='sans'>the</span>
         constraints of legibility
-        <span class='sans'>when <b>lowercase</b> is rendered 3 pixels high.</span>
+        <span class='sans'>when lowercase is rendered 3 pixels high.</span>
       </p>
 
-      <small><span class='sans'>The regular
-        sans-serif font inspired by the pixel-grid renders well at it's target
-        size, as well as sizes at least 2x larger, when rendered at the native
-        size it is really at the limits of legibility; however it manages to
-        do so while still looking quite decent. The linewidths used here are
-        horrible with regards to readability, since full differentiation
-        between glyph shapes are not possible at this scale; reading also
-        relies on word-shape recognition to work. Oh; and,. most of the
-        text on this page is within a contenteditable DIV, making it possible
-        for you to experiment with your own text.</span>
-      </small>
+      <div style='font-size:49px;padding:0;margin:0'>
+      <span style="font-family:'0xA000-Regular'">Regular</span>
+      <span
+        style="font-family:'0xA000-Bold'">Bold</span>
+      <span
+        style="font-family:'0xA000-Mono'">Mono</span>
 
-      <pre>&lt;<span style='color:#949'>style</span> type=<span style='color:#339'>'text/css'</span>&gt;
-  <span style='color:#949'>@font-face</span> {
-    font-family:<span style='color:#339'>'0xA000-Regular'</span>;
-    src: <span style='color:#339'>url(</span>'<a
-    href='0xA000-Regular.ttf'>0xA000-Regular.ttf</a>'<span style='color:#339'>)</span>;
-  }
-  <span class='monosans'><span style='color:#949'>body</span> {
-    font-family:<span style='color:#339'>'0xA000-Regular'</span>;
-    font-size: <span style='color:#339'>14px</span>;
-  }
-&lt;/<span style='color:#949'>style</span>&gt;</span></pre>
+      <span
+        style="font-family:'0xA000-Pixelated-Regular'">Pixelated-Regular</span>
+      <span
+        style="font-family:'0xA000-Pixelated-Mono'">Pixelated-Mono</span>
 
-<p>
-    The 0xA000 family consists of quite a few fonts; here are their download
-    links, typeset in themselves:
-</p>
+      <span
+        style="font-family:'0xA000-Dots-Regular'">Dots-Regular</span>
+      <span
+        style="font-family:'0xA000-Dots-Mono'">Dots-Mono</span>
+
+      <span
+        style="font-family:'0xA000-Boxes-Regular'">Boxes-Regular</span>
+      <span
+        style="font-family:'0xA000-Boxes-Mono'">Boxes-Mono</span>
+
+      <span
+        style="font-family:'0xA000-Monochrome-Regular'">Monochrome-Regular</span>
+      <span
+        style="font-family:'0xA000-Monochrome-Mono'">Monochrome-Mono</span>
+      <p>
       </div>
+
 
 <div style='font-size: 21px;'>
 
