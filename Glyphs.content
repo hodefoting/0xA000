@@ -9,6 +9,7 @@
       </div>
       <span class='rendering-Mono'>&#x0020;</span>
       <span class='rendering-Regular'>&#x0020;</span>
+      <span class='rendering-Bold'>&#x0020;</span>
       <span class='rendering-Pixelated-Regular'>&#x0020;</span>
       <span class='rendering-Dots-Regular'>&#x0020;</span>
       <span class='rendering-Boxes-Regular'>&#x0020;</span>
@@ -23,6 +24,7 @@
       </div>
       <span class='rendering-Mono'>&#x0021;</span>
       <span class='rendering-Regular'>&#x0021;</span>
+      <span class='rendering-Bold'>&#x0021;</span>
       <span class='rendering-Pixelated-Regular'>&#x0021;</span>
       <span class='rendering-Dots-Regular'>&#x0021;</span>
       <span class='rendering-Boxes-Regular'>&#x0021;</span>
@@ -37,10 +39,26 @@
       </div>
       <span class='rendering-Mono'>&#x0022;</span>
       <span class='rendering-Regular'>&#x0022;</span>
+      <span class='rendering-Bold'>&#x0022;</span>
       <span class='rendering-Pixelated-Regular'>&#x0022;</span>
       <span class='rendering-Dots-Regular'>&#x0022;</span>
       <span class='rendering-Boxes-Regular'>&#x0022;</span>
       <span class='rendering-Reference'>&#x0022;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x0023;</span>
+        <span class='unicode'> 0023 </span>
+        <span class='name'>NUMBER SIGN</span>
+      </div>
+      <span class='rendering-Mono'>&#x0023;</span>
+      <span class='rendering-Regular'>&#x0023;</span>
+      <span class='rendering-Bold'>&#x0023;</span>
+      <span class='rendering-Pixelated-Regular'>&#x0023;</span>
+      <span class='rendering-Dots-Regular'>&#x0023;</span>
+      <span class='rendering-Boxes-Regular'>&#x0023;</span>
+      <span class='rendering-Reference'>&#x0023;</span>
     </div>
 
     <div class='glyph'>
@@ -51,6 +69,7 @@
       </div>
       <span class='rendering-Mono'>&#x0024;</span>
       <span class='rendering-Regular'>&#x0024;</span>
+      <span class='rendering-Bold'>&#x0024;</span>
       <span class='rendering-Pixelated-Regular'>&#x0024;</span>
       <span class='rendering-Dots-Regular'>&#x0024;</span>
       <span class='rendering-Boxes-Regular'>&#x0024;</span>
@@ -65,6 +84,7 @@
       </div>
       <span class='rendering-Mono'>&#x0025;</span>
       <span class='rendering-Regular'>&#x0025;</span>
+      <span class='rendering-Bold'>&#x0025;</span>
       <span class='rendering-Pixelated-Regular'>&#x0025;</span>
       <span class='rendering-Dots-Regular'>&#x0025;</span>
       <span class='rendering-Boxes-Regular'>&#x0025;</span>
@@ -79,6 +99,7 @@
       </div>
       <span class='rendering-Mono'>&#x0026;</span>
       <span class='rendering-Regular'>&#x0026;</span>
+      <span class='rendering-Bold'>&#x0026;</span>
       <span class='rendering-Pixelated-Regular'>&#x0026;</span>
       <span class='rendering-Dots-Regular'>&#x0026;</span>
       <span class='rendering-Boxes-Regular'>&#x0026;</span>
@@ -93,6 +114,7 @@
       </div>
       <span class='rendering-Mono'>&#x0027;</span>
       <span class='rendering-Regular'>&#x0027;</span>
+      <span class='rendering-Bold'>&#x0027;</span>
       <span class='rendering-Pixelated-Regular'>&#x0027;</span>
       <span class='rendering-Dots-Regular'>&#x0027;</span>
       <span class='rendering-Boxes-Regular'>&#x0027;</span>
@@ -107,6 +129,7 @@
       </div>
       <span class='rendering-Mono'>&#x0028;</span>
       <span class='rendering-Regular'>&#x0028;</span>
+      <span class='rendering-Bold'>&#x0028;</span>
       <span class='rendering-Pixelated-Regular'>&#x0028;</span>
       <span class='rendering-Dots-Regular'>&#x0028;</span>
       <span class='rendering-Boxes-Regular'>&#x0028;</span>
@@ -121,6 +144,7 @@
       </div>
       <span class='rendering-Mono'>&#x0029;</span>
       <span class='rendering-Regular'>&#x0029;</span>
+      <span class='rendering-Bold'>&#x0029;</span>
       <span class='rendering-Pixelated-Regular'>&#x0029;</span>
       <span class='rendering-Dots-Regular'>&#x0029;</span>
       <span class='rendering-Boxes-Regular'>&#x0029;</span>
@@ -135,6 +159,7 @@
       </div>
       <span class='rendering-Mono'>&#x002A;</span>
       <span class='rendering-Regular'>&#x002A;</span>
+      <span class='rendering-Bold'>&#x002A;</span>
       <span class='rendering-Pixelated-Regular'>&#x002A;</span>
       <span class='rendering-Dots-Regular'>&#x002A;</span>
       <span class='rendering-Boxes-Regular'>&#x002A;</span>
@@ -149,6 +174,7 @@
       </div>
       <span class='rendering-Mono'>&#x002B;</span>
       <span class='rendering-Regular'>&#x002B;</span>
+      <span class='rendering-Bold'>&#x002B;</span>
       <span class='rendering-Pixelated-Regular'>&#x002B;</span>
       <span class='rendering-Dots-Regular'>&#x002B;</span>
       <span class='rendering-Boxes-Regular'>&#x002B;</span>
@@ -163,6 +189,7 @@
       </div>
       <span class='rendering-Mono'>&#x002C;</span>
       <span class='rendering-Regular'>&#x002C;</span>
+      <span class='rendering-Bold'>&#x002C;</span>
       <span class='rendering-Pixelated-Regular'>&#x002C;</span>
       <span class='rendering-Dots-Regular'>&#x002C;</span>
       <span class='rendering-Boxes-Regular'>&#x002C;</span>
@@ -177,6 +204,7 @@
       </div>
       <span class='rendering-Mono'>&#x002D;</span>
       <span class='rendering-Regular'>&#x002D;</span>
+      <span class='rendering-Bold'>&#x002D;</span>
       <span class='rendering-Pixelated-Regular'>&#x002D;</span>
       <span class='rendering-Dots-Regular'>&#x002D;</span>
       <span class='rendering-Boxes-Regular'>&#x002D;</span>
@@ -191,6 +219,7 @@
       </div>
       <span class='rendering-Mono'>&#x002E;</span>
       <span class='rendering-Regular'>&#x002E;</span>
+      <span class='rendering-Bold'>&#x002E;</span>
       <span class='rendering-Pixelated-Regular'>&#x002E;</span>
       <span class='rendering-Dots-Regular'>&#x002E;</span>
       <span class='rendering-Boxes-Regular'>&#x002E;</span>
@@ -205,6 +234,7 @@
       </div>
       <span class='rendering-Mono'>&#x002F;</span>
       <span class='rendering-Regular'>&#x002F;</span>
+      <span class='rendering-Bold'>&#x002F;</span>
       <span class='rendering-Pixelated-Regular'>&#x002F;</span>
       <span class='rendering-Dots-Regular'>&#x002F;</span>
       <span class='rendering-Boxes-Regular'>&#x002F;</span>
@@ -219,6 +249,7 @@
       </div>
       <span class='rendering-Mono'>&#x0030;</span>
       <span class='rendering-Regular'>&#x0030;</span>
+      <span class='rendering-Bold'>&#x0030;</span>
       <span class='rendering-Pixelated-Regular'>&#x0030;</span>
       <span class='rendering-Dots-Regular'>&#x0030;</span>
       <span class='rendering-Boxes-Regular'>&#x0030;</span>
@@ -233,6 +264,7 @@
       </div>
       <span class='rendering-Mono'>&#x0031;</span>
       <span class='rendering-Regular'>&#x0031;</span>
+      <span class='rendering-Bold'>&#x0031;</span>
       <span class='rendering-Pixelated-Regular'>&#x0031;</span>
       <span class='rendering-Dots-Regular'>&#x0031;</span>
       <span class='rendering-Boxes-Regular'>&#x0031;</span>
@@ -247,6 +279,7 @@
       </div>
       <span class='rendering-Mono'>&#x0032;</span>
       <span class='rendering-Regular'>&#x0032;</span>
+      <span class='rendering-Bold'>&#x0032;</span>
       <span class='rendering-Pixelated-Regular'>&#x0032;</span>
       <span class='rendering-Dots-Regular'>&#x0032;</span>
       <span class='rendering-Boxes-Regular'>&#x0032;</span>
@@ -261,6 +294,7 @@
       </div>
       <span class='rendering-Mono'>&#x0033;</span>
       <span class='rendering-Regular'>&#x0033;</span>
+      <span class='rendering-Bold'>&#x0033;</span>
       <span class='rendering-Pixelated-Regular'>&#x0033;</span>
       <span class='rendering-Dots-Regular'>&#x0033;</span>
       <span class='rendering-Boxes-Regular'>&#x0033;</span>
@@ -275,6 +309,7 @@
       </div>
       <span class='rendering-Mono'>&#x0034;</span>
       <span class='rendering-Regular'>&#x0034;</span>
+      <span class='rendering-Bold'>&#x0034;</span>
       <span class='rendering-Pixelated-Regular'>&#x0034;</span>
       <span class='rendering-Dots-Regular'>&#x0034;</span>
       <span class='rendering-Boxes-Regular'>&#x0034;</span>
@@ -289,6 +324,7 @@
       </div>
       <span class='rendering-Mono'>&#x0035;</span>
       <span class='rendering-Regular'>&#x0035;</span>
+      <span class='rendering-Bold'>&#x0035;</span>
       <span class='rendering-Pixelated-Regular'>&#x0035;</span>
       <span class='rendering-Dots-Regular'>&#x0035;</span>
       <span class='rendering-Boxes-Regular'>&#x0035;</span>
@@ -303,6 +339,7 @@
       </div>
       <span class='rendering-Mono'>&#x0036;</span>
       <span class='rendering-Regular'>&#x0036;</span>
+      <span class='rendering-Bold'>&#x0036;</span>
       <span class='rendering-Pixelated-Regular'>&#x0036;</span>
       <span class='rendering-Dots-Regular'>&#x0036;</span>
       <span class='rendering-Boxes-Regular'>&#x0036;</span>
@@ -317,6 +354,7 @@
       </div>
       <span class='rendering-Mono'>&#x0037;</span>
       <span class='rendering-Regular'>&#x0037;</span>
+      <span class='rendering-Bold'>&#x0037;</span>
       <span class='rendering-Pixelated-Regular'>&#x0037;</span>
       <span class='rendering-Dots-Regular'>&#x0037;</span>
       <span class='rendering-Boxes-Regular'>&#x0037;</span>
@@ -331,6 +369,7 @@
       </div>
       <span class='rendering-Mono'>&#x0038;</span>
       <span class='rendering-Regular'>&#x0038;</span>
+      <span class='rendering-Bold'>&#x0038;</span>
       <span class='rendering-Pixelated-Regular'>&#x0038;</span>
       <span class='rendering-Dots-Regular'>&#x0038;</span>
       <span class='rendering-Boxes-Regular'>&#x0038;</span>
@@ -345,6 +384,7 @@
       </div>
       <span class='rendering-Mono'>&#x0039;</span>
       <span class='rendering-Regular'>&#x0039;</span>
+      <span class='rendering-Bold'>&#x0039;</span>
       <span class='rendering-Pixelated-Regular'>&#x0039;</span>
       <span class='rendering-Dots-Regular'>&#x0039;</span>
       <span class='rendering-Boxes-Regular'>&#x0039;</span>
@@ -359,6 +399,7 @@
       </div>
       <span class='rendering-Mono'>&#x003A;</span>
       <span class='rendering-Regular'>&#x003A;</span>
+      <span class='rendering-Bold'>&#x003A;</span>
       <span class='rendering-Pixelated-Regular'>&#x003A;</span>
       <span class='rendering-Dots-Regular'>&#x003A;</span>
       <span class='rendering-Boxes-Regular'>&#x003A;</span>
@@ -373,6 +414,7 @@
       </div>
       <span class='rendering-Mono'>&#x003B;</span>
       <span class='rendering-Regular'>&#x003B;</span>
+      <span class='rendering-Bold'>&#x003B;</span>
       <span class='rendering-Pixelated-Regular'>&#x003B;</span>
       <span class='rendering-Dots-Regular'>&#x003B;</span>
       <span class='rendering-Boxes-Regular'>&#x003B;</span>
@@ -387,6 +429,7 @@
       </div>
       <span class='rendering-Mono'>&#x003C;</span>
       <span class='rendering-Regular'>&#x003C;</span>
+      <span class='rendering-Bold'>&#x003C;</span>
       <span class='rendering-Pixelated-Regular'>&#x003C;</span>
       <span class='rendering-Dots-Regular'>&#x003C;</span>
       <span class='rendering-Boxes-Regular'>&#x003C;</span>
@@ -401,6 +444,7 @@
       </div>
       <span class='rendering-Mono'>&#x003D;</span>
       <span class='rendering-Regular'>&#x003D;</span>
+      <span class='rendering-Bold'>&#x003D;</span>
       <span class='rendering-Pixelated-Regular'>&#x003D;</span>
       <span class='rendering-Dots-Regular'>&#x003D;</span>
       <span class='rendering-Boxes-Regular'>&#x003D;</span>
@@ -415,6 +459,7 @@
       </div>
       <span class='rendering-Mono'>&#x003E;</span>
       <span class='rendering-Regular'>&#x003E;</span>
+      <span class='rendering-Bold'>&#x003E;</span>
       <span class='rendering-Pixelated-Regular'>&#x003E;</span>
       <span class='rendering-Dots-Regular'>&#x003E;</span>
       <span class='rendering-Boxes-Regular'>&#x003E;</span>
@@ -429,6 +474,7 @@
       </div>
       <span class='rendering-Mono'>&#x003F;</span>
       <span class='rendering-Regular'>&#x003F;</span>
+      <span class='rendering-Bold'>&#x003F;</span>
       <span class='rendering-Pixelated-Regular'>&#x003F;</span>
       <span class='rendering-Dots-Regular'>&#x003F;</span>
       <span class='rendering-Boxes-Regular'>&#x003F;</span>
@@ -443,6 +489,7 @@
       </div>
       <span class='rendering-Mono'>&#x0040;</span>
       <span class='rendering-Regular'>&#x0040;</span>
+      <span class='rendering-Bold'>&#x0040;</span>
       <span class='rendering-Pixelated-Regular'>&#x0040;</span>
       <span class='rendering-Dots-Regular'>&#x0040;</span>
       <span class='rendering-Boxes-Regular'>&#x0040;</span>
@@ -457,6 +504,7 @@
       </div>
       <span class='rendering-Mono'>&#x0041;</span>
       <span class='rendering-Regular'>&#x0041;</span>
+      <span class='rendering-Bold'>&#x0041;</span>
       <span class='rendering-Pixelated-Regular'>&#x0041;</span>
       <span class='rendering-Dots-Regular'>&#x0041;</span>
       <span class='rendering-Boxes-Regular'>&#x0041;</span>
@@ -471,6 +519,7 @@
       </div>
       <span class='rendering-Mono'>&#x0042;</span>
       <span class='rendering-Regular'>&#x0042;</span>
+      <span class='rendering-Bold'>&#x0042;</span>
       <span class='rendering-Pixelated-Regular'>&#x0042;</span>
       <span class='rendering-Dots-Regular'>&#x0042;</span>
       <span class='rendering-Boxes-Regular'>&#x0042;</span>
@@ -485,6 +534,7 @@
       </div>
       <span class='rendering-Mono'>&#x0043;</span>
       <span class='rendering-Regular'>&#x0043;</span>
+      <span class='rendering-Bold'>&#x0043;</span>
       <span class='rendering-Pixelated-Regular'>&#x0043;</span>
       <span class='rendering-Dots-Regular'>&#x0043;</span>
       <span class='rendering-Boxes-Regular'>&#x0043;</span>
@@ -499,6 +549,7 @@
       </div>
       <span class='rendering-Mono'>&#x0044;</span>
       <span class='rendering-Regular'>&#x0044;</span>
+      <span class='rendering-Bold'>&#x0044;</span>
       <span class='rendering-Pixelated-Regular'>&#x0044;</span>
       <span class='rendering-Dots-Regular'>&#x0044;</span>
       <span class='rendering-Boxes-Regular'>&#x0044;</span>
@@ -513,6 +564,7 @@
       </div>
       <span class='rendering-Mono'>&#x0045;</span>
       <span class='rendering-Regular'>&#x0045;</span>
+      <span class='rendering-Bold'>&#x0045;</span>
       <span class='rendering-Pixelated-Regular'>&#x0045;</span>
       <span class='rendering-Dots-Regular'>&#x0045;</span>
       <span class='rendering-Boxes-Regular'>&#x0045;</span>
@@ -527,6 +579,7 @@
       </div>
       <span class='rendering-Mono'>&#x0046;</span>
       <span class='rendering-Regular'>&#x0046;</span>
+      <span class='rendering-Bold'>&#x0046;</span>
       <span class='rendering-Pixelated-Regular'>&#x0046;</span>
       <span class='rendering-Dots-Regular'>&#x0046;</span>
       <span class='rendering-Boxes-Regular'>&#x0046;</span>
@@ -541,6 +594,7 @@
       </div>
       <span class='rendering-Mono'>&#x0047;</span>
       <span class='rendering-Regular'>&#x0047;</span>
+      <span class='rendering-Bold'>&#x0047;</span>
       <span class='rendering-Pixelated-Regular'>&#x0047;</span>
       <span class='rendering-Dots-Regular'>&#x0047;</span>
       <span class='rendering-Boxes-Regular'>&#x0047;</span>
@@ -555,6 +609,7 @@
       </div>
       <span class='rendering-Mono'>&#x0048;</span>
       <span class='rendering-Regular'>&#x0048;</span>
+      <span class='rendering-Bold'>&#x0048;</span>
       <span class='rendering-Pixelated-Regular'>&#x0048;</span>
       <span class='rendering-Dots-Regular'>&#x0048;</span>
       <span class='rendering-Boxes-Regular'>&#x0048;</span>
@@ -569,6 +624,7 @@
       </div>
       <span class='rendering-Mono'>&#x0049;</span>
       <span class='rendering-Regular'>&#x0049;</span>
+      <span class='rendering-Bold'>&#x0049;</span>
       <span class='rendering-Pixelated-Regular'>&#x0049;</span>
       <span class='rendering-Dots-Regular'>&#x0049;</span>
       <span class='rendering-Boxes-Regular'>&#x0049;</span>
@@ -583,6 +639,7 @@
       </div>
       <span class='rendering-Mono'>&#x004A;</span>
       <span class='rendering-Regular'>&#x004A;</span>
+      <span class='rendering-Bold'>&#x004A;</span>
       <span class='rendering-Pixelated-Regular'>&#x004A;</span>
       <span class='rendering-Dots-Regular'>&#x004A;</span>
       <span class='rendering-Boxes-Regular'>&#x004A;</span>
@@ -597,6 +654,7 @@
       </div>
       <span class='rendering-Mono'>&#x004B;</span>
       <span class='rendering-Regular'>&#x004B;</span>
+      <span class='rendering-Bold'>&#x004B;</span>
       <span class='rendering-Pixelated-Regular'>&#x004B;</span>
       <span class='rendering-Dots-Regular'>&#x004B;</span>
       <span class='rendering-Boxes-Regular'>&#x004B;</span>
@@ -611,6 +669,7 @@
       </div>
       <span class='rendering-Mono'>&#x004C;</span>
       <span class='rendering-Regular'>&#x004C;</span>
+      <span class='rendering-Bold'>&#x004C;</span>
       <span class='rendering-Pixelated-Regular'>&#x004C;</span>
       <span class='rendering-Dots-Regular'>&#x004C;</span>
       <span class='rendering-Boxes-Regular'>&#x004C;</span>
@@ -625,6 +684,7 @@
       </div>
       <span class='rendering-Mono'>&#x004D;</span>
       <span class='rendering-Regular'>&#x004D;</span>
+      <span class='rendering-Bold'>&#x004D;</span>
       <span class='rendering-Pixelated-Regular'>&#x004D;</span>
       <span class='rendering-Dots-Regular'>&#x004D;</span>
       <span class='rendering-Boxes-Regular'>&#x004D;</span>
@@ -639,6 +699,7 @@
       </div>
       <span class='rendering-Mono'>&#x004E;</span>
       <span class='rendering-Regular'>&#x004E;</span>
+      <span class='rendering-Bold'>&#x004E;</span>
       <span class='rendering-Pixelated-Regular'>&#x004E;</span>
       <span class='rendering-Dots-Regular'>&#x004E;</span>
       <span class='rendering-Boxes-Regular'>&#x004E;</span>
@@ -653,6 +714,7 @@
       </div>
       <span class='rendering-Mono'>&#x004F;</span>
       <span class='rendering-Regular'>&#x004F;</span>
+      <span class='rendering-Bold'>&#x004F;</span>
       <span class='rendering-Pixelated-Regular'>&#x004F;</span>
       <span class='rendering-Dots-Regular'>&#x004F;</span>
       <span class='rendering-Boxes-Regular'>&#x004F;</span>
@@ -667,6 +729,7 @@
       </div>
       <span class='rendering-Mono'>&#x0050;</span>
       <span class='rendering-Regular'>&#x0050;</span>
+      <span class='rendering-Bold'>&#x0050;</span>
       <span class='rendering-Pixelated-Regular'>&#x0050;</span>
       <span class='rendering-Dots-Regular'>&#x0050;</span>
       <span class='rendering-Boxes-Regular'>&#x0050;</span>
@@ -681,6 +744,7 @@
       </div>
       <span class='rendering-Mono'>&#x0051;</span>
       <span class='rendering-Regular'>&#x0051;</span>
+      <span class='rendering-Bold'>&#x0051;</span>
       <span class='rendering-Pixelated-Regular'>&#x0051;</span>
       <span class='rendering-Dots-Regular'>&#x0051;</span>
       <span class='rendering-Boxes-Regular'>&#x0051;</span>
@@ -695,6 +759,7 @@
       </div>
       <span class='rendering-Mono'>&#x0052;</span>
       <span class='rendering-Regular'>&#x0052;</span>
+      <span class='rendering-Bold'>&#x0052;</span>
       <span class='rendering-Pixelated-Regular'>&#x0052;</span>
       <span class='rendering-Dots-Regular'>&#x0052;</span>
       <span class='rendering-Boxes-Regular'>&#x0052;</span>
@@ -709,6 +774,7 @@
       </div>
       <span class='rendering-Mono'>&#x0053;</span>
       <span class='rendering-Regular'>&#x0053;</span>
+      <span class='rendering-Bold'>&#x0053;</span>
       <span class='rendering-Pixelated-Regular'>&#x0053;</span>
       <span class='rendering-Dots-Regular'>&#x0053;</span>
       <span class='rendering-Boxes-Regular'>&#x0053;</span>
@@ -723,6 +789,7 @@
       </div>
       <span class='rendering-Mono'>&#x0054;</span>
       <span class='rendering-Regular'>&#x0054;</span>
+      <span class='rendering-Bold'>&#x0054;</span>
       <span class='rendering-Pixelated-Regular'>&#x0054;</span>
       <span class='rendering-Dots-Regular'>&#x0054;</span>
       <span class='rendering-Boxes-Regular'>&#x0054;</span>
@@ -737,6 +804,7 @@
       </div>
       <span class='rendering-Mono'>&#x0055;</span>
       <span class='rendering-Regular'>&#x0055;</span>
+      <span class='rendering-Bold'>&#x0055;</span>
       <span class='rendering-Pixelated-Regular'>&#x0055;</span>
       <span class='rendering-Dots-Regular'>&#x0055;</span>
       <span class='rendering-Boxes-Regular'>&#x0055;</span>
@@ -751,6 +819,7 @@
       </div>
       <span class='rendering-Mono'>&#x0056;</span>
       <span class='rendering-Regular'>&#x0056;</span>
+      <span class='rendering-Bold'>&#x0056;</span>
       <span class='rendering-Pixelated-Regular'>&#x0056;</span>
       <span class='rendering-Dots-Regular'>&#x0056;</span>
       <span class='rendering-Boxes-Regular'>&#x0056;</span>
@@ -765,6 +834,7 @@
       </div>
       <span class='rendering-Mono'>&#x0057;</span>
       <span class='rendering-Regular'>&#x0057;</span>
+      <span class='rendering-Bold'>&#x0057;</span>
       <span class='rendering-Pixelated-Regular'>&#x0057;</span>
       <span class='rendering-Dots-Regular'>&#x0057;</span>
       <span class='rendering-Boxes-Regular'>&#x0057;</span>
@@ -779,6 +849,7 @@
       </div>
       <span class='rendering-Mono'>&#x0058;</span>
       <span class='rendering-Regular'>&#x0058;</span>
+      <span class='rendering-Bold'>&#x0058;</span>
       <span class='rendering-Pixelated-Regular'>&#x0058;</span>
       <span class='rendering-Dots-Regular'>&#x0058;</span>
       <span class='rendering-Boxes-Regular'>&#x0058;</span>
@@ -793,6 +864,7 @@
       </div>
       <span class='rendering-Mono'>&#x0059;</span>
       <span class='rendering-Regular'>&#x0059;</span>
+      <span class='rendering-Bold'>&#x0059;</span>
       <span class='rendering-Pixelated-Regular'>&#x0059;</span>
       <span class='rendering-Dots-Regular'>&#x0059;</span>
       <span class='rendering-Boxes-Regular'>&#x0059;</span>
@@ -807,6 +879,7 @@
       </div>
       <span class='rendering-Mono'>&#x005A;</span>
       <span class='rendering-Regular'>&#x005A;</span>
+      <span class='rendering-Bold'>&#x005A;</span>
       <span class='rendering-Pixelated-Regular'>&#x005A;</span>
       <span class='rendering-Dots-Regular'>&#x005A;</span>
       <span class='rendering-Boxes-Regular'>&#x005A;</span>
@@ -821,6 +894,7 @@
       </div>
       <span class='rendering-Mono'>&#x005B;</span>
       <span class='rendering-Regular'>&#x005B;</span>
+      <span class='rendering-Bold'>&#x005B;</span>
       <span class='rendering-Pixelated-Regular'>&#x005B;</span>
       <span class='rendering-Dots-Regular'>&#x005B;</span>
       <span class='rendering-Boxes-Regular'>&#x005B;</span>
@@ -835,6 +909,7 @@
       </div>
       <span class='rendering-Mono'>&#x005C;</span>
       <span class='rendering-Regular'>&#x005C;</span>
+      <span class='rendering-Bold'>&#x005C;</span>
       <span class='rendering-Pixelated-Regular'>&#x005C;</span>
       <span class='rendering-Dots-Regular'>&#x005C;</span>
       <span class='rendering-Boxes-Regular'>&#x005C;</span>
@@ -849,6 +924,7 @@
       </div>
       <span class='rendering-Mono'>&#x005D;</span>
       <span class='rendering-Regular'>&#x005D;</span>
+      <span class='rendering-Bold'>&#x005D;</span>
       <span class='rendering-Pixelated-Regular'>&#x005D;</span>
       <span class='rendering-Dots-Regular'>&#x005D;</span>
       <span class='rendering-Boxes-Regular'>&#x005D;</span>
@@ -863,6 +939,7 @@
       </div>
       <span class='rendering-Mono'>&#x005E;</span>
       <span class='rendering-Regular'>&#x005E;</span>
+      <span class='rendering-Bold'>&#x005E;</span>
       <span class='rendering-Pixelated-Regular'>&#x005E;</span>
       <span class='rendering-Dots-Regular'>&#x005E;</span>
       <span class='rendering-Boxes-Regular'>&#x005E;</span>
@@ -877,6 +954,7 @@
       </div>
       <span class='rendering-Mono'>&#x005F;</span>
       <span class='rendering-Regular'>&#x005F;</span>
+      <span class='rendering-Bold'>&#x005F;</span>
       <span class='rendering-Pixelated-Regular'>&#x005F;</span>
       <span class='rendering-Dots-Regular'>&#x005F;</span>
       <span class='rendering-Boxes-Regular'>&#x005F;</span>
@@ -891,6 +969,7 @@
       </div>
       <span class='rendering-Mono'>&#x0060;</span>
       <span class='rendering-Regular'>&#x0060;</span>
+      <span class='rendering-Bold'>&#x0060;</span>
       <span class='rendering-Pixelated-Regular'>&#x0060;</span>
       <span class='rendering-Dots-Regular'>&#x0060;</span>
       <span class='rendering-Boxes-Regular'>&#x0060;</span>
@@ -905,6 +984,7 @@
       </div>
       <span class='rendering-Mono'>&#x0061;</span>
       <span class='rendering-Regular'>&#x0061;</span>
+      <span class='rendering-Bold'>&#x0061;</span>
       <span class='rendering-Pixelated-Regular'>&#x0061;</span>
       <span class='rendering-Dots-Regular'>&#x0061;</span>
       <span class='rendering-Boxes-Regular'>&#x0061;</span>
@@ -919,6 +999,7 @@
       </div>
       <span class='rendering-Mono'>&#x0062;</span>
       <span class='rendering-Regular'>&#x0062;</span>
+      <span class='rendering-Bold'>&#x0062;</span>
       <span class='rendering-Pixelated-Regular'>&#x0062;</span>
       <span class='rendering-Dots-Regular'>&#x0062;</span>
       <span class='rendering-Boxes-Regular'>&#x0062;</span>
@@ -933,6 +1014,7 @@
       </div>
       <span class='rendering-Mono'>&#x0063;</span>
       <span class='rendering-Regular'>&#x0063;</span>
+      <span class='rendering-Bold'>&#x0063;</span>
       <span class='rendering-Pixelated-Regular'>&#x0063;</span>
       <span class='rendering-Dots-Regular'>&#x0063;</span>
       <span class='rendering-Boxes-Regular'>&#x0063;</span>
@@ -947,6 +1029,7 @@
       </div>
       <span class='rendering-Mono'>&#x0064;</span>
       <span class='rendering-Regular'>&#x0064;</span>
+      <span class='rendering-Bold'>&#x0064;</span>
       <span class='rendering-Pixelated-Regular'>&#x0064;</span>
       <span class='rendering-Dots-Regular'>&#x0064;</span>
       <span class='rendering-Boxes-Regular'>&#x0064;</span>
@@ -961,6 +1044,7 @@
       </div>
       <span class='rendering-Mono'>&#x0065;</span>
       <span class='rendering-Regular'>&#x0065;</span>
+      <span class='rendering-Bold'>&#x0065;</span>
       <span class='rendering-Pixelated-Regular'>&#x0065;</span>
       <span class='rendering-Dots-Regular'>&#x0065;</span>
       <span class='rendering-Boxes-Regular'>&#x0065;</span>
@@ -975,6 +1059,7 @@
       </div>
       <span class='rendering-Mono'>&#x0066;</span>
       <span class='rendering-Regular'>&#x0066;</span>
+      <span class='rendering-Bold'>&#x0066;</span>
       <span class='rendering-Pixelated-Regular'>&#x0066;</span>
       <span class='rendering-Dots-Regular'>&#x0066;</span>
       <span class='rendering-Boxes-Regular'>&#x0066;</span>
@@ -989,6 +1074,7 @@
       </div>
       <span class='rendering-Mono'>&#x0067;</span>
       <span class='rendering-Regular'>&#x0067;</span>
+      <span class='rendering-Bold'>&#x0067;</span>
       <span class='rendering-Pixelated-Regular'>&#x0067;</span>
       <span class='rendering-Dots-Regular'>&#x0067;</span>
       <span class='rendering-Boxes-Regular'>&#x0067;</span>
@@ -1003,6 +1089,7 @@
       </div>
       <span class='rendering-Mono'>&#x0068;</span>
       <span class='rendering-Regular'>&#x0068;</span>
+      <span class='rendering-Bold'>&#x0068;</span>
       <span class='rendering-Pixelated-Regular'>&#x0068;</span>
       <span class='rendering-Dots-Regular'>&#x0068;</span>
       <span class='rendering-Boxes-Regular'>&#x0068;</span>
@@ -1017,6 +1104,7 @@
       </div>
       <span class='rendering-Mono'>&#x0069;</span>
       <span class='rendering-Regular'>&#x0069;</span>
+      <span class='rendering-Bold'>&#x0069;</span>
       <span class='rendering-Pixelated-Regular'>&#x0069;</span>
       <span class='rendering-Dots-Regular'>&#x0069;</span>
       <span class='rendering-Boxes-Regular'>&#x0069;</span>
@@ -1031,6 +1119,7 @@
       </div>
       <span class='rendering-Mono'>&#x006A;</span>
       <span class='rendering-Regular'>&#x006A;</span>
+      <span class='rendering-Bold'>&#x006A;</span>
       <span class='rendering-Pixelated-Regular'>&#x006A;</span>
       <span class='rendering-Dots-Regular'>&#x006A;</span>
       <span class='rendering-Boxes-Regular'>&#x006A;</span>
@@ -1045,6 +1134,7 @@
       </div>
       <span class='rendering-Mono'>&#x006B;</span>
       <span class='rendering-Regular'>&#x006B;</span>
+      <span class='rendering-Bold'>&#x006B;</span>
       <span class='rendering-Pixelated-Regular'>&#x006B;</span>
       <span class='rendering-Dots-Regular'>&#x006B;</span>
       <span class='rendering-Boxes-Regular'>&#x006B;</span>
@@ -1059,6 +1149,7 @@
       </div>
       <span class='rendering-Mono'>&#x006C;</span>
       <span class='rendering-Regular'>&#x006C;</span>
+      <span class='rendering-Bold'>&#x006C;</span>
       <span class='rendering-Pixelated-Regular'>&#x006C;</span>
       <span class='rendering-Dots-Regular'>&#x006C;</span>
       <span class='rendering-Boxes-Regular'>&#x006C;</span>
@@ -1073,6 +1164,7 @@
       </div>
       <span class='rendering-Mono'>&#x006D;</span>
       <span class='rendering-Regular'>&#x006D;</span>
+      <span class='rendering-Bold'>&#x006D;</span>
       <span class='rendering-Pixelated-Regular'>&#x006D;</span>
       <span class='rendering-Dots-Regular'>&#x006D;</span>
       <span class='rendering-Boxes-Regular'>&#x006D;</span>
@@ -1087,6 +1179,7 @@
       </div>
       <span class='rendering-Mono'>&#x006E;</span>
       <span class='rendering-Regular'>&#x006E;</span>
+      <span class='rendering-Bold'>&#x006E;</span>
       <span class='rendering-Pixelated-Regular'>&#x006E;</span>
       <span class='rendering-Dots-Regular'>&#x006E;</span>
       <span class='rendering-Boxes-Regular'>&#x006E;</span>
@@ -1101,6 +1194,7 @@
       </div>
       <span class='rendering-Mono'>&#x006F;</span>
       <span class='rendering-Regular'>&#x006F;</span>
+      <span class='rendering-Bold'>&#x006F;</span>
       <span class='rendering-Pixelated-Regular'>&#x006F;</span>
       <span class='rendering-Dots-Regular'>&#x006F;</span>
       <span class='rendering-Boxes-Regular'>&#x006F;</span>
@@ -1115,6 +1209,7 @@
       </div>
       <span class='rendering-Mono'>&#x0070;</span>
       <span class='rendering-Regular'>&#x0070;</span>
+      <span class='rendering-Bold'>&#x0070;</span>
       <span class='rendering-Pixelated-Regular'>&#x0070;</span>
       <span class='rendering-Dots-Regular'>&#x0070;</span>
       <span class='rendering-Boxes-Regular'>&#x0070;</span>
@@ -1129,6 +1224,7 @@
       </div>
       <span class='rendering-Mono'>&#x0071;</span>
       <span class='rendering-Regular'>&#x0071;</span>
+      <span class='rendering-Bold'>&#x0071;</span>
       <span class='rendering-Pixelated-Regular'>&#x0071;</span>
       <span class='rendering-Dots-Regular'>&#x0071;</span>
       <span class='rendering-Boxes-Regular'>&#x0071;</span>
@@ -1143,6 +1239,7 @@
       </div>
       <span class='rendering-Mono'>&#x0072;</span>
       <span class='rendering-Regular'>&#x0072;</span>
+      <span class='rendering-Bold'>&#x0072;</span>
       <span class='rendering-Pixelated-Regular'>&#x0072;</span>
       <span class='rendering-Dots-Regular'>&#x0072;</span>
       <span class='rendering-Boxes-Regular'>&#x0072;</span>
@@ -1157,6 +1254,7 @@
       </div>
       <span class='rendering-Mono'>&#x0073;</span>
       <span class='rendering-Regular'>&#x0073;</span>
+      <span class='rendering-Bold'>&#x0073;</span>
       <span class='rendering-Pixelated-Regular'>&#x0073;</span>
       <span class='rendering-Dots-Regular'>&#x0073;</span>
       <span class='rendering-Boxes-Regular'>&#x0073;</span>
@@ -1171,6 +1269,7 @@
       </div>
       <span class='rendering-Mono'>&#x0074;</span>
       <span class='rendering-Regular'>&#x0074;</span>
+      <span class='rendering-Bold'>&#x0074;</span>
       <span class='rendering-Pixelated-Regular'>&#x0074;</span>
       <span class='rendering-Dots-Regular'>&#x0074;</span>
       <span class='rendering-Boxes-Regular'>&#x0074;</span>
@@ -1185,6 +1284,7 @@
       </div>
       <span class='rendering-Mono'>&#x0075;</span>
       <span class='rendering-Regular'>&#x0075;</span>
+      <span class='rendering-Bold'>&#x0075;</span>
       <span class='rendering-Pixelated-Regular'>&#x0075;</span>
       <span class='rendering-Dots-Regular'>&#x0075;</span>
       <span class='rendering-Boxes-Regular'>&#x0075;</span>
@@ -1199,6 +1299,7 @@
       </div>
       <span class='rendering-Mono'>&#x0076;</span>
       <span class='rendering-Regular'>&#x0076;</span>
+      <span class='rendering-Bold'>&#x0076;</span>
       <span class='rendering-Pixelated-Regular'>&#x0076;</span>
       <span class='rendering-Dots-Regular'>&#x0076;</span>
       <span class='rendering-Boxes-Regular'>&#x0076;</span>
@@ -1213,6 +1314,7 @@
       </div>
       <span class='rendering-Mono'>&#x0077;</span>
       <span class='rendering-Regular'>&#x0077;</span>
+      <span class='rendering-Bold'>&#x0077;</span>
       <span class='rendering-Pixelated-Regular'>&#x0077;</span>
       <span class='rendering-Dots-Regular'>&#x0077;</span>
       <span class='rendering-Boxes-Regular'>&#x0077;</span>
@@ -1227,6 +1329,7 @@
       </div>
       <span class='rendering-Mono'>&#x0078;</span>
       <span class='rendering-Regular'>&#x0078;</span>
+      <span class='rendering-Bold'>&#x0078;</span>
       <span class='rendering-Pixelated-Regular'>&#x0078;</span>
       <span class='rendering-Dots-Regular'>&#x0078;</span>
       <span class='rendering-Boxes-Regular'>&#x0078;</span>
@@ -1241,6 +1344,7 @@
       </div>
       <span class='rendering-Mono'>&#x0079;</span>
       <span class='rendering-Regular'>&#x0079;</span>
+      <span class='rendering-Bold'>&#x0079;</span>
       <span class='rendering-Pixelated-Regular'>&#x0079;</span>
       <span class='rendering-Dots-Regular'>&#x0079;</span>
       <span class='rendering-Boxes-Regular'>&#x0079;</span>
@@ -1255,6 +1359,7 @@
       </div>
       <span class='rendering-Mono'>&#x007A;</span>
       <span class='rendering-Regular'>&#x007A;</span>
+      <span class='rendering-Bold'>&#x007A;</span>
       <span class='rendering-Pixelated-Regular'>&#x007A;</span>
       <span class='rendering-Dots-Regular'>&#x007A;</span>
       <span class='rendering-Boxes-Regular'>&#x007A;</span>
@@ -1269,6 +1374,7 @@
       </div>
       <span class='rendering-Mono'>&#x007B;</span>
       <span class='rendering-Regular'>&#x007B;</span>
+      <span class='rendering-Bold'>&#x007B;</span>
       <span class='rendering-Pixelated-Regular'>&#x007B;</span>
       <span class='rendering-Dots-Regular'>&#x007B;</span>
       <span class='rendering-Boxes-Regular'>&#x007B;</span>
@@ -1283,6 +1389,7 @@
       </div>
       <span class='rendering-Mono'>&#x007C;</span>
       <span class='rendering-Regular'>&#x007C;</span>
+      <span class='rendering-Bold'>&#x007C;</span>
       <span class='rendering-Pixelated-Regular'>&#x007C;</span>
       <span class='rendering-Dots-Regular'>&#x007C;</span>
       <span class='rendering-Boxes-Regular'>&#x007C;</span>
@@ -1297,6 +1404,7 @@
       </div>
       <span class='rendering-Mono'>&#x007D;</span>
       <span class='rendering-Regular'>&#x007D;</span>
+      <span class='rendering-Bold'>&#x007D;</span>
       <span class='rendering-Pixelated-Regular'>&#x007D;</span>
       <span class='rendering-Dots-Regular'>&#x007D;</span>
       <span class='rendering-Boxes-Regular'>&#x007D;</span>
@@ -1311,6 +1419,7 @@
       </div>
       <span class='rendering-Mono'>&#x007E;</span>
       <span class='rendering-Regular'>&#x007E;</span>
+      <span class='rendering-Bold'>&#x007E;</span>
       <span class='rendering-Pixelated-Regular'>&#x007E;</span>
       <span class='rendering-Dots-Regular'>&#x007E;</span>
       <span class='rendering-Boxes-Regular'>&#x007E;</span>
@@ -1325,6 +1434,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A0;</span>
       <span class='rendering-Regular'>&#x00A0;</span>
+      <span class='rendering-Bold'>&#x00A0;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A0;</span>
       <span class='rendering-Dots-Regular'>&#x00A0;</span>
       <span class='rendering-Boxes-Regular'>&#x00A0;</span>
@@ -1339,6 +1449,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A1;</span>
       <span class='rendering-Regular'>&#x00A1;</span>
+      <span class='rendering-Bold'>&#x00A1;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A1;</span>
       <span class='rendering-Dots-Regular'>&#x00A1;</span>
       <span class='rendering-Boxes-Regular'>&#x00A1;</span>
@@ -1353,6 +1464,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A2;</span>
       <span class='rendering-Regular'>&#x00A2;</span>
+      <span class='rendering-Bold'>&#x00A2;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A2;</span>
       <span class='rendering-Dots-Regular'>&#x00A2;</span>
       <span class='rendering-Boxes-Regular'>&#x00A2;</span>
@@ -1367,6 +1479,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A3;</span>
       <span class='rendering-Regular'>&#x00A3;</span>
+      <span class='rendering-Bold'>&#x00A3;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A3;</span>
       <span class='rendering-Dots-Regular'>&#x00A3;</span>
       <span class='rendering-Boxes-Regular'>&#x00A3;</span>
@@ -1381,6 +1494,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A4;</span>
       <span class='rendering-Regular'>&#x00A4;</span>
+      <span class='rendering-Bold'>&#x00A4;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A4;</span>
       <span class='rendering-Dots-Regular'>&#x00A4;</span>
       <span class='rendering-Boxes-Regular'>&#x00A4;</span>
@@ -1395,6 +1509,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A5;</span>
       <span class='rendering-Regular'>&#x00A5;</span>
+      <span class='rendering-Bold'>&#x00A5;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A5;</span>
       <span class='rendering-Dots-Regular'>&#x00A5;</span>
       <span class='rendering-Boxes-Regular'>&#x00A5;</span>
@@ -1409,6 +1524,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A6;</span>
       <span class='rendering-Regular'>&#x00A6;</span>
+      <span class='rendering-Bold'>&#x00A6;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A6;</span>
       <span class='rendering-Dots-Regular'>&#x00A6;</span>
       <span class='rendering-Boxes-Regular'>&#x00A6;</span>
@@ -1423,6 +1539,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A7;</span>
       <span class='rendering-Regular'>&#x00A7;</span>
+      <span class='rendering-Bold'>&#x00A7;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A7;</span>
       <span class='rendering-Dots-Regular'>&#x00A7;</span>
       <span class='rendering-Boxes-Regular'>&#x00A7;</span>
@@ -1437,6 +1554,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A8;</span>
       <span class='rendering-Regular'>&#x00A8;</span>
+      <span class='rendering-Bold'>&#x00A8;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A8;</span>
       <span class='rendering-Dots-Regular'>&#x00A8;</span>
       <span class='rendering-Boxes-Regular'>&#x00A8;</span>
@@ -1451,6 +1569,7 @@
       </div>
       <span class='rendering-Mono'>&#x00A9;</span>
       <span class='rendering-Regular'>&#x00A9;</span>
+      <span class='rendering-Bold'>&#x00A9;</span>
       <span class='rendering-Pixelated-Regular'>&#x00A9;</span>
       <span class='rendering-Dots-Regular'>&#x00A9;</span>
       <span class='rendering-Boxes-Regular'>&#x00A9;</span>
@@ -1465,6 +1584,7 @@
       </div>
       <span class='rendering-Mono'>&#x00AA;</span>
       <span class='rendering-Regular'>&#x00AA;</span>
+      <span class='rendering-Bold'>&#x00AA;</span>
       <span class='rendering-Pixelated-Regular'>&#x00AA;</span>
       <span class='rendering-Dots-Regular'>&#x00AA;</span>
       <span class='rendering-Boxes-Regular'>&#x00AA;</span>
@@ -1479,6 +1599,7 @@
       </div>
       <span class='rendering-Mono'>&#x00AB;</span>
       <span class='rendering-Regular'>&#x00AB;</span>
+      <span class='rendering-Bold'>&#x00AB;</span>
       <span class='rendering-Pixelated-Regular'>&#x00AB;</span>
       <span class='rendering-Dots-Regular'>&#x00AB;</span>
       <span class='rendering-Boxes-Regular'>&#x00AB;</span>
@@ -1493,6 +1614,7 @@
       </div>
       <span class='rendering-Mono'>&#x00AC;</span>
       <span class='rendering-Regular'>&#x00AC;</span>
+      <span class='rendering-Bold'>&#x00AC;</span>
       <span class='rendering-Pixelated-Regular'>&#x00AC;</span>
       <span class='rendering-Dots-Regular'>&#x00AC;</span>
       <span class='rendering-Boxes-Regular'>&#x00AC;</span>
@@ -1507,6 +1629,7 @@
       </div>
       <span class='rendering-Mono'>&#x00AD;</span>
       <span class='rendering-Regular'>&#x00AD;</span>
+      <span class='rendering-Bold'>&#x00AD;</span>
       <span class='rendering-Pixelated-Regular'>&#x00AD;</span>
       <span class='rendering-Dots-Regular'>&#x00AD;</span>
       <span class='rendering-Boxes-Regular'>&#x00AD;</span>
@@ -1521,6 +1644,7 @@
       </div>
       <span class='rendering-Mono'>&#x00AE;</span>
       <span class='rendering-Regular'>&#x00AE;</span>
+      <span class='rendering-Bold'>&#x00AE;</span>
       <span class='rendering-Pixelated-Regular'>&#x00AE;</span>
       <span class='rendering-Dots-Regular'>&#x00AE;</span>
       <span class='rendering-Boxes-Regular'>&#x00AE;</span>
@@ -1535,6 +1659,7 @@
       </div>
       <span class='rendering-Mono'>&#x00AF;</span>
       <span class='rendering-Regular'>&#x00AF;</span>
+      <span class='rendering-Bold'>&#x00AF;</span>
       <span class='rendering-Pixelated-Regular'>&#x00AF;</span>
       <span class='rendering-Dots-Regular'>&#x00AF;</span>
       <span class='rendering-Boxes-Regular'>&#x00AF;</span>
@@ -1549,6 +1674,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B0;</span>
       <span class='rendering-Regular'>&#x00B0;</span>
+      <span class='rendering-Bold'>&#x00B0;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B0;</span>
       <span class='rendering-Dots-Regular'>&#x00B0;</span>
       <span class='rendering-Boxes-Regular'>&#x00B0;</span>
@@ -1563,6 +1689,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B1;</span>
       <span class='rendering-Regular'>&#x00B1;</span>
+      <span class='rendering-Bold'>&#x00B1;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B1;</span>
       <span class='rendering-Dots-Regular'>&#x00B1;</span>
       <span class='rendering-Boxes-Regular'>&#x00B1;</span>
@@ -1577,6 +1704,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B2;</span>
       <span class='rendering-Regular'>&#x00B2;</span>
+      <span class='rendering-Bold'>&#x00B2;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B2;</span>
       <span class='rendering-Dots-Regular'>&#x00B2;</span>
       <span class='rendering-Boxes-Regular'>&#x00B2;</span>
@@ -1591,6 +1719,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B3;</span>
       <span class='rendering-Regular'>&#x00B3;</span>
+      <span class='rendering-Bold'>&#x00B3;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B3;</span>
       <span class='rendering-Dots-Regular'>&#x00B3;</span>
       <span class='rendering-Boxes-Regular'>&#x00B3;</span>
@@ -1605,6 +1734,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B4;</span>
       <span class='rendering-Regular'>&#x00B4;</span>
+      <span class='rendering-Bold'>&#x00B4;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B4;</span>
       <span class='rendering-Dots-Regular'>&#x00B4;</span>
       <span class='rendering-Boxes-Regular'>&#x00B4;</span>
@@ -1619,6 +1749,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B5;</span>
       <span class='rendering-Regular'>&#x00B5;</span>
+      <span class='rendering-Bold'>&#x00B5;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B5;</span>
       <span class='rendering-Dots-Regular'>&#x00B5;</span>
       <span class='rendering-Boxes-Regular'>&#x00B5;</span>
@@ -1633,6 +1764,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B6;</span>
       <span class='rendering-Regular'>&#x00B6;</span>
+      <span class='rendering-Bold'>&#x00B6;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B6;</span>
       <span class='rendering-Dots-Regular'>&#x00B6;</span>
       <span class='rendering-Boxes-Regular'>&#x00B6;</span>
@@ -1647,6 +1779,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B7;</span>
       <span class='rendering-Regular'>&#x00B7;</span>
+      <span class='rendering-Bold'>&#x00B7;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B7;</span>
       <span class='rendering-Dots-Regular'>&#x00B7;</span>
       <span class='rendering-Boxes-Regular'>&#x00B7;</span>
@@ -1661,6 +1794,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B8;</span>
       <span class='rendering-Regular'>&#x00B8;</span>
+      <span class='rendering-Bold'>&#x00B8;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B8;</span>
       <span class='rendering-Dots-Regular'>&#x00B8;</span>
       <span class='rendering-Boxes-Regular'>&#x00B8;</span>
@@ -1675,6 +1809,7 @@
       </div>
       <span class='rendering-Mono'>&#x00B9;</span>
       <span class='rendering-Regular'>&#x00B9;</span>
+      <span class='rendering-Bold'>&#x00B9;</span>
       <span class='rendering-Pixelated-Regular'>&#x00B9;</span>
       <span class='rendering-Dots-Regular'>&#x00B9;</span>
       <span class='rendering-Boxes-Regular'>&#x00B9;</span>
@@ -1689,6 +1824,7 @@
       </div>
       <span class='rendering-Mono'>&#x00BA;</span>
       <span class='rendering-Regular'>&#x00BA;</span>
+      <span class='rendering-Bold'>&#x00BA;</span>
       <span class='rendering-Pixelated-Regular'>&#x00BA;</span>
       <span class='rendering-Dots-Regular'>&#x00BA;</span>
       <span class='rendering-Boxes-Regular'>&#x00BA;</span>
@@ -1703,6 +1839,7 @@
       </div>
       <span class='rendering-Mono'>&#x00BB;</span>
       <span class='rendering-Regular'>&#x00BB;</span>
+      <span class='rendering-Bold'>&#x00BB;</span>
       <span class='rendering-Pixelated-Regular'>&#x00BB;</span>
       <span class='rendering-Dots-Regular'>&#x00BB;</span>
       <span class='rendering-Boxes-Regular'>&#x00BB;</span>
@@ -1717,6 +1854,7 @@
       </div>
       <span class='rendering-Mono'>&#x00BC;</span>
       <span class='rendering-Regular'>&#x00BC;</span>
+      <span class='rendering-Bold'>&#x00BC;</span>
       <span class='rendering-Pixelated-Regular'>&#x00BC;</span>
       <span class='rendering-Dots-Regular'>&#x00BC;</span>
       <span class='rendering-Boxes-Regular'>&#x00BC;</span>
@@ -1731,6 +1869,7 @@
       </div>
       <span class='rendering-Mono'>&#x00BD;</span>
       <span class='rendering-Regular'>&#x00BD;</span>
+      <span class='rendering-Bold'>&#x00BD;</span>
       <span class='rendering-Pixelated-Regular'>&#x00BD;</span>
       <span class='rendering-Dots-Regular'>&#x00BD;</span>
       <span class='rendering-Boxes-Regular'>&#x00BD;</span>
@@ -1745,6 +1884,7 @@
       </div>
       <span class='rendering-Mono'>&#x00BE;</span>
       <span class='rendering-Regular'>&#x00BE;</span>
+      <span class='rendering-Bold'>&#x00BE;</span>
       <span class='rendering-Pixelated-Regular'>&#x00BE;</span>
       <span class='rendering-Dots-Regular'>&#x00BE;</span>
       <span class='rendering-Boxes-Regular'>&#x00BE;</span>
@@ -1759,6 +1899,7 @@
       </div>
       <span class='rendering-Mono'>&#x00BF;</span>
       <span class='rendering-Regular'>&#x00BF;</span>
+      <span class='rendering-Bold'>&#x00BF;</span>
       <span class='rendering-Pixelated-Regular'>&#x00BF;</span>
       <span class='rendering-Dots-Regular'>&#x00BF;</span>
       <span class='rendering-Boxes-Regular'>&#x00BF;</span>
@@ -1773,6 +1914,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C0;</span>
       <span class='rendering-Regular'>&#x00C0;</span>
+      <span class='rendering-Bold'>&#x00C0;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C0;</span>
       <span class='rendering-Dots-Regular'>&#x00C0;</span>
       <span class='rendering-Boxes-Regular'>&#x00C0;</span>
@@ -1787,6 +1929,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C1;</span>
       <span class='rendering-Regular'>&#x00C1;</span>
+      <span class='rendering-Bold'>&#x00C1;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C1;</span>
       <span class='rendering-Dots-Regular'>&#x00C1;</span>
       <span class='rendering-Boxes-Regular'>&#x00C1;</span>
@@ -1801,6 +1944,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C2;</span>
       <span class='rendering-Regular'>&#x00C2;</span>
+      <span class='rendering-Bold'>&#x00C2;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C2;</span>
       <span class='rendering-Dots-Regular'>&#x00C2;</span>
       <span class='rendering-Boxes-Regular'>&#x00C2;</span>
@@ -1815,6 +1959,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C3;</span>
       <span class='rendering-Regular'>&#x00C3;</span>
+      <span class='rendering-Bold'>&#x00C3;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C3;</span>
       <span class='rendering-Dots-Regular'>&#x00C3;</span>
       <span class='rendering-Boxes-Regular'>&#x00C3;</span>
@@ -1829,6 +1974,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C4;</span>
       <span class='rendering-Regular'>&#x00C4;</span>
+      <span class='rendering-Bold'>&#x00C4;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C4;</span>
       <span class='rendering-Dots-Regular'>&#x00C4;</span>
       <span class='rendering-Boxes-Regular'>&#x00C4;</span>
@@ -1843,6 +1989,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C5;</span>
       <span class='rendering-Regular'>&#x00C5;</span>
+      <span class='rendering-Bold'>&#x00C5;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C5;</span>
       <span class='rendering-Dots-Regular'>&#x00C5;</span>
       <span class='rendering-Boxes-Regular'>&#x00C5;</span>
@@ -1857,6 +2004,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C6;</span>
       <span class='rendering-Regular'>&#x00C6;</span>
+      <span class='rendering-Bold'>&#x00C6;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C6;</span>
       <span class='rendering-Dots-Regular'>&#x00C6;</span>
       <span class='rendering-Boxes-Regular'>&#x00C6;</span>
@@ -1871,6 +2019,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C7;</span>
       <span class='rendering-Regular'>&#x00C7;</span>
+      <span class='rendering-Bold'>&#x00C7;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C7;</span>
       <span class='rendering-Dots-Regular'>&#x00C7;</span>
       <span class='rendering-Boxes-Regular'>&#x00C7;</span>
@@ -1885,6 +2034,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C8;</span>
       <span class='rendering-Regular'>&#x00C8;</span>
+      <span class='rendering-Bold'>&#x00C8;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C8;</span>
       <span class='rendering-Dots-Regular'>&#x00C8;</span>
       <span class='rendering-Boxes-Regular'>&#x00C8;</span>
@@ -1899,6 +2049,7 @@
       </div>
       <span class='rendering-Mono'>&#x00C9;</span>
       <span class='rendering-Regular'>&#x00C9;</span>
+      <span class='rendering-Bold'>&#x00C9;</span>
       <span class='rendering-Pixelated-Regular'>&#x00C9;</span>
       <span class='rendering-Dots-Regular'>&#x00C9;</span>
       <span class='rendering-Boxes-Regular'>&#x00C9;</span>
@@ -1913,6 +2064,7 @@
       </div>
       <span class='rendering-Mono'>&#x00CA;</span>
       <span class='rendering-Regular'>&#x00CA;</span>
+      <span class='rendering-Bold'>&#x00CA;</span>
       <span class='rendering-Pixelated-Regular'>&#x00CA;</span>
       <span class='rendering-Dots-Regular'>&#x00CA;</span>
       <span class='rendering-Boxes-Regular'>&#x00CA;</span>
@@ -1927,6 +2079,7 @@
       </div>
       <span class='rendering-Mono'>&#x00CB;</span>
       <span class='rendering-Regular'>&#x00CB;</span>
+      <span class='rendering-Bold'>&#x00CB;</span>
       <span class='rendering-Pixelated-Regular'>&#x00CB;</span>
       <span class='rendering-Dots-Regular'>&#x00CB;</span>
       <span class='rendering-Boxes-Regular'>&#x00CB;</span>
@@ -1941,6 +2094,7 @@
       </div>
       <span class='rendering-Mono'>&#x00CC;</span>
       <span class='rendering-Regular'>&#x00CC;</span>
+      <span class='rendering-Bold'>&#x00CC;</span>
       <span class='rendering-Pixelated-Regular'>&#x00CC;</span>
       <span class='rendering-Dots-Regular'>&#x00CC;</span>
       <span class='rendering-Boxes-Regular'>&#x00CC;</span>
@@ -1955,6 +2109,7 @@
       </div>
       <span class='rendering-Mono'>&#x00CD;</span>
       <span class='rendering-Regular'>&#x00CD;</span>
+      <span class='rendering-Bold'>&#x00CD;</span>
       <span class='rendering-Pixelated-Regular'>&#x00CD;</span>
       <span class='rendering-Dots-Regular'>&#x00CD;</span>
       <span class='rendering-Boxes-Regular'>&#x00CD;</span>
@@ -1969,6 +2124,7 @@
       </div>
       <span class='rendering-Mono'>&#x00CE;</span>
       <span class='rendering-Regular'>&#x00CE;</span>
+      <span class='rendering-Bold'>&#x00CE;</span>
       <span class='rendering-Pixelated-Regular'>&#x00CE;</span>
       <span class='rendering-Dots-Regular'>&#x00CE;</span>
       <span class='rendering-Boxes-Regular'>&#x00CE;</span>
@@ -1983,6 +2139,7 @@
       </div>
       <span class='rendering-Mono'>&#x00CF;</span>
       <span class='rendering-Regular'>&#x00CF;</span>
+      <span class='rendering-Bold'>&#x00CF;</span>
       <span class='rendering-Pixelated-Regular'>&#x00CF;</span>
       <span class='rendering-Dots-Regular'>&#x00CF;</span>
       <span class='rendering-Boxes-Regular'>&#x00CF;</span>
@@ -1997,6 +2154,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D0;</span>
       <span class='rendering-Regular'>&#x00D0;</span>
+      <span class='rendering-Bold'>&#x00D0;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D0;</span>
       <span class='rendering-Dots-Regular'>&#x00D0;</span>
       <span class='rendering-Boxes-Regular'>&#x00D0;</span>
@@ -2011,6 +2169,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D1;</span>
       <span class='rendering-Regular'>&#x00D1;</span>
+      <span class='rendering-Bold'>&#x00D1;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D1;</span>
       <span class='rendering-Dots-Regular'>&#x00D1;</span>
       <span class='rendering-Boxes-Regular'>&#x00D1;</span>
@@ -2025,6 +2184,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D2;</span>
       <span class='rendering-Regular'>&#x00D2;</span>
+      <span class='rendering-Bold'>&#x00D2;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D2;</span>
       <span class='rendering-Dots-Regular'>&#x00D2;</span>
       <span class='rendering-Boxes-Regular'>&#x00D2;</span>
@@ -2039,6 +2199,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D3;</span>
       <span class='rendering-Regular'>&#x00D3;</span>
+      <span class='rendering-Bold'>&#x00D3;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D3;</span>
       <span class='rendering-Dots-Regular'>&#x00D3;</span>
       <span class='rendering-Boxes-Regular'>&#x00D3;</span>
@@ -2053,6 +2214,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D4;</span>
       <span class='rendering-Regular'>&#x00D4;</span>
+      <span class='rendering-Bold'>&#x00D4;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D4;</span>
       <span class='rendering-Dots-Regular'>&#x00D4;</span>
       <span class='rendering-Boxes-Regular'>&#x00D4;</span>
@@ -2067,6 +2229,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D5;</span>
       <span class='rendering-Regular'>&#x00D5;</span>
+      <span class='rendering-Bold'>&#x00D5;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D5;</span>
       <span class='rendering-Dots-Regular'>&#x00D5;</span>
       <span class='rendering-Boxes-Regular'>&#x00D5;</span>
@@ -2081,6 +2244,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D6;</span>
       <span class='rendering-Regular'>&#x00D6;</span>
+      <span class='rendering-Bold'>&#x00D6;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D6;</span>
       <span class='rendering-Dots-Regular'>&#x00D6;</span>
       <span class='rendering-Boxes-Regular'>&#x00D6;</span>
@@ -2095,6 +2259,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D7;</span>
       <span class='rendering-Regular'>&#x00D7;</span>
+      <span class='rendering-Bold'>&#x00D7;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D7;</span>
       <span class='rendering-Dots-Regular'>&#x00D7;</span>
       <span class='rendering-Boxes-Regular'>&#x00D7;</span>
@@ -2109,6 +2274,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D8;</span>
       <span class='rendering-Regular'>&#x00D8;</span>
+      <span class='rendering-Bold'>&#x00D8;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D8;</span>
       <span class='rendering-Dots-Regular'>&#x00D8;</span>
       <span class='rendering-Boxes-Regular'>&#x00D8;</span>
@@ -2123,6 +2289,7 @@
       </div>
       <span class='rendering-Mono'>&#x00D9;</span>
       <span class='rendering-Regular'>&#x00D9;</span>
+      <span class='rendering-Bold'>&#x00D9;</span>
       <span class='rendering-Pixelated-Regular'>&#x00D9;</span>
       <span class='rendering-Dots-Regular'>&#x00D9;</span>
       <span class='rendering-Boxes-Regular'>&#x00D9;</span>
@@ -2137,6 +2304,7 @@
       </div>
       <span class='rendering-Mono'>&#x00DA;</span>
       <span class='rendering-Regular'>&#x00DA;</span>
+      <span class='rendering-Bold'>&#x00DA;</span>
       <span class='rendering-Pixelated-Regular'>&#x00DA;</span>
       <span class='rendering-Dots-Regular'>&#x00DA;</span>
       <span class='rendering-Boxes-Regular'>&#x00DA;</span>
@@ -2151,6 +2319,7 @@
       </div>
       <span class='rendering-Mono'>&#x00DB;</span>
       <span class='rendering-Regular'>&#x00DB;</span>
+      <span class='rendering-Bold'>&#x00DB;</span>
       <span class='rendering-Pixelated-Regular'>&#x00DB;</span>
       <span class='rendering-Dots-Regular'>&#x00DB;</span>
       <span class='rendering-Boxes-Regular'>&#x00DB;</span>
@@ -2165,6 +2334,7 @@
       </div>
       <span class='rendering-Mono'>&#x00DC;</span>
       <span class='rendering-Regular'>&#x00DC;</span>
+      <span class='rendering-Bold'>&#x00DC;</span>
       <span class='rendering-Pixelated-Regular'>&#x00DC;</span>
       <span class='rendering-Dots-Regular'>&#x00DC;</span>
       <span class='rendering-Boxes-Regular'>&#x00DC;</span>
@@ -2179,6 +2349,7 @@
       </div>
       <span class='rendering-Mono'>&#x00DD;</span>
       <span class='rendering-Regular'>&#x00DD;</span>
+      <span class='rendering-Bold'>&#x00DD;</span>
       <span class='rendering-Pixelated-Regular'>&#x00DD;</span>
       <span class='rendering-Dots-Regular'>&#x00DD;</span>
       <span class='rendering-Boxes-Regular'>&#x00DD;</span>
@@ -2193,6 +2364,7 @@
       </div>
       <span class='rendering-Mono'>&#x00DE;</span>
       <span class='rendering-Regular'>&#x00DE;</span>
+      <span class='rendering-Bold'>&#x00DE;</span>
       <span class='rendering-Pixelated-Regular'>&#x00DE;</span>
       <span class='rendering-Dots-Regular'>&#x00DE;</span>
       <span class='rendering-Boxes-Regular'>&#x00DE;</span>
@@ -2207,6 +2379,7 @@
       </div>
       <span class='rendering-Mono'>&#x00DF;</span>
       <span class='rendering-Regular'>&#x00DF;</span>
+      <span class='rendering-Bold'>&#x00DF;</span>
       <span class='rendering-Pixelated-Regular'>&#x00DF;</span>
       <span class='rendering-Dots-Regular'>&#x00DF;</span>
       <span class='rendering-Boxes-Regular'>&#x00DF;</span>
@@ -2221,6 +2394,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E0;</span>
       <span class='rendering-Regular'>&#x00E0;</span>
+      <span class='rendering-Bold'>&#x00E0;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E0;</span>
       <span class='rendering-Dots-Regular'>&#x00E0;</span>
       <span class='rendering-Boxes-Regular'>&#x00E0;</span>
@@ -2235,6 +2409,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E1;</span>
       <span class='rendering-Regular'>&#x00E1;</span>
+      <span class='rendering-Bold'>&#x00E1;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E1;</span>
       <span class='rendering-Dots-Regular'>&#x00E1;</span>
       <span class='rendering-Boxes-Regular'>&#x00E1;</span>
@@ -2249,6 +2424,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E2;</span>
       <span class='rendering-Regular'>&#x00E2;</span>
+      <span class='rendering-Bold'>&#x00E2;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E2;</span>
       <span class='rendering-Dots-Regular'>&#x00E2;</span>
       <span class='rendering-Boxes-Regular'>&#x00E2;</span>
@@ -2263,6 +2439,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E3;</span>
       <span class='rendering-Regular'>&#x00E3;</span>
+      <span class='rendering-Bold'>&#x00E3;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E3;</span>
       <span class='rendering-Dots-Regular'>&#x00E3;</span>
       <span class='rendering-Boxes-Regular'>&#x00E3;</span>
@@ -2277,6 +2454,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E4;</span>
       <span class='rendering-Regular'>&#x00E4;</span>
+      <span class='rendering-Bold'>&#x00E4;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E4;</span>
       <span class='rendering-Dots-Regular'>&#x00E4;</span>
       <span class='rendering-Boxes-Regular'>&#x00E4;</span>
@@ -2291,6 +2469,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E5;</span>
       <span class='rendering-Regular'>&#x00E5;</span>
+      <span class='rendering-Bold'>&#x00E5;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E5;</span>
       <span class='rendering-Dots-Regular'>&#x00E5;</span>
       <span class='rendering-Boxes-Regular'>&#x00E5;</span>
@@ -2305,6 +2484,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E6;</span>
       <span class='rendering-Regular'>&#x00E6;</span>
+      <span class='rendering-Bold'>&#x00E6;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E6;</span>
       <span class='rendering-Dots-Regular'>&#x00E6;</span>
       <span class='rendering-Boxes-Regular'>&#x00E6;</span>
@@ -2319,6 +2499,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E7;</span>
       <span class='rendering-Regular'>&#x00E7;</span>
+      <span class='rendering-Bold'>&#x00E7;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E7;</span>
       <span class='rendering-Dots-Regular'>&#x00E7;</span>
       <span class='rendering-Boxes-Regular'>&#x00E7;</span>
@@ -2333,6 +2514,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E8;</span>
       <span class='rendering-Regular'>&#x00E8;</span>
+      <span class='rendering-Bold'>&#x00E8;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E8;</span>
       <span class='rendering-Dots-Regular'>&#x00E8;</span>
       <span class='rendering-Boxes-Regular'>&#x00E8;</span>
@@ -2347,6 +2529,7 @@
       </div>
       <span class='rendering-Mono'>&#x00E9;</span>
       <span class='rendering-Regular'>&#x00E9;</span>
+      <span class='rendering-Bold'>&#x00E9;</span>
       <span class='rendering-Pixelated-Regular'>&#x00E9;</span>
       <span class='rendering-Dots-Regular'>&#x00E9;</span>
       <span class='rendering-Boxes-Regular'>&#x00E9;</span>
@@ -2361,6 +2544,7 @@
       </div>
       <span class='rendering-Mono'>&#x00EA;</span>
       <span class='rendering-Regular'>&#x00EA;</span>
+      <span class='rendering-Bold'>&#x00EA;</span>
       <span class='rendering-Pixelated-Regular'>&#x00EA;</span>
       <span class='rendering-Dots-Regular'>&#x00EA;</span>
       <span class='rendering-Boxes-Regular'>&#x00EA;</span>
@@ -2375,6 +2559,7 @@
       </div>
       <span class='rendering-Mono'>&#x00EB;</span>
       <span class='rendering-Regular'>&#x00EB;</span>
+      <span class='rendering-Bold'>&#x00EB;</span>
       <span class='rendering-Pixelated-Regular'>&#x00EB;</span>
       <span class='rendering-Dots-Regular'>&#x00EB;</span>
       <span class='rendering-Boxes-Regular'>&#x00EB;</span>
@@ -2389,6 +2574,7 @@
       </div>
       <span class='rendering-Mono'>&#x00EC;</span>
       <span class='rendering-Regular'>&#x00EC;</span>
+      <span class='rendering-Bold'>&#x00EC;</span>
       <span class='rendering-Pixelated-Regular'>&#x00EC;</span>
       <span class='rendering-Dots-Regular'>&#x00EC;</span>
       <span class='rendering-Boxes-Regular'>&#x00EC;</span>
@@ -2403,6 +2589,7 @@
       </div>
       <span class='rendering-Mono'>&#x00ED;</span>
       <span class='rendering-Regular'>&#x00ED;</span>
+      <span class='rendering-Bold'>&#x00ED;</span>
       <span class='rendering-Pixelated-Regular'>&#x00ED;</span>
       <span class='rendering-Dots-Regular'>&#x00ED;</span>
       <span class='rendering-Boxes-Regular'>&#x00ED;</span>
@@ -2417,6 +2604,7 @@
       </div>
       <span class='rendering-Mono'>&#x00EE;</span>
       <span class='rendering-Regular'>&#x00EE;</span>
+      <span class='rendering-Bold'>&#x00EE;</span>
       <span class='rendering-Pixelated-Regular'>&#x00EE;</span>
       <span class='rendering-Dots-Regular'>&#x00EE;</span>
       <span class='rendering-Boxes-Regular'>&#x00EE;</span>
@@ -2431,6 +2619,7 @@
       </div>
       <span class='rendering-Mono'>&#x00EF;</span>
       <span class='rendering-Regular'>&#x00EF;</span>
+      <span class='rendering-Bold'>&#x00EF;</span>
       <span class='rendering-Pixelated-Regular'>&#x00EF;</span>
       <span class='rendering-Dots-Regular'>&#x00EF;</span>
       <span class='rendering-Boxes-Regular'>&#x00EF;</span>
@@ -2445,6 +2634,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F0;</span>
       <span class='rendering-Regular'>&#x00F0;</span>
+      <span class='rendering-Bold'>&#x00F0;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F0;</span>
       <span class='rendering-Dots-Regular'>&#x00F0;</span>
       <span class='rendering-Boxes-Regular'>&#x00F0;</span>
@@ -2459,6 +2649,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F1;</span>
       <span class='rendering-Regular'>&#x00F1;</span>
+      <span class='rendering-Bold'>&#x00F1;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F1;</span>
       <span class='rendering-Dots-Regular'>&#x00F1;</span>
       <span class='rendering-Boxes-Regular'>&#x00F1;</span>
@@ -2473,6 +2664,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F2;</span>
       <span class='rendering-Regular'>&#x00F2;</span>
+      <span class='rendering-Bold'>&#x00F2;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F2;</span>
       <span class='rendering-Dots-Regular'>&#x00F2;</span>
       <span class='rendering-Boxes-Regular'>&#x00F2;</span>
@@ -2487,6 +2679,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F3;</span>
       <span class='rendering-Regular'>&#x00F3;</span>
+      <span class='rendering-Bold'>&#x00F3;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F3;</span>
       <span class='rendering-Dots-Regular'>&#x00F3;</span>
       <span class='rendering-Boxes-Regular'>&#x00F3;</span>
@@ -2501,6 +2694,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F4;</span>
       <span class='rendering-Regular'>&#x00F4;</span>
+      <span class='rendering-Bold'>&#x00F4;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F4;</span>
       <span class='rendering-Dots-Regular'>&#x00F4;</span>
       <span class='rendering-Boxes-Regular'>&#x00F4;</span>
@@ -2515,6 +2709,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F5;</span>
       <span class='rendering-Regular'>&#x00F5;</span>
+      <span class='rendering-Bold'>&#x00F5;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F5;</span>
       <span class='rendering-Dots-Regular'>&#x00F5;</span>
       <span class='rendering-Boxes-Regular'>&#x00F5;</span>
@@ -2529,6 +2724,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F6;</span>
       <span class='rendering-Regular'>&#x00F6;</span>
+      <span class='rendering-Bold'>&#x00F6;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F6;</span>
       <span class='rendering-Dots-Regular'>&#x00F6;</span>
       <span class='rendering-Boxes-Regular'>&#x00F6;</span>
@@ -2543,6 +2739,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F7;</span>
       <span class='rendering-Regular'>&#x00F7;</span>
+      <span class='rendering-Bold'>&#x00F7;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F7;</span>
       <span class='rendering-Dots-Regular'>&#x00F7;</span>
       <span class='rendering-Boxes-Regular'>&#x00F7;</span>
@@ -2557,6 +2754,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F8;</span>
       <span class='rendering-Regular'>&#x00F8;</span>
+      <span class='rendering-Bold'>&#x00F8;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F8;</span>
       <span class='rendering-Dots-Regular'>&#x00F8;</span>
       <span class='rendering-Boxes-Regular'>&#x00F8;</span>
@@ -2571,6 +2769,7 @@
       </div>
       <span class='rendering-Mono'>&#x00F9;</span>
       <span class='rendering-Regular'>&#x00F9;</span>
+      <span class='rendering-Bold'>&#x00F9;</span>
       <span class='rendering-Pixelated-Regular'>&#x00F9;</span>
       <span class='rendering-Dots-Regular'>&#x00F9;</span>
       <span class='rendering-Boxes-Regular'>&#x00F9;</span>
@@ -2585,6 +2784,7 @@
       </div>
       <span class='rendering-Mono'>&#x00FA;</span>
       <span class='rendering-Regular'>&#x00FA;</span>
+      <span class='rendering-Bold'>&#x00FA;</span>
       <span class='rendering-Pixelated-Regular'>&#x00FA;</span>
       <span class='rendering-Dots-Regular'>&#x00FA;</span>
       <span class='rendering-Boxes-Regular'>&#x00FA;</span>
@@ -2599,6 +2799,7 @@
       </div>
       <span class='rendering-Mono'>&#x00FB;</span>
       <span class='rendering-Regular'>&#x00FB;</span>
+      <span class='rendering-Bold'>&#x00FB;</span>
       <span class='rendering-Pixelated-Regular'>&#x00FB;</span>
       <span class='rendering-Dots-Regular'>&#x00FB;</span>
       <span class='rendering-Boxes-Regular'>&#x00FB;</span>
@@ -2613,6 +2814,7 @@
       </div>
       <span class='rendering-Mono'>&#x00FC;</span>
       <span class='rendering-Regular'>&#x00FC;</span>
+      <span class='rendering-Bold'>&#x00FC;</span>
       <span class='rendering-Pixelated-Regular'>&#x00FC;</span>
       <span class='rendering-Dots-Regular'>&#x00FC;</span>
       <span class='rendering-Boxes-Regular'>&#x00FC;</span>
@@ -2627,6 +2829,7 @@
       </div>
       <span class='rendering-Mono'>&#x00FD;</span>
       <span class='rendering-Regular'>&#x00FD;</span>
+      <span class='rendering-Bold'>&#x00FD;</span>
       <span class='rendering-Pixelated-Regular'>&#x00FD;</span>
       <span class='rendering-Dots-Regular'>&#x00FD;</span>
       <span class='rendering-Boxes-Regular'>&#x00FD;</span>
@@ -2641,6 +2844,7 @@
       </div>
       <span class='rendering-Mono'>&#x00FE;</span>
       <span class='rendering-Regular'>&#x00FE;</span>
+      <span class='rendering-Bold'>&#x00FE;</span>
       <span class='rendering-Pixelated-Regular'>&#x00FE;</span>
       <span class='rendering-Dots-Regular'>&#x00FE;</span>
       <span class='rendering-Boxes-Regular'>&#x00FE;</span>
@@ -2655,6 +2859,7 @@
       </div>
       <span class='rendering-Mono'>&#x00FF;</span>
       <span class='rendering-Regular'>&#x00FF;</span>
+      <span class='rendering-Bold'>&#x00FF;</span>
       <span class='rendering-Pixelated-Regular'>&#x00FF;</span>
       <span class='rendering-Dots-Regular'>&#x00FF;</span>
       <span class='rendering-Boxes-Regular'>&#x00FF;</span>
@@ -2669,6 +2874,7 @@
       </div>
       <span class='rendering-Mono'>&#x0108;</span>
       <span class='rendering-Regular'>&#x0108;</span>
+      <span class='rendering-Bold'>&#x0108;</span>
       <span class='rendering-Pixelated-Regular'>&#x0108;</span>
       <span class='rendering-Dots-Regular'>&#x0108;</span>
       <span class='rendering-Boxes-Regular'>&#x0108;</span>
@@ -2683,6 +2889,7 @@
       </div>
       <span class='rendering-Mono'>&#x0109;</span>
       <span class='rendering-Regular'>&#x0109;</span>
+      <span class='rendering-Bold'>&#x0109;</span>
       <span class='rendering-Pixelated-Regular'>&#x0109;</span>
       <span class='rendering-Dots-Regular'>&#x0109;</span>
       <span class='rendering-Boxes-Regular'>&#x0109;</span>
@@ -2697,6 +2904,7 @@
       </div>
       <span class='rendering-Mono'>&#x010D;</span>
       <span class='rendering-Regular'>&#x010D;</span>
+      <span class='rendering-Bold'>&#x010D;</span>
       <span class='rendering-Pixelated-Regular'>&#x010D;</span>
       <span class='rendering-Dots-Regular'>&#x010D;</span>
       <span class='rendering-Boxes-Regular'>&#x010D;</span>
@@ -2711,6 +2919,7 @@
       </div>
       <span class='rendering-Mono'>&#x011C;</span>
       <span class='rendering-Regular'>&#x011C;</span>
+      <span class='rendering-Bold'>&#x011C;</span>
       <span class='rendering-Pixelated-Regular'>&#x011C;</span>
       <span class='rendering-Dots-Regular'>&#x011C;</span>
       <span class='rendering-Boxes-Regular'>&#x011C;</span>
@@ -2725,6 +2934,7 @@
       </div>
       <span class='rendering-Mono'>&#x011D;</span>
       <span class='rendering-Regular'>&#x011D;</span>
+      <span class='rendering-Bold'>&#x011D;</span>
       <span class='rendering-Pixelated-Regular'>&#x011D;</span>
       <span class='rendering-Dots-Regular'>&#x011D;</span>
       <span class='rendering-Boxes-Regular'>&#x011D;</span>
@@ -2739,6 +2949,7 @@
       </div>
       <span class='rendering-Mono'>&#x0124;</span>
       <span class='rendering-Regular'>&#x0124;</span>
+      <span class='rendering-Bold'>&#x0124;</span>
       <span class='rendering-Pixelated-Regular'>&#x0124;</span>
       <span class='rendering-Dots-Regular'>&#x0124;</span>
       <span class='rendering-Boxes-Regular'>&#x0124;</span>
@@ -2753,6 +2964,7 @@
       </div>
       <span class='rendering-Mono'>&#x0125;</span>
       <span class='rendering-Regular'>&#x0125;</span>
+      <span class='rendering-Bold'>&#x0125;</span>
       <span class='rendering-Pixelated-Regular'>&#x0125;</span>
       <span class='rendering-Dots-Regular'>&#x0125;</span>
       <span class='rendering-Boxes-Regular'>&#x0125;</span>
@@ -2767,6 +2979,7 @@
       </div>
       <span class='rendering-Mono'>&#x0131;</span>
       <span class='rendering-Regular'>&#x0131;</span>
+      <span class='rendering-Bold'>&#x0131;</span>
       <span class='rendering-Pixelated-Regular'>&#x0131;</span>
       <span class='rendering-Dots-Regular'>&#x0131;</span>
       <span class='rendering-Boxes-Regular'>&#x0131;</span>
@@ -2781,6 +2994,7 @@
       </div>
       <span class='rendering-Mono'>&#x0134;</span>
       <span class='rendering-Regular'>&#x0134;</span>
+      <span class='rendering-Bold'>&#x0134;</span>
       <span class='rendering-Pixelated-Regular'>&#x0134;</span>
       <span class='rendering-Dots-Regular'>&#x0134;</span>
       <span class='rendering-Boxes-Regular'>&#x0134;</span>
@@ -2795,6 +3009,7 @@
       </div>
       <span class='rendering-Mono'>&#x0135;</span>
       <span class='rendering-Regular'>&#x0135;</span>
+      <span class='rendering-Bold'>&#x0135;</span>
       <span class='rendering-Pixelated-Regular'>&#x0135;</span>
       <span class='rendering-Dots-Regular'>&#x0135;</span>
       <span class='rendering-Boxes-Regular'>&#x0135;</span>
@@ -2809,6 +3024,7 @@
       </div>
       <span class='rendering-Mono'>&#x0141;</span>
       <span class='rendering-Regular'>&#x0141;</span>
+      <span class='rendering-Bold'>&#x0141;</span>
       <span class='rendering-Pixelated-Regular'>&#x0141;</span>
       <span class='rendering-Dots-Regular'>&#x0141;</span>
       <span class='rendering-Boxes-Regular'>&#x0141;</span>
@@ -2823,6 +3039,7 @@
       </div>
       <span class='rendering-Mono'>&#x0142;</span>
       <span class='rendering-Regular'>&#x0142;</span>
+      <span class='rendering-Bold'>&#x0142;</span>
       <span class='rendering-Pixelated-Regular'>&#x0142;</span>
       <span class='rendering-Dots-Regular'>&#x0142;</span>
       <span class='rendering-Boxes-Regular'>&#x0142;</span>
@@ -2837,6 +3054,7 @@
       </div>
       <span class='rendering-Mono'>&#x0150;</span>
       <span class='rendering-Regular'>&#x0150;</span>
+      <span class='rendering-Bold'>&#x0150;</span>
       <span class='rendering-Pixelated-Regular'>&#x0150;</span>
       <span class='rendering-Dots-Regular'>&#x0150;</span>
       <span class='rendering-Boxes-Regular'>&#x0150;</span>
@@ -2851,6 +3069,7 @@
       </div>
       <span class='rendering-Mono'>&#x0151;</span>
       <span class='rendering-Regular'>&#x0151;</span>
+      <span class='rendering-Bold'>&#x0151;</span>
       <span class='rendering-Pixelated-Regular'>&#x0151;</span>
       <span class='rendering-Dots-Regular'>&#x0151;</span>
       <span class='rendering-Boxes-Regular'>&#x0151;</span>
@@ -2865,6 +3084,7 @@
       </div>
       <span class='rendering-Mono'>&#x0152;</span>
       <span class='rendering-Regular'>&#x0152;</span>
+      <span class='rendering-Bold'>&#x0152;</span>
       <span class='rendering-Pixelated-Regular'>&#x0152;</span>
       <span class='rendering-Dots-Regular'>&#x0152;</span>
       <span class='rendering-Boxes-Regular'>&#x0152;</span>
@@ -2879,6 +3099,7 @@
       </div>
       <span class='rendering-Mono'>&#x0153;</span>
       <span class='rendering-Regular'>&#x0153;</span>
+      <span class='rendering-Bold'>&#x0153;</span>
       <span class='rendering-Pixelated-Regular'>&#x0153;</span>
       <span class='rendering-Dots-Regular'>&#x0153;</span>
       <span class='rendering-Boxes-Regular'>&#x0153;</span>
@@ -2893,6 +3114,7 @@
       </div>
       <span class='rendering-Mono'>&#x0158;</span>
       <span class='rendering-Regular'>&#x0158;</span>
+      <span class='rendering-Bold'>&#x0158;</span>
       <span class='rendering-Pixelated-Regular'>&#x0158;</span>
       <span class='rendering-Dots-Regular'>&#x0158;</span>
       <span class='rendering-Boxes-Regular'>&#x0158;</span>
@@ -2907,6 +3129,7 @@
       </div>
       <span class='rendering-Mono'>&#x0159;</span>
       <span class='rendering-Regular'>&#x0159;</span>
+      <span class='rendering-Bold'>&#x0159;</span>
       <span class='rendering-Pixelated-Regular'>&#x0159;</span>
       <span class='rendering-Dots-Regular'>&#x0159;</span>
       <span class='rendering-Boxes-Regular'>&#x0159;</span>
@@ -2921,6 +3144,7 @@
       </div>
       <span class='rendering-Mono'>&#x015A;</span>
       <span class='rendering-Regular'>&#x015A;</span>
+      <span class='rendering-Bold'>&#x015A;</span>
       <span class='rendering-Pixelated-Regular'>&#x015A;</span>
       <span class='rendering-Dots-Regular'>&#x015A;</span>
       <span class='rendering-Boxes-Regular'>&#x015A;</span>
@@ -2935,6 +3159,7 @@
       </div>
       <span class='rendering-Mono'>&#x015B;</span>
       <span class='rendering-Regular'>&#x015B;</span>
+      <span class='rendering-Bold'>&#x015B;</span>
       <span class='rendering-Pixelated-Regular'>&#x015B;</span>
       <span class='rendering-Dots-Regular'>&#x015B;</span>
       <span class='rendering-Boxes-Regular'>&#x015B;</span>
@@ -2949,6 +3174,7 @@
       </div>
       <span class='rendering-Mono'>&#x015C;</span>
       <span class='rendering-Regular'>&#x015C;</span>
+      <span class='rendering-Bold'>&#x015C;</span>
       <span class='rendering-Pixelated-Regular'>&#x015C;</span>
       <span class='rendering-Dots-Regular'>&#x015C;</span>
       <span class='rendering-Boxes-Regular'>&#x015C;</span>
@@ -2963,6 +3189,7 @@
       </div>
       <span class='rendering-Mono'>&#x015D;</span>
       <span class='rendering-Regular'>&#x015D;</span>
+      <span class='rendering-Bold'>&#x015D;</span>
       <span class='rendering-Pixelated-Regular'>&#x015D;</span>
       <span class='rendering-Dots-Regular'>&#x015D;</span>
       <span class='rendering-Boxes-Regular'>&#x015D;</span>
@@ -2977,6 +3204,7 @@
       </div>
       <span class='rendering-Mono'>&#x015E;</span>
       <span class='rendering-Regular'>&#x015E;</span>
+      <span class='rendering-Bold'>&#x015E;</span>
       <span class='rendering-Pixelated-Regular'>&#x015E;</span>
       <span class='rendering-Dots-Regular'>&#x015E;</span>
       <span class='rendering-Boxes-Regular'>&#x015E;</span>
@@ -2991,6 +3219,7 @@
       </div>
       <span class='rendering-Mono'>&#x015F;</span>
       <span class='rendering-Regular'>&#x015F;</span>
+      <span class='rendering-Bold'>&#x015F;</span>
       <span class='rendering-Pixelated-Regular'>&#x015F;</span>
       <span class='rendering-Dots-Regular'>&#x015F;</span>
       <span class='rendering-Boxes-Regular'>&#x015F;</span>
@@ -3005,6 +3234,7 @@
       </div>
       <span class='rendering-Mono'>&#x0160;</span>
       <span class='rendering-Regular'>&#x0160;</span>
+      <span class='rendering-Bold'>&#x0160;</span>
       <span class='rendering-Pixelated-Regular'>&#x0160;</span>
       <span class='rendering-Dots-Regular'>&#x0160;</span>
       <span class='rendering-Boxes-Regular'>&#x0160;</span>
@@ -3019,6 +3249,7 @@
       </div>
       <span class='rendering-Mono'>&#x0161;</span>
       <span class='rendering-Regular'>&#x0161;</span>
+      <span class='rendering-Bold'>&#x0161;</span>
       <span class='rendering-Pixelated-Regular'>&#x0161;</span>
       <span class='rendering-Dots-Regular'>&#x0161;</span>
       <span class='rendering-Boxes-Regular'>&#x0161;</span>
@@ -3033,6 +3264,7 @@
       </div>
       <span class='rendering-Mono'>&#x0168;</span>
       <span class='rendering-Regular'>&#x0168;</span>
+      <span class='rendering-Bold'>&#x0168;</span>
       <span class='rendering-Pixelated-Regular'>&#x0168;</span>
       <span class='rendering-Dots-Regular'>&#x0168;</span>
       <span class='rendering-Boxes-Regular'>&#x0168;</span>
@@ -3047,6 +3279,7 @@
       </div>
       <span class='rendering-Mono'>&#x0169;</span>
       <span class='rendering-Regular'>&#x0169;</span>
+      <span class='rendering-Bold'>&#x0169;</span>
       <span class='rendering-Pixelated-Regular'>&#x0169;</span>
       <span class='rendering-Dots-Regular'>&#x0169;</span>
       <span class='rendering-Boxes-Regular'>&#x0169;</span>
@@ -3061,6 +3294,7 @@
       </div>
       <span class='rendering-Mono'>&#x016C;</span>
       <span class='rendering-Regular'>&#x016C;</span>
+      <span class='rendering-Bold'>&#x016C;</span>
       <span class='rendering-Pixelated-Regular'>&#x016C;</span>
       <span class='rendering-Dots-Regular'>&#x016C;</span>
       <span class='rendering-Boxes-Regular'>&#x016C;</span>
@@ -3075,6 +3309,7 @@
       </div>
       <span class='rendering-Mono'>&#x016D;</span>
       <span class='rendering-Regular'>&#x016D;</span>
+      <span class='rendering-Bold'>&#x016D;</span>
       <span class='rendering-Pixelated-Regular'>&#x016D;</span>
       <span class='rendering-Dots-Regular'>&#x016D;</span>
       <span class='rendering-Boxes-Regular'>&#x016D;</span>
@@ -3089,6 +3324,7 @@
       </div>
       <span class='rendering-Mono'>&#x016E;</span>
       <span class='rendering-Regular'>&#x016E;</span>
+      <span class='rendering-Bold'>&#x016E;</span>
       <span class='rendering-Pixelated-Regular'>&#x016E;</span>
       <span class='rendering-Dots-Regular'>&#x016E;</span>
       <span class='rendering-Boxes-Regular'>&#x016E;</span>
@@ -3103,6 +3339,7 @@
       </div>
       <span class='rendering-Mono'>&#x016F;</span>
       <span class='rendering-Regular'>&#x016F;</span>
+      <span class='rendering-Bold'>&#x016F;</span>
       <span class='rendering-Pixelated-Regular'>&#x016F;</span>
       <span class='rendering-Dots-Regular'>&#x016F;</span>
       <span class='rendering-Boxes-Regular'>&#x016F;</span>
@@ -3117,6 +3354,7 @@
       </div>
       <span class='rendering-Mono'>&#x0178;</span>
       <span class='rendering-Regular'>&#x0178;</span>
+      <span class='rendering-Bold'>&#x0178;</span>
       <span class='rendering-Pixelated-Regular'>&#x0178;</span>
       <span class='rendering-Dots-Regular'>&#x0178;</span>
       <span class='rendering-Boxes-Regular'>&#x0178;</span>
@@ -3131,6 +3369,7 @@
       </div>
       <span class='rendering-Mono'>&#x017D;</span>
       <span class='rendering-Regular'>&#x017D;</span>
+      <span class='rendering-Bold'>&#x017D;</span>
       <span class='rendering-Pixelated-Regular'>&#x017D;</span>
       <span class='rendering-Dots-Regular'>&#x017D;</span>
       <span class='rendering-Boxes-Regular'>&#x017D;</span>
@@ -3145,6 +3384,7 @@
       </div>
       <span class='rendering-Mono'>&#x017E;</span>
       <span class='rendering-Regular'>&#x017E;</span>
+      <span class='rendering-Bold'>&#x017E;</span>
       <span class='rendering-Pixelated-Regular'>&#x017E;</span>
       <span class='rendering-Dots-Regular'>&#x017E;</span>
       <span class='rendering-Boxes-Regular'>&#x017E;</span>
@@ -3159,6 +3399,7 @@
       </div>
       <span class='rendering-Mono'>&#x0192;</span>
       <span class='rendering-Regular'>&#x0192;</span>
+      <span class='rendering-Bold'>&#x0192;</span>
       <span class='rendering-Pixelated-Regular'>&#x0192;</span>
       <span class='rendering-Dots-Regular'>&#x0192;</span>
       <span class='rendering-Boxes-Regular'>&#x0192;</span>
@@ -3173,6 +3414,7 @@
       </div>
       <span class='rendering-Mono'>&#x02C6;</span>
       <span class='rendering-Regular'>&#x02C6;</span>
+      <span class='rendering-Bold'>&#x02C6;</span>
       <span class='rendering-Pixelated-Regular'>&#x02C6;</span>
       <span class='rendering-Dots-Regular'>&#x02C6;</span>
       <span class='rendering-Boxes-Regular'>&#x02C6;</span>
@@ -3187,6 +3429,7 @@
       </div>
       <span class='rendering-Mono'>&#x02C7;</span>
       <span class='rendering-Regular'>&#x02C7;</span>
+      <span class='rendering-Bold'>&#x02C7;</span>
       <span class='rendering-Pixelated-Regular'>&#x02C7;</span>
       <span class='rendering-Dots-Regular'>&#x02C7;</span>
       <span class='rendering-Boxes-Regular'>&#x02C7;</span>
@@ -3201,6 +3444,7 @@
       </div>
       <span class='rendering-Mono'>&#x02C9;</span>
       <span class='rendering-Regular'>&#x02C9;</span>
+      <span class='rendering-Bold'>&#x02C9;</span>
       <span class='rendering-Pixelated-Regular'>&#x02C9;</span>
       <span class='rendering-Dots-Regular'>&#x02C9;</span>
       <span class='rendering-Boxes-Regular'>&#x02C9;</span>
@@ -3215,6 +3459,7 @@
       </div>
       <span class='rendering-Mono'>&#x02D8;</span>
       <span class='rendering-Regular'>&#x02D8;</span>
+      <span class='rendering-Bold'>&#x02D8;</span>
       <span class='rendering-Pixelated-Regular'>&#x02D8;</span>
       <span class='rendering-Dots-Regular'>&#x02D8;</span>
       <span class='rendering-Boxes-Regular'>&#x02D8;</span>
@@ -3229,6 +3474,7 @@
       </div>
       <span class='rendering-Mono'>&#x02D9;</span>
       <span class='rendering-Regular'>&#x02D9;</span>
+      <span class='rendering-Bold'>&#x02D9;</span>
       <span class='rendering-Pixelated-Regular'>&#x02D9;</span>
       <span class='rendering-Dots-Regular'>&#x02D9;</span>
       <span class='rendering-Boxes-Regular'>&#x02D9;</span>
@@ -3243,6 +3489,7 @@
       </div>
       <span class='rendering-Mono'>&#x02DA;</span>
       <span class='rendering-Regular'>&#x02DA;</span>
+      <span class='rendering-Bold'>&#x02DA;</span>
       <span class='rendering-Pixelated-Regular'>&#x02DA;</span>
       <span class='rendering-Dots-Regular'>&#x02DA;</span>
       <span class='rendering-Boxes-Regular'>&#x02DA;</span>
@@ -3257,6 +3504,7 @@
       </div>
       <span class='rendering-Mono'>&#x02DB;</span>
       <span class='rendering-Regular'>&#x02DB;</span>
+      <span class='rendering-Bold'>&#x02DB;</span>
       <span class='rendering-Pixelated-Regular'>&#x02DB;</span>
       <span class='rendering-Dots-Regular'>&#x02DB;</span>
       <span class='rendering-Boxes-Regular'>&#x02DB;</span>
@@ -3271,6 +3519,7 @@
       </div>
       <span class='rendering-Mono'>&#x02DC;</span>
       <span class='rendering-Regular'>&#x02DC;</span>
+      <span class='rendering-Bold'>&#x02DC;</span>
       <span class='rendering-Pixelated-Regular'>&#x02DC;</span>
       <span class='rendering-Dots-Regular'>&#x02DC;</span>
       <span class='rendering-Boxes-Regular'>&#x02DC;</span>
@@ -3285,6 +3534,7 @@
       </div>
       <span class='rendering-Mono'>&#x02DD;</span>
       <span class='rendering-Regular'>&#x02DD;</span>
+      <span class='rendering-Bold'>&#x02DD;</span>
       <span class='rendering-Pixelated-Regular'>&#x02DD;</span>
       <span class='rendering-Dots-Regular'>&#x02DD;</span>
       <span class='rendering-Boxes-Regular'>&#x02DD;</span>
@@ -3299,6 +3549,7 @@
       </div>
       <span class='rendering-Mono'>&#x03A9;</span>
       <span class='rendering-Regular'>&#x03A9;</span>
+      <span class='rendering-Bold'>&#x03A9;</span>
       <span class='rendering-Pixelated-Regular'>&#x03A9;</span>
       <span class='rendering-Dots-Regular'>&#x03A9;</span>
       <span class='rendering-Boxes-Regular'>&#x03A9;</span>
@@ -3313,6 +3564,7 @@
       </div>
       <span class='rendering-Mono'>&#x03C0;</span>
       <span class='rendering-Regular'>&#x03C0;</span>
+      <span class='rendering-Bold'>&#x03C0;</span>
       <span class='rendering-Pixelated-Regular'>&#x03C0;</span>
       <span class='rendering-Dots-Regular'>&#x03C0;</span>
       <span class='rendering-Boxes-Regular'>&#x03C0;</span>
@@ -3327,6 +3579,7 @@
       </div>
       <span class='rendering-Mono'>&#x2013;</span>
       <span class='rendering-Regular'>&#x2013;</span>
+      <span class='rendering-Bold'>&#x2013;</span>
       <span class='rendering-Pixelated-Regular'>&#x2013;</span>
       <span class='rendering-Dots-Regular'>&#x2013;</span>
       <span class='rendering-Boxes-Regular'>&#x2013;</span>
@@ -3341,6 +3594,7 @@
       </div>
       <span class='rendering-Mono'>&#x2014;</span>
       <span class='rendering-Regular'>&#x2014;</span>
+      <span class='rendering-Bold'>&#x2014;</span>
       <span class='rendering-Pixelated-Regular'>&#x2014;</span>
       <span class='rendering-Dots-Regular'>&#x2014;</span>
       <span class='rendering-Boxes-Regular'>&#x2014;</span>
@@ -3355,6 +3609,7 @@
       </div>
       <span class='rendering-Mono'>&#x2018;</span>
       <span class='rendering-Regular'>&#x2018;</span>
+      <span class='rendering-Bold'>&#x2018;</span>
       <span class='rendering-Pixelated-Regular'>&#x2018;</span>
       <span class='rendering-Dots-Regular'>&#x2018;</span>
       <span class='rendering-Boxes-Regular'>&#x2018;</span>
@@ -3369,6 +3624,7 @@
       </div>
       <span class='rendering-Mono'>&#x2019;</span>
       <span class='rendering-Regular'>&#x2019;</span>
+      <span class='rendering-Bold'>&#x2019;</span>
       <span class='rendering-Pixelated-Regular'>&#x2019;</span>
       <span class='rendering-Dots-Regular'>&#x2019;</span>
       <span class='rendering-Boxes-Regular'>&#x2019;</span>
@@ -3383,6 +3639,7 @@
       </div>
       <span class='rendering-Mono'>&#x201A;</span>
       <span class='rendering-Regular'>&#x201A;</span>
+      <span class='rendering-Bold'>&#x201A;</span>
       <span class='rendering-Pixelated-Regular'>&#x201A;</span>
       <span class='rendering-Dots-Regular'>&#x201A;</span>
       <span class='rendering-Boxes-Regular'>&#x201A;</span>
@@ -3397,6 +3654,7 @@
       </div>
       <span class='rendering-Mono'>&#x201C;</span>
       <span class='rendering-Regular'>&#x201C;</span>
+      <span class='rendering-Bold'>&#x201C;</span>
       <span class='rendering-Pixelated-Regular'>&#x201C;</span>
       <span class='rendering-Dots-Regular'>&#x201C;</span>
       <span class='rendering-Boxes-Regular'>&#x201C;</span>
@@ -3411,6 +3669,7 @@
       </div>
       <span class='rendering-Mono'>&#x201D;</span>
       <span class='rendering-Regular'>&#x201D;</span>
+      <span class='rendering-Bold'>&#x201D;</span>
       <span class='rendering-Pixelated-Regular'>&#x201D;</span>
       <span class='rendering-Dots-Regular'>&#x201D;</span>
       <span class='rendering-Boxes-Regular'>&#x201D;</span>
@@ -3425,6 +3684,7 @@
       </div>
       <span class='rendering-Mono'>&#x201E;</span>
       <span class='rendering-Regular'>&#x201E;</span>
+      <span class='rendering-Bold'>&#x201E;</span>
       <span class='rendering-Pixelated-Regular'>&#x201E;</span>
       <span class='rendering-Dots-Regular'>&#x201E;</span>
       <span class='rendering-Boxes-Regular'>&#x201E;</span>
@@ -3439,6 +3699,7 @@
       </div>
       <span class='rendering-Mono'>&#x2020;</span>
       <span class='rendering-Regular'>&#x2020;</span>
+      <span class='rendering-Bold'>&#x2020;</span>
       <span class='rendering-Pixelated-Regular'>&#x2020;</span>
       <span class='rendering-Dots-Regular'>&#x2020;</span>
       <span class='rendering-Boxes-Regular'>&#x2020;</span>
@@ -3453,6 +3714,7 @@
       </div>
       <span class='rendering-Mono'>&#x2021;</span>
       <span class='rendering-Regular'>&#x2021;</span>
+      <span class='rendering-Bold'>&#x2021;</span>
       <span class='rendering-Pixelated-Regular'>&#x2021;</span>
       <span class='rendering-Dots-Regular'>&#x2021;</span>
       <span class='rendering-Boxes-Regular'>&#x2021;</span>
@@ -3467,6 +3729,7 @@
       </div>
       <span class='rendering-Mono'>&#x2022;</span>
       <span class='rendering-Regular'>&#x2022;</span>
+      <span class='rendering-Bold'>&#x2022;</span>
       <span class='rendering-Pixelated-Regular'>&#x2022;</span>
       <span class='rendering-Dots-Regular'>&#x2022;</span>
       <span class='rendering-Boxes-Regular'>&#x2022;</span>
@@ -3481,6 +3744,7 @@
       </div>
       <span class='rendering-Mono'>&#x2023;</span>
       <span class='rendering-Regular'>&#x2023;</span>
+      <span class='rendering-Bold'>&#x2023;</span>
       <span class='rendering-Pixelated-Regular'>&#x2023;</span>
       <span class='rendering-Dots-Regular'>&#x2023;</span>
       <span class='rendering-Boxes-Regular'>&#x2023;</span>
@@ -3495,6 +3759,7 @@
       </div>
       <span class='rendering-Mono'>&#x2026;</span>
       <span class='rendering-Regular'>&#x2026;</span>
+      <span class='rendering-Bold'>&#x2026;</span>
       <span class='rendering-Pixelated-Regular'>&#x2026;</span>
       <span class='rendering-Dots-Regular'>&#x2026;</span>
       <span class='rendering-Boxes-Regular'>&#x2026;</span>
@@ -3509,6 +3774,7 @@
       </div>
       <span class='rendering-Mono'>&#x2030;</span>
       <span class='rendering-Regular'>&#x2030;</span>
+      <span class='rendering-Bold'>&#x2030;</span>
       <span class='rendering-Pixelated-Regular'>&#x2030;</span>
       <span class='rendering-Dots-Regular'>&#x2030;</span>
       <span class='rendering-Boxes-Regular'>&#x2030;</span>
@@ -3523,6 +3789,7 @@
       </div>
       <span class='rendering-Mono'>&#x2039;</span>
       <span class='rendering-Regular'>&#x2039;</span>
+      <span class='rendering-Bold'>&#x2039;</span>
       <span class='rendering-Pixelated-Regular'>&#x2039;</span>
       <span class='rendering-Dots-Regular'>&#x2039;</span>
       <span class='rendering-Boxes-Regular'>&#x2039;</span>
@@ -3537,6 +3804,7 @@
       </div>
       <span class='rendering-Mono'>&#x203A;</span>
       <span class='rendering-Regular'>&#x203A;</span>
+      <span class='rendering-Bold'>&#x203A;</span>
       <span class='rendering-Pixelated-Regular'>&#x203A;</span>
       <span class='rendering-Dots-Regular'>&#x203A;</span>
       <span class='rendering-Boxes-Regular'>&#x203A;</span>
@@ -3551,6 +3819,7 @@
       </div>
       <span class='rendering-Mono'>&#x2044;</span>
       <span class='rendering-Regular'>&#x2044;</span>
+      <span class='rendering-Bold'>&#x2044;</span>
       <span class='rendering-Pixelated-Regular'>&#x2044;</span>
       <span class='rendering-Dots-Regular'>&#x2044;</span>
       <span class='rendering-Boxes-Regular'>&#x2044;</span>
@@ -3565,6 +3834,7 @@
       </div>
       <span class='rendering-Mono'>&#x2074;</span>
       <span class='rendering-Regular'>&#x2074;</span>
+      <span class='rendering-Bold'>&#x2074;</span>
       <span class='rendering-Pixelated-Regular'>&#x2074;</span>
       <span class='rendering-Dots-Regular'>&#x2074;</span>
       <span class='rendering-Boxes-Regular'>&#x2074;</span>
@@ -3579,6 +3849,7 @@
       </div>
       <span class='rendering-Mono'>&#x20AC;</span>
       <span class='rendering-Regular'>&#x20AC;</span>
+      <span class='rendering-Bold'>&#x20AC;</span>
       <span class='rendering-Pixelated-Regular'>&#x20AC;</span>
       <span class='rendering-Dots-Regular'>&#x20AC;</span>
       <span class='rendering-Boxes-Regular'>&#x20AC;</span>
@@ -3593,6 +3864,7 @@
       </div>
       <span class='rendering-Mono'>&#x2113;</span>
       <span class='rendering-Regular'>&#x2113;</span>
+      <span class='rendering-Bold'>&#x2113;</span>
       <span class='rendering-Pixelated-Regular'>&#x2113;</span>
       <span class='rendering-Dots-Regular'>&#x2113;</span>
       <span class='rendering-Boxes-Regular'>&#x2113;</span>
@@ -3607,6 +3879,7 @@
       </div>
       <span class='rendering-Mono'>&#x2122;</span>
       <span class='rendering-Regular'>&#x2122;</span>
+      <span class='rendering-Bold'>&#x2122;</span>
       <span class='rendering-Pixelated-Regular'>&#x2122;</span>
       <span class='rendering-Dots-Regular'>&#x2122;</span>
       <span class='rendering-Boxes-Regular'>&#x2122;</span>
@@ -3621,6 +3894,7 @@
       </div>
       <span class='rendering-Mono'>&#x212E;</span>
       <span class='rendering-Regular'>&#x212E;</span>
+      <span class='rendering-Bold'>&#x212E;</span>
       <span class='rendering-Pixelated-Regular'>&#x212E;</span>
       <span class='rendering-Dots-Regular'>&#x212E;</span>
       <span class='rendering-Boxes-Regular'>&#x212E;</span>
@@ -3635,6 +3909,7 @@
       </div>
       <span class='rendering-Mono'>&#x2202;</span>
       <span class='rendering-Regular'>&#x2202;</span>
+      <span class='rendering-Bold'>&#x2202;</span>
       <span class='rendering-Pixelated-Regular'>&#x2202;</span>
       <span class='rendering-Dots-Regular'>&#x2202;</span>
       <span class='rendering-Boxes-Regular'>&#x2202;</span>
@@ -3649,6 +3924,7 @@
       </div>
       <span class='rendering-Mono'>&#x2206;</span>
       <span class='rendering-Regular'>&#x2206;</span>
+      <span class='rendering-Bold'>&#x2206;</span>
       <span class='rendering-Pixelated-Regular'>&#x2206;</span>
       <span class='rendering-Dots-Regular'>&#x2206;</span>
       <span class='rendering-Boxes-Regular'>&#x2206;</span>
@@ -3663,6 +3939,7 @@
       </div>
       <span class='rendering-Mono'>&#x220F;</span>
       <span class='rendering-Regular'>&#x220F;</span>
+      <span class='rendering-Bold'>&#x220F;</span>
       <span class='rendering-Pixelated-Regular'>&#x220F;</span>
       <span class='rendering-Dots-Regular'>&#x220F;</span>
       <span class='rendering-Boxes-Regular'>&#x220F;</span>
@@ -3677,6 +3954,7 @@
       </div>
       <span class='rendering-Mono'>&#x2211;</span>
       <span class='rendering-Regular'>&#x2211;</span>
+      <span class='rendering-Bold'>&#x2211;</span>
       <span class='rendering-Pixelated-Regular'>&#x2211;</span>
       <span class='rendering-Dots-Regular'>&#x2211;</span>
       <span class='rendering-Boxes-Regular'>&#x2211;</span>
@@ -3691,6 +3969,7 @@
       </div>
       <span class='rendering-Mono'>&#x2212;</span>
       <span class='rendering-Regular'>&#x2212;</span>
+      <span class='rendering-Bold'>&#x2212;</span>
       <span class='rendering-Pixelated-Regular'>&#x2212;</span>
       <span class='rendering-Dots-Regular'>&#x2212;</span>
       <span class='rendering-Boxes-Regular'>&#x2212;</span>
@@ -3705,6 +3984,7 @@
       </div>
       <span class='rendering-Mono'>&#x2215;</span>
       <span class='rendering-Regular'>&#x2215;</span>
+      <span class='rendering-Bold'>&#x2215;</span>
       <span class='rendering-Pixelated-Regular'>&#x2215;</span>
       <span class='rendering-Dots-Regular'>&#x2215;</span>
       <span class='rendering-Boxes-Regular'>&#x2215;</span>
@@ -3719,6 +3999,7 @@
       </div>
       <span class='rendering-Mono'>&#x2219;</span>
       <span class='rendering-Regular'>&#x2219;</span>
+      <span class='rendering-Bold'>&#x2219;</span>
       <span class='rendering-Pixelated-Regular'>&#x2219;</span>
       <span class='rendering-Dots-Regular'>&#x2219;</span>
       <span class='rendering-Boxes-Regular'>&#x2219;</span>
@@ -3733,6 +4014,7 @@
       </div>
       <span class='rendering-Mono'>&#x221A;</span>
       <span class='rendering-Regular'>&#x221A;</span>
+      <span class='rendering-Bold'>&#x221A;</span>
       <span class='rendering-Pixelated-Regular'>&#x221A;</span>
       <span class='rendering-Dots-Regular'>&#x221A;</span>
       <span class='rendering-Boxes-Regular'>&#x221A;</span>
@@ -3747,6 +4029,7 @@
       </div>
       <span class='rendering-Mono'>&#x221E;</span>
       <span class='rendering-Regular'>&#x221E;</span>
+      <span class='rendering-Bold'>&#x221E;</span>
       <span class='rendering-Pixelated-Regular'>&#x221E;</span>
       <span class='rendering-Dots-Regular'>&#x221E;</span>
       <span class='rendering-Boxes-Regular'>&#x221E;</span>
@@ -3761,6 +4044,7 @@
       </div>
       <span class='rendering-Mono'>&#x222B;</span>
       <span class='rendering-Regular'>&#x222B;</span>
+      <span class='rendering-Bold'>&#x222B;</span>
       <span class='rendering-Pixelated-Regular'>&#x222B;</span>
       <span class='rendering-Dots-Regular'>&#x222B;</span>
       <span class='rendering-Boxes-Regular'>&#x222B;</span>
@@ -3775,6 +4059,7 @@
       </div>
       <span class='rendering-Mono'>&#x2248;</span>
       <span class='rendering-Regular'>&#x2248;</span>
+      <span class='rendering-Bold'>&#x2248;</span>
       <span class='rendering-Pixelated-Regular'>&#x2248;</span>
       <span class='rendering-Dots-Regular'>&#x2248;</span>
       <span class='rendering-Boxes-Regular'>&#x2248;</span>
@@ -3789,6 +4074,7 @@
       </div>
       <span class='rendering-Mono'>&#x2260;</span>
       <span class='rendering-Regular'>&#x2260;</span>
+      <span class='rendering-Bold'>&#x2260;</span>
       <span class='rendering-Pixelated-Regular'>&#x2260;</span>
       <span class='rendering-Dots-Regular'>&#x2260;</span>
       <span class='rendering-Boxes-Regular'>&#x2260;</span>
@@ -3803,6 +4089,7 @@
       </div>
       <span class='rendering-Mono'>&#x2264;</span>
       <span class='rendering-Regular'>&#x2264;</span>
+      <span class='rendering-Bold'>&#x2264;</span>
       <span class='rendering-Pixelated-Regular'>&#x2264;</span>
       <span class='rendering-Dots-Regular'>&#x2264;</span>
       <span class='rendering-Boxes-Regular'>&#x2264;</span>
@@ -3817,6 +4104,7 @@
       </div>
       <span class='rendering-Mono'>&#x2265;</span>
       <span class='rendering-Regular'>&#x2265;</span>
+      <span class='rendering-Bold'>&#x2265;</span>
       <span class='rendering-Pixelated-Regular'>&#x2265;</span>
       <span class='rendering-Dots-Regular'>&#x2265;</span>
       <span class='rendering-Boxes-Regular'>&#x2265;</span>
@@ -3831,6 +4119,7 @@
       </div>
       <span class='rendering-Mono'>&#x2500;</span>
       <span class='rendering-Regular'>&#x2500;</span>
+      <span class='rendering-Bold'>&#x2500;</span>
       <span class='rendering-Pixelated-Regular'>&#x2500;</span>
       <span class='rendering-Dots-Regular'>&#x2500;</span>
       <span class='rendering-Boxes-Regular'>&#x2500;</span>
@@ -3845,6 +4134,7 @@
       </div>
       <span class='rendering-Mono'>&#x2501;</span>
       <span class='rendering-Regular'>&#x2501;</span>
+      <span class='rendering-Bold'>&#x2501;</span>
       <span class='rendering-Pixelated-Regular'>&#x2501;</span>
       <span class='rendering-Dots-Regular'>&#x2501;</span>
       <span class='rendering-Boxes-Regular'>&#x2501;</span>
@@ -3859,6 +4149,7 @@
       </div>
       <span class='rendering-Mono'>&#x2502;</span>
       <span class='rendering-Regular'>&#x2502;</span>
+      <span class='rendering-Bold'>&#x2502;</span>
       <span class='rendering-Pixelated-Regular'>&#x2502;</span>
       <span class='rendering-Dots-Regular'>&#x2502;</span>
       <span class='rendering-Boxes-Regular'>&#x2502;</span>
@@ -3873,6 +4164,7 @@
       </div>
       <span class='rendering-Mono'>&#x2503;</span>
       <span class='rendering-Regular'>&#x2503;</span>
+      <span class='rendering-Bold'>&#x2503;</span>
       <span class='rendering-Pixelated-Regular'>&#x2503;</span>
       <span class='rendering-Dots-Regular'>&#x2503;</span>
       <span class='rendering-Boxes-Regular'>&#x2503;</span>
@@ -3887,6 +4179,7 @@
       </div>
       <span class='rendering-Mono'>&#x250C;</span>
       <span class='rendering-Regular'>&#x250C;</span>
+      <span class='rendering-Bold'>&#x250C;</span>
       <span class='rendering-Pixelated-Regular'>&#x250C;</span>
       <span class='rendering-Dots-Regular'>&#x250C;</span>
       <span class='rendering-Boxes-Regular'>&#x250C;</span>
@@ -3901,6 +4194,7 @@
       </div>
       <span class='rendering-Mono'>&#x250F;</span>
       <span class='rendering-Regular'>&#x250F;</span>
+      <span class='rendering-Bold'>&#x250F;</span>
       <span class='rendering-Pixelated-Regular'>&#x250F;</span>
       <span class='rendering-Dots-Regular'>&#x250F;</span>
       <span class='rendering-Boxes-Regular'>&#x250F;</span>
@@ -3915,6 +4209,7 @@
       </div>
       <span class='rendering-Mono'>&#x2510;</span>
       <span class='rendering-Regular'>&#x2510;</span>
+      <span class='rendering-Bold'>&#x2510;</span>
       <span class='rendering-Pixelated-Regular'>&#x2510;</span>
       <span class='rendering-Dots-Regular'>&#x2510;</span>
       <span class='rendering-Boxes-Regular'>&#x2510;</span>
@@ -3929,6 +4224,7 @@
       </div>
       <span class='rendering-Mono'>&#x2513;</span>
       <span class='rendering-Regular'>&#x2513;</span>
+      <span class='rendering-Bold'>&#x2513;</span>
       <span class='rendering-Pixelated-Regular'>&#x2513;</span>
       <span class='rendering-Dots-Regular'>&#x2513;</span>
       <span class='rendering-Boxes-Regular'>&#x2513;</span>
@@ -3943,6 +4239,7 @@
       </div>
       <span class='rendering-Mono'>&#x2514;</span>
       <span class='rendering-Regular'>&#x2514;</span>
+      <span class='rendering-Bold'>&#x2514;</span>
       <span class='rendering-Pixelated-Regular'>&#x2514;</span>
       <span class='rendering-Dots-Regular'>&#x2514;</span>
       <span class='rendering-Boxes-Regular'>&#x2514;</span>
@@ -3957,6 +4254,7 @@
       </div>
       <span class='rendering-Mono'>&#x2517;</span>
       <span class='rendering-Regular'>&#x2517;</span>
+      <span class='rendering-Bold'>&#x2517;</span>
       <span class='rendering-Pixelated-Regular'>&#x2517;</span>
       <span class='rendering-Dots-Regular'>&#x2517;</span>
       <span class='rendering-Boxes-Regular'>&#x2517;</span>
@@ -3971,6 +4269,7 @@
       </div>
       <span class='rendering-Mono'>&#x2518;</span>
       <span class='rendering-Regular'>&#x2518;</span>
+      <span class='rendering-Bold'>&#x2518;</span>
       <span class='rendering-Pixelated-Regular'>&#x2518;</span>
       <span class='rendering-Dots-Regular'>&#x2518;</span>
       <span class='rendering-Boxes-Regular'>&#x2518;</span>
@@ -3985,6 +4284,7 @@
       </div>
       <span class='rendering-Mono'>&#x251B;</span>
       <span class='rendering-Regular'>&#x251B;</span>
+      <span class='rendering-Bold'>&#x251B;</span>
       <span class='rendering-Pixelated-Regular'>&#x251B;</span>
       <span class='rendering-Dots-Regular'>&#x251B;</span>
       <span class='rendering-Boxes-Regular'>&#x251B;</span>
@@ -3999,6 +4299,7 @@
       </div>
       <span class='rendering-Mono'>&#x251C;</span>
       <span class='rendering-Regular'>&#x251C;</span>
+      <span class='rendering-Bold'>&#x251C;</span>
       <span class='rendering-Pixelated-Regular'>&#x251C;</span>
       <span class='rendering-Dots-Regular'>&#x251C;</span>
       <span class='rendering-Boxes-Regular'>&#x251C;</span>
@@ -4013,6 +4314,7 @@
       </div>
       <span class='rendering-Mono'>&#x2523;</span>
       <span class='rendering-Regular'>&#x2523;</span>
+      <span class='rendering-Bold'>&#x2523;</span>
       <span class='rendering-Pixelated-Regular'>&#x2523;</span>
       <span class='rendering-Dots-Regular'>&#x2523;</span>
       <span class='rendering-Boxes-Regular'>&#x2523;</span>
@@ -4027,6 +4329,7 @@
       </div>
       <span class='rendering-Mono'>&#x2524;</span>
       <span class='rendering-Regular'>&#x2524;</span>
+      <span class='rendering-Bold'>&#x2524;</span>
       <span class='rendering-Pixelated-Regular'>&#x2524;</span>
       <span class='rendering-Dots-Regular'>&#x2524;</span>
       <span class='rendering-Boxes-Regular'>&#x2524;</span>
@@ -4041,6 +4344,7 @@
       </div>
       <span class='rendering-Mono'>&#x252B;</span>
       <span class='rendering-Regular'>&#x252B;</span>
+      <span class='rendering-Bold'>&#x252B;</span>
       <span class='rendering-Pixelated-Regular'>&#x252B;</span>
       <span class='rendering-Dots-Regular'>&#x252B;</span>
       <span class='rendering-Boxes-Regular'>&#x252B;</span>
@@ -4055,6 +4359,7 @@
       </div>
       <span class='rendering-Mono'>&#x252C;</span>
       <span class='rendering-Regular'>&#x252C;</span>
+      <span class='rendering-Bold'>&#x252C;</span>
       <span class='rendering-Pixelated-Regular'>&#x252C;</span>
       <span class='rendering-Dots-Regular'>&#x252C;</span>
       <span class='rendering-Boxes-Regular'>&#x252C;</span>
@@ -4069,6 +4374,7 @@
       </div>
       <span class='rendering-Mono'>&#x2533;</span>
       <span class='rendering-Regular'>&#x2533;</span>
+      <span class='rendering-Bold'>&#x2533;</span>
       <span class='rendering-Pixelated-Regular'>&#x2533;</span>
       <span class='rendering-Dots-Regular'>&#x2533;</span>
       <span class='rendering-Boxes-Regular'>&#x2533;</span>
@@ -4083,6 +4389,7 @@
       </div>
       <span class='rendering-Mono'>&#x2534;</span>
       <span class='rendering-Regular'>&#x2534;</span>
+      <span class='rendering-Bold'>&#x2534;</span>
       <span class='rendering-Pixelated-Regular'>&#x2534;</span>
       <span class='rendering-Dots-Regular'>&#x2534;</span>
       <span class='rendering-Boxes-Regular'>&#x2534;</span>
@@ -4097,6 +4404,7 @@
       </div>
       <span class='rendering-Mono'>&#x253B;</span>
       <span class='rendering-Regular'>&#x253B;</span>
+      <span class='rendering-Bold'>&#x253B;</span>
       <span class='rendering-Pixelated-Regular'>&#x253B;</span>
       <span class='rendering-Dots-Regular'>&#x253B;</span>
       <span class='rendering-Boxes-Regular'>&#x253B;</span>
@@ -4111,6 +4419,7 @@
       </div>
       <span class='rendering-Mono'>&#x253C;</span>
       <span class='rendering-Regular'>&#x253C;</span>
+      <span class='rendering-Bold'>&#x253C;</span>
       <span class='rendering-Pixelated-Regular'>&#x253C;</span>
       <span class='rendering-Dots-Regular'>&#x253C;</span>
       <span class='rendering-Boxes-Regular'>&#x253C;</span>
@@ -4125,6 +4434,7 @@
       </div>
       <span class='rendering-Mono'>&#x254B;</span>
       <span class='rendering-Regular'>&#x254B;</span>
+      <span class='rendering-Bold'>&#x254B;</span>
       <span class='rendering-Pixelated-Regular'>&#x254B;</span>
       <span class='rendering-Dots-Regular'>&#x254B;</span>
       <span class='rendering-Boxes-Regular'>&#x254B;</span>
@@ -4139,6 +4449,7 @@
       </div>
       <span class='rendering-Mono'>&#x2575;</span>
       <span class='rendering-Regular'>&#x2575;</span>
+      <span class='rendering-Bold'>&#x2575;</span>
       <span class='rendering-Pixelated-Regular'>&#x2575;</span>
       <span class='rendering-Dots-Regular'>&#x2575;</span>
       <span class='rendering-Boxes-Regular'>&#x2575;</span>
@@ -4153,6 +4464,7 @@
       </div>
       <span class='rendering-Mono'>&#x2576;</span>
       <span class='rendering-Regular'>&#x2576;</span>
+      <span class='rendering-Bold'>&#x2576;</span>
       <span class='rendering-Pixelated-Regular'>&#x2576;</span>
       <span class='rendering-Dots-Regular'>&#x2576;</span>
       <span class='rendering-Boxes-Regular'>&#x2576;</span>
@@ -4167,6 +4479,7 @@
       </div>
       <span class='rendering-Mono'>&#x2577;</span>
       <span class='rendering-Regular'>&#x2577;</span>
+      <span class='rendering-Bold'>&#x2577;</span>
       <span class='rendering-Pixelated-Regular'>&#x2577;</span>
       <span class='rendering-Dots-Regular'>&#x2577;</span>
       <span class='rendering-Boxes-Regular'>&#x2577;</span>
@@ -4181,6 +4494,7 @@
       </div>
       <span class='rendering-Mono'>&#x2578;</span>
       <span class='rendering-Regular'>&#x2578;</span>
+      <span class='rendering-Bold'>&#x2578;</span>
       <span class='rendering-Pixelated-Regular'>&#x2578;</span>
       <span class='rendering-Dots-Regular'>&#x2578;</span>
       <span class='rendering-Boxes-Regular'>&#x2578;</span>
@@ -4195,6 +4509,7 @@
       </div>
       <span class='rendering-Mono'>&#x2579;</span>
       <span class='rendering-Regular'>&#x2579;</span>
+      <span class='rendering-Bold'>&#x2579;</span>
       <span class='rendering-Pixelated-Regular'>&#x2579;</span>
       <span class='rendering-Dots-Regular'>&#x2579;</span>
       <span class='rendering-Boxes-Regular'>&#x2579;</span>
@@ -4209,6 +4524,7 @@
       </div>
       <span class='rendering-Mono'>&#x257A;</span>
       <span class='rendering-Regular'>&#x257A;</span>
+      <span class='rendering-Bold'>&#x257A;</span>
       <span class='rendering-Pixelated-Regular'>&#x257A;</span>
       <span class='rendering-Dots-Regular'>&#x257A;</span>
       <span class='rendering-Boxes-Regular'>&#x257A;</span>
@@ -4223,6 +4539,7 @@
       </div>
       <span class='rendering-Mono'>&#x257B;</span>
       <span class='rendering-Regular'>&#x257B;</span>
+      <span class='rendering-Bold'>&#x257B;</span>
       <span class='rendering-Pixelated-Regular'>&#x257B;</span>
       <span class='rendering-Dots-Regular'>&#x257B;</span>
       <span class='rendering-Boxes-Regular'>&#x257B;</span>
@@ -4237,6 +4554,7 @@
       </div>
       <span class='rendering-Mono'>&#x2580;</span>
       <span class='rendering-Regular'>&#x2580;</span>
+      <span class='rendering-Bold'>&#x2580;</span>
       <span class='rendering-Pixelated-Regular'>&#x2580;</span>
       <span class='rendering-Dots-Regular'>&#x2580;</span>
       <span class='rendering-Boxes-Regular'>&#x2580;</span>
@@ -4251,6 +4569,7 @@
       </div>
       <span class='rendering-Mono'>&#x2584;</span>
       <span class='rendering-Regular'>&#x2584;</span>
+      <span class='rendering-Bold'>&#x2584;</span>
       <span class='rendering-Pixelated-Regular'>&#x2584;</span>
       <span class='rendering-Dots-Regular'>&#x2584;</span>
       <span class='rendering-Boxes-Regular'>&#x2584;</span>
@@ -4265,6 +4584,7 @@
       </div>
       <span class='rendering-Mono'>&#x2588;</span>
       <span class='rendering-Regular'>&#x2588;</span>
+      <span class='rendering-Bold'>&#x2588;</span>
       <span class='rendering-Pixelated-Regular'>&#x2588;</span>
       <span class='rendering-Dots-Regular'>&#x2588;</span>
       <span class='rendering-Boxes-Regular'>&#x2588;</span>
@@ -4279,6 +4599,7 @@
       </div>
       <span class='rendering-Mono'>&#x258C;</span>
       <span class='rendering-Regular'>&#x258C;</span>
+      <span class='rendering-Bold'>&#x258C;</span>
       <span class='rendering-Pixelated-Regular'>&#x258C;</span>
       <span class='rendering-Dots-Regular'>&#x258C;</span>
       <span class='rendering-Boxes-Regular'>&#x258C;</span>
@@ -4293,6 +4614,7 @@
       </div>
       <span class='rendering-Mono'>&#x2590;</span>
       <span class='rendering-Regular'>&#x2590;</span>
+      <span class='rendering-Bold'>&#x2590;</span>
       <span class='rendering-Pixelated-Regular'>&#x2590;</span>
       <span class='rendering-Dots-Regular'>&#x2590;</span>
       <span class='rendering-Boxes-Regular'>&#x2590;</span>
@@ -4307,6 +4629,7 @@
       </div>
       <span class='rendering-Mono'>&#x2591;</span>
       <span class='rendering-Regular'>&#x2591;</span>
+      <span class='rendering-Bold'>&#x2591;</span>
       <span class='rendering-Pixelated-Regular'>&#x2591;</span>
       <span class='rendering-Dots-Regular'>&#x2591;</span>
       <span class='rendering-Boxes-Regular'>&#x2591;</span>
@@ -4321,6 +4644,7 @@
       </div>
       <span class='rendering-Mono'>&#x2592;</span>
       <span class='rendering-Regular'>&#x2592;</span>
+      <span class='rendering-Bold'>&#x2592;</span>
       <span class='rendering-Pixelated-Regular'>&#x2592;</span>
       <span class='rendering-Dots-Regular'>&#x2592;</span>
       <span class='rendering-Boxes-Regular'>&#x2592;</span>
@@ -4335,6 +4659,7 @@
       </div>
       <span class='rendering-Mono'>&#x2593;</span>
       <span class='rendering-Regular'>&#x2593;</span>
+      <span class='rendering-Bold'>&#x2593;</span>
       <span class='rendering-Pixelated-Regular'>&#x2593;</span>
       <span class='rendering-Dots-Regular'>&#x2593;</span>
       <span class='rendering-Boxes-Regular'>&#x2593;</span>
@@ -4349,6 +4674,7 @@
       </div>
       <span class='rendering-Mono'>&#x2599;</span>
       <span class='rendering-Regular'>&#x2599;</span>
+      <span class='rendering-Bold'>&#x2599;</span>
       <span class='rendering-Pixelated-Regular'>&#x2599;</span>
       <span class='rendering-Dots-Regular'>&#x2599;</span>
       <span class='rendering-Boxes-Regular'>&#x2599;</span>
@@ -4363,6 +4689,7 @@
       </div>
       <span class='rendering-Mono'>&#x25CA;</span>
       <span class='rendering-Regular'>&#x25CA;</span>
+      <span class='rendering-Bold'>&#x25CA;</span>
       <span class='rendering-Pixelated-Regular'>&#x25CA;</span>
       <span class='rendering-Dots-Regular'>&#x25CA;</span>
       <span class='rendering-Boxes-Regular'>&#x25CA;</span>
@@ -4377,6 +4704,7 @@
       </div>
       <span class='rendering-Mono'>&#x25E2;</span>
       <span class='rendering-Regular'>&#x25E2;</span>
+      <span class='rendering-Bold'>&#x25E2;</span>
       <span class='rendering-Pixelated-Regular'>&#x25E2;</span>
       <span class='rendering-Dots-Regular'>&#x25E2;</span>
       <span class='rendering-Boxes-Regular'>&#x25E2;</span>
@@ -4391,6 +4719,7 @@
       </div>
       <span class='rendering-Mono'>&#x25E3;</span>
       <span class='rendering-Regular'>&#x25E3;</span>
+      <span class='rendering-Bold'>&#x25E3;</span>
       <span class='rendering-Pixelated-Regular'>&#x25E3;</span>
       <span class='rendering-Dots-Regular'>&#x25E3;</span>
       <span class='rendering-Boxes-Regular'>&#x25E3;</span>
@@ -4405,6 +4734,7 @@
       </div>
       <span class='rendering-Mono'>&#x25E4;</span>
       <span class='rendering-Regular'>&#x25E4;</span>
+      <span class='rendering-Bold'>&#x25E4;</span>
       <span class='rendering-Pixelated-Regular'>&#x25E4;</span>
       <span class='rendering-Dots-Regular'>&#x25E4;</span>
       <span class='rendering-Boxes-Regular'>&#x25E4;</span>
@@ -4419,6 +4749,7 @@
       </div>
       <span class='rendering-Mono'>&#x25E5;</span>
       <span class='rendering-Regular'>&#x25E5;</span>
+      <span class='rendering-Bold'>&#x25E5;</span>
       <span class='rendering-Pixelated-Regular'>&#x25E5;</span>
       <span class='rendering-Dots-Regular'>&#x25E5;</span>
       <span class='rendering-Boxes-Regular'>&#x25E5;</span>
@@ -4433,6 +4764,7 @@
       </div>
       <span class='rendering-Mono'>&#x2603;</span>
       <span class='rendering-Regular'>&#x2603;</span>
+      <span class='rendering-Bold'>&#x2603;</span>
       <span class='rendering-Pixelated-Regular'>&#x2603;</span>
       <span class='rendering-Dots-Regular'>&#x2603;</span>
       <span class='rendering-Boxes-Regular'>&#x2603;</span>
@@ -4447,10 +4779,26 @@
       </div>
       <span class='rendering-Mono'>&#x2620;</span>
       <span class='rendering-Regular'>&#x2620;</span>
+      <span class='rendering-Bold'>&#x2620;</span>
       <span class='rendering-Pixelated-Regular'>&#x2620;</span>
       <span class='rendering-Dots-Regular'>&#x2620;</span>
       <span class='rendering-Boxes-Regular'>&#x2620;</span>
       <span class='rendering-Reference'>&#x2620;</span>
+    </div>
+
+    <div class='glyph'>
+      <div class='label'>
+        <span class='reference'>&#x2691;</span>
+        <span class='unicode'> 2691 </span>
+        <span class='name'>BLACK FLAG</span>
+      </div>
+      <span class='rendering-Mono'>&#x2691;</span>
+      <span class='rendering-Regular'>&#x2691;</span>
+      <span class='rendering-Bold'>&#x2691;</span>
+      <span class='rendering-Pixelated-Regular'>&#x2691;</span>
+      <span class='rendering-Dots-Regular'>&#x2691;</span>
+      <span class='rendering-Boxes-Regular'>&#x2691;</span>
+      <span class='rendering-Reference'>&#x2691;</span>
     </div>
 
     <div class='glyph'>
@@ -4461,6 +4809,7 @@
       </div>
       <span class='rendering-Mono'>&#xFB01;</span>
       <span class='rendering-Regular'>&#xFB01;</span>
+      <span class='rendering-Bold'>&#xFB01;</span>
       <span class='rendering-Pixelated-Regular'>&#xFB01;</span>
       <span class='rendering-Dots-Regular'>&#xFB01;</span>
       <span class='rendering-Boxes-Regular'>&#xFB01;</span>
@@ -4475,6 +4824,7 @@
       </div>
       <span class='rendering-Mono'>&#xFB02;</span>
       <span class='rendering-Regular'>&#xFB02;</span>
+      <span class='rendering-Bold'>&#xFB02;</span>
       <span class='rendering-Pixelated-Regular'>&#xFB02;</span>
       <span class='rendering-Dots-Regular'>&#xFB02;</span>
       <span class='rendering-Boxes-Regular'>&#xFB02;</span>

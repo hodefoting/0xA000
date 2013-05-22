@@ -3,6 +3,7 @@ BIN_PKGMODULES=glib-2.0
 CFLAGS += -O2 -g
 all: 0xA000-Regular.ttf    \
 		 0xA000-Mono.ttf       \
+		 0xA000-Bold.ttf       \
 	   0xA000-Pixelated-Regular.ttf \
 	   0xA000-Pixelated-Mono.ttf \
 	   0xA000-Boxes-Regular.ttf \

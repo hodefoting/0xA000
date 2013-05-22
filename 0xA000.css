@@ -1,5 +1,6 @@
 @font-face {font-family:'0xA000-Regular';           src: url('0xA000-Regular.ttf');}
 @font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}
+@font-face {font-family:'0xA000-Bold';              src: url('0xA000-Bold.ttf');}
 @font-face {font-family:'0xA000-Pixelated-Mono';    src: url('0xA000-Pixelated-Mono.ttf');}
 @font-face {font-family:'0xA000-Pixelated-Regular'; src: url('0xA000-Pixelated-Regular.ttf');}
 @font-face {font-family:'0xA000-Boxes-Mono';        src: url('0xA000-Boxes-Mono.ttf');}
@@ -11,11 +12,12 @@
 
 body       {font-family: '0xA000-Regular'; font-size: 21px;
             background-color: #f7f7f7;}
-tt, pre    {font-family: '0xA000-Mono'; }
-small      {font-size  :  7px; }
-h1         {font-size  :  3em; font-weight: normal; margin: 0.5em 0 0.25em}
-h2         {font-size  :  2em; font-weight: normal; margin: 1.0em 0 0 0}
-h3,h4      {font-size  :1.5em; font-weight: normal; margin: 0 0 0 0}
+tt, pre    {font-family: '0xA000-Mono';}
+b          {font-family: '0xA000-Bold';}
+small      {font-size :  7px; }
+h1         {font-size :  3em; font-weight: normal; margin: 0.5em 0 0.25em}
+h2         {font-size :  2em; font-weight: normal; margin: 1.0em 0 0 0}
+h3,h4      {font-size :1.5em; font-weight: normal; margin: 0 0 0 0}
 
 li         {list-style-type: none; list-style: none; }
 li:before  {content: "• "; position: relative -1em; overflow: visible;
@@ -68,6 +70,7 @@ div.glyph {
 .rendering-Pixelated-Regular,
 .rendering-Pixelated-Mono,
 .rendering-Mono,
+.rendering-Bold,
 .rendering-Reference,
 .rendering-Dots-Regular,
 .rendering-Dots-Mono,
@@ -93,6 +96,9 @@ div.glyph {
  }
  .rendering-Mono {
    font-family: '0xA000-Mono';
+ }
+ .rendering-Bold {
+   font-family: '0xA000-Bold';
  }
  .rendering-Regular {
    font-family: '0xA000-Regular';

@@ -8,7 +8,7 @@
       <span>The <span class='sans'>shapes</span> for the glyphs in
         this font have been designed within <span class='sans'>the</span>
         constraints of legibility
-        <span class='sans'>when lowercase is rendered 3 pixels high.</span>
+        <span class='sans'>when <b>lowercase</b> is rendered 3 pixels high.</span>
       </p>
 
       <small><span class='sans'>The regular
@@ -41,10 +41,13 @@
 </p>
       </div>
 
-<div style='font-size: 14px;'>
+<div style='font-size: 21px;'>
 
       <a href='0xA000-Regular.ttf'
         style="font-family:'0xA000-Regular'">0xA000-Regular.ttf</a>
+      <br/>
+      <a href='0xA000-Bold.ttf'
+        style="font-family:'0xA000-Bold'">0xA000-Bold.ttf</a>
       <br/>
       <a href='0xA000-Mono.ttf'
         style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
