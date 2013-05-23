@@ -1,7 +1,6 @@
     <div contenteditable='true' style='padding:0em;'>
 
     <h1>0xA000</h1>
-
       <h2><span
       class='monochrome'>Pixel inspired font-family</span></h2>
       <p>
@@ -12,9 +11,9 @@
       </p>
 
       <div style='font-size:49px;padding:0;margin:0'>
-      <span style="font-family:'0xA000-Regular'">Regular</span>
+      <span style="font-family:'0xA000-Regular'">RegularŋŊ</span>
       <span
-        style="font-family:'0xA000-Bold'">Bold</span>
+        style="font-family:'0xA000-Bold'">ŋŊBold</span>
       <span
         style="font-family:'0xA000-Mono'">Mono</span>
 

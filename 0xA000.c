@@ -20,7 +20,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int SCALE=512;
+int SCALE=100;
 static int overlap_solid=1;
 static int author_mode = 0;
 static int y_shift = 0;
@@ -394,7 +394,7 @@ void import_includes (char **asc_source)
         PARSE_INT (y_shift,           "y_shift ")
         PARSE_INT (rbearing_reduce,           "rbearing_reduce ")
         PARSE_INT (overlap_solid,     "overlap_solid ")
-        PARSE_INT (SCALE,             "scale")
+        PARSE_INT (SCALE,             "scale ")
         PARSE_STRING (font_variant,   "variant ")
         PARSE_STRING (font_name,      "fontname ")
 

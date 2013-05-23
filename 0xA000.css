@@ -67,14 +67,14 @@ div.glyph {
    padding-left: 0.2em;
  }
 
-.rendering-Pixelated-Regular,
+.rendering-Pixelated,
 .rendering-Pixelated-Mono,
 .rendering-Mono,
 .rendering-Bold,
 .rendering-Reference,
-.rendering-Dots-Regular,
+.rendering-Dots,
 .rendering-Dots-Mono,
-.rendering-Boxes-Regular,
+.rendering-Boxes,
 .rendering-Regular {
    font-size: 40px;
    color: black;
@@ -88,7 +88,7 @@ div.glyph {
  .rendering-Reference {
    font-family: 'Sans';
  }
- .rendering-Pixelated-Regular {
+ .rendering-Pixelated {
    font-family: '0xA000-Pixelated';
  }
  .rendering-Pixelated-Mono {
@@ -103,10 +103,10 @@ div.glyph {
  .rendering-Regular {
    font-family: '0xA000-Regular';
  }
- .rendering-Dots-Regular {
+ .rendering-Dots {
    font-family: '0xA000-Dots';
  }
- .rendering-Boxes-Regular {
+ .rendering-Boxes {
    font-family: '0xA000-Boxes';
  }
  .rendering-Dots-Mono {
