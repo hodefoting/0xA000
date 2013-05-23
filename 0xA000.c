@@ -75,7 +75,7 @@ int catalog_add (const gchar *name)
   return i;
 }
 
-static Mapping map[256]={{0,},};
+static Mapping map[512]={{0,},};
 static int     mappings=0;
 
 gchar *component_name_tmp = NULL;
