@@ -19,27 +19,27 @@
         style="font-family:'0xA000-Mono'">Mono</span>
 
       <span
-        style="font-family:'0xA000-Pixelated-Regular'">Pixelated-Regular</span>
+        style="font-family:'0xA000-Pixelated'">Pixelated-Regular</span>
       <span
         style="font-family:'0xA000-Pixelated-Mono'">Pixelated-Mono</span>
 
       <span
-        style="font-family:'0xA000-Dots-Regular'">Dots-Regular</span>
+        style="font-family:'0xA000-Dots'">Dots-Regular</span>
       <span
         style="font-family:'0xA000-Dots-Mono'">Dots-Mono</span>
 
       <span
-        style="font-family:'0xA000-Boxes-Regular'">Boxes-Regular</span>
+        style="font-family:'0xA000-Boxes'">Boxes-Regular</span>
       <span
         style="font-family:'0xA000-Boxes-Mono'">Boxes-Mono</span>
 
       <span
-        style="font-family:'0xA000-Monochrome-Regular'">Monochrome-Regular</span>
+        style="font-family:'0xA000-Monochrome'">Monochrome-Regular</span>
       <span
         style="font-family:'0xA000-Monochrome-Mono'">Monochrome-Mono</span>
       <p>
       </div>
-
+</div>
 
 <div style='font-size: 21px;'>
 
@@ -53,29 +53,29 @@
         style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
       <br/>
 
-      <a href='0xA000-Pixelated-Regular.ttf'
-        style="font-family:'0xA000-Pixelated-Regular'">0xA000-Pixelated-Regular.ttf</a>
+      <a href='0xA000-Pixelated.ttf'
+        style="font-family:'0xA000-Pixelated'">0xA000-Pixelated.ttf</a>
       <br/>
       <a href='0xA000-Pixelated-Mono.ttf'
         style="font-family:'0xA000-Pixelated-Mono'">0xA000-Pixelated-Mono.ttf</a>
       <br/>
 
-      <a href='0xA000-Dots-Regular.ttf'
-        style="font-family:'0xA000-Dots-Regular'">0xA000-Dots-Regular.ttf</a>
+      <a href='0xA000-Dots.ttf'
+        style="font-family:'0xA000-Dots'">0xA000-Dots.ttf</a>
       <br/>
       <a href='0xA000-Dots-Mono.ttf'
         style="font-family:'0xA000-Dots-Mono'">0xA000-Dots-Mono.ttf</a>
       <br/>
 
-      <a href='0xA000-Boxes-Regular.ttf'
-        style="font-family:'0xA000-Boxes-Regular'">0xA000-Boxes-Regular.ttf</a>
+      <a href='0xA000-Boxes.ttf'
+        style="font-family:'0xA000-Boxes'">0xA000-Boxes.ttf</a>
       <br/>
       <a href='0xA000-Boxes-Mono.ttf'
         style="font-family:'0xA000-Boxes-Mono'">0xA000-Boxes-Mono.ttf</a>
       <br/>
 
-      <a href='0xA000-Monochrome-Regular.ttf'
-        style="font-family:'0xA000-Monochrome-Regular'">0xA000-Monochrome-Regular.ttf</a>
+      <a href='0xA000-Monochrome.ttf'
+        style="font-family:'0xA000-Monochrome'">0xA000-Monochrome.ttf</a>
       <br/>
       <a href='0xA000-Monochrome-Mono.ttf'
         style="font-family:'0xA000-Monochrome-Mono'">0xA000-Monochrome-Mono.ttf</a>

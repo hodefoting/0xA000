@@ -2,12 +2,12 @@
 @font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-Bold';              src: url('0xA000-Bold.ttf');}
 @font-face {font-family:'0xA000-Pixelated-Mono';    src: url('0xA000-Pixelated-Mono.ttf');}
-@font-face {font-family:'0xA000-Pixelated-Regular'; src: url('0xA000-Pixelated-Regular.ttf');}
+@font-face {font-family:'0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf');}
 @font-face {font-family:'0xA000-Boxes-Mono';        src: url('0xA000-Boxes-Mono.ttf');}
-@font-face {font-family:'0xA000-Boxes-Regular';     src: url('0xA000-Boxes-Regular.ttf');}
-@font-face {font-family:'0xA000-Dots-Regular';      src: url('0xA000-Dots-Regular.ttf');}
+@font-face {font-family:'0xA000-Boxes';     src: url('0xA000-Boxes.ttf');}
+@font-face {font-family:'0xA000-Dots';      src: url('0xA000-Dots.ttf');}
 @font-face {font-family:'0xA000-Dots-Mono';         src: url('0xA000-Dots-Mono.ttf');}
-@font-face {font-family:'0xA000-Monochrome-Regular';src: url('0xA000-Monochrome-Regular.ttf');}
+@font-face {font-family:'0xA000-Monochrome';src: url('0xA000-Monochrome.ttf');}
 @font-face {font-family:'0xA000-Monochrome-Mono';   src: url('0xA000-Monochrome-Mono.ttf');}
 
 body       {font-family: '0xA000-Regular'; font-size: 21px;
@@ -33,8 +33,8 @@ a:hover    { text-decoration: underline }
 .selected, .faces>a.selected  { color: #000;
                               text-decoration: underline;}
 .sans      {font-family: '0xA000-Regular';}
-.monochrome {font-family: '0xA000-Monochrome-Regular';}
-.boxes     {font-family: '0xA000-Boxes-Regular';}
+.monochrome {font-family: '0xA000-Monochrome';}
+.boxes     {font-family: '0xA000-Boxes';}
 .monosans  {font-family: '0xA000-Mono';}
 .copy      { text-align: right; margin-bottom: 4em;margin-top: 3em;}
 .content   {margin-left: 200px;margin-right:20px;margin-top: 1em;
@@ -89,7 +89,7 @@ div.glyph {
    font-family: 'Sans';
  }
  .rendering-Pixelated-Regular {
-   font-family: '0xA000-Pixelated-Regular';
+   font-family: '0xA000-Pixelated';
  }
  .rendering-Pixelated-Mono {
    font-family: '0xA000-Pixelated-Mono';
@@ -104,10 +104,10 @@ div.glyph {
    font-family: '0xA000-Regular';
  }
  .rendering-Dots-Regular {
-   font-family: '0xA000-Dots-Regular';
+   font-family: '0xA000-Dots';
  }
  .rendering-Boxes-Regular {
-   font-family: '0xA000-Boxes-Regular';
+   font-family: '0xA000-Boxes';
  }
  .rendering-Dots-Mono {
    font-family: '0xA000-Dots-Mono';

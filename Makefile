@@ -4,13 +4,13 @@ CFLAGS += -O2 -g
 all: 0xA000-Regular.ttf    \
 		 0xA000-Mono.ttf       \
 		 0xA000-Bold.ttf       \
-	   0xA000-Pixelated-Regular.ttf \
+	   0xA000-Pixelated.ttf \
 	   0xA000-Pixelated-Mono.ttf \
-	   0xA000-Boxes-Regular.ttf \
+	   0xA000-Boxes.ttf \
 		 0xA000-Boxes-Mono.ttf \
-	   0xA000-Dots-Regular.ttf \
+	   0xA000-Dots.ttf \
 		 0xA000-Dots-Mono.ttf \
-	   0xA000-Monochrome-Regular.ttf \
+	   0xA000-Monochrome.ttf \
 	   0xA000-Monochrome-Mono.ttf \
 		 0xA000-Edit-Mono.ttf \
 		 Beta-Regular.ttf \
