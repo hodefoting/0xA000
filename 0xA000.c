@@ -68,7 +68,7 @@ int catalog_add (const gchar *name)
   for (i = 0; i < n_catalog; i++)
     if (!strcmp (name, catalog[i].name))
       {
-        fprintf (stderr, "%s already exists!\n");
+        fprintf (stderr, "%s already exists!\n", name);
         return i;
       }
   catalog[n_catalog++].name = g_strdup (name);
