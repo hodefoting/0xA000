@@ -11,6 +11,7 @@ all: 0xA000-Regular.ttf         \
 	   0xA000-Monochrome-Mono.ttf \
 		 0xA000-Edit-Mono.ttf       \
 		 Beta-Regular.ttf           \
+		 Beta-Edit.ttf           	  \
 		 \
 		 Glyphs.html                \
 		 Tech.html                  \
@@ -24,6 +25,7 @@ CFLAGS += -O2 -g
 	gcc $< -o $@ `pkg-config --cflags --libs gegl`
 
 Beta-Regular.ttf: squiggly.pal
+Beta-Edit.ttf: squiggly.pal
 
 %.pal: %.png 0xA000-cgen
 	./0xA000-cgen $< > $@

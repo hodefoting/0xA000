@@ -603,7 +603,7 @@ int main (int argc, char **argv)
       int i;
       for (i = 0; map[i].ascii; i++)
         {
-          gen_ref_glyph (&map[i], maxy-2, maxy+1);
+          gen_ref_glyph (&map[i], maxy-3, maxy+1);
         }
     }
   }
