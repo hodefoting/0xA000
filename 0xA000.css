@@ -1,3 +1,4 @@
+@font-face {font-family:'Beta-Regular';           src: url('Beta-Regular.ttf');}
 @font-face {font-family:'0xA000-Regular';           src: url('0xA000-Regular.ttf');}
 @font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-Bold';              src: url('0xA000-Bold.ttf');}
@@ -71,6 +72,7 @@ div.glyph {
 .rendering-Pixelated-Mono,
 .rendering-Mono,
 .rendering-Bold,
+.rendering-Beta,
 .rendering-Reference,
 .rendering-Dots,
 .rendering-Dots-Mono,
@@ -90,6 +92,9 @@ div.glyph {
  }
  .rendering-Pixelated {
    font-family: '0xA000-Pixelated';
+ }
+ .rendering-Beta {
+   font-family: 'Beta-Regular';
  }
  .rendering-Pixelated-Mono {
    font-family: '0xA000-Pixelated-Mono';

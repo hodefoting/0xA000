@@ -20,6 +20,7 @@ for a in `ls *.ufo/glyphs -1 | sort | uniq | sed s/\.glif//`; do
       <span class='rendering-Pixelated'>&#x$a;</span>
       <span class='rendering-Dots'>&#x$a;</span>
       <span class='rendering-Boxes'>&#x$a;</span>
+      <span class='rendering-Beta'>&#x$a;</span>
       <span class='rendering-Reference'>&#x$a;</span>
     </div>"
   fi
