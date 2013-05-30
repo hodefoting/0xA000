@@ -3,14 +3,14 @@
     <h1>0xA000</h1>
       <h2><span
       class='monochrome'>Pixel inspired font-family</span></h2>
-      <p>The fonts in this family are all metric compatible; and all
-      weights/variations of the fonts exist with both proportional and
-      mono-spacing.
-      </p>
-      <p>
-      The shapes for the glyphs in this font have been designed within the
-      constraints of legibility when lowercase is rendered 3 pixels high.
-      </p>
+      <p>Metafont-like tile driven, pixel constrained font family</p>
+
+      <p>The fonts in this family are all: metric compatible, have monospaced
+      counterpart and have full Latin 1 coverage. The design started out
+      modelling lowercase characters as 3pixels high; extrapolating
+      which glyph designs would result in The outline variations work
+      well at many small pixel sizes without hinting, in particular with
+      subpixel RGB anti-aliasing.  </p>
 
       <div style='font-size:2em;padding:0;margin:0'>
       <span style="font-family:'0xA000'">Regular</span>
@@ -34,7 +34,6 @@
       <p>
       </div>
 </div>
-
 <div>
 
       <a href='0xA000-Regular.ttf'

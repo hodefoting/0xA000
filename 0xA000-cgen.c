@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define POTRACE_OPTS "-O 1.0 -t 4 "
+#define POTRACE_OPTS "-O 0.5 -t 2 "
 
 const char uniglyph[8][8]=
 {"        ",
