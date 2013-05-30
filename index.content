@@ -3,51 +3,54 @@
     <h1>0xA000</h1>
       <h2><span
       class='monochrome'>Pixel inspired font-family</span></h2>
+      <p>The fonts in this family are all metric compatible; and all
+      weights/variations of the fonts exist with both proportional and
+      mono-spacing.
+      </p>
       <p>
-      <span>The <span class='sans'>shapes</span> for the glyphs in
-        this font have been designed within <span class='sans'>the</span>
-        constraints of legibility
-        <span class='sans'>when lowercase is rendered 3 pixels high.</span>
+      The shapes for the glyphs in this font have been designed within the
+      constraints of legibility when lowercase is rendered 3 pixels high.
       </p>
 
-      <div style='font-size:49px;padding:0;margin:0'>
-      <span style="font-family:'0xA000-Regular'">Regular</span>
-      <span
-        style="font-family:'0xA000-Bold'">Bold</span>
-      <span
-        style="font-family:'0xA000-Mono'">Mono</span>
+      <div style='font-size:2em;padding:0;margin:0'>
+      <span style="font-family:'0xA000'">Regular</span>
+      <span style="font-family:'0xA000-Semibold'">Semibold</span>
+      <span style="font-family:'0xA000-Bold'">Bold</span>
+      <span style="font-family:'0xA000-Pixelated'">Pixelated</span>
+      <span style="font-family:'0xA000-Dots'">Dots</span>
+      <span style="font-family:'0xA000-Boxes'">Boxes</span>
+      <span style="font-family:'0xA000-Pen'">Pen</span>
 
-      <span
-        style="font-family:'0xA000-Pixelated'">Pixelated-Regular</span>
-      <span
-        style="font-family:'0xA000-Pixelated-Mono'">Pixelated-Mono</span>
+      <span style="font-family:'0xA000-Mono'">Mono</span>
+      <span style="font-family:'0xA000-Semibold-Mono'">Semibold-Mono</span>
+      <span style="font-family:'0xA000-Bold-Mono'">Bold-Mono</span>
 
-      <span
-        style="font-family:'0xA000-Dots'">Dots-Regular</span>
-      <span
-        style="font-family:'0xA000-Dots-Mono'">Dots-Mono</span>
-
-      <span
-        style="font-family:'0xA000-Boxes'">Boxes-Regular</span>
-      <span
-        style="font-family:'0xA000-Boxes-Mono'">Boxes-Mono</span>
-
-      <span
-        style="font-family:'0xA000-Monochrome'">Monochrome-Regular</span>
-      <span
-        style="font-family:'0xA000-Monochrome-Mono'">Monochrome-Mono</span>
+      <span style="font-family:'0xA000-Pixelated-Mono'">Pixelated-Mono</span>
+      <span style="font-family:'0xA000-Dots-Mono'">Dots-Mono</span>
+      <span style="font-family:'0xA000-Boxes-Mono'">Boxes-Mono</span>
+      <span style="font-family:'0xA000-Monochrome'">Monochrome</span>
+      <span style="font-family:'0xA000-Monochrome-Mono'">Monochrome-Mono</span>
+      <span style="font-family:'0xA000-Pen-Mono'">Pen-Mono</span>
       <p>
       </div>
 </div>
 
-<div style='font-size: 21px;'>
+<div>
 
       <a href='0xA000-Regular.ttf'
         style="font-family:'0xA000-Regular'">0xA000-Regular.ttf</a>
       <br/>
       <a href='0xA000-Bold.ttf'
+        style="font-family:'0xA000-Semibold'">0xA000-Semibold.ttf</a>
+      <br/>
+      <a href='0xA000-Bold.ttf'
         style="font-family:'0xA000-Bold'">0xA000-Bold.ttf</a>
       <br/>
+      <a href='0xA000-Bold.ttf'
+        style="font-family:'0xA000-Pen'">0xA000-Pen.ttf</a>
+      <br/>
+
+
       <a href='0xA000-Mono.ttf'
         style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
       <br/>

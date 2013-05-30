@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define POTRACE_OPTS "-O 1.0 -t 4 "
+
 const char uniglyph[8][8]=
 {"        ",
  " 78mi^b ",
@@ -104,7 +106,7 @@ main (gint    argc,
 
             sprintf (path, "convert %s/c%X.png %s/c%X.pnm", workdir, ascii,  workdir, ascii);
             system (path);
-            sprintf (path, "potrace %s/c%X.pnm -e -c  -M 0 --flat -q", workdir, ascii);
+            sprintf (path, "potrace %s/c%X.pnm %s -e -c  -M 0 --flat -q", workdir, ascii, POTRACE_OPTS);
             system (path);
 
             g_object_unref (buffer);  /* XXX: why is two unrefs needed here? */
@@ -132,7 +134,9 @@ main (gint    argc,
 
             sprintf (path, "convert %s/c%X.png %s/c%X.pnm", workdir, ascii2, workdir, ascii2);
             system (path);
-            sprintf (path, "potrace %s/c%X.pnm -e -c  -M 0 --flat -q", workdir, ascii2);
+
+
+            sprintf (path, "potrace %s/c%X.pnm -e -c %s  -M 0 --flat -q", workdir, ascii2, POTRACE_OPTS);
             system (path);
 
               }

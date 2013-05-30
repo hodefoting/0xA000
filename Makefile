@@ -1,6 +1,9 @@
 all: 0xA000-Regular.ttf         \
 		 0xA000-Mono.ttf            \
 		 0xA000-Bold.ttf            \
+		 0xA000-Bold-Mono.ttf       \
+		 0xA000-Semibold.ttf        \
+		 0xA000-Semibold-Mono.ttf   \
 	   0xA000-Pixelated.ttf       \
 	   0xA000-Pixelated-Mono.ttf  \
 	   0xA000-Boxes.ttf           \
@@ -10,6 +13,8 @@ all: 0xA000-Regular.ttf         \
 	   0xA000-Monochrome.ttf      \
 	   0xA000-Monochrome-Mono.ttf \
 		 0xA000-Edit-Mono.ttf       \
+		 0xA000-Pen.ttf             \
+		 0xA000-Pen-Mono.ttf        \
 		 Beta-Regular.ttf           \
 		 Beta-Edit.ttf           	  \
 		 \
@@ -25,13 +30,15 @@ CFLAGS += -O2 -g
 	gcc $< -o $@ `pkg-config --cflags --libs gegl`
 
 0xA000-Regular.ttf: slimmed.pal
-0xA000-Mono.ttf: slimmed.pal
-Beta-Regular.ttf: squiggly.pal
-Beta-Edit.ttf: squiggly.pal
+0xA000-Mono.ttf:    slimmed.pal
+0xA000-Pen.ttf:     squiggly.pal
+0xA000-Pen-Mono.ttf: squiggly.pal
+Beta-Regular.ttf:   squiggly.pal
+Beta-Edit.ttf:      squiggly.pal
 
 %.pal: %.png 0xA000-cgen
 	./0xA000-cgen $< > $@
-%.ttf: %.asc 0xA000 *.asc
+%.ttf: %.asc 0xA000 5px-ascii.asc 5px-latin.asc 5px-mono.asc
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
 %.html: %.content head.html
