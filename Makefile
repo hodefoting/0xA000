@@ -24,6 +24,8 @@ CFLAGS += -O2 -g
 0xA000-cgen: 0xA000-cgen.c
 	gcc $< -o $@ `pkg-config --cflags --libs gegl`
 
+0xA000-Regular.ttf: slimmed.pal
+0xA000-Mono.ttf: slimmed.pal
 Beta-Regular.ttf: squiggly.pal
 Beta-Edit.ttf: squiggly.pal
 
