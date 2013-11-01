@@ -1,26 +1,19 @@
-@font-face {font-family:'Beta-Regular';          src: url('Beta-Regular.ttf');}
-
-@font-face {font-family:'0xA000';                src: url('0xA000-Regular.ttf');}
-@font-face {font-family:'0xA000-Mono';           src: url('0xA000-Mono.ttf');}
-
-@font-face {font-family:'0xA000-Bold';           src: url('0xA000-Bold.ttf');}
-@font-face {font-family:'0xA000-Bold-Mono';      src: url('0xA000-Bold-Mono.ttf');}
-
-@font-face {font-family:'0xA000-Semibold';           src: url('0xA000-Semibold.ttf');}
-@font-face {font-family:'0xA000-Semibold-Mono';      src: url('0xA000-Semibold-Mono.ttf');}
-
-@font-face {font-family:'0xA000-Pixelated-Mono'; src: url('0xA000-Pixelated-Mono.ttf');}
-@font-face {font-family:'0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf');}
-
-@font-face {font-family:'0xA000-Boxes-Mono';     src: url('0xA000-Boxes-Mono.ttf');}
-@font-face {font-family:'0xA000-Boxes';     src: url('0xA000-Boxes.ttf');}
-
-@font-face {font-family:'0xA000-Dots';      src: url('0xA000-Dots.ttf');}
-@font-face {font-family:'0xA000-Dots-Mono';      src: url('0xA000-Dots-Mono.ttf');}
-
-@font-face {font-family:'0xA000-Pen';      src: url('0xA000-Pen.ttf');}
-@font-face {font-family:'0xA000-Pen-Mono';      src: url('0xA000-Pen-Mono.ttf');}
-
+@font-face {font-family:'Beta-Regular';             src: url('Beta-Regular.ttf');}
+@font-face {font-family:'0xA000';                   src: url('0xA000-Regular.ttf');}
+@font-face {font-family:'0xA000-Regular';           src: url('0xA000-Regular.ttf');}
+@font-face {font-family:'0xA000-Bold';              src: url('0xA000-Bold.ttf');}
+@font-face {font-family:'0xA000-Semibold';          src: url('0xA000-Semibold.ttf');}
+@font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono-Regular.ttf');}
+@font-face {font-family:'0xA000-Mono-Bold';         src: url('0xA000-Mono-Bold.ttf');}
+@font-face {font-family:'0xA000-Mono-Semibold';     src: url('0xA000-Mono-Semibold.ttf');}
+@font-face {font-family:'0xA000-Pixelated-Regular'; src: url('0xA000-Pixelated.ttf');}
+@font-face {font-family:'0xA000-Pixelated-Mono';    src: url('0xA000-Pixelated-Mono.ttf');}
+@font-face {font-family:'0xA000-Boxes-Mono';        src: url('0xA000-Boxes-Mono.ttf');}
+@font-face {font-family:'0xA000-Boxes-Regular';     src: url('0xA000-Boxes-Regular.ttf');}
+@font-face {font-family:'0xA000-Dots-Regular';      src: url('0xA000-Dots-Regular.ttf');}
+@font-face {font-family:'0xA000-Dots-Mono';         src: url('0xA000-Dots-Mono.ttf');}
+@font-face {font-family:'0xA000-Pen-Regular';       src: url('0xA000-Pen-Regular.ttf');}
+@font-face {font-family:'0xA000-Pen-Mono';          src: url('0xA000-Pen-Mono.ttf');}
 @font-face {font-family:'0xA000-Monochrome';src: url('0xA000-Monochrome.ttf');}
 @font-face {font-family:'0xA000-Monochrome-Mono';src: url('0xA000-Monochrome-Mono.ttf');}
 
