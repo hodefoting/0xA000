@@ -36,7 +36,7 @@ Beta-Edit.ttf:       squiggly.pal
 
 %.pal: %.png 0xA000-cgen
 	./0xA000-cgen $< > $@
-%.ttf: %.asc 5px-ascii.asc 5px-latin.asc 5px-mono.asc
+%.ttf: %.asc glyphs-*.asc
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
 %.html: %.content head.html

@@ -19,7 +19,7 @@
 
 
 
-body       {font-family: '0xA000'; font-size: 21px;
+body       {font-family: '0xA000-Regular'; font-size: 21px;
             background-color: #f7f7f7;}
 tt, pre    {font-family: '0xA000-Mono';}
 b          {font-family: '0xA000-Bold'; font-weight: normal;}
@@ -76,17 +76,17 @@ div.glyph {
    padding-left: 0.2em;
  }
 
-.rendering-Pixelated,
+.rendering-Pixelated-Regular,
 .rendering-Pixelated-Mono,
-.rendering-Mono,
+.rendering-Mono-Regular,
 .rendering-Bold,
 .rendering-Beta,
 .rendering-Reference,
-.rendering-Dots,
+.rendering-Dots-Regular,
 .rendering-Dots-Mono,
-.rendering-Pen,
+.rendering-Pen-Regular,
 .rendering-Pen-Mono,
-.rendering-Boxes,
+.rendering-Boxes-Regular,
 .rendering-Regular {
    font-size: 40px;
    color: black;
@@ -100,8 +100,8 @@ div.glyph {
  .rendering-Reference {
    font-family: 'Sans';
  }
- .rendering-Pixelated {
-   font-family: '0xA000-Pixelated';
+ .rendering-Pixelated-Regular {
+   font-family: '0xA000-Pixelated-Regular';
  }
  .rendering-Beta {
    font-family: 'Beta-Regular';
@@ -109,8 +109,8 @@ div.glyph {
  .rendering-Pixelated-Mono {
    font-family: '0xA000-Pixelated-Mono';
  }
- .rendering-Mono {
-   font-family: '0xA000-Mono';
+ .rendering-Mono-Regular {
+   font-family: '0xA000-Mono-Regular';
  }
  .rendering-Bold {
    font-family: '0xA000-Bold';
@@ -118,35 +118,29 @@ div.glyph {
  .rendering-Regular {
    font-family: '0xA000';
  }
- .rendering-Dots {
-   font-family: '0xA000-Dots';
+ .rendering-Dots-Regular {
+   font-family: '0xA000-Dots-Regular';
  }
  .rendering-Dots-Mono {
    font-family: '0xA000-Dots-Mono';
  }
-
- .rendering-Pen {
-   font-family: '0xA000-Pen';
+ .rendering-Pen-Regular {
+   font-family: '0xA000-Pen-Regular';
  }
  .rendering-Pen-Mono {
    font-family: '0xA000-Pen-Mono';
  }
- .rendering-Boxes {
-   font-family: '0xA000-Boxes';
+ .rendering-Boxes-Regular {
+   font-family: '0xA000-Boxes-Regular';
  }
-
 div.glyphs {
 }
-
 div.clear {
   clear: both;
 }
-
 span.cmt {color: gray;}
-
 [contenteditable="true"]:active, [contenteditable="true"]:focus{
     outline:none;
 }
-
 p {
 }
