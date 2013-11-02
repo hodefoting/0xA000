@@ -15,8 +15,6 @@ all: 0xA000-Regular.ttf            \
 		 0xA000-Edit-Mono.ttf          \
 		 0xA000-Pen-Regular.ttf        \
 		 0xA000-Pen-Mono.ttf           \
-		 Beta-Regular.ttf              \
-		 Beta-Edit.ttf           	     \
 		 \
 		 Glyphs.html                   \
 		 Tech.html                     \
@@ -24,18 +22,16 @@ all: 0xA000-Regular.ttf            \
 
 CFLAGS += -O2 -g
 
-0xA000-cgen: 0xA000-cgen.c
+tilegen: tilegen.c
 	gcc $< -o $@ `pkg-config --cflags --libs gegl`
 
-0xA000-Regular.ttf:  slimmed.pal
-0xA000-Mono.ttf:     slimmed.pal
-0xA000-Pen.ttf:      squiggly.pal
-0xA000-Pen-Mono.ttf: squiggly.pal
-Beta-Regular.ttf:    squiggly.pal
-Beta-Edit.ttf:       squiggly.pal
+0xA000-Regular.ttf:       slimmed.pal
+0xA000-Mono-Regular.ttf:  slimmed.pal
+0xA000-Pen-Regular.ttf:   squiggly.pal
+0xA000-Pen-Mono.ttf:      squiggly.pal
 
-%.pal: %.png 0xA000-cgen
-	./0xA000-cgen $< > $@
+%.pal: %.png tilegen
+	./tilegen $< > $@
 %.ttf: %.asc glyphs-*.asc
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
@@ -54,4 +50,4 @@ UnicodeData.txt:
 clean: 
 	rm -rf *.ttf *.ufo
 	rm -rf *.pal
-	rm -rf 0xA000-cgen
+	rm -rf tilegen 
