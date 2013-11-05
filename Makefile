@@ -1,20 +1,21 @@
-all: 0xA000-Regular.ttf            \
+all: 0xA000.ttf    				         \
 		 0xA000-Bold.ttf               \
 		 0xA000-Semibold.ttf           \
-		 0xA000-Mono-Regular.ttf       \
+		 0xA000-Mono.ttf       				 \
 		 0xA000-Mono-Bold.ttf          \
 		 0xA000-Mono-Semibold.ttf      \
-	   0xA000-Pixelated-Regular.ttf  \
+	   0xA000-Pixelated.ttf  				 \
 	   0xA000-Pixelated-Mono.ttf     \
-	   0xA000-Boxes-Regular.ttf      \
+	   0xA000-Boxes.ttf      				 \
 		 0xA000-Boxes-Mono.ttf         \
-	   0xA000-Dots-Regular.ttf       \
+	   0xA000-Dots.ttf 				       \
 		 0xA000-Dots-Mono.ttf          \
-	   0xA000-Monochrome-Regular.ttf \
+	   0xA000-Monochrome.ttf 				 \
 	   0xA000-Monochrome-Mono.ttf    \
 		 0xA000-Edit-Mono.ttf          \
-		 0xA000-Pen-Regular.ttf        \
+		 0xA000-Pen.ttf        				 \
 		 0xA000-Pen-Mono.ttf           \
+		 0xA000.zip										 \
 		 \
 		 Glyphs.html                   \
 		 Tech.html                     \
@@ -22,12 +23,15 @@ all: 0xA000-Regular.ttf            \
 
 CFLAGS += -O2 -g
 
+0xA000.zip: *.ttf
+	zip $@ $< LICENSE.OFL
+
 tilegen: tilegen.c
 	gcc $< -o $@ `pkg-config --cflags --libs gegl`
 
-0xA000-Regular.ttf:       slimmed.pal
-0xA000-Mono-Regular.ttf:  slimmed.pal
-0xA000-Pen-Regular.ttf:   squiggly.pal
+0xA000.ttf:               slimmed.pal
+0xA000-Mono.ttf:          slimmed.pal
+0xA000-Pen.ttf:           squiggly.pal
 0xA000-Pen-Mono.ttf:      squiggly.pal
 
 %.pal: %.png tilegen

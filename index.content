@@ -1,20 +1,20 @@
-    <div contenteditable='true' style='padding:0em;'>
+    <div style='padding:0em;'>
 
-    <h1>0xA000</h1>
+    <h1><span style='font-family:"0xA000-Monochrome";'>0xA000</a></h1>
       <h2><span
-      class='monochrome'>Pixel inspired font-family</span></h2>
-      <p>Metafont-like tile driven, pixel constrained font family</p>
+      style='font-family:"0xA000-Pixelated"''>Pixel constraint inspired font-family</span></h2>
 
-      <p>The fonts in this family are all: metric compatible, have monospaced
-      counterpart and have full Latin 1 coverage. The design started out
-      modelling lowercase characters as 3pixels high; extrapolating
-      which glyph designs would result in The outline variations work
-      well at many small pixel sizes without hinting, in particular with
-      subpixel RGB anti-aliasing.  </p>
+      <p>This font has been designed using <a
+      href='https://github.com/hodefoting/fontile'>fontile</a> with an
+      x-height of 3 tiles/pixels</p>
 
-      <div style='font-size:2em;padding:0;margin:0'>
+      <p>The font family is provided with <a href='Glyphs.html'>Latin
+      coverage and a bit more</a>, the family has many variants, courtesy
+      of how fontile works</p>
+
+      <!--<div style='font-size:2em;padding:0;margin:0'>-->
+      <div contenteditable='true'>
       <span style="font-family:'0xA000'">Regular</span>
-      <span style="font-family:'0xA000-Semibold'">Semibold</span>
       <span style="font-family:'0xA000-Bold'">Bold</span>
       <span style="font-family:'0xA000-Pixelated'">Pixelated</span>
       <span style="font-family:'0xA000-Dots'">Dots</span>
@@ -22,8 +22,7 @@
       <span style="font-family:'0xA000-Pen'">Pen</span>
 
       <span style="font-family:'0xA000-Mono'">Mono</span>
-      <span style="font-family:'0xA000-Semibold-Mono'">Semibold-Mono</span>
-      <span style="font-family:'0xA000-Bold-Mono'">Bold-Mono</span>
+      <span style="font-family:'0xA000-Mono-Bold'">Mono-Bold</span>
 
       <span style="font-family:'0xA000-Pixelated-Mono'">Pixelated-Mono</span>
       <span style="font-family:'0xA000-Dots-Mono'">Dots-Mono</span>
@@ -34,13 +33,14 @@
       <p>
       </div>
 </div>
-<div>
 
-      <a href='0xA000-Regular.ttf'
-        style="font-family:'0xA000-Regular'">0xA000-Regular.ttf</a>
+<div>
+      <h2><span class='monochrome'>Downloads:</span></h2>
+      <div style='-moz-column-width:15em;'>
+      <a href='0xA000.zip' style="font-family:'0xA000'">0xA000.zip</a>
       <br/>
-      <a href='0xA000-Bold.ttf'
-        style="font-family:'0xA000-Semibold'">0xA000-Semibold.ttf</a>
+      <a href='0xA000.ttf'
+        style="font-family:'0xA000'">0xA000.ttf</a>
       <br/>
       <a href='0xA000-Bold.ttf'
         style="font-family:'0xA000-Bold'">0xA000-Bold.ttf</a>
@@ -52,6 +52,9 @@
 
       <a href='0xA000-Mono.ttf'
         style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
+      <br/>
+      <a href='0xA000-Mono-Bold.ttf'
+        style="font-family:'0xA000-Mono-Bold'">0xA000-Mono-Bold.ttf</a>
       <br/>
 
       <a href='0xA000-Pixelated.ttf'
@@ -81,11 +84,6 @@
       <a href='0xA000-Monochrome-Mono.ttf'
         style="font-family:'0xA000-Monochrome-Mono'">0xA000-Monochrome-Mono.ttf</a>
       <br/>
+      </div>
 </div>
 
-<p>You might also want to look at the <a href='Glyphs.html'>Glyph Gallery</a>
-which shows all the glyphs/shapes of the font family in variants.</p>
-
-<p>Those interested in fonts or digital media tech in general might
-find the page with <a href='Tech.html'>technical background</a>
-interesting.</p>
