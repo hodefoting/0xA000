@@ -12,8 +12,7 @@
       coverage and a bit more</a>, the family has many variants, courtesy
       of how fontile works</p>
 
-      <!--<div style='font-size:2em;padding:0;margin:0'>-->
-      <div contenteditable='true'>
+      <div style='font-size:2em;padding:0;margin:0' contenteditable='true'>
       <span style="font-family:'0xA000'">Regular</span>
       <span style="font-family:'0xA000-Bold'">Bold</span>
       <span style="font-family:'0xA000-Pixelated'">Pixelated</span>

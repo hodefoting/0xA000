@@ -1,11 +1,7 @@
-@font-face {font-family:'Beta-Regular';             src: url('Beta-Regular.ttf');}
 @font-face {font-family:'0xA000';                   src: url('0xA000.ttf');}
-@font-face {font-family:'0xA000-Regular';           src: url('0xA000.ttf');}
 @font-face {font-family:'0xA000-Bold';              src: url('0xA000-Bold.ttf');}
-@font-face {font-family:'0xA000-Semibold';          src: url('0xA000-Semibold.ttf');}
 @font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-Mono-Bold';         src: url('0xA000-Mono-Bold.ttf');}
-@font-face {font-family:'0xA000-Mono-Semibold';     src: url('0xA000-Mono-Semibold.ttf');}
 @font-face {font-family:'0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf');}
 @font-face {font-family:'0xA000-Pixelated-Mono';    src: url('0xA000-Pixelated-Mono.ttf');}
 @font-face {font-family:'0xA000-Boxes-Mono';        src: url('0xA000-Boxes-Mono.ttf');}
@@ -19,12 +15,12 @@
 
 
 
-body       {font-family: '0xA000'; font-size: 32px;
+body       {font-family: '0xA000', 'Sans'; font-size: 32px;
             background-color: #f7f7f7;}
-tt, pre    {font-family: '0xA000-Mono';}
-b          {font-family: '0xA000-Bold'; font-weight: normal;}
+tt, pre    {font-family: '0xA000-Mono', 'Sans';}
+b          {font-family: '0xA000-Bold'. 'Sans'; font-weight: normal;}
 small      {font-size :  50%; }
-h1         {font-size :  3em; font-family: '0xA000-Semibold'; font-weight: normal; margin: 0.5em 0 0.25em}
+h1         {font-size :  3em; font-family: '0xA000-Semibold', 'Sans'; font-weight: normal; margin: 0.5em 0 0.25em}
 h2         {font-size :  2em; font-weight: normal; margin: 1.0em 0 0 0}
 h3,h4      {font-size :1.5em; font-weight: normal; margin: 0 0 0 0}
 
@@ -41,17 +37,17 @@ a { color: #182; text-decoration:none}
 a:hover    { text-decoration: underline }
 .selected, .faces>a.selected  { color: #000;
                               text-decoration: underline;}
-.sans      {font-family: '0xA000-Regular';}
-.monochrome {font-family: '0xA000-Monochrome';}
-.boxes     {font-family: '0xA000-Boxes';}
-.monosans  {font-family: '0xA000-Mono';}
+.sans      {font-family: '0xA000','Sans';}
+.monochrome {font-family: '0xA000-Monochrome'.'Sans';}
+.boxes     {font-family: '0xA000-Boxes','Sans';}
+.monosans  {font-family: '0xA000-Mono','Sans';}
 .copy      { text-align: right; margin-bottom: 4em;margin-top: 3em;}
 .content   {margin-left: 200px;margin-right:20px;margin-top: 1em;
             min-width: 20em; max-width: 45em;
            }
 
 div.glyph {
-  font-family: '0xA000-Regular';
+  font-family: '0xA000', 'Sans';
   display: block;
   margin-left: 0.2em;
   margin-right: 0.2em;
@@ -76,18 +72,18 @@ div.glyph {
    padding-left: 0.2em;
  }
 
-.rendering-Pixelated-Regular,
+.rendering-Pixelated,
 .rendering-Pixelated-Mono,
-.rendering-Mono-Regular,
+.rendering-Mono,
 .rendering-Bold,
 .rendering-Beta,
 .rendering-Reference,
-.rendering-Dots-Regular,
+.rendering-Dots,
 .rendering-Dots-Mono,
-.rendering-Pen-Regular,
+.rendering-Pen,
 .rendering-Pen-Mono,
-.rendering-Boxes-Regular,
-.rendering-Regular {
+.rendering-Boxes,
+.rendering {
    font-size: 40px;
    color: black;
    margin-top: 0.25em;
@@ -100,38 +96,38 @@ div.glyph {
  .rendering-Reference {
    font-family: 'Sans';
  }
- .rendering-Pixelated-Regular {
-   font-family: '0xA000-Pixelated-Regular';
+ .rendering-Pixelated {
+   font-family: '0xA000-Pixelated', 'Sans';
  }
  .rendering-Beta {
-   font-family: 'Beta-Regular';
+   font-family: 'Beta', 'Sans';
  }
  .rendering-Pixelated-Mono {
-   font-family: '0xA000-Pixelated-Mono';
+   font-family: '0xA000-Pixelated-Mono', 'Sans';
  }
- .rendering-Mono-Regular {
-   font-family: '0xA000-Mono-Regular';
+ .rendering-Mono {
+   font-family: '0xA000-Mono', 'Sans';
  }
  .rendering-Bold {
-   font-family: '0xA000-Bold';
+   font-family: '0xA000-Bold', 'Sans';
  }
- .rendering-Regular {
-   font-family: '0xA000';
+ .rendering {
+   font-family: '0xA000', 'Sans';
  }
- .rendering-Dots-Regular {
-   font-family: '0xA000-Dots-Regular';
+ .rendering-Dots {
+   font-family: '0xA000-Dots', 'Sans';
  }
  .rendering-Dots-Mono {
    font-family: '0xA000-Dots-Mono';
  }
- .rendering-Pen-Regular {
-   font-family: '0xA000-Pen-Regular';
+ .rendering-Pen {
+   font-family: '0xA000-Pen', 'Sans';
  }
  .rendering-Pen-Mono {
-   font-family: '0xA000-Pen-Mono';
+   font-family: '0xA000-Pen-Mono', 'Sans';
  }
- .rendering-Boxes-Regular {
-   font-family: '0xA000-Boxes-Regular';
+ .rendering-Boxes {
+   font-family: '0xA000-Boxes', 'Sans';
  }
 div.glyphs {
 }
