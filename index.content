@@ -1,37 +1,34 @@
     <div style='padding:0em;'>
 
     <h1><span style='font-family:"0xA000-Monochrome";'>0xA000</a></h1>
+
       <h2><span
       style='font-family:"0xA000-Pixelated"''>Pixel constraint inspired font-family</span></h2>
 
-      <p>This font has been designed using <a
-      href='https://github.com/hodefoting/fontile'>fontile</a> with an
-      x-height of 3 tiles/pixels</p>
+      <p contenteditable='true'>0xA000 is a font family with a basis of being able to discern the
+      character shapes when rendered with a <span
+      style='font-family:"0xA000-Pixelated"'>3px x-height</span>. The core
+      variants are the Regular, and <b>Bold</b> and <span
+      style='font-family:"0xA000-Pixelated"'>pixelated</span>, also
+      <span style='font-family:"0xA000-Mono-Bold"'>existing</a> in
+      <tt>monospaced <span
+      style='font-family:"0xA000-Pixelated-Mono"'>variants</span> for code
+      and terminals.</tt>
+      </p>
 
-      <p>The font family is provided with <a href='Glyphs.html'>Latin
-      coverage and a bit more</a>, the family has many variants, courtesy
-      of how fontile works</p>
+      <p contenteditable='true'>Some more display variants come to life
+      through mapping different shapes to the tiles used:
+      <span style="font-family:'0xA000-Dots'">Dots</span>,
+      <span style="font-family:'0xA000-Boxes'">Boxes</span> and
+      <span style="font-family:'0xA000-Monochrome'">Monochrome (a rougher
+      alternative to pixelated).</span>
 
-      <div style='font-size:2em;padding:0;margin:0' contenteditable='true'>
-      <span style="font-family:'0xA000'">Regular</span>
-      <span style="font-family:'0xA000-Bold'">Bold</span>
-      <span style="font-family:'0xA000-Pixelated'">Pixelated</span>
-      <span style="font-family:'0xA000-Dots'">Dots</span>
-      <span style="font-family:'0xA000-Boxes'">Boxes</span>
-      <span style="font-family:'0xA000-Pen'">Pen</span>
+      <a href='https://github.com/hodefoting/fontile'>fontile</a>
 
-      <span style="font-family:'0xA000-Mono'">Mono</span>
-      <span style="font-family:'0xA000-Mono-Bold'">Mono-Bold</span>
-
-      <span style="font-family:'0xA000-Pixelated-Mono'">Pixelated-Mono</span>
-      <span style="font-family:'0xA000-Dots-Mono'">Dots-Mono</span>
-      <span style="font-family:'0xA000-Boxes-Mono'">Boxes-Mono</span>
-      <span style="font-family:'0xA000-Monochrome'">Monochrome</span>
-      <span style="font-family:'0xA000-Monochrome-Mono'">Monochrome-Mono</span>
-      <span style="font-family:'0xA000-Pen-Mono'">Pen-Mono</span>
-      <p>
-      </div>
-</div>
+      <h2 contenteditable='true'>Coverage:</h2>
+      <p>The font family is provided with
+      <a href='Glyphs.html'>Latin coverage and a bit more</a>
+  </div>
 
 <div>
       <h2><span class='monochrome'>Downloads:</span></h2>

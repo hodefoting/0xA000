@@ -1,3 +1,5 @@
+
+
 all: 0xA000.ttf    				         \
 		 0xA000-Bold.ttf               \
 		 0xA000-Semibold.ttf           \
@@ -19,7 +21,19 @@ all: 0xA000.ttf    				         \
 		 \
 		 Glyphs.html                   \
 		 Tech.html                     \
-		 index.html
+		 index.html fit
+
+fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000.ufo 0xA000b.ufo
+	kernagic -g 0.28 -s 1 0xA000b.ufo -o 0xA000.ufo
+	./fontconvert 0xA000.ufo -t
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
+	kernagic -g 0.28 -s 1 0xA000b.ufo -o 0xA000-Bold.ufo
+	./fontconvert 0xA000-Bold.ufo -t
+
+
 
 CFLAGS += -O2 -g
 
