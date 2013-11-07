@@ -55,3 +55,12 @@ clean:
 	rm -rf *.ttf *.ufo
 	rm -rf *.pal
 	rm -rf tilegen 
+
+install:
+	install -d /usr/share/fonts/truetype/0xA000/
+	install *.ttf /usr/share/fonts/truetype/0xA000/
+	fc-cache -fv
+
+uninstall:
+	rm -rf /usr/share/fonts/truetype/0xA000/
+	fc-cache -fv
