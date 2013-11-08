@@ -32,6 +32,7 @@ fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
 	kernagic -g 0.28 -s 1 0xA000b.ufo -o 0xA000-Bold.ufo
 	./fontconvert 0xA000-Bold.ufo -t
+	touch fit
 
 
 
@@ -68,9 +69,9 @@ UnicodeData.txt:
 clean: 
 	rm -rf *.ttf *.ufo
 	rm -rf *.pal
-	rm -rf tilegen 
+	rm -rf tilegen fit
 
-install:
+install: fit
 	install -d /usr/share/fonts/truetype/0xA000/
 	install *.ttf /usr/share/fonts/truetype/0xA000/
 	fc-cache -fv

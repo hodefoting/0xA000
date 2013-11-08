@@ -2,15 +2,12 @@
 
     <h1><span style='font-family:"0xA000-Monochrome";'>0xA000</a></h1>
 
-      <h2><span
-      style='font-family:"0xA000-Pixelated"''>Pixel constraint inspired font-family</span></h2>
-
-      <p contenteditable='true'>0xA000 is a font family with a basis of being able to discern the
-      character shapes when rendered with a <span
-      style='font-family:"0xA000-Pixelated"'>3px x-height</span>. The core
-      variants are the Regular, and <b>Bold</b> and <span
-      style='font-family:"0xA000-Pixelated"'>pixelated</span>, also
-      <span style='font-family:"0xA000-Mono-Bold"'>existing</a> in
+      <p contenteditable='true'>0xA000 is a font family constrained by it's
+      rasterization with a <span
+      style='font-family:"0xA000-Pixelated"'>3px x-height</span> (7px size).
+      The core variants are the Regular, and <b>Bold</b> and <span
+      style='font-family:"0xA000-Pixelated"'>pixelated</span>, all of these
+      <span style='font-family:"0xA000-Mono-Bold"'>also</a> have
       <tt>monospaced <span
       style='font-family:"0xA000-Pixelated-Mono"'>variants</span> for code
       and terminals.</tt>
@@ -23,7 +20,6 @@
       <span style="font-family:'0xA000-Monochrome'">Monochrome (a rougher
       alternative to pixelated).</span>
 
-      <a href='https://github.com/hodefoting/fontile'>fontile</a>
 
       <h2 contenteditable='true'>Coverage:</h2>
       <p>The font family is provided with
@@ -80,6 +76,16 @@
       <a href='0xA000-Monochrome-Mono.ttf'
         style="font-family:'0xA000-Monochrome-Mono'">0xA000-Monochrome-Mono.ttf</a>
       <br/>
+
       </div>
+
+      <h2 contenteditable='true'>Sources:</h2>
+
+      <p>The sources for 0xA000 are hosted on <a
+      href='https://github.com/hodefoting/0xA000/'>
+      github.com/hodefoting/0xA000</a>. 0xA000 uses
+      <a href='https://github.com/hodefoting/fontile'>fontile</a>,
+      <a href='http://sourceforge.net/projects/fontforge/'>fontforge</a> and
+      <a href='https://github.com/hodefoting/kernagic'>kernagic</a>.
 </div>
 
