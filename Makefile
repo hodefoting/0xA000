@@ -44,11 +44,6 @@ CFLAGS += -O2 -g
 tilegen: tilegen.c
 	gcc $< -o $@ `pkg-config --cflags --libs gegl`
 
-0xA000.ttf:               slimmed.pal
-0xA000-Mono.ttf:          slimmed.pal
-0xA000-Pen.ttf:           squiggly.pal
-0xA000-Pen-Mono.ttf:      squiggly.pal
-
 %.pal: %.png tilegen
 	./tilegen $< > $@
 %.ttf: %.asc glyphs-*.asc
