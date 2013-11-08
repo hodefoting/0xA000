@@ -41,11 +41,6 @@ CFLAGS += -O2 -g
 0xA000.zip: *.ttf
 	zip $@ $< LICENSE.OFL
 
-tilegen: tilegen.c
-	gcc $< -o $@ `pkg-config --cflags --libs gegl`
-
-%.pal: %.png tilegen
-	./tilegen $< > $@
 %.ttf: %.asc glyphs-*.asc
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
@@ -63,8 +58,7 @@ UnicodeData.txt:
 
 clean: 
 	rm -rf *.ttf *.ufo
-	rm -rf *.pal
-	rm -rf tilegen fit
+	rm -rf *.pal fit
 
 install: fit
 	install -d /usr/share/fonts/truetype/0xA000/
