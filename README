@@ -1,19 +1,18 @@
-0xA000 is a pixel/tile/component based font generator, as well as a
-font-family based on this. The tool itself is licensed under the ISC license;
-while the font it ships with is licensed under OFL.
+0xA000 is a font family constrained by it's rasterization with a 3px x-height
+(7px size). The core variants are the Regular, and Bold and pixelated, all of
+these also have monospaced variants for code and terminals. 
+
+Some more display variants come to life through mapping different shapes to
+the tiles used: Dots, Boxes and Monochrome (a rougher alternative to
+pixelated). 
 
 To see the generated fonts in action take a look at
 http://pippin.gimp.org/0xA000/
 
 Dependencies:
-  glib
-  gegl and babl
+  fontile
+  kernagic
   font-forge with python bindings
   make
 
-Just running "make" in the checkout of 0xA000 should generate all the fonts.
-
-I consider the 0xA000 sources themselves to be a side-effect of the actual
-font-design; and as such doesn't warrant very extensive documentation.
-See index.html and Tech.html for more information about the fonts themselves
-as well as how the format itself is used.
+Just running "make" in the checkout of 0xA000 should generate TTFs.
