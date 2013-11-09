@@ -5,7 +5,7 @@
       <p contenteditable='true'>0xA000 is a font family constrained by it's
       rasterization with a <span
       style='font-family:"0xA000-Pixelated"'>3px x-height</span> (7px size).
-      The core variants are the Regular, and <b>Bold</b> and <span
+      The core variants are the Regular <b>Bold</b> and <span
       style='font-family:"0xA000-Pixelated"'>pixelated</span>, all of these
       <span style='font-family:"0xA000-Mono-Bold"'>also</a> have
       <tt>monospaced <span
