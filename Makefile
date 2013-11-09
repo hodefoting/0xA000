@@ -14,14 +14,15 @@ all: 0xA000.ttf    				         \
 		 0xA000-Dots-Mono.ttf          \
 	   0xA000-Monochrome.ttf 				 \
 	   0xA000-Monochrome-Mono.ttf    \
-		 0xA000-Edit-Mono.ttf          \
-		 0xA000-Pen.ttf        				 \
-		 0xA000-Pen-Mono.ttf           \
 		 0xA000.zip										 \
 		 \
 		 Glyphs.html                   \
 		 Tech.html                     \
 		 index.html fit
+
+#    0xA000-Edit-Mono.ttf          \
+		 0xA000-Pen.ttf        				 \
+		 0xA000-Pen-Mono.ttf           \
 
 fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 	rm -rf 0xA000b.ufo
@@ -38,8 +39,11 @@ fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 
 CFLAGS += -O2 -g
 
-0xA000.zip: *.ttf
-	zip $@ $< LICENSE.OFL
+0xA000.zip: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Mono.ttf 0xA000-Mono-Bold.ttf \
+	          0xA000-Monochrome.ttf 0xA000-Monochrome-Mono.ttf \
+						0xA000-Dots.ttf 0xA000-Dots-Mono.ttf \
+						0xA000-Boxes.ttf 0xA000-Boxes-Mono.ttf
+	zip $@ *.ttf LICENSE.OFL
 
 %.ttf: %.asc glyphs-*.asc
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
