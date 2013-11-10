@@ -20,14 +20,15 @@
       <span style="font-family:'0xA000-Monochrome'">Monochrome (a rougher
       alternative to pixelated).</span>
 
-      <h2 contenteditable='true'>Coverage:</h2>
+      <h2><span style='font-family:"0xA000-Dots"'
+      contenteditable='true'>Coverage</span></h2>
       <p>For all variants, 0xA000 has <a href='Glyphs.html'>ascii,
       latin, drawing characters and a some novelty unicode characters.
       </a>
   </div>
 
 <div>
-      <h2><span class='monochrome'>Downloads:</span></h2>
+      <h2><span style='font-family:"0xA000-Dots"'>Downloads</span></h2>
       <div style='-moz-column-width:13em;-webkit-column-width:12em'>
       <a href='0xA000.zip' style="font-family:'0xA000'">0xA000.zip</a>
       <br/>
@@ -78,7 +79,8 @@
 
       </div>
 
-      <h2 contenteditable='true'>Sources:</h2>
+      <h2><span style='font-family:"0xA000-Boxes"'
+      contenteditable='true'>Coverage</span></h2>
 
       <p>The sources for 0xA000 are hosted on <a
       href='https://github.com/hodefoting/0xA000/'>
