@@ -62,9 +62,14 @@ basename, ext = os.path.splitext(filename)
 
 font.selection.all();
 font.removeOverlap();
+font.selection.all();
 font.simplify();
+font.selection.all();
 font.addExtrema();
-#font.simplify();
+font.selection.all();
+font.simplify();
+font.selection.all();
+font.autoHint();
 
 
 print d

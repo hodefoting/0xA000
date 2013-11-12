@@ -13,7 +13,14 @@
       and terminals.</tt>
       </p>
 
-      <p contenteditable='true'>Some more display variants come to life
+      <p>
+        <img src='mc.png' style='float:right;padding-left: 0.5em;'>
+        The image to the right is an example of 0xA000 regular rendered
+        at its “intended” size. Showing that one could fit a regular sized
+        terminal in MCGA (320x200) with chunky anti-aliased pixelated chars.
+      </p>
+
+      <p style='clear:both;' contenteditable='true'>Some more display variants come to life
       through mapping different shapes to the tiles used:
       <span style="font-family:'0xA000-Dots'">Dots</span>,
       <span style="font-family:'0xA000-Boxes'">Boxes</span> and
@@ -80,7 +87,7 @@
       </div>
 
       <h2><span style='font-family:"0xA000-Boxes"'
-      contenteditable='true'>Coverage</span></h2>
+      contenteditable='true'>Sources</span></h2>
 
       <p>The sources for 0xA000 are hosted on <a
       href='https://github.com/hodefoting/0xA000/'>
