@@ -2,6 +2,48 @@
 
     <h1><span style='font-family:"0xA000-Monochrome";'>0xA000</a></h1>
 
+      <div contenteditable='true' style='font-size: 10em'>
+      <p>
+         <span style='font-family:"0xA000-Monochrome"'>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </span></p>
+      <p>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </p>
+      <p><b>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </b></p>
+
+      <p>
+         <span style='font-family:"0xA000-Monochrome-Mono"'>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </span></p>
+      <p>
+         <span style='font-family:"0xA000-Mono"'>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </span></p>
+      <p>
+         <span style='font-family:"0xA000-Mono-Bold"'>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </span></p>
+      <p>
+         <span style='font-family:"0xA000-Dots"'>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </span></p>
+      <p>
+         <span style='font-family:"0xA000-Boxes"'>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </span></p>
+      </div>
+
       <p contenteditable='true'>0xA000 is a font family constrained by it's
       rasterization with a <span
       style='font-family:"0xA000-Pixelated"'>3px x-height</span> (7px size).
@@ -18,6 +60,8 @@
         The image to the right is an example of 0xA000 regular rendered
         at its “intended” size. Showing that one could fit a regular sized
         terminal in MCGA (320x200) with chunky anti-aliased pixelated chars.
+        This ability to show a lot of text that is possible to make legible
+        can also be used on 
       </p>
 
       <p style='clear:both;' contenteditable='true'>Some more display variants come to life
