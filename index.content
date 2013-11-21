@@ -42,6 +42,11 @@
          abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
          ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
       </span></p>
+      <p>
+         <span style='font-family:"0xA000-Tiled"'>
+         abcdefghijklmnopqrstuvwxyz@;l1i|:;+=~!?"'`<br>
+         ABCDEFGHIJKLMNOPQRSTUVWXYZ@[]{}()&lt;&gt;/\#$%&amp;
+      </span></p>
       </div>
 
       <p contenteditable='true'>0xA000 is a font family constrained by it's

@@ -1,6 +1,5 @@
-
-
 all: 0xA000.ttf    				         \
+     0xA000-Tiled.ttf    	         \
 		 0xA000-Bold.ttf               \
 		 0xA000-Mono.ttf       				 \
 		 0xA000-Mono-Bold.ttf          \
@@ -12,6 +11,7 @@ all: 0xA000.ttf    				         \
 		 0xA000-Dots-Mono.ttf          \
 	   0xA000-Monochrome.ttf 				 \
 	   0xA000-Monochrome-Mono.ttf    \
+     0xA000-Tiled.ttf    	         \
 		 0xA000.zip										 \
 		 \
 		 Glyphs.html                   \
@@ -25,11 +25,11 @@ all: 0xA000.ttf    				         \
 fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000.ufo 0xA000b.ufo
-	kernagic -g 0.28 -s 64 0xA000b.ufo -o 0xA000.ufo
+	kernagic -bs 1.15 -g 0.28 -s 64 0xA000b.ufo -o 0xA000.ufo
 	./fontconvert 0xA000.ufo -t
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
-	kernagic -g 0.28 -s 64 0xA000b.ufo -o 0xA000-Bold.ufo
+	kernagic -bs 1.15 -g 0.28 -s 64 0xA000b.ufo -o 0xA000-Bold.ufo
 	./fontconvert 0xA000-Bold.ufo -t
 	touch fit
 
