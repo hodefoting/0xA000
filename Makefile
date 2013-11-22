@@ -1,5 +1,4 @@
 all: 0xA000.ttf    				         \
-     0xA000-Tiled.ttf    	         \
 		 0xA000-Bold.ttf               \
 		 0xA000-Mono.ttf       				 \
 		 0xA000-Mono-Bold.ttf          \
@@ -18,6 +17,7 @@ all: 0xA000.ttf    				         \
 		 Tech.html                     \
 		 index.html fit
 
+#    0xA000-Tiled.ttf    	         \
 #    0xA000-Edit-Mono.ttf          \
 		 0xA000-Pen.ttf        				 \
 		 0xA000-Pen-Mono.ttf           \
@@ -49,6 +49,9 @@ CFLAGS += -O2 -g
 %.html: %.content head.html
 	cat head.html neck.html $< end.html > $@
 
+components-regular.asc: wgen
+	./wgen > components-regular.asc
+
 # this also relies on all ufo dirs existing.
 # it has to be manually invoked
 Glyphs.content: Glyphs.content.sh UnicodeData.txt
@@ -57,10 +60,9 @@ Glyphs.content: Glyphs.content.sh UnicodeData.txt
 # not including such a huge file in the repo..
 UnicodeData.txt:
 	wget ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
-
 clean: 
 	rm -rf *.ttf *.ufo
-	rm -rf *.pal fit
+	rm -rf *.pal fit clean
 
 install: fit
 	install -d /usr/share/fonts/truetype/0xA000/
@@ -70,3 +72,7 @@ install: fit
 uninstall:
 	rm -rf /usr/share/fonts/truetype/0xA000/
 	fc-cache -fv
+
+all: wgen
+wgen: wgen.c
+	gcc wgen.c -o wgen
