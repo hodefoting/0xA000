@@ -74,6 +74,27 @@ void new_path ()
 int main (int argc, char **argv)
 {
   NEW
+  line_to (0, 1.0);
+  line_to (1.0, 0);
+  line_to (0.28, 0);
+  line_to (0.0, 0.28);
+  name ("lne2");
+  rot90 ();
+  name ("lnw2");
+  name ("lnw3");
+
+  NEW
+  line_to (0, 0.72);
+  line_to (0.72, 0);
+  line_to (0, 0);
+  line_to (0.0, 0);
+  rot90 ();
+  rot90 ();
+  name ("lsw2");
+  rot90 ();
+  name ("lse2");
+
+  NEW
   line_to (0, 0.72);
   line_to (0.72, 0);
   line_to (0, 0);
@@ -86,12 +107,18 @@ int main (int argc, char **argv)
   line_to (1, 0);
   line_to (0.28, 0);
   line_to (0.0, 0.28);
-  //line_to (0, 0);
   rot90 ();
   rot90 ();
   name ("lsw");
   rot90 ();
   name ("lse");
+  new_path ();
+  line_to (0, 0.78);
+  line_to (1, 0.78);
+  line_to (1, 0);
+  line_to (0, 0);
+
+  name ("lse3");
 
   NEW
   line_to (0.28, 0);
