@@ -1,3 +1,7 @@
+/* helper generator script for generating correctly winded symmetric shapes
+ * for the 0xA000 palette.
+ */
+
 #include <stdio.h>
 
 typedef struct Vertex {
@@ -74,6 +78,16 @@ void new_path ()
 int main (int argc, char **argv)
 {
   NEW
+  line_to (0,     0.80);
+  line_to (1.0,   0);
+  line_to (0.28,  0);
+  line_to (0.0,   0.20);
+  name ("specials2");
+  rot90 ();
+  rot90 ();
+  name ("specials1");
+
+  NEW
   line_to (0, 1.0);
   line_to (1.0, 0);
   line_to (0.28, 0);
@@ -113,8 +127,8 @@ int main (int argc, char **argv)
   rot90 ();
   name ("lse");
   new_path ();
-  line_to (0, 0.78);
-  line_to (1, 0.78);
+  line_to (0, 0.72);
+  line_to (1, 0.72);
   line_to (1, 0);
   line_to (0, 0);
 
