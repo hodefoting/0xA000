@@ -1,3 +1,8 @@
+/* There is a total of about 20 tiles; that can be rotated producing 80
+ * variants.
+ */
+
+
 /* helper generator script for generating correctly winded symmetric shapes
  * for the 0xA000 palette.
  */
@@ -18,7 +23,7 @@ void clear (void)
   n_vertex = 0;
 }
 
-void rot90 (void)
+void rot90 (void) /* rotates shape in unit square 90 degrees */
 {
   int i;
   for (i = 0; i < n_vertex; i++)
