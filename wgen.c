@@ -2,6 +2,17 @@
  * variants.
  */
 
+//#define THICKNESS 0.15
+//#define THICKNESS 0.72
+//#define FOO 0.1343
+//#define BAR 0.5523
+//
+#define MORPH  0.0
+#define SLIDE(VALA, VALB)  (MORPH * VALB + (1.0-MORPH)* VALA)
+
+#define THICKNESS  SLIDE(0.72,   0.05)
+#define FOO        SLIDE(0.1343, 0.0643)
+#define BAR        SLIDE(0.5523, 0.4623)
 
 /* helper generator script for generating correctly winded symmetric shapes
  * for the 0xA000 palette.
@@ -83,10 +94,10 @@ void new_path ()
 int main (int argc, char **argv)
 {
   NEW
-  line_to (0,     0.80);
+  line_to (0,     SLIDE(0.80, 0.9));
   line_to (1.0,   0);
-  line_to (0.28,  0);
-  line_to (0.0,   0.20);
+  line_to ((1.0-THICKNESS),  0);
+  line_to (0.0,   SLIDE(0.20, 0.1));
   name ("specials2");
   rot90 ();
   rot90 ();
@@ -95,16 +106,16 @@ int main (int argc, char **argv)
   NEW
   line_to (0, 1.0);
   line_to (1.0, 0);
-  line_to (0.28, 0);
-  line_to (0.0, 0.28);
+  line_to ((1.0-THICKNESS), 0);
+  line_to (0.0, (1.0-THICKNESS));
   name ("lne2");
   rot90 ();
   name ("lnw2");
   name ("lnw3");
 
   NEW
-  line_to (0, 0.72);
-  line_to (0.72, 0);
+  line_to (0, THICKNESS);
+  line_to (THICKNESS, 0);
   line_to (0, 0);
   line_to (0.0, 0);
   rot90 ();
@@ -114,8 +125,8 @@ int main (int argc, char **argv)
   name ("lse2");
 
   NEW
-  line_to (0, 0.72);
-  line_to (0.72, 0);
+  line_to (0, THICKNESS);
+  line_to (THICKNESS, 0);
   line_to (0, 0);
   name ("lne");
   rot90 ();
@@ -124,29 +135,30 @@ int main (int argc, char **argv)
   NEW
   line_to (0, 1);
   line_to (1, 0);
-  line_to (0.28, 0);
-  line_to (0.0, 0.28);
+  line_to ((1.0-THICKNESS), 0);
+  line_to (0.0, (1.0-THICKNESS));
   rot90 ();
   rot90 ();
   name ("lsw");
   rot90 ();
   name ("lse");
   new_path ();
-  line_to (0, 0.72);
-  line_to (1, 0.72);
+  line_to (0, THICKNESS);
+  line_to (1, THICKNESS);
   line_to (1, 0);
   line_to (0, 0);
 
   name ("lse3");
 
+
   NEW
-  line_to (0.28, 0);
-  curve_to (0.28, 0.1343,
-            0.1343, 0.28,
-            0, 0.28);
+  line_to ((1.0-THICKNESS), 0);
+  curve_to ((1.0-THICKNESS), FOO,
+            FOO, (1.0-THICKNESS),
+            0, (1.0-THICKNESS));
   line_to (0, 1);
-  curve_to (0.5523, 1,
-            1, 0.5523,
+  curve_to (BAR, 1,
+            1, BAR,
             1, 0);
   name ("cne");
   rot90 ();
@@ -158,8 +170,8 @@ int main (int argc, char **argv)
 
   NEW
   line_to (0, 1);
-  curve_to (0.5523, 1,
-            1,      0.5523,
+  curve_to (BAR, 1,
+            1,      BAR,
             1,      0);
   line_to (1, 1);
   name ("Cne");
@@ -171,13 +183,13 @@ int main (int argc, char **argv)
   name ("Cse");
 
   NEW
-  line_to (1, 0);
-  curve_to (0.72, 0.28,
-            0.28, 0.28,
-            0, 0);
+  line_to (1, SLIDE(0, 0.8));
+  curve_to (SLIDE(0.7,0.4), SLIDE(0.28, 0.8),
+            SLIDE(0.28,0.5), SLIDE(0.28, 0.8),
+            0, SLIDE(0, 0.8));
   line_to (0, 0.9);
-  curve_to (0.28, 1.0, 
-            0.65, 1.0,
+  curve_to ((1.0-THICKNESS), 1.0, 
+            SLIDE(0.65, 0.9), 1.0,
             1, 0.9);
   name ("c8");
   rot90 ();
@@ -206,8 +218,8 @@ int main (int argc, char **argv)
   NEW
   line_to (0, 1);
   line_to (1, 1);
-  line_to (1, 0.28);
-  line_to (0, 0.28);
+  line_to (1, (1.0-THICKNESS));
+  line_to (0, (1.0-THICKNESS));
   name ("solidNorth");
   rot90 ();
   name ("solidWest");
@@ -230,10 +242,10 @@ int main (int argc, char **argv)
 
   NEW
   line_to (1, 0.1);
-  curve_to (0.56, 0.30,
-            0.27, 0.62,
-            0.10, 1.0);
-  line_to (1, 1);
+  curve_to (SLIDE(0.56, 0.55), SLIDE(0.30, 0.35),
+            SLIDE(0.27, 0.23), SLIDE(0.62, 0.6),
+            SLIDE(0.10, 0.15), 1.0);
+  line_to (1, SLIDE(1, 0.1));
   name ("c1");
   rot90 ();
   name ("c3");
@@ -244,9 +256,9 @@ int main (int argc, char **argv)
 
   NEW
   line_to (0.1, 0);
-  curve_to (0.0, 0.28, 0.0, 0.65, 0.0, 1);
-  line_to (0.72, 1);
-  curve_to (0.72, 0.3, 0.9, 0.1, 1, 0);
+  curve_to (0.0, (1.0-THICKNESS), 0.0, SLIDE(0.65, 0.9), 0.0, 1);
+  line_to (THICKNESS, 1);
+  curve_to (THICKNESS, SLIDE(0.3,0.1), 0.9, 0.1, SLIDE(1, 0.1), 0);
   name ("c4b");
   rot90 ();
   name ("c2b");
@@ -257,9 +269,9 @@ int main (int argc, char **argv)
 
   NEW
   line_to (1, 1);
-  curve_to (0.9, 0.9, 0.72, 0.7, 0.72, 0);
+  curve_to (0.9, 0.9, THICKNESS, SLIDE(0.7, 0.9), THICKNESS, 0);
   line_to (0, 0);
-  curve_to (0.0, 0.35, 0.0, 0.72, 0.10, 1);
+  curve_to (0.0, SLIDE(0.35, 0.15), 0.0, THICKNESS, 0.10, 1);
   name ("c4a");
   rot90 ();
   name ("c2a");
@@ -269,15 +281,15 @@ int main (int argc, char **argv)
   name ("c8b");
 
   NEW
-  line_to (0, 0.72);
-  line_to (1, 0.72);
+  line_to (0, THICKNESS);
+  line_to (1, THICKNESS);
   line_to (1, 0);
   line_to (0, 0);
   new_path ();
   line_to (0, 0);
   line_to (0, 1);
-  line_to (0.72, 1);
-  line_to (0.72, 0);
+  line_to (THICKNESS, 1);
+  line_to (THICKNESS, 0);
   name ("solidSouthWest");
   rot90 ();
   name ("solidSouthEast");
@@ -289,13 +301,13 @@ int main (int argc, char **argv)
   NEW
   line_to (0, 1);
   line_to (1, 1);
-  line_to (1, 0.28);
-  line_to (0, 0.28);
+  line_to (1, (1.0-THICKNESS));
+  line_to (0, (1.0-THICKNESS));
   new_path();
-  line_to (0, 0.28);
+  line_to (0, (1.0-THICKNESS));
   line_to (0, 1);
-  line_to (0.72, 1);
-  line_to (0.72, 0.28);
+  line_to (THICKNESS, 1);
+  line_to (THICKNESS, (1.0-THICKNESS));
   name ("solidSouthWest5");
 
   NEW
@@ -306,29 +318,31 @@ int main (int argc, char **argv)
   name ("specialS");
 
   NEW
-  line_to (0, 0.28);
+  line_to (0, (1.0-THICKNESS));
   line_to (0, 1.0);
   line_to (1, 1.0);
   line_to (1, 0);
   name ("specialB");
 
+#define MIDS ((1.0-THICKNESS)/2)
+
   NEW
-  line_to (0.14, 0);
-  line_to (0.14, 1.05);
-  line_to (0.86, 1.05);
-  line_to (0.86, 0);
+  line_to (MIDS, 0);
+  line_to (MIDS, 1.05);
+  line_to (1.0-MIDS, 1.05);
+  line_to (1.0-MIDS, 0);
   name ("solidMiddle");
 
   NEW
-  line_to (0.14, 0);
-  line_to (0.14, 1.0);
-  line_to (0.86, 1.0);
-  line_to (0.86, 0);
+  line_to (MIDS, 0);
+  line_to (MIDS, 1.0);
+  line_to (1.0-MIDS, 1.0);
+  line_to (1.0-MIDS, 0);
   new_path ();
   line_to (0, 1);
   line_to (1, 1);
-  line_to (1, 0.28);
-  line_to (0, 0.28);
+  line_to (1, (1.0-THICKNESS));
+  line_to (0, (1.0-THICKNESS));
   name ("solidMiddleNorth");
 
   NEW
