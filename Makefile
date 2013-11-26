@@ -10,7 +10,6 @@ all: 0xA000.ttf    				         \
 		 0xA000-Dots-Mono.ttf          \
 	   0xA000-Monochrome.ttf 				 \
 	   0xA000-Monochrome-Mono.ttf    \
-     0xA000-Tiled.ttf    	         \
 		 0xA000.zip										 \
 		 \
 		 Glyphs.html                   \
