@@ -8,7 +8,7 @@
 //#define BAR 0.5523
 //
 //#define MORPH      0.3
-#define MORPH      0.2
+#define MORPH      0.0
 #define SLIDE(VALA, VALB)  (MORPH * VALB + (1.0-MORPH)* VALA)
 
 #define THICKNESS  SLIDE(0.72,   0.05)
@@ -214,6 +214,20 @@ int main (int argc, char **argv)
   name ("vs");
   rot90 ();
   name ("ve");
+
+  NEW
+  line_to (0, (THICKNESS+0.8)/2);
+  line_to (0.5, (THICKNESS+0.8)/4);
+  line_to (1, (THICKNESS+0.8)/2);
+  line_to (1, 0);
+  line_to (0, 0);
+  name ("vn2");
+  rot90 ();
+  name ("vw2");
+  rot90 ();
+  name ("vs2");
+  rot90 ();
+  name ("ve2");
 
 
   NEW
