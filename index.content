@@ -2,7 +2,7 @@
 
     <h1 contenteditable='true'><span style='font-family:"0xA000-Pixelated";'>0xA000</a></h1>
 
-      <div contenteditable='true' style='font-size: 1.5em'>
+      <div contenteditable='true' style='font-size: 2.0em'>
       <p>
          <span style='font-family:"0xA000-Pixelated"'>
          fix problem quickly with galvanized jets
@@ -144,7 +144,7 @@
 
       </div>
 
-      <h2><span style='font-family:"0xA000-Boxes"'
+      <h2><span style='font-family:"0xA000-Dots"'
       contenteditable='true'>Sources</span></h2>
 
       <p>The sources for 0xA000 are hosted on <a
