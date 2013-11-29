@@ -21,17 +21,24 @@ all: 0xA000.ttf    				         \
 		 0xA000-Pen.ttf        				 \
 		 0xA000-Pen-Mono.ttf           \
 
+foo:
+	rm 0xA000.ttf 0xA000.ufo -rf; make fit
+
+GAP = 0.23
+SNAP = 50
+X_SHIFT = -100
+BIG_SCALE = 1.15
+
 fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000.ufo 0xA000b.ufo
-	kernagic -bs 1.15 -g 0.25 -s 16 0xA000b.ufo -o 0xA000.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ijlI|'.:;"
 	./fontconvert 0xA000.ufo -t
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
-	kernagic -bs 1.15 -g 0.25 -s 16 0xA000b.ufo -o 0xA000-Bold.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Bold.ufo --center-glyphs "ijlI|'.:;"
 	./fontconvert 0xA000-Bold.ufo -t
 	touch fit
-
 
 
 CFLAGS += -O2 -g

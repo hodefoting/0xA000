@@ -1,7 +1,9 @@
-@font-face {font-family:'0xA000';                   src: url('0xA000.ttf');}
-@font-face {font-family:'0xA000-Bold';              src: url('0xA000-Bold.ttf');}
-@font-face {font-family:'0xA000-Tiled';              src: url('0xA000-Tiled.ttf');}
+@font-face {font-family:'0xA000'; src: url('0xA000.ttf');}
+@font-face {font-family:'0xA000-Bold'; src: url('0xA000-Bold.ttf');}
+@font-face {font-family:'0xA000'; font-weight: bold; src: url('0xA000-Bold.ttf');}
+@font-face {font-family:'0xA000-Tiled'; src: url('0xA000-Tiled.ttf'); }
 @font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}
+@font-face {font-family:'0xA000-Mono'; font-weight: bold; src: url('0xA000-Mono-Bold.ttf');}
 @font-face {font-family:'0xA000-Mono-Bold';         src: url('0xA000-Mono-Bold.ttf');}
 @font-face {font-family:'0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf');}
 @font-face {font-family:'0xA000-Pixelated-Mono';    src: url('0xA000-Pixelated-Mono.ttf');}
@@ -96,39 +98,51 @@ div.glyph {
 
  .rendering-Reference {
    font-family: 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Pixelated {
    font-family: '0xA000-Pixelated', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Beta {
    font-family: 'Beta', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Pixelated-Mono {
    font-family: '0xA000-Pixelated-Mono', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Mono {
    font-family: '0xA000-Mono', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Bold {
    font-family: '0xA000-Bold', 'Sans';
+   border: 1px solid gray;
  }
  .rendering {
    font-family: '0xA000', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Dots {
    font-family: '0xA000-Dots', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Dots-Mono {
    font-family: '0xA000-Dots-Mono';
+   border: 1px solid gray;
  }
  .rendering-Pen {
    font-family: '0xA000-Pen', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Pen-Mono {
    font-family: '0xA000-Pen-Mono', 'Sans';
+   border: 1px solid gray;
  }
  .rendering-Boxes {
    font-family: '0xA000-Boxes', 'Sans';
+   border: 1px solid gray;
  }
 div.glyphs {
 }

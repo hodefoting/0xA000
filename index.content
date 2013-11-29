@@ -1,22 +1,46 @@
     <div style='padding:0em;'>
 
+
     <h1 contenteditable='true'><span style='font-family:"0xA000-Pixelated";'>0xA000</a></h1>
 
+    <span style='line-height:1.1em;font-family:"0xA000"; font-size:7px;' contenteditable='true'>
+    In most browswers, at default zoom this text should be
+    discernable if predictable geometric anti-aliasing is what occurs.
+    Rendered this way the font is able to cram a lot of text, or small print
+    into a small space; this is in the extereme - but also other sizes of the
+    font are readable at tiny sizes; making it suitable for densely packing
+    information content into small (eink) or low-resolution (lcd) display
+    technologies. For graphic effect within a variant; one can use CAPITALS
+    ᴏʀ ꜱᴍᴀʟʟ ᴄᴀᴘꜱ. ᴍixing ꜱmall ᴄaps ɪnitials ᴡith ᴛhe ʟower ᴄase ɪs ᴛedious
+    ʙut ʜarmonizes ᴡell ᴡith ᴛhe ᴀscenders. 
+    <span style='font-family:"0xA000-Mono"'>The monospace version remains crisper at
+    smaller sizes than the sans serif one.<br></span>
+    <span style='font-family:"0xA000-Pixelated"'>The pixelated version shows
+    how the Sans version would be without the metrics which throw off the
+    horizontal alignment with the pixel grid.<br></span>
+    
+    <br/>
+    <br/>
+    TL;DR Ipsum
+    </span>
       <div contenteditable='true' style='font-size: 2.0em'>
       <p>
          <span style='font-family:"0xA000-Pixelated"'>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </span></p>
       <p>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </p>
       <p><b>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </b></p>
 
@@ -24,36 +48,42 @@
          <span style='font-family:"0xA000-Monochrome-Mono"'>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </span></p>
       <p>
          <span style='font-family:"0xA000-Mono"'>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </span></p>
       <p>
-         <span style='font-family:"0xA000-Mono-Bold"'>
+         <span style='font-family:"0xA000-Mono"'><b>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
-      </span></p>
+      </b></span></p>
       <p>
          <span style='font-family:"0xA000-Dots"'>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </span></p>
       <p>
          <span style='font-family:"0xA000-Boxes"'>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </span></p>
       <p>
          <span style='font-family:"0xA000-Tiled"'>
          fix problem quickly with galvanized jets
          THE FIVE BOXING WIZARDS JUMP QUICKLY
+         ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǪʀꜱᴛᴜᴠᴡʏᴚᴢ
          @;l1i|:;+=~!?"'`{}()[]&lt;&gt;/\#$%&amp;
       </span></p>
       </div>
