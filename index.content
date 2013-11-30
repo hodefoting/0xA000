@@ -17,7 +17,9 @@
     smaller sizes than the sans serif one.<br></span>
     <span style='font-family:"0xA000-Pixelated"'>The pixelated version shows
     how the Sans version would be without the metrics which throw off the
-    horizontal alignment with the pixel grid.<br></span>
+    horizontal alignment with the pixel grid. The strange mostly 0
+    left-bearing aligns the design pixels with aftual pixel grid when tiles
+    are rendered at 1:1 with pixels. <br></span>
     
     <br/>
     <br/>

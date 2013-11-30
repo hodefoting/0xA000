@@ -1,3 +1,5 @@
+
+
 all: 0xA000.ttf    				         \
 		 0xA000-Bold.ttf               \
 		 0xA000-Mono.ttf       				 \
@@ -24,9 +26,9 @@ all: 0xA000.ttf    				         \
 foo:
 	rm 0xA000.ttf 0xA000.ufo -rf; make fit
 
-GAP = 0.23
-SNAP = 50
-X_SHIFT = -100
+GAP = 0.26
+SNAP = 0
+X_SHIFT = -90
 BIG_SCALE = 1.15
 
 fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
@@ -49,7 +51,7 @@ CFLAGS += -O2 -g
 						0xA000-Boxes.ttf 0xA000-Boxes-Mono.ttf
 	zip $@ *.ttf LICENSE.OFL
 
-%.ttf: %.asc glyphs-*.asc *.asc
+%.ttf: %.asc glyphs-*.asc *.asc bake_ttf.sh
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
 %.html: %.content head.html
@@ -82,3 +84,7 @@ uninstall:
 all: wgen
 wgen: wgen.c
 	gcc wgen.c -o wgen
+
+head.html: head.html.in
+	cat head.html.in fonts.head > head.html
+
