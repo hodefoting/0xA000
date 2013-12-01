@@ -26,7 +26,7 @@ all: 0xA000.ttf    				         \
 foo:
 	rm 0xA000.ttf 0xA000.ufo -rf; make fit
 
-GAP = 0.26
+GAP = 0.25
 SNAP = 0
 X_SHIFT = -90
 BIG_SCALE = 1.15
