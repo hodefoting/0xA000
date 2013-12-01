@@ -30,16 +30,18 @@ GAP = 0.26
 SNAP = 0
 X_SHIFT = -90
 BIG_SCALE = 1.15
-OVERRIDES = --override T 0.25 0.75
+OVERRIDES = \
+			--override T 0.25 0.75 \
+			--override j 0.60 0.60
 
 fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000.ufo 0xA000b.ufo
-	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ijlI|'.:;" $(OVERRIDES)
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ilI|'.:;" $(OVERRIDES)
 	./fontconvert 0xA000.ufo -t
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
-	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Bold.ufo --center-glyphs "ijlI|'.:;" $(OVERRIDES)
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Bold.ufo --center-glyphs "ilI|'.:;" $(OVERRIDES)
 	./fontconvert 0xA000-Bold.ufo -t
 	touch fit
 
