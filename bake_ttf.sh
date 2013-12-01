@@ -6,7 +6,11 @@ fontile $1.asc
 
 echo "<style>@font-face {font-family:'custom'; src: url('$1.ttf');}</style>" > $1.content
 echo "<h1><a href='index.html'>$1</a></h1><h2
-style='font-family:"custom"'>The quick brown fox jumps over the lazy dog.</h2>" >> $1.content
+style='font-family:"custom";' contenteditable='true'>
+  fix problem quickly with galvanized jets
+  ꜰᴇᴡ ʙʟᴀᴄᴋ ᴛᴀᴚɪꜱ ᴅʀɪᴠᴇ ᴜᴘ ᴍᴀᴊᴏʀ ʀᴏᴀᴅꜱ ᴏɴ ʜᴀᴢʏ Ǫᴜɪᴇᴛ ɴɪɢʜᴛꜱ
+  THE FIVE BOXING WIZARDS JUMP QUICKLY
+</h2>" >> $1.content
 echo "<div class='glyphs'>" >> $1.content
 
 for a in `ls $1.ufo/glyphs -1 | sort | uniq | sed s/\.glif//`; do

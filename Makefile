@@ -30,15 +30,16 @@ GAP = 0.26
 SNAP = 0
 X_SHIFT = -90
 BIG_SCALE = 1.15
+OVERRIDES = --override T 0.25 0.75
 
 fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000.ufo 0xA000b.ufo
-	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ijlI|'.:;"
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ijlI|'.:;" $(OVERRIDES)
 	./fontconvert 0xA000.ufo -t
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
-	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Bold.ufo --center-glyphs "ijlI|'.:;"
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Bold.ufo --center-glyphs "ijlI|'.:;" $(OVERRIDES)
 	./fontconvert 0xA000-Bold.ufo -t
 	touch fit
 
@@ -85,6 +86,13 @@ all: wgen
 wgen: wgen.c
 	gcc wgen.c -o wgen
 
-head.html: head.html.in
+fonts.head: fonts.list Makefile
+	echo "<div>" > fonts.head
+	for a in `cat fonts.list`;do \
+		echo "<a href='$$a.html'>`echo $$a | sed s/0xA000-//`</a> " >> fonts.head;\
+	done;\
+	echo "</div>" >> fonts.head
+
+head.html: head.html.in fonts.head
 	cat head.html.in fonts.head > head.html
 
