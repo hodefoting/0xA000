@@ -19,7 +19,7 @@
 
 
 body       {font-family: '0xA000', 'Sans'; font-size: 14px;
-            background-color: #f7f7f7;}
+            background-color: #f7f7f7; }
 tt, pre    {font-family: '0xA000-Mono', 'Sans';}
 b          {font-family: '0xA000-Bold'. 'Sans'; font-weight: normal;}
 small      {font-size :  50%; }
