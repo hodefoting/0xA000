@@ -69,6 +69,112 @@
       -->
 
 
+<!--
+      <p contenteditable='true'>0xA000 is a font family constrained by it's
+      rasterization with a <span
+      style='font-family:"0xA000-Pixelated"'>3px x-height</span> (7px size).
+      The core variants are the Regular <b>Bold</b> and <span
+      style='font-family:"0xA000-Pixelated"'>pixelated</span>, all of these
+      <span style='font-family:"0xA000-Mono-Bold"'>also</a> have
+      <tt>monospaced <span
+      style='font-family:"0xA000-Pixelated-Mono"'>variants</span> for code
+      and terminals.</tt>
+      </p>
+
+      <p>
+        <img src='mc.png' style='float:right;padding-left: 0.5em;'>
+        The image to the right is an example of 0xA000 regular rendered
+        at its “intended” size. Showing that one could fit a regular sized
+        terminal in MCGA (320x200) with chunky anti-aliased pixelated chars.
+        This ability to show a lot of text that is possible to make legible
+        can also be used on 
+      </p>
+
+      <p style='clear:both;' contenteditable='true'>Some more display variants come to life
+      through mapping different shapes to the tiles used:
+      <span style="font-family:'0xA000-Dots'">Dots</span>,
+      <span style="font-family:'0xA000-Boxes'">Boxes</span> and
+      <span style="font-family:'0xA000-Monochrome'">Monochrome (a rougher
+      alternative to pixelated).</span>
+
+      <h2><span style='font-family:"0xA000-Dots"'
+      contenteditable='true'>Coverage</span></h2>
+      <p>For all variants, 0xA000 has <a href='Glyphs.html'>ascii,
+      latin, drawing characters and a some novelty unicode characters.
+      </a>
+  </div>
+  -->
+
+    0xA000 is a font family designed for screen, inspired and constrained
+    by the pixel raster. 0xA000 is a modular sans serif; with
+    accompanying display variants; that renders sharp at small sizes without
+    needing hinting. Each of the individual variant have download links for
+    their TTF file, to download a bundle containing all the variants download 
+      <a href='0xA000.zip' style="font-family:'0xA000'">0xA000.zip</a>. It is
+      also worth noting that the sample texts for each variant is in-place
+      editable in the browser.
+
+      <!--
+
+<div>
+      <h2><span style='font-family:"0xA000-Dots"'>Downloads</span></h2>
+      <div style='-moz-column-width:13em;-webkit-column-width:12em'>
+      <a href='0xA000.zip' style="font-family:'0xA000'">0xA000.zip</a>
+      <br/>
+      <a href='0xA000.ttf'
+        style="font-family:'0xA000'">0xA000.ttf</a>
+      <br/>
+      <a href='0xA000-Bold.ttf'
+        style="font-family:'0xA000-Bold'">0xA000-Bold.ttf</a>
+      <br/>
+      <a href='0xA000-Mono.ttf'
+        style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
+      <br/>
+      <a href='0xA000-Mono-Bold.ttf'
+        style="font-family:'0xA000-Mono-Bold'">0xA000-Mono-Bold.ttf</a>
+      <br/>
+
+      <a href='0xA000-Pixelated.ttf'
+        style="font-family:'0xA000-Pixelated'">0xA000-Pixelated.ttf</a>
+      <br/>
+      <a href='0xA000-Pixelated-Mono.ttf'
+        style="font-family:'0xA000-Pixelated-Mono'">0xA000-Pixelated-Mono.ttf</a>
+      <br/>
+
+      <a href='0xA000-Dots.ttf'
+        style="font-family:'0xA000-Dots'">0xA000-Dots.ttf</a>
+      <br/>
+      <a href='0xA000-Dots-Mono.ttf'
+        style="font-family:'0xA000-Dots-Mono'">0xA000-Dots-Mono.ttf</a>
+      <br/>
+
+      <a href='0xA000-Boxes.ttf'
+        style="font-family:'0xA000-Boxes'">0xA000-Boxes.ttf</a>
+      <br/>
+      <a href='0xA000-Boxes-Mono.ttf'
+        style="font-family:'0xA000-Boxes-Mono'">0xA000-Boxes-Mono.ttf</a>
+      <br/>
+
+      <a href='0xA000-Monochrome.ttf'
+        style="font-family:'0xA000-Monochrome'">0xA000-Monochrome.ttf</a>
+      <br/>
+      <a href='0xA000-Monochrome-Mono.ttf'
+        style="font-family:'0xA000-Monochrome-Mono'">0xA000-Monochrome-Mono.ttf</a>
+      <br/>
+
+      </div>
+
+-->
+
+      <p>The sources for 0xA000 are hosted on <a
+      href='https://github.com/hodefoting/0xA000/'>
+      github.com/hodefoting/0xA000</a>. 0xA000 uses
+      <a href='https://github.com/hodefoting/fontile'>fontile</a>,
+      <a href='http://sourceforge.net/projects/fontforge/'>fontforge</a> and
+      <a href='https://github.com/hodefoting/kernagic'>kernagic</a>.
+</div>
+
+
 <div style='line-height: 150%; font-family:"0xA000"' contenteditable='true'>
 
     <span style='font-size:28px;'>However, </span><span
@@ -137,101 +243,3 @@
     </span>
     </div>
 
-<!--
-      <p contenteditable='true'>0xA000 is a font family constrained by it's
-      rasterization with a <span
-      style='font-family:"0xA000-Pixelated"'>3px x-height</span> (7px size).
-      The core variants are the Regular <b>Bold</b> and <span
-      style='font-family:"0xA000-Pixelated"'>pixelated</span>, all of these
-      <span style='font-family:"0xA000-Mono-Bold"'>also</a> have
-      <tt>monospaced <span
-      style='font-family:"0xA000-Pixelated-Mono"'>variants</span> for code
-      and terminals.</tt>
-      </p>
-
-      <p>
-        <img src='mc.png' style='float:right;padding-left: 0.5em;'>
-        The image to the right is an example of 0xA000 regular rendered
-        at its “intended” size. Showing that one could fit a regular sized
-        terminal in MCGA (320x200) with chunky anti-aliased pixelated chars.
-        This ability to show a lot of text that is possible to make legible
-        can also be used on 
-      </p>
-
-      <p style='clear:both;' contenteditable='true'>Some more display variants come to life
-      through mapping different shapes to the tiles used:
-      <span style="font-family:'0xA000-Dots'">Dots</span>,
-      <span style="font-family:'0xA000-Boxes'">Boxes</span> and
-      <span style="font-family:'0xA000-Monochrome'">Monochrome (a rougher
-      alternative to pixelated).</span>
-
-      <h2><span style='font-family:"0xA000-Dots"'
-      contenteditable='true'>Coverage</span></h2>
-      <p>For all variants, 0xA000 has <a href='Glyphs.html'>ascii,
-      latin, drawing characters and a some novelty unicode characters.
-      </a>
-  </div>
-  -->
-
-<div>
-      <h2><span style='font-family:"0xA000-Dots"'>Downloads</span></h2>
-      <div style='-moz-column-width:13em;-webkit-column-width:12em'>
-      <a href='0xA000.zip' style="font-family:'0xA000'">0xA000.zip</a>
-      <br/>
-      <a href='0xA000.ttf'
-        style="font-family:'0xA000'">0xA000.ttf</a>
-      <br/>
-      <a href='0xA000-Bold.ttf'
-        style="font-family:'0xA000-Bold'">0xA000-Bold.ttf</a>
-      <br/>
-      <a href='0xA000-Mono.ttf'
-        style="font-family:'0xA000-Mono'">0xA000-Mono.ttf</a>
-      <br/>
-      <a href='0xA000-Mono-Bold.ttf'
-        style="font-family:'0xA000-Mono-Bold'">0xA000-Mono-Bold.ttf</a>
-      <br/>
-
-      <a href='0xA000-Pixelated.ttf'
-        style="font-family:'0xA000-Pixelated'">0xA000-Pixelated.ttf</a>
-      <br/>
-      <a href='0xA000-Pixelated-Mono.ttf'
-        style="font-family:'0xA000-Pixelated-Mono'">0xA000-Pixelated-Mono.ttf</a>
-      <br/>
-
-      <a href='0xA000-Dots.ttf'
-        style="font-family:'0xA000-Dots'">0xA000-Dots.ttf</a>
-      <br/>
-      <!--
-      <a href='0xA000-Dots-Mono.ttf'
-        style="font-family:'0xA000-Dots-Mono'">0xA000-Dots-Mono.ttf</a>
-      <br/>
-      -->
-
-      <a href='0xA000-Boxes.ttf'
-        style="font-family:'0xA000-Boxes'">0xA000-Boxes.ttf</a>
-      <br/>
-      <!--
-      <a href='0xA000-Boxes-Mono.ttf'
-        style="font-family:'0xA000-Boxes-Mono'">0xA000-Boxes-Mono.ttf</a>
-      <br/>
-      -->
-
-      <a href='0xA000-Monochrome.ttf'
-        style="font-family:'0xA000-Monochrome'">0xA000-Monochrome.ttf</a>
-      <br/>
-      <a href='0xA000-Monochrome-Mono.ttf'
-        style="font-family:'0xA000-Monochrome-Mono'">0xA000-Monochrome-Mono.ttf</a>
-      <br/>
-
-      </div>
-
-      <h2><span style='font-family:"0xA000-Dots"'
-      contenteditable='true'>Sources</span></h2>
-
-      <p>The sources for 0xA000 are hosted on <a
-      href='https://github.com/hodefoting/0xA000/'>
-      github.com/hodefoting/0xA000</a>. 0xA000 uses
-      <a href='https://github.com/hodefoting/fontile'>fontile</a>,
-      <a href='http://sourceforge.net/projects/fontforge/'>fontforge</a> and
-      <a href='https://github.com/hodefoting/kernagic'>kernagic</a>.
-</div>
