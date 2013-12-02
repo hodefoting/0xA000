@@ -1,10 +1,10 @@
-0xA000 is a font family constrained by it's rasterization with a 3px x-height
-(7px size). The core variants are the Regular, and Bold and pixelated, all of
-these also have monospaced variants for code and terminals. 
+0xA000 is a meta-modular tile-grid based font-family.
 
-Some more display variants come to life through mapping different shapes to
-the tiles used: Dots, Boxes and Monochrome (a rougher alternative to
-pixelated). 
+The resulting Sans Serif face, as well as mono-spaced variant of it are
+designs that without additional hinting renders legible at small resolutions,
+working well even without anti-aliasing; but taking advantage of any
+additional shape clarity provided by grayscale and RGBA based anti-aliasing
+technologies.
 
 To see the generated fonts in action take a look at
 http://pippin.gimp.org/0xA000/
