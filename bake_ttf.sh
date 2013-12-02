@@ -5,12 +5,15 @@ fontile $1.asc
 ./fontconvert $1.ufo -t
 
 echo "<style>@font-face {font-family:'custom'; src: url('$1.ttf');}</style>" > $1.content
-echo "<h1><a href='$1.ttf' style='font-family:\"custom\"'>$1.ttf</a></h1><h2
-style='font-family:"custom";' contenteditable='true'>
+
+echo "<h2 style='font-family:"custom";' contenteditable='true'>
   fix problem quickly with galvanized jets
-  ꜰᴇᴡ ʙʟᴀᴄᴋ ᴛᴀᴚɪꜱ ᴅʀɪᴠᴇ ᴜᴘ ᴍᴀᴊᴏʀ ʀᴏᴀᴅꜱ ᴏɴ ʜᴀᴢʏ Ǫᴜɪᴇᴛ ɴɪɢʜᴛꜱ
   THE FIVE BOXING WIZARDS JUMP QUICKLY
+  ꜰᴇᴡ ʙʟᴀᴄᴋ ᴛᴀᴚɪꜱ ᴅʀɪᴠᴇ ᴜᴘ ᴍᴀᴊᴏʀ ʀᴏᴀᴅꜱ ᴏɴ ʜᴀᴢʏ Ǫᴜɪᴇᴛ ɴɪɢʜᴛꜱ
 </h2>" >> $1.content
+
+echo "<h2><a href='$1.ttf' style='font-family:\"custom\"'>$1.ttf</a></h2>" >> $1.content 
+
 echo "<div class='glyphs'>" >> $1.content
 
 for a in `ls $1.ufo/glyphs -1 | sort | uniq | sed s/\.glif//`; do

@@ -90,11 +90,11 @@ wgen: wgen.c
 	gcc wgen.c -o wgen
 
 fonts.head: fonts.list Makefile
-	echo "<a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:2em'>0xA000</a><br/><div style='font-size:1.5em;'>" > fonts.head
+	echo "<table><tr><td valign='top'><a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:3em'>0xA000</a></td><td valign='top'><div style='font-size:1.5em;margin:0 0 0 0;'>" > fonts.head
 	for a in `cat fonts.list`;do \
-		echo "<a style='font-family:\"$$a\";' href='$$a.html'>`echo $$a | sed s/0xA000-//`</a> " >> fonts.head;\
+		echo "<a style='font-family:\"$$a\";' href='$$a.html'>`echo $$a | sed s/0xA000-// | sed s/0xA000/Regular/`</a> " >> fonts.head;\
 	done;\
-	echo "</div>" >> fonts.head
+	echo "</div></td></tr></table>" >> fonts.head
 
 head.html: head.html.in fonts.head
 	cat head.html.in fonts.head > head.html
