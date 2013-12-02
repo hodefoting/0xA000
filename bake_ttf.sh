@@ -5,7 +5,7 @@ fontile $1.asc
 ./fontconvert $1.ufo -t
 
 echo "<style>@font-face {font-family:'custom'; src: url('$1.ttf');}</style>" > $1.content
-echo "<h1><a href='index.html'>$1</a></h1><h2
+echo "<h1><a href='$1.ttf' style='font-family:\"custom\"'>$1.ttf</a></h1><h2
 style='font-family:"custom";' contenteditable='true'>
   fix problem quickly with galvanized jets
   ꜰᴇᴡ ʙʟᴀᴄᴋ ᴛᴀᴚɪꜱ ᴅʀɪᴠᴇ ᴜᴘ ᴍᴀᴊᴏʀ ʀᴏᴀᴅꜱ ᴏɴ ʜᴀᴢʏ Ǫᴜɪᴇᴛ ɴɪɢʜᴛꜱ

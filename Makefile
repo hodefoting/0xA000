@@ -89,7 +89,7 @@ wgen: wgen.c
 	gcc wgen.c -o wgen
 
 fonts.head: fonts.list Makefile
-	echo "<div>" > fonts.head
+	echo "<a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:2em'>0xA000</a><br/><div style='font-size:1.5em;'>" > fonts.head
 	for a in `cat fonts.list`;do \
 		echo "<a style='font-family:\"$$a\";' href='$$a.html'>`echo $$a | sed s/0xA000-//`</a> " >> fonts.head;\
 	done;\

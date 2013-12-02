@@ -45,9 +45,15 @@ a:hover    { text-decoration: underline }
 .boxes     {font-family: '0xA000-Boxes','Sans';}
 .monosans  {font-family: '0xA000-Mono','Sans';}
 .copy      { text-align: right; margin-bottom: 4em;margin-top: 3em;}
+/*
 .content   {margin-left: 200px;margin-right:20px;margin-top: 1em;
             min-width: 20em; max-width: 45em;
            }
+           */
+.content   {margin-left: 2em; margin-right:2em; margin-top: 1em;
+            min-width: 20em; max-width: 60em;
+           }
+           */
 
 div.glyph {
   font-family: '0xA000', 'Sans';
