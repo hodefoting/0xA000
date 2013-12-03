@@ -12,7 +12,7 @@ echo "<h2 style='font-family:"custom";' contenteditable='true'>
   ꜰᴇᴡ ʙʟᴀᴄᴋ ᴛᴀᴚɪꜱ ᴅʀɪᴠᴇ ᴜᴘ ᴍᴀᴊᴏʀ ʀᴏᴀᴅꜱ ᴏɴ ʜᴀᴢʏ Ǫᴜɪᴇᴛ ɴɪɢʜᴛꜱ
 </h2>" >> $1.content
 
-echo "<h2><a href='$1.ttf' style='font-family:\"custom\"'>$1.ttf</a> (`ls -sh $1.ttf | cut -f 1 -d ' '`)</h2>" >> $1.content 
+echo "<h2 style='font-family:\"custom\";'><a href='$1.ttf' style='font-family:\"custom\"'>$1.ttf</a> (`ls -sh $1.ttf | cut -f 1 -d ' '`)</h2>" >> $1.content 
 
 echo "<div class='glyphs'>" >> $1.content
 
