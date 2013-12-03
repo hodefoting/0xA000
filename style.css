@@ -1,5 +1,8 @@
 @font-face {font-family:'0xA000'; src: url('0xA000.ttf');}
+@font-face {font-family:'0xA000-Thin'; src: url('0xA000-Thin.ttf');}
+@font-face {font-family:'0xA000-Light'; src: url('0xA000-Light.ttf');}
 @font-face {font-family:'0xA000-Bold'; src: url('0xA000-Bold.ttf');}
+@font-face {font-family:'0xA000-Semibold'; src: url('0xA000-Semibold.ttf');}
 @font-face {font-family:'0xA000'; font-weight: bold; src: url('0xA000-Bold.ttf');}
 @font-face {font-family:'0xA000-Tiled'; src: url('0xA000-Tiled.ttf'); }
 @font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}

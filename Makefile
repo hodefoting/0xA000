@@ -1,6 +1,9 @@
 
 
 all: 0xA000.ttf    				         \
+		 0xA000-Thin.ttf               \
+		 0xA000-Light.ttf              \
+		 0xA000-Semibold.ttf           \
 		 0xA000-Bold.ttf               \
 		 0xA000-Mono.ttf       				 \
 		 0xA000-Mono-Bold.ttf          \
@@ -42,10 +45,27 @@ fit: 0xA000.ttf 0xA000-Bold.ttf Makefile
 	cp -rv 0xA000.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
 	./fontconvert 0xA000.ufo -t
+	
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP2) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Bold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
 	./fontconvert 0xA000-Bold.ufo -t
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Semibold.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP2) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Semibold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
+	./fontconvert 0xA000-Semibold.ufo -t
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Thin.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Thin.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
+	./fontconvert 0xA000-Thin.ufo -t
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Light.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Light.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
+	./fontconvert 0xA000-Light.ufo -t
+	
 	touch fit
 
 
@@ -63,8 +83,17 @@ CFLAGS += -O2 -g
 %.html: %.content head.html
 	cat head.html neck.html $< end.html > $@
 
-components-regular.asc: wgen
-	./wgen > components-regular.asc
+
+components-ultralight.asc: wgen Makefile
+	./wgen 0.8 > components-ultralight.asc
+components-thin.asc: wgen Makefile
+	./wgen 0.6 > components-thin.asc
+components-light.asc: wgen Makefile
+	./wgen 0.4 > components-light.asc
+components-regular.asc: wgen Makefile
+	./wgen 0.2 > components-regular.asc
+components-semibold.asc: wgen Makefile
+	./wgen 0.0 > components-semibold.asc
 
 # this also relies on all ufo dirs existing.
 # it has to be manually invoked

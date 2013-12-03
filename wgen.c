@@ -1,6 +1,7 @@
 /* There is a total of about 20 tiles; that can be rotated producing 80
  * variants.
  */
+#include <stdlib.h>
 
 //#define THICKNESS 0.15
 //#define THICKNESS 0.72
@@ -8,7 +9,9 @@
 //#define BAR 0.5523
 //
 //#define MORPH      0.3
-#define MORPH      0.0
+//
+float MORPH = 0.8;
+//#define MORPH      0.8
 #define SLIDE(VALA, VALB)  (MORPH * VALB + (1.0-MORPH)* VALA)
 
 #define THICKNESS  SLIDE(0.72,   0.05)
@@ -94,6 +97,9 @@ void new_path ()
 
 int main (int argc, char **argv)
 {
+  if (argv[1])
+    MORPH = atof (argv[1]);
+
   NEW
   line_to (0,     SLIDE(0.80, 0.9));
   line_to (1.0,   0);
@@ -150,6 +156,9 @@ int main (int argc, char **argv)
   line_to (0, 0);
 
   name ("lse3");
+  rot90();
+  rot90();
+  name ("lnw3");
 
 
   NEW
@@ -259,8 +268,9 @@ int main (int argc, char **argv)
   line_to (1, 0.1);
   curve_to (SLIDE(0.56, 0.55), SLIDE(0.30, 0.35),
             SLIDE(0.27, 0.23), SLIDE(0.62, 0.6),
-            SLIDE(0.10, 0.15), 1);
-  line_to (1, SLIDE(1, 0.05));
+            SLIDE(0.10, 0.10), 1);
+  line_to (SLIDE(1,0.15), 1);
+  line_to (1, SLIDE(1,0.15));
   name ("c1");
   rot90 ();
   name ("c3");
