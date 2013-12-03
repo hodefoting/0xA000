@@ -26,13 +26,14 @@ all: 0xA000.ttf    				         \
 foo:
 	rm 0xA000.ttf 0xA000.ufo -rf; make fit
 
-GAP = 0.25
-GAP2 = 0.249
+GAP = 0.249
+GAP2 = 0.248
 SNAP = 0
 X_SHIFT = -90
 BIG_SCALE = 1.15
 OVERRIDES = \
 			--override T 0.25 0.75 \
+			--override 1 0.66 0.66 \
 			--override j 0.60 0.60
 
 fit: 0xA000.ttf 0xA000-Bold.ttf Makefile

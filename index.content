@@ -171,7 +171,8 @@
       github.com/hodefoting/0xA000</a>. 0xA000 uses
       <a href='https://github.com/hodefoting/fontile'>fontile</a>,
       <a href='http://sourceforge.net/projects/fontforge/'>fontforge</a> and
-      <a href='https://github.com/hodefoting/kernagic'>kernagic</a>.
+      <a href='https://github.com/hodefoting/kernagic'>kernagic</a> to
+      transform source text-files into TTF files.
 </div>
 
 
@@ -215,9 +216,9 @@
     style='font-size:14px;'>hot </span><span
     style='font-size:13.5px;'>buttered </span><span
     style='font-size:13px;'>toast,) </span><span
-    style='font-size:12.5x;'>she </span><span
-    style='font-size:12x;'>very </span><span
-    style='font-size:11.75x;'>soon </span><span
+    style='font-size:12.5px;'>she </span><span
+    style='font-size:12px;'>very </span><span
+    style='font-size:11.75px;'>soon </span><span
     style='font-size:11.5px;'>finished </span><span
     style='font-size:11.25px;'>it. </span><span
     style='font-size:11px;'>off. </span>
@@ -226,8 +227,9 @@
     style='font-size:10.5px;'>'a </span><span
     style='font-size:10.25px;'>curious' </span><span
     style='font-size:10px;'>feeling!' </span><span
-    style='font-size:9.5px;'>said </span><span
-    style='font-size:9px;'>Alice; I </span><span
+    style='font-size:9.75px;'>said </span><span
+    style='font-size:9.5px;'>Alice;</span><span
+    style='font-size:9.25px;'>I </span><span
     style='font-size:8.5px;'>must </span><span
     style='font-size:8.25px;'>be </span><span
     style='font-size:8px;'>shutting </span><span
