@@ -94,6 +94,8 @@ components-regular.asc: wgen Makefile
 	./wgen 0.2 > components-regular.asc
 components-semibold.asc: wgen Makefile
 	./wgen 0.0 > components-semibold.asc
+components-bold.asc: wgen Makefile
+	./wgen -0.23 > components-bold.asc
 
 # this also relies on all ufo dirs existing.
 # it has to be manually invoked
