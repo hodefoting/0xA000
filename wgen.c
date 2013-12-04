@@ -101,10 +101,10 @@ int main (int argc, char **argv)
     MORPH = atof (argv[1]);
 
   NEW
-  line_to (0,     SLIDE(0.80, 0.9));
+  line_to (SLIDE(0,0), SLIDE(0.80, 0.45));
   line_to (1.0,   0);
   line_to ((1.0-THICKNESS),  0);
-  line_to (0.0,   SLIDE(0.20, 0.1));
+  line_to (0.0,   SLIDE(0.20, 0.55));
   name ("specials2");
   rot90 ();
   rot90 ();
@@ -342,10 +342,10 @@ int main (int argc, char **argv)
   name ("solidSouthWest5");
 
   NEW
-  line_to (0, 0.1);
-  line_to (0, 1.0);
-  line_to (1, 0.9);
-  line_to (1, 0);
+  line_to (0, SLIDE(0.1, 0.1));
+  line_to (0, SLIDE(1.0, 0.2));
+  line_to (1, SLIDE(0.9, 0.9));
+  line_to (1, SLIDE(0, 0.8));
   name ("specialS");
 
   NEW
@@ -380,15 +380,20 @@ int main (int argc, char **argv)
   name ("solidMiddleSouth");
 
   NEW
-  line_to (1, 0);
-  line_to (0.1, 0);
+  line_to (1, SLIDE(0, 0.77));
+  line_to (0.8, 0.2);
+  line_to (SLIDE(0.7,0.3), SLIDE(0,0.7));
+  line_to (0.7, 0.4);
   curve_to (0.27, 0.38,
             0.56, 0.70,
             1, 0.9);
   new_path ();
   line_to (0, 0.9);
-  curve_to (0.44, 0.70, 0.73, 0.38, 0.90, 0);
-  line_to (0, 0);
+  curve_to (0.44, 0.70,
+            0.73, 0.38,
+            0.90, 0);
+  line_to (SLIDE(0.3, 0.66), 0);
+  line_to (0, SLIDE(0.0, 0.75));
   name ("v13");
   rot90 ();
   name ("v17");

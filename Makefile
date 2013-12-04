@@ -19,7 +19,7 @@ all: 0xA000.ttf    				         \
 		 \
 		 Glyphs.html                   \
 		 Tech.html                     \
-		 index.html fit
+		 index.html test.html fit
 
 #    0xA000-Tiled.ttf    	         \
 #    0xA000-Edit-Mono.ttf          \
@@ -88,19 +88,19 @@ CFLAGS += -O2 -g
 
 
 components-ultralight.asc: wgen Makefile
-	./wgen 0.85 > components-ultralight.asc
+	./wgen 0.9 > components-ultralight.asc
 
 
 components-thin.asc: wgen Makefile
-	./wgen 0.7  > components-thin.asc
+	./wgen 0.8  > components-thin.asc
 components-light.asc: wgen Makefile
-	./wgen 0.5 > components-light.asc
+	./wgen 0.6 > components-light.asc
 components-regular.asc: wgen Makefile
 	./wgen 0.3  > components-regular.asc
 components-semibold.asc: wgen Makefile
-	./wgen 0.1 > components-semibold.asc
+	./wgen 0.0 > components-semibold.asc
 components-bold.asc: wgen Makefile
-	./wgen -0.2 > components-bold.asc
+	./wgen -0.3 > components-bold.asc
 
 # this also relies on all ufo dirs existing.
 # it has to be manually invoked
