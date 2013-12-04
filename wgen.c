@@ -211,11 +211,13 @@ int main (int argc, char **argv)
 
 
   NEW
+  line_to (0, 1-THICKNESS);
   line_to (0, 1);
   line_to (0.5, 0.5);
   line_to (1, 1);
-  line_to (1, 0);
-  line_to (0, 0);
+  line_to (1, 1-THICKNESS);
+  line_to (SLIDE(0.8,0.3), 0);
+  line_to (SLIDE(0.2,0.7), 0);
   name ("vn");
   rot90 ();
   name ("vw");
