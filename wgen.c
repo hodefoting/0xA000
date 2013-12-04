@@ -198,7 +198,7 @@ int main (int argc, char **argv)
             0.28, SLIDE(0.28, 0.9),
             0, SLIDE(0, 0.8));
   line_to (0, 0.9);
-  curve_to ((1.0-THICKNESS), 1.0, 
+  curve_to (0.21, 1.0, 
             0.65, 1.0,
             1, 0.9);
   name ("c8");
@@ -281,7 +281,7 @@ int main (int argc, char **argv)
 
   NEW
   line_to (0.1, 0);
-  curve_to (0.0, (1.0-THICKNESS), 0.0, SLIDE(0.65, 0.95), 0.0, 1);
+  curve_to (0.0, 0.79, 0.0, 0.65, 0.0, 1);
   line_to (THICKNESS, 1);
   curve_to (THICKNESS, SLIDE(0.3,0.1),
             SLIDE(0.9,0.3), 0.1,
@@ -300,9 +300,9 @@ int main (int argc, char **argv)
             THICKNESS,      SLIDE(0.7, 0.3),
             THICKNESS,      0);
   line_to (0, 0);
-  curve_to (0.0, SLIDE(0.35, 0.11),
-            0.0, THICKNESS,
-            SLIDE(0.10,0.01), 1);
+  curve_to (0.0, 0.35,
+            0.0, 0.11,
+            0.10, 1);
   name ("c4a");
   rot90 ();
   name ("c2a");

@@ -106,8 +106,9 @@
     0xA000 is a font family designed for screen, inspired and constrained
     by the pixel raster. 0xA000 is a modular sans serif; with
     accompanying display variants; that renders sharp at small sizes without
-    needing hinting. Each of the individual variant have download links for
-    their TTF file, to download a bundle containing all the variants download 
+    needing hinting. The sub-page for each variant, accessible through the
+    links in the top-header, have download links for
+    the individual TTF files, to download a bundle containing all variants download 
       <a href='0xA000.zip' style="font-family:'0xA000'">0xA000.zip</a>. It is
       also worth noting that the sample texts for each variant is in-place
       editable in the browser.
