@@ -7,6 +7,9 @@ all: 0xA000.ttf    				         \
 		 0xA000-Bold.ttf               \
 		 0xA000-Mono.ttf       				 \
 		 0xA000-Mono-Bold.ttf          \
+		 0xA000-Mono-Thin.ttf          \
+		 0xA000-Mono-Light.ttf         \
+		 0xA000-Mono-Semibold.ttf      \
 	   0xA000-Pixelated.ttf  				 \
 	   0xA000-Pixelated-Mono.ttf     \
 	   0xA000-Boxes.ttf      				 \

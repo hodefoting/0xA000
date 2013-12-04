@@ -6,8 +6,11 @@
 @font-face {font-family:'0xA000'; font-weight: bold; src: url('0xA000-Bold.ttf');}
 @font-face {font-family:'0xA000-Tiled'; src: url('0xA000-Tiled.ttf'); }
 @font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}
-@font-face {font-family:'0xA000-Mono'; font-weight: bold; src: url('0xA000-Mono-Bold.ttf');}
+@font-face {font-family:'0xA000-Mono'; font-weight: bold; src: url('0xA000-Mono.ttf');}
 @font-face {font-family:'0xA000-Mono-Bold';         src: url('0xA000-Mono-Bold.ttf');}
+@font-face {font-family:'0xA000-Mono-Light';         src: url('0xA000-Mono-Light.ttf');}
+@font-face {font-family:'0xA000-Mono-Thin';         src: url('0xA000-Mono-Thin.ttf');}
+@font-face {font-family:'0xA000-Mono-Semibold';         src: url('0xA000-Mono-Semibold.ttf');}
 @font-face {font-family:'0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf');}
 @font-face {font-family:'0xA000-Pixelated-Mono';    src: url('0xA000-Pixelated-Mono.ttf');}
 @font-face {font-family:'0xA000-Boxes-Mono';        src: url('0xA000-Boxes-Mono.ttf');}
