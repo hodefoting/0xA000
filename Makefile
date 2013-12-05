@@ -38,7 +38,7 @@ GAP_REGULAR  = 0.23
 GAP_SEMIBOLD = 0.24 
 GAP_BOLD     = 0.25
 SNAP = 0
-X_SHIFT = -90
+X_SHIFT = -95
 BIG_SCALE = 1.15
 OVERRIDES = \
 			--override T 0.25 0.75 \

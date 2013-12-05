@@ -224,8 +224,6 @@ int main (int argc, char **argv)
 
   NEW
 
-#define THICKNESS  SLIDE(0.72,   0.05)
-
   line_to (0, SLIDE(0.76, 0.05));
   line_to (0.5, SLIDE(0.36, 0.19));
   line_to (1, SLIDE(0.76, 0.05));
