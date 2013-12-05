@@ -2,7 +2,7 @@
 
 rm -rf $1.ufo
 fontile $1.asc
-./fontconvert $1.ufo -t
+./fontconvert $1.ufo -t > /dev/null 2>&1
 
 echo "<style>@font-face {font-family:'custom'; src: url('$1.ttf');}</style>" > $1.content
 

@@ -5,8 +5,6 @@
 
 //#define THICKNESS 0.15
 //#define THICKNESS 0.72
-//#define FOO 0.1343
-//#define BAR 0.5523
 //
 //#define MORPH      0.3
 //
@@ -15,8 +13,6 @@ float MORPH = 0.8;
 #define SLIDE(VALA, VALB)  (MORPH * VALB + (1.0-MORPH)* VALA)
 
 #define THICKNESS  SLIDE(0.72,   0.05)
-#define FOO        SLIDE(0.1343, 0.0643)
-#define BAR        SLIDE(0.5523, 0.4623)
 
 /* helper generator script for generating correctly winded symmetric shapes
  * for the 0xA000 palette.
@@ -163,12 +159,12 @@ int main (int argc, char **argv)
 
   NEW
   line_to ((1.0-THICKNESS), 0);
-  curve_to ((1.0-THICKNESS), FOO,
-            FOO, (1.0-THICKNESS),
-            0, (1.0-THICKNESS));
+  curve_to (SLIDE(0.22,0.8), SLIDE(0.13, 0.97),
+            SLIDE(0.43,0.10), SLIDE(0.13, 0.97),
+            0,    SLIDE(0.27, 0.97));
   line_to (0, 1);
-  curve_to (BAR, 1,
-            1, BAR,
+  curve_to (0.5523, 1,
+            1, 0.5523,
             1, 0);
   name ("cne");
   rot90 ();
@@ -180,8 +176,8 @@ int main (int argc, char **argv)
 
   NEW
   line_to (0, 1);
-  curve_to (BAR, 1,
-            1,      BAR,
+  curve_to (0.5523, 1,
+            1,      0.5523,
             1,      0);
   line_to (1, 1);
   name ("Cne");
@@ -227,9 +223,12 @@ int main (int argc, char **argv)
   name ("ve");
 
   NEW
-  line_to (0, (THICKNESS+0.8)/2);
-  line_to (0.5, (THICKNESS+0.8)/4);
-  line_to (1, (THICKNESS+0.8)/2);
+
+#define THICKNESS  SLIDE(0.72,   0.05)
+
+  line_to (0, SLIDE(0.76, 0.05));
+  line_to (0.5, SLIDE(0.36, 0.19));
+  line_to (1, SLIDE(0.76, 0.05));
   line_to (1, 0);
   line_to (0, 0);
   name ("vn2");
@@ -268,11 +267,13 @@ int main (int argc, char **argv)
 
   NEW
   line_to (1, 0.1);
-  curve_to (SLIDE(0.56, 0.55), SLIDE(0.30, 0.35),
-            SLIDE(0.27, 0.23), SLIDE(0.62, 0.6),
-            SLIDE(0.10, 0.10), 1);
-  line_to (SLIDE(1,0.15), 1);
-  line_to (1, SLIDE(1,0.15));
+  curve_to (0.56, 0.30,
+            0.27, 0.62,
+            0.10, 1);
+  line_to (SLIDE(1,0.21), 1);
+  curve_to (SLIDE(0.8,0.45), SLIDE(1, 0.75),
+           SLIDE(0.9,0.7), SLIDE(1,0.35),
+           1, SLIDE(1,0.23));
   name ("c1");
   rot90 ();
   name ("c3");

@@ -32,11 +32,11 @@ all: 0xA000.ttf    				         \
 foo:
 	rm 0xA000.ttf 0xA000.ufo -rf; make fit
 
-GAP_THIN     = 0.225
-GAP_LIGHT    = 0.238
-GAP_REGULAR  = 0.25
-GAP_SEMIBOLD = 0.256
-GAP_BOLD     = 0.263
+GAP_THIN     = 0.205
+GAP_LIGHT    = 0.22
+GAP_REGULAR  = 0.23
+GAP_SEMIBOLD = 0.24 
+GAP_BOLD     = 0.25
 SNAP = 0
 X_SHIFT = -90
 BIG_SCALE = 1.15
@@ -50,27 +50,27 @@ fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_REGULAR) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
-	./fontconvert 0xA000.ufo -t
+	./fontconvert 0xA000.ufo -t > /dev/null 2>&1
 	
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_BOLD) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Bold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
-	./fontconvert 0xA000-Bold.ufo -t
+	./fontconvert 0xA000-Bold.ufo -t > /dev/null 2>&1
 	
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Semibold.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_SEMIBOLD) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Semibold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
-	./fontconvert 0xA000-Semibold.ufo -t
+	./fontconvert 0xA000-Semibold.ufo -t > /dev/null 2>&1
 	
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Thin.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_THIN) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Thin.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
-	./fontconvert 0xA000-Thin.ufo -t
+	./fontconvert 0xA000-Thin.ufo -t > /dev/null 2>&1
 	
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Light.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_LIGHT) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Light.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
-	./fontconvert 0xA000-Light.ufo -t
+	./fontconvert 0xA000-Light.ufo -t > /dev/null 2>&1
 	
 	touch fit
 
@@ -99,11 +99,11 @@ components-thin.asc: wgen Makefile
 components-light.asc: wgen Makefile
 	./wgen 0.6 > components-light.asc
 components-regular.asc: wgen Makefile
-	./wgen 0.3  > components-regular.asc
+	./wgen 0.45  > components-regular.asc
 components-semibold.asc: wgen Makefile
-	./wgen 0.0 > components-semibold.asc
+	./wgen 0.1 > components-semibold.asc
 components-bold.asc: wgen Makefile
-	./wgen -0.3 > components-bold.asc
+	./wgen -0.2 > components-bold.asc
 
 # this also relies on all ufo dirs existing.
 # it has to be manually invoked
