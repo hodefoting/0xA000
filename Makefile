@@ -12,6 +12,7 @@ all: 0xA000.ttf    				         \
 		 0xA000-Mono-Semibold.ttf      \
 	   0xA000-Pixelated.ttf  				 \
 	   0xA000-Pixelated-Mono.ttf     \
+	   0xA000-Square.ttf     				 \
 	   0xA000-Boxes.ttf      				 \
 		 0xA000-Boxes-Mono.ttf         \
 	   0xA000-Dots.ttf 				       \
@@ -44,6 +45,7 @@ OVERRIDES = \
 			--override T 0.25 0.75 \
 			--override ᴛ 0.25 0.75 \
 			--override 1 0.66 0.66 \
+			--override 7 0.25 0.97 \
 			--override j 0.60 0.60
 
 fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light.ttf Makefile
