@@ -263,6 +263,29 @@ int main (int argc, char **argv)
   rot90 ();
   name ("Vw");
 
+
+  NEW
+  line_to (1, 0.1);
+  curve_to (0.56, 0.30,
+            0.27, 0.62,
+            0.10, 1);
+  line_to (SLIDE(1,0.21), 1);
+  curve_to (SLIDE(0.8,0.45), SLIDE(0.7, 0.75),
+           SLIDE(0.9,0.7), SLIDE(0.5,0.35),
+           1, SLIDE(0.5,0.2));
+  new_path ();
+  line_to (0, THICKNESS);
+  line_to (1, THICKNESS);
+  line_to (1, 0);
+  line_to (0, 0);
+  name ("cj1");
+  rot90();
+  name ("cj3");
+  rot90();
+  name ("cj9");
+  rot90();
+  name ("cj7");
+
   NEW
   line_to (1, 0.1);
   curve_to (0.56, 0.30,
