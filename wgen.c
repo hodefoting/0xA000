@@ -350,6 +350,13 @@ int main (int argc, char **argv)
   name ("specialS");
 
   NEW
+  line_to (0, SLIDE(0, 0));
+  line_to (0, THICKNESS);
+  line_to (1, SLIDE(1, 1));
+  line_to (1, 1.0-THICKNESS);
+  name ("smallcapss");
+
+  NEW
   line_to (0, (1.0-THICKNESS));
   line_to (0, 1.0);
   line_to (1, 1.0);

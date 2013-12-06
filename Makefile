@@ -14,6 +14,9 @@ all: 0xA000.ttf    				         \
 	   0xA000-Pixelated-Mono.ttf     \
 	   0xA000-Square.ttf     				 \
 	   0xA000-Squareish.ttf  				 \
+	   0xA000-Square-Bold.ttf     	 \
+	   0xA000-Squareish-Bold.ttf  	 \
+	   0xA000-Squareish-Mono.ttf  	\
 	   0xA000-Boxes.ttf      				 \
 		 0xA000-Boxes-Mono.ttf         \
 	   0xA000-Dots.ttf 				       \
@@ -30,6 +33,20 @@ all: 0xA000.ttf    				         \
 #    0xA000-Edit-Mono.ttf          \
 		 0xA000-Pen.ttf        				 \
 		 0xA000-Pen-Mono.ttf           \
+
+
+components-ultralight.asc: wgen Makefile
+	./wgen 0.9 > components-ultralight.asc
+components-thin.asc: wgen Makefile
+	./wgen 0.8 > components-thin.asc
+components-light.asc: wgen Makefile
+	./wgen 0.6 > components-light.asc
+components-regular.asc: wgen Makefile
+	./wgen 0.4 > components-regular.asc
+components-semibold.asc: wgen Makefile
+	./wgen 0.1 > components-semibold.asc
+components-bold.asc: wgen Makefile
+	./wgen -0.2 > components-bold.asc
 
 foo:
 	rm 0xA000.ttf 0xA000.ufo -rf; make fit
@@ -71,6 +88,16 @@ fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light
 	./fontconvert 0xA000-Bold.ufo -t > /dev/null 2>&1
 	
 	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Square-Bold.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP_BOLD) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Square-Bold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
+	./fontconvert 0xA000-Square-Bold.ufo -t > /dev/null 2>&1
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Squareish-Bold.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP_BOLD) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Squareish-Bold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
+	./fontconvert 0xA000-Squareish-Bold.ufo -t > /dev/null 2>&1
+	
+	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Semibold.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_SEMIBOLD) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Semibold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
 	./fontconvert 0xA000-Semibold.ufo -t > /dev/null 2>&1
@@ -103,20 +130,6 @@ CFLAGS += -O2 -g
 	cat head.html neck.html $< end.html > $@
 
 
-components-ultralight.asc: wgen Makefile
-	./wgen 0.9 > components-ultralight.asc
-
-
-components-thin.asc: wgen Makefile
-	./wgen 0.8  > components-thin.asc
-components-light.asc: wgen Makefile
-	./wgen 0.6 > components-light.asc
-components-regular.asc: wgen Makefile
-	./wgen 0.45  > components-regular.asc
-components-semibold.asc: wgen Makefile
-	./wgen 0.1 > components-semibold.asc
-components-bold.asc: wgen Makefile
-	./wgen -0.2 > components-bold.asc
 
 # this also relies on all ufo dirs existing.
 # it has to be manually invoked
