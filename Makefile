@@ -2,6 +2,7 @@
 
 all: 0xA000.ttf    				         \
 		 0xA000-Contrast.ttf           \
+		 0xA000-Contrast-Mono.ttf      \
 		 0xA000-Thin.ttf               \
 		 0xA000-Light.ttf              \
 		 0xA000-Semibold.ttf           \
