@@ -1,6 +1,7 @@
 
 
 all: 0xA000.ttf    				         \
+		 0xA000-Contrast.ttf           \
 		 0xA000-Thin.ttf               \
 		 0xA000-Light.ttf              \
 		 0xA000-Semibold.ttf           \
@@ -66,11 +67,16 @@ OVERRIDES = \
 			--override 7 0.25 0.97 \
 			--override j 0.60 0.60
 
-fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light.ttf Makefile 0xA000-Square.ttf 0xA000-Squareish.ttf
+fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light.ttf Makefile 0xA000-Square.ttf 0xA000-Squareish.ttf 0xA000-Contrast.ttf
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_REGULAR) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
 	./fontconvert 0xA000.ufo -t > /dev/null 2>&1
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Contrast.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP_REGULAR) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Contrast.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
+	./fontconvert 0xA000-Contrast.ufo -t > /dev/null 2>&1
 	
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Square.ufo 0xA000b.ufo
