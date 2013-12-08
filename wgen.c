@@ -439,6 +439,8 @@ int main (int argc, char **argv)
   line_to (1.0-MIDS, 1.05);
   line_to (1.0-MIDS, 0);
   name ("solidMiddle");
+  rot90 ();
+  name ("solidMiddleHorizontal");
 
   NEW
   line_to (MIDS, 0);
@@ -452,23 +454,23 @@ int main (int argc, char **argv)
   line_to (0, (1.0-SLIDE(THICKA,THICKB)));
   name ("solidMiddleNorth");
   rot90 ();
+  name ("solidMiddleWest");
   rot90 ();
   name ("solidMiddleSouth");
 
   NEW
   line_to (1, SLIDE(0, 0.77));
-  line_to (0.8, 0.2);
-  line_to (SLIDE(0.7,0.3), SLIDE(0,0.7));
-  line_to (0.7, 0.4);
-  curve_to (0.27, 0.38,
+  line_to (SLIDE(0.6,0.55), 0.0);
+  line_to (SLIDE(0.2,0.45), 0.0);
+  curve_to (SLIDE(0.2,0.45), 0.38,
             0.56, 0.70,
             1, 0.9);
   new_path ();
   line_to (0, 0.9);
-  curve_to (0.44, 0.70,
-            0.73, 0.38,
-            0.90, 0);
-  line_to (SLIDE(0.3, 0.66), 0);
+  curve_to (SLIDE(0.44, 0.44), 0.70,
+            SLIDE(0.90,0.55), 0.2,
+            SLIDE(0.90,0.55), 0);
+  line_to (SLIDE(0.38, 0.45), 0);
   line_to (0, SLIDE(0.0, 0.75));
   name ("v13");
   rot90 ();
