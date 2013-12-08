@@ -164,7 +164,7 @@ wgen: wgen.c
 	gcc wgen.c -o wgen
 
 fonts.head: fonts.list Makefile
-	echo "<table><tr><td valign='top'><a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:3em'>0xA000</a><br/><span style='font-family:"0xA000";font-size:12px'>Metamorphic-modular font-family.</span></td><td valign='top'><div style='font-size:1.5em;margin:0 0 0 0;'>" > fonts.head
+	echo "<table><tr><td valign='top'><a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:3.5em'>0xA000</a><br/><span style='font-family:"0xA000";font-size:11px'>Metamorphic-modular font-family.<ul><li>Sans sharp at small sizes</li><li>Minimalistic geometry</li><li>Extended Latin Support</li><li>Dedicated mono-space design</li></ul></span></td><td valign='top'><div style='font-size:1.5em;margin:0 0 0 0;'>" > fonts.head
 	for a in `cat fonts.list`;do \
 		echo "<a style='font-family:\"$$a\";' href='$$a.html'>`echo $$a | sed s/0xA000-// | sed s/0xA000/Regular/`</a> " >> fonts.head;\
 	done;\
