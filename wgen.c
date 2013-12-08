@@ -49,12 +49,29 @@ void rot90 (void) /* rotates shape in unit square 90 degrees */
     }
 }
 
+
+
 void vertex (char type, float x, float y)
 {
   shape[n_vertex].type = type;
   shape[n_vertex].x = x;
   shape[n_vertex].y = y;
   n_vertex++;
+}
+
+void vertex_scaled (int type, float x, float y, float scale)
+{
+  x -= 0.5;
+  y -= 0.5;
+  scale *= 1.5;
+  x *= scale;
+  y *= scale;
+
+  x += 0.5;
+  y += 0.5;
+  x += SLIDE (0.18, 0.42);
+
+  fprintf (stdout, "%c %f %f\n", type, x, y);
 }
 
 void name (const char *name)
@@ -460,6 +477,23 @@ int main (int argc, char **argv)
   name ("v79");
   rot90 ();
   name ("v39");
+
+  fprintf (stdout, "\n{ circle\n");
+  {
+    float scale = SLIDE (0.7, 0.23);
+    vertex_scaled ('c', 0.11, 0.29, scale);
+    vertex_scaled ('c', 0.29, 0.11, scale);
+    vertex_scaled ('C', 0.50, 0.11, scale);
+    vertex_scaled ('c', 0.71, 0.11, scale);
+    vertex_scaled ('c', 0.89, 0.29, scale);
+    vertex_scaled ('C', 0.89, 0.50, scale);
+    vertex_scaled ('c', 0.89, 0.71, scale);
+    vertex_scaled ('c', 0.71, 0.89, scale);
+    vertex_scaled ('C', 0.50, 0.89, scale);
+    vertex_scaled ('c', 0.29, 0.89, scale);
+    vertex_scaled ('c', 0.11, 0.71, scale);
+    vertex_scaled ('C', 0.11, 0.50, scale);
+  }
 
   return 0;
 }
