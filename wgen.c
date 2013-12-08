@@ -69,7 +69,7 @@ void vertex_scaled (int type, float x, float y, float scale)
 
   x += 0.5;
   y += 0.5;
-  x += SLIDE (0.18, 0.42);
+  x += SLIDE (0.20, 0.44);
 
   fprintf (stdout, "%c %f %f\n", type, x, y);
 }
