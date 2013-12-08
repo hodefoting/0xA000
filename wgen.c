@@ -69,7 +69,7 @@ void vertex_scaled (int type, float x, float y, float scale)
 
   x += 0.5;
   y += 0.5;
-  x += SLIDE (0.20, 0.44);
+  x += SLIDE (0.18, 0.44);
 
   fprintf (stdout, "%c %f %f\n", type, x, y);
 }
@@ -497,7 +497,7 @@ int main (int argc, char **argv)
 
   fprintf (stdout, "\n{ circle\n");
   {
-    float scale = SLIDE (0.7, 0.23);
+    float scale = SLIDE (0.8, 0.25);
     vertex_scaled ('c', 0.11, 0.29, scale);
     vertex_scaled ('c', 0.29, 0.11, scale);
     vertex_scaled ('C', 0.50, 0.11, scale);
@@ -514,7 +514,7 @@ int main (int argc, char **argv)
 
   fprintf (stdout, "\n{ circlec\n");
   {
-    float scale = SLIDE (0.7, 0.23);
+    float scale = SLIDE (0.8, 0.25);
     vertex_scaled2 ('c', 0.11, 0.29, scale);
     vertex_scaled2 ('c', 0.29, 0.11, scale);
     vertex_scaled2 ('C', 0.50, 0.11, scale);
