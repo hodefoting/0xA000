@@ -191,10 +191,10 @@ int main (int argc, char **argv)
 
 
   NEW
-  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
-  curve_to (SLIDE(0.22,0.8), SLIDE(0.13, 0.97),
-            SLIDE(0.43,0.10), SLIDE(0.13, 0.97),
-            0,    SLIDE(0.27, 0.97));
+  line_to ((1.0-SLIDE(THICKA,THICKB)),       0);
+  curve_to (SLIDE(0.27,0.95), SLIDE(0.13, 0.51),
+            SLIDE(0.17,0.51), SLIDE(0.27, 0.95),
+            0,                SLIDE(0.27, 0.95));
   line_to (0, 1);
   curve_to (0.5523, 1,
             1, 0.5523,

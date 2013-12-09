@@ -37,16 +37,14 @@ all: 0xA000.ttf    				         \
 		 0xA000-Pen-Mono.ttf           \
 
 
-components-ultralight.asc: wgen Makefile
-	./wgen 0.9 > components-ultralight.asc
 components-thin.asc: wgen Makefile
-	./wgen 0.8 > components-thin.asc
+	./wgen 1.0 > components-thin.asc
 components-light.asc: wgen Makefile
 	./wgen 0.6 > components-light.asc
 components-regular.asc: wgen Makefile
 	./wgen 0.4 > components-regular.asc
 components-semibold.asc: wgen Makefile
-	./wgen 0.1 > components-semibold.asc
+	./wgen 0.0 > components-semibold.asc
 components-bold.asc: wgen Makefile
 	./wgen -0.2 > components-bold.asc
 
