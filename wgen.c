@@ -208,13 +208,13 @@ int main (int argc, char **argv)
   name ("cse");
 
   NEW
-  line_to (1, SLIDE(0, 0.8));
-  curve_to (0.7,  SLIDE(0.28, 0.8),
-            0.28, SLIDE(0.28, 0.9),
-            0, SLIDE(0, 0.8));
+  line_to (1,     SLIDE(0, 0.8));
+  curve_to (0.7,  SLIDE(0.28, 0.9),
+            0.3,  SLIDE(0.28, 0.9),
+            0,    SLIDE(0, 0.8));
   line_to (0, 0.9);
-  curve_to (0.21, 1.0, 
-            0.65, 1.0,
+  curve_to (0.3, 1.0, 
+            0.7, 1.0,
             1, 0.9);
   name ("c8");
   rot90 ();
@@ -337,10 +337,10 @@ int main (int argc, char **argv)
   curve_to (0.56, 0.30,
             0.27, 0.62,
             0.10, 1);
-  line_to (SLIDE(1,0.21), 1);
-  curve_to (SLIDE(0.8,0.45), SLIDE(1, 0.75),
-           SLIDE(0.9,0.7), SLIDE(1,0.35),
-           1, SLIDE(1,0.23));
+  line_to (SLIDE(1,0.21),  1);
+  curve_to (SLIDE(1,0.35), SLIDE(1, 0.70),
+            SLIDE(1,0.70), SLIDE(1,0.35),
+            1,             SLIDE(1,0.21));
   name ("c1");
   rot90 ();
   name ("c3");
