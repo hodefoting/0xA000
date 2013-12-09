@@ -208,20 +208,6 @@ int main (int argc, char **argv)
   name ("cse");
 
   NEW
-  line_to (0, 1);
-  curve_to (0.5523, 1,
-            1,      0.5523,
-            1,      0);
-  line_to (1, 1);
-  name ("Cne");
-  rot90 ();
-  name ("Cnw");
-  rot90 ();
-  name ("Csw");
-  rot90 ();
-  name ("Cse");
-
-  NEW
   line_to (1, SLIDE(0, 0.8));
   curve_to (0.7,  SLIDE(0.28, 0.8),
             0.28, SLIDE(0.28, 0.9),
