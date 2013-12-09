@@ -351,11 +351,11 @@ int main (int argc, char **argv)
 
   NEW
   line_to (0.1, 0);
-  curve_to (0.0, 0.79, 0.0, 0.65, 0.0, 1);
+  curve_to (0.0, 0.49, 0.0, 0.65, 0.0, 1);
   line_to (SLIDE(THICKA,THICKB), 1);
-  curve_to (SLIDE(THICKA,THICKB), SLIDE(0.3,0.1),
-            SLIDE(0.9,0.3), 0.1,
-            SLIDE(1, 0.05), 0);
+  curve_to (SLIDE(THICKA,THICKB), 0.4,
+            SLIDE(0.79, 0.16), 0.3,
+            SLIDE(1, 0.16), 0);
   name ("c4b");
   rot90 ();
   name ("c2b");
@@ -365,14 +365,14 @@ int main (int argc, char **argv)
   name ("c8a");
 
   NEW
-  line_to (SLIDE(1, 0.2), 1);
-  curve_to (SLIDE(0.9,0.1), SLIDE(0.9, 0.3),
-            SLIDE(THICKA,THICKB),      SLIDE(0.7, 0.3),
-            SLIDE(THICKA,THICKB),      0);
-  line_to (0, 0);
+  line_to  (SLIDE(1, 0.16), 1);
+  curve_to (SLIDE(0.79, 0.16), 0.7,
+            SLIDE(THICKA,THICKB), 0.6,
+            SLIDE(THICKA,THICKB), 0);
+  line_to  (0.0, 0);
   curve_to (0.0, 0.35,
-            0.0, 0.11,
-            0.10, 1);
+            0.0, 0.51,
+            0.1, 1);
   name ("c4a");
   rot90 ();
   name ("c2a");
@@ -424,13 +424,6 @@ int main (int argc, char **argv)
   line_to (1, SLIDE(1, 1));
   line_to (1, 1.0-SLIDE(THICKA,THICKB));
   name ("smallcapss");
-
-  NEW
-  line_to (0, (1.0-SLIDE(THICKA,THICKB)));
-  line_to (0, 1.0);
-  line_to (1, 1.0);
-  line_to (1, 0);
-  name ("specialB");
 
 #define MIDS ((1.0-SLIDE(THICKA,THICKB))/2)
 
