@@ -231,9 +231,9 @@ int main (int argc, char **argv)
   line_to (0, 1);
   line_to (0.5, 0.5);
   line_to (1, 1);
-  line_to (1, 1-SLIDE(THICKA,THICKB));
-  line_to (SLIDE(0.8,0.3), 0);
-  line_to (SLIDE(0.2,0.7), 0);
+  line_to (1, SLIDE(0.28, 0.95));
+  line_to (SLIDE(0.73,0.5), SLIDE(0, 0.45));
+  line_to (SLIDE(0.28,0.5), SLIDE(0., 0.45));
   name ("vn");
   rot90 ();
   name ("vw");
