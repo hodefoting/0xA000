@@ -185,9 +185,10 @@ int main (int argc, char **argv)
   line_to (0, 0);
 
   name ("lse3");
+  /*
   rot90();
   rot90();
-  name ("lnw3");
+  name ("lnw3");*/
 
 
   NEW

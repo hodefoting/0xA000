@@ -7,7 +7,10 @@ all: .dep \
 		 0xA000-Thin.ttf               \
 		 0xA000-Light.ttf              \
 		 0xA000-Semibold.ttf           \
+		 0xA000-Extra-Bold.ttf         \
+		 0xA000-Ultra-Black.ttf        \
 		 0xA000-Bold.ttf               \
+		 0xA000-Heavy.ttf              \
 		 0xA000-Mono.ttf       				 \
 		 0xA000-Mono-Bold.ttf          \
 		 0xA000-Mono-Thin.ttf          \
@@ -38,24 +41,26 @@ all: .dep \
 		 0xA000-Pen-Mono.ttf           \
 
 
-components-ultralight.asc: wgen Makefile
-	./wgen 1.0 > components-ultralight.asc   # 100
-components-thin.asc: wgen Makefile
-	./wgen 0.8 > components-thin.asc         # 200
-components-light.asc: wgen Makefile
-	./wgen 0.6 > components-light.asc        # 300
-components-regular.asc: wgen Makefile
-	./wgen 0.4 > components-regular.asc      # 400
-components-semibold.asc: wgen Makefile
-	./wgen 0.2 > components-semibold.asc     # 500
-components-bold.asc: wgen Makefile
-	./wgen 0.0 > components-bold.asc         # 600
-components-extra-bold.asc: wgen Makefile
-	./wgen -0.1 > components-extra-bold.asc  # 700
-components-heavy.asc: wgen Makefile
-	./wgen -0.2 > components-heavy.asc       # 800
-components-ultra-heavy.asc: wgen Makefile
-	./wgen -0.3 > components-ultra-heavy.asc # 900
+components-ultralight.asc: wgen 
+	./wgen 1.0 > components-ultralight.asc  # 100
+components-thin.asc: wgen 
+	./wgen 0.8 > components-thin.asc        # 200
+components-light.asc: wgen
+	./wgen 0.6 > components-light.asc       # 300
+components-regular.asc: wgen
+	./wgen 0.4 > components-regular.asc     # 400
+components-medium.asc: wgen
+	./wgen 0.3 > components-medium.asc      # 500
+components-semibold.asc: wgen
+	./wgen 0.2 > components-semibold.asc    # 600
+components-bold.asc: wgen 
+	./wgen 0.1 > components-bold.asc        # 700
+components-extra-bold.asc: wgen 
+	./wgen 0.0 > components-extra-bold.asc # 800
+components-heavy.asc: wgen 
+	./wgen -0.25 > components-heavy.asc      # 800
+components-ultra-black.asc: wgen 
+	./wgen -0.5 > components-ultra-black.asc # 900
 
 foo:
 	rm 0xA000.ttf 0xA000.ufo -rf; make fit
@@ -66,6 +71,9 @@ GAP_LIGHT    = 0.22
 GAP_REGULAR  = 0.23
 GAP_SEMIBOLD = 0.24 
 GAP_BOLD     = 0.25
+GAP_EXTRA_BOLD = 0.26
+GAP_HEAVY    = 0.29
+GAP_ULTRA_BLACK = 0.3
 SNAP = 0
 X_SHIFT = -95
 BIG_SCALE = 1.15
@@ -76,7 +84,7 @@ OVERRIDES = \
 			--override 7 0.25 0.97 \
 			--override j 0.60 0.60
 
-fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light.ttf Makefile 0xA000-Square.ttf 0xA000-Squareish.ttf 0xA000-Contrast.ttf 0xA000-Ultralight.ttf
+fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light.ttf Makefile 0xA000-Square.ttf 0xA000-Squareish.ttf 0xA000-Contrast.ttf 0xA000-Ultralight.ttf 0xA000-Heavy.ttf 0xA000-Extra-Bold.ttf 0xA000-Ultra-Black.ttf
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_REGULAR) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
@@ -96,6 +104,16 @@ fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light
 	cp -rv 0xA000-Squareish.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_REGULAR) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Squareish.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
 	./fontconvert 0xA000-Squareish.ufo -t > /dev/null 2>&1
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Extra-Bold.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP_EXTRA_BOLD) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Extra-Bold.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
+	./fontconvert 0xA000-Extra-Bold.ufo -t > /dev/null 2>&1
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Ultra-Black.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP_ULTRA_BLACK) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Ultra-Black.ufo --center-glyphs "ilI|ıɪ'.:;" $(OVERRIDES)
+	./fontconvert 0xA000-Ultra-Black.ufo -t > /dev/null 2>&1
 	
 	rm -rf 0xA000b.ufo
 	cp -rv 0xA000-Bold.ufo 0xA000b.ufo
@@ -131,6 +149,11 @@ fit: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Thin.ttf 0xA000-Semibold.ttf 0xA000-Light
 	cp -rv 0xA000-Light.ufo 0xA000b.ufo
 	kernagic -bs $(BIG_SCALE) -g $(GAP_LIGHT) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Light.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
 	./fontconvert 0xA000-Light.ufo -t > /dev/null 2>&1
+	
+	rm -rf 0xA000b.ufo
+	cp -rv 0xA000-Heavy.ufo 0xA000b.ufo
+	kernagic -bs $(BIG_SCALE) -g $(GAP_HEAVY) -s $(SNAP) --x_shift $(X_SHIFT) 0xA000b.ufo -o 0xA000-Heavy.ufo --center-glyphs "ilI|'.:;ıɪ˙" $(OVERRIDES)
+	./fontconvert 0xA000-Heavy.ufo -t > /dev/null 2>&1
 	
 	touch fit
 
