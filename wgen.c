@@ -455,20 +455,37 @@ int main (int argc, char **argv)
   rot90 ();
   name ("solidMiddleSouth");
 
+
   NEW
-  line_to (1, SLIDE(0, 0.77));
-  line_to (SLIDE(0.6,0.55), 0.0);
-  line_to (SLIDE(0.2,0.45), 0.0);
-  curve_to (SLIDE(0.2,0.45), 0.38,
+  line_to (MIDS, 0);
+  line_to (MIDS, 1.0);
+  line_to (1.0-MIDS, 1.0);
+  line_to (1.0-MIDS, 0);
+  new_path ();
+  line_to (0, 1.0-MIDS);
+  line_to (1, 1.0-MIDS);
+  line_to (1, MIDS);
+  line_to (0, MIDS);
+  name ("middleCross");
+
+  NEW
+  line_to (1, SLIDE(0, 0.83));
+  curve_to (SLIDE(1, 0.65), SLIDE(0, 0.64),
+            SLIDE(0.6, 0.525), SLIDE( 0, 0.45),
+            SLIDE(0.6,0.525), 0);
+  line_to (SLIDE(0.2,0.475), 0.0);
+  curve_to (SLIDE(0.2,0.475), 0.38,
             0.56, 0.70,
             1, 0.9);
   new_path ();
   line_to (0, 0.9);
   curve_to (SLIDE(0.44, 0.44), 0.70,
-            SLIDE(0.90,0.55), 0.2,
-            SLIDE(0.90,0.55), 0);
-  line_to (SLIDE(0.38, 0.45), 0);
-  line_to (0, SLIDE(0.0, 0.75));
+            SLIDE(0.90,0.525), SLIDE(0.2, 0.38),
+            SLIDE(0.90,0.525), 0);
+  line_to (SLIDE(0.38, 0.475), 0);
+  curve_to (SLIDE(0.38, 0.475), SLIDE(0, 0.45),
+            SLIDE(0, 0.35), SLIDE(0, 0.64),
+            0, SLIDE(0.0, SLIDE(0.75, 0.83)));
   name ("v13");
   rot90 ();
   name ("v17");
