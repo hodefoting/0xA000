@@ -385,6 +385,20 @@ int main (int argc, char **argv)
   rot90 ();
   name ("c8b");
 
+
+  NEW
+  line_to (0, SLIDE(THICKA,THICKB));
+  line_to (SLIDE(THICKA,THICKB), SLIDE(THICKA,THICKB));
+  line_to (SLIDE(THICKA,THICKB), 0);
+  line_to (0, 0);
+  name ("box1");
+  rot90 ();
+  name ("box3");
+  rot90 ();
+  name ("box9");
+  rot90 ();
+  name ("box7");
+
   NEW
   line_to (0, SLIDE(THICKA,THICKB));
   line_to (1, SLIDE(THICKA,THICKB));
@@ -402,18 +416,6 @@ int main (int argc, char **argv)
   name ("solidNorthEast");
   rot90 ();
   name ("solidNorthWest");
-
-  NEW
-  line_to (0, 1);
-  line_to (1, 1);
-  line_to (1, (1.0-SLIDE(THICKA,THICKB)));
-  line_to (0, (1.0-SLIDE(THICKA,THICKB)));
-  new_path();
-  line_to (0, (1.0-SLIDE(THICKA,THICKB)));
-  line_to (0, 1);
-  line_to (SLIDE(THICKA,THICKB), 1);
-  line_to (SLIDE(THICKA,THICKB), (1.0-SLIDE(THICKA,THICKB)));
-  name ("solidSouthWest5");
 
   NEW
   line_to (0, SLIDE(0.1, 0.1));
@@ -494,6 +496,20 @@ int main (int argc, char **argv)
   name ("v79");
   rot90 ();
   name ("v39");
+
+  NEW
+  line_to (0, 1);
+  line_to (1, 1);
+  line_to (1, (1.0-SLIDE(THICKA,THICKB)));
+  line_to (0, (1.0-SLIDE(THICKA,THICKB)));
+  new_path();
+  line_to (0, (1.0-SLIDE(THICKA,THICKB)));
+  line_to (0, 1);
+  line_to (SLIDE(THICKA,THICKB), 1);
+  line_to (SLIDE(THICKA,THICKB), (1.0-SLIDE(THICKA,THICKB)));
+  name ("solidSouthWest5");
+
+  NEW
 
   fprintf (stdout, "\n{ circle\n");
   {
