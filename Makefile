@@ -52,13 +52,13 @@ components-regular.asc: wgen
 components-medium.asc: wgen
 	./wgen 0.3 > components-medium.asc      # 500
 components-semibold.asc: wgen
-	./wgen 0.2 > components-semibold.asc    # 600
+	./wgen 0.15 > components-semibold.asc    # 600
 components-bold.asc: wgen 
-	./wgen 0.1 > components-bold.asc        # 700
+	./wgen 0.0 > components-bold.asc        # 700
 components-extra-bold.asc: wgen 
-	./wgen 0.0 > components-extra-bold.asc # 800
+	./wgen -0.125 > components-extra-bold.asc # 800
 components-heavy.asc: wgen 
-	./wgen -0.25 > components-heavy.asc      # 800
+	./wgen -0.3  > components-heavy.asc      # 800
 components-ultra-black.asc: wgen 
 	./wgen -0.5 > components-ultra-black.asc # 900
 
