@@ -173,6 +173,7 @@ int main (int argc, char **argv)
   line_to (1, 0);
   line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
   line_to (0.0, (1.0-SLIDE(THICKA,THICKB)));
+  name ("foo");
   rot90 ();
   rot90 ();
   name ("lsw");
@@ -418,11 +419,15 @@ int main (int argc, char **argv)
   name ("solidNorthWest");
 
   NEW
-  line_to (0, SLIDE(0.1, 0.1));
-  line_to (0, SLIDE(1.0, 0.2));
-  line_to (1, SLIDE(0.9, 0.9));
-  line_to (1, SLIDE(0, 0.8));
-  name ("specialS");
+  line_to (0, SLIDE(0.0, 0.0));
+  line_to (0, SLIDE(THICKA, THICKB));
+  curve_to (SLIDE(0.15, 0.15), SLIDE(THICKA, THICKB),
+            SLIDE(0.85, 0.85), 0,
+            1, 0);
+  name ("specialSa");
+  rot90 ();
+  rot90 ();
+  name ("specialSb");
 
   NEW
   line_to (0, SLIDE(0, 0));

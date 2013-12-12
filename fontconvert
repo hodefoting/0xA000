@@ -7,6 +7,8 @@
 
 import sys, os
 import fontforge
+import psMat
+import math
 import optparse
 
 # print 'ARGV      :', sys.argv[1:]
@@ -62,12 +64,18 @@ basename, ext = os.path.splitext(filename)
 
 font.selection.all();
 font.removeOverlap();
+# this makes the font oblique;- which is what we want..
+#font.transform(psMat.skew(0.2))
 font.selection.all();
 font.simplify();
+
+
 font.selection.all();
 font.addExtrema();
 font.selection.all();
 font.simplify();
+font.selection.all();
+
 font.selection.all();
 font.autoHint();
 
