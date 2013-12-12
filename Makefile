@@ -35,11 +35,6 @@ all: .dep \
 		 Tech.html                     \
 		 index.html test.html 
 
-#    0xA000-Tiled.ttf    	         \
-#    0xA000-Edit-Mono.ttf          \
-		 0xA000-Pen.ttf        				 \
-		 0xA000-Pen-Mono.ttf           \
-
 
 components-ultralight.asc: wgen 
 	./wgen 1.0 > components-ultralight.asc  # 100
