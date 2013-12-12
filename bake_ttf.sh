@@ -2,7 +2,19 @@
 
 rm -rf $1.ufo
 fontile $1.asc
+
+# do kerning if the font file contains kernagic instructions
+grep kernagic-options $1.asc && (
+ KOPTIONS=`grep kernagic-options $1.asc | sed s/.*kernagic-options://`
+ rm -rf input.ufo
+ cp -rv $1.ufo input.ufo
+ kernagic $KOPTIONS input.ufo -o $1.ufo
+ rm -rf input.ufo
+)
+
 ./fontconvert $1.ufo -t > /dev/null 2>&1
+
+# build per variant specimen page for TTF
 
 echo "<style>@font-face {font-family:'custom'; src: url('$1.ttf');}</style>" > $1.content
 

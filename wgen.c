@@ -49,8 +49,6 @@ void rot90 (void) /* rotates shape in unit square 90 degrees */
     }
 }
 
-
-
 void vertex (char type, float x, float y)
 {
   shape[n_vertex].type = type;
