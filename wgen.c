@@ -256,6 +256,19 @@ int main (int argc, char **argv)
   rot90 ();
   name ("ve2");
 
+  NEW
+  line_to (1, 1);
+  line_to (1, 0);
+  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
+  line_to ((1.0-SLIDE(THICKA,THICKB))-0.25, 0);
+  line_to ((1.0-SLIDE(THICKA,THICKB))-0.25, 0.01);
+  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
+  line_to ((1.0-SLIDE(THICKA,THICKB)), 1);
+  name ("ihack");
+
+  /* this micro serif is a hack to escape abduction from the
+   * baseline
+   */
 
   NEW
   line_to (0, 1);

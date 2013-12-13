@@ -43,11 +43,11 @@ components-thin.asc: wgen
 components-light.asc: wgen
 	./wgen 0.6 > components-light.asc       # 300
 components-regular.asc: wgen
-	./wgen 0.4 > components-regular.asc     # 400
+	./wgen 0.5 > components-regular.asc     # 400
 components-medium.asc: wgen
-	./wgen 0.3 > components-medium.asc      # 500
+	./wgen 0.333 > components-medium.asc      # 500
 components-semibold.asc: wgen
-	./wgen 0.15 > components-semibold.asc    # 600
+	./wgen 0.166 > components-semibold.asc    # 600
 components-bold.asc: wgen 
 	./wgen 0.0 > components-bold.asc        # 700
 components-extra-bold.asc: wgen 
