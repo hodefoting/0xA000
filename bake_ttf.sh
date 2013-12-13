@@ -18,8 +18,8 @@ grep ttfautohint-options $1.asc && (
  TTFAHOPTIONS=`grep ttfautohint-options $1.asc | sed s/.*ttfautohint-options://`
  cp $1.ttf temp$1.ttf
  ttfautohint $TTFAHOPTIONS temp$1.ttf $1.ttf
+ rm temp$1.ttf
 )
- #rm temp$1.ttf
 
 # build per variant specimen page for TTF
 
