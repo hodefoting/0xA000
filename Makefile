@@ -1,34 +1,8 @@
 
+FONTS=$(shell cat fonts.list | sed s/$$/.ttf/)
+
 all: .dep \
-	   0xA000.ttf    				         \
-		 0xA000-Contrast.ttf           \
-		 0xA000-Contrast-Mono.ttf      \
-		 0xA000-Ultralight.ttf         \
-		 0xA000-Thin.ttf               \
-		 0xA000-Light.ttf              \
-		 0xA000-Semibold.ttf           \
-		 0xA000-Extra-Bold.ttf         \
-		 0xA000-Ultra-Black.ttf        \
-		 0xA000-Bold.ttf               \
-		 0xA000-Heavy.ttf              \
-		 0xA000-Mono.ttf       				 \
-		 0xA000-Mono-Bold.ttf          \
-		 0xA000-Mono-Thin.ttf          \
-		 0xA000-Mono-Light.ttf         \
-		 0xA000-Mono-Semibold.ttf      \
-	   0xA000-Pixelated.ttf  				 \
-	   0xA000-Pixelated-Mono.ttf     \
-	   0xA000-Square.ttf     				 \
-	   0xA000-Squareish.ttf  				 \
-	   0xA000-Square-Bold.ttf     	 \
-	   0xA000-Squareish-Bold.ttf  	 \
-	   0xA000-Squareish-Mono.ttf  	\
-	   0xA000-Boxes.ttf      				 \
-		 0xA000-Boxes-Mono.ttf         \
-	   0xA000-Dots.ttf 				       \
-		 0xA000-Dots-Mono.ttf          \
-	   0xA000-Monochrome.ttf 				 \
-	   0xA000-Monochrome-Mono.ttf    \
+	   $(FONTS) \
 		 0xA000.zip										 \
 		 \
 		 Glyphs.html                   \
