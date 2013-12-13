@@ -36,25 +36,25 @@ all: .dep \
 		 index.html test.html 
 
 
-components-ultralight.asc: wgen 
+components-ultralight.asc: wgen  Makefile
 	./wgen 1.0 > components-ultralight.asc  # 100
-components-thin.asc: wgen 
+components-thin.asc: wgen  Makefile
 	./wgen 0.8 > components-thin.asc        # 200
-components-light.asc: wgen
+components-light.asc: wgen Makefile
 	./wgen 0.6 > components-light.asc       # 300
-components-regular.asc: wgen
-	./wgen 0.5 > components-regular.asc     # 400
-components-medium.asc: wgen
+components-regular.asc: wgen Makefile
+	./wgen 0.45 > components-regular.asc     # 400
+components-medium.asc: wgen Makefile
 	./wgen 0.333 > components-medium.asc      # 500
-components-semibold.asc: wgen
+components-semibold.asc: wgen Makefile
 	./wgen 0.166 > components-semibold.asc    # 600
-components-bold.asc: wgen 
+components-bold.asc: wgen  Makefile
 	./wgen 0.0 > components-bold.asc        # 700
-components-extra-bold.asc: wgen 
+components-extra-bold.asc: wgen  Makefile
 	./wgen -0.125 > components-extra-bold.asc # 800
-components-heavy.asc: wgen 
+components-heavy.asc: wgen  Makefile
 	./wgen -0.3  > components-heavy.asc      # 800
-components-ultra-black.asc: wgen 
+components-ultra-black.asc: wgen  Makefile
 	./wgen -0.5 > components-ultra-black.asc # 900
 
 CFLAGS += -O2 -g
