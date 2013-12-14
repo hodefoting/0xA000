@@ -17,19 +17,19 @@ components-thin.asc: wgen  Makefile
 components-light.asc: wgen Makefile
 	./wgen 0.6 > components-light.asc       # 300
 components-regular.asc: wgen Makefile
-	./wgen 0.45 > components-regular.asc     # 400
+	./wgen 0.4 > components-regular.asc     # 400
 components-medium.asc: wgen Makefile
-	./wgen 0.333 > components-medium.asc      # 500
+	./wgen 0.3 > components-medium.asc      # 500
 components-semibold.asc: wgen Makefile
-	./wgen 0.166 > components-semibold.asc    # 600
+	./wgen 0.2 > components-semibold.asc    # 600
 components-bold.asc: wgen  Makefile
-	./wgen 0.0 > components-bold.asc        # 700
+	./wgen 0.1 > components-bold.asc        # 700
 components-extra-bold.asc: wgen  Makefile
-	./wgen -0.125 > components-extra-bold.asc # 800
+	./wgen 0.0 > components-extra-bold.asc # 800
 components-heavy.asc: wgen  Makefile
-	./wgen -0.3  > components-heavy.asc      # 800
+	./wgen -0.1 > components-heavy.asc      # 800
 components-ultra-black.asc: wgen  Makefile
-	./wgen -0.5 > components-ultra-black.asc # 900
+	./wgen -0.3 > components-ultra-black.asc # 900
 
 CFLAGS += -O2 -g
 
