@@ -7,27 +7,30 @@ all: .dep \
 		 \
 		 Glyphs.html                   \
 		 Tech.html                     \
-		 index.html test.html 
+		 index.html test.html 0xA000.css
 
+0xA000.css: fonts.list
+	echo "" > $@
+	for a in `cat fonts.list`; do echo "@font-face {font-family:'"$$a"';src:url('"$$a".ttf');}" >> $@; done
 
 components-ultralight.asc: wgen  Makefile
 	./wgen 1.0 > components-ultralight.asc  # 100
 components-thin.asc: wgen  Makefile
-	./wgen 0.8 > components-thin.asc        # 200
+	./wgen 0.75 > components-thin.asc        # 200
 components-light.asc: wgen Makefile
-	./wgen 0.6 > components-light.asc       # 300
+	./wgen 0.5 > components-light.asc       # 300
 components-regular.asc: wgen Makefile
-	./wgen 0.4 > components-regular.asc     # 400
+	./wgen 0.3 > components-regular.asc     # 400
 components-medium.asc: wgen Makefile
-	./wgen 0.3 > components-medium.asc      # 500
+	./wgen 0.2 > components-medium.asc      # 500
 components-semibold.asc: wgen Makefile
-	./wgen 0.2 > components-semibold.asc    # 600
+	./wgen 0.1 > components-semibold.asc    # 600
 components-bold.asc: wgen  Makefile
-	./wgen 0.1 > components-bold.asc        # 700
+	./wgen 0.0 > components-bold.asc        # 700
 components-extra-bold.asc: wgen  Makefile
-	./wgen 0.0 > components-extra-bold.asc # 800
+	./wgen -0.1 > components-extra-bold.asc # 800
 components-heavy.asc: wgen  Makefile
-	./wgen -0.1 > components-heavy.asc      # 800
+	./wgen -0.2 > components-heavy.asc      # 800
 components-ultra-black.asc: wgen  Makefile
 	./wgen -0.3 > components-ultra-black.asc # 900
 
@@ -73,7 +76,7 @@ wgen: wgen.c
 	gcc wgen.c -o wgen
 
 fonts.head: fonts.list Makefile
-	echo "<table><tr><td valign='top'><a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:3.5em'>0xA000</a><br/><span style='font-family:"0xA000";font-size:11px'>Metamorphic-modular font-family.<ul><li>Sans sharp at small sizes</li><li>Minimalistic geometry</li><li>Extended Latin Support</li><li>Dedicated mono-space design</li></ul></span></td><td valign='top'><div style='font-size:1.5em;margin:0 0 0 0;'>" > fonts.head
+	echo "<table><tr><td valign='top'><a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:3.5em'>0xA000</a><br/><span style='font-family:"0xA000";font-size:11px'>Metamorphic-modular font-family.<ul><li><a href='small-sizes.html'>Sans sharp at small sizes</a></li><li>Minimalistic geometry</li><li>Extended Latin Support</li><li>Dedicated mono-space design</li></ul></span></td><td valign='top'><div style='font-size:1.5em;margin:0 0 0 0;'>" > fonts.head
 	for a in `cat fonts.list`;do \
 		echo "<a style='font-family:\"$$a\";' href='$$a.html'>`echo $$a | sed s/0xA000-// | sed s/0xA000/Regular/`</a> " >> fonts.head;\
 	done;\

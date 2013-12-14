@@ -1,42 +1,5 @@
-@font-face {font-family:'0xA000'; src: url('0xA000.ttf');}
-@font-face {font-family:'0xA000-Thin'; src: url('0xA000-Thin.ttf');}
-@font-face {font-family:'0xA000-Medium'; src: url('0xA000-Medium.ttf');}
-@font-face {font-family:'0xA000-Light'; src: url('0xA000-Light.ttf');}
-@font-face {font-family:'0xA000-Heavy'; src: url('0xA000-Heavy.ttf');}
-@font-face {font-family:'0xA000-Ultralight'; src: url('0xA000-Ultralight.ttf');}
-@font-face {font-family:'0xA000-Bold'; src: url('0xA000-Bold.ttf');}
-@font-face {font-family:'0xA000-Semibold'; src: url('0xA000-Semibold.ttf');}
-@font-face {font-family:'0xA000-Extra-Bold'; src: url('0xA000-Extra-Bold.ttf');}
-@font-face {font-family:'0xA000-Ultra-Black'; src: url('0xA000-Ultra-Black.ttf');}
-@font-face {font-family:'0xA000-Contrast'; src: url('0xA000-Contrast.ttf');}
-@font-face {font-family:'0xA000-Contrast-Mono'; src: url('0xA000-Contrast-Mono.ttf');}
-@font-face {font-family:'0xA000-Square'; src: url('0xA000-Square.ttf');}
-@font-face {font-family:'0xA000-Squareish'; src: url('0xA000-Squareish.ttf');}
-@font-face {font-family:'0xA000-Square-Bold'; src: url('0xA000-Square-Bold.ttf');}
-@font-face {font-family:'0xA000-Squareish-Bold'; src: url('0xA000-Squareish-Bold.ttf');}
-@font-face {font-family:'0xA000-Squareish-Mono'; src: url('0xA000-Squareish-Mono.ttf');}
-@font-face {font-family:'0xA000'; font-weight: bold; src: url('0xA000-Bold.ttf');}
-@font-face {font-family:'0xA000-Tiled'; src: url('0xA000-Tiled.ttf'); }
-@font-face {font-family:'0xA000-Mono';              src: url('0xA000-Mono.ttf');}
-@font-face {font-family:'0xA000-Mono'; font-weight: bold; src: url('0xA000-Mono.ttf');}
-@font-face {font-family:'0xA000-Mono-Bold';         src: url('0xA000-Mono-Bold.ttf');}
-@font-face {font-family:'0xA000-Mono-Medium';         src: url('0xA000-Mono-Medium.ttf');}
-@font-face {font-family:'0xA000-Mono-Semibold';         src: url('0xA000-Mono-Semibold.ttf');}
-@font-face {font-family:'0xA000-Mono-Light';         src: url('0xA000-Mono-Light.ttf');}
-@font-face {font-family:'0xA000-Mono-Thin';         src: url('0xA000-Mono-Thin.ttf');}
-@font-face {font-family:'0xA000-Mono-Semibold';         src: url('0xA000-Mono-Semibold.ttf');}
-@font-face {font-family:'0xA000-Pixelated'; src: url('0xA000-Pixelated.ttf');}
-@font-face {font-family:'0xA000-Pixelated-Mono';    src: url('0xA000-Pixelated-Mono.ttf');}
-@font-face {font-family:'0xA000-Boxes-Mono';        src: url('0xA000-Boxes-Mono.ttf');}
-@font-face {font-family:'0xA000-Boxes';     src: url('0xA000-Boxes.ttf');}
-@font-face {font-family:'0xA000-Dots';      src: url('0xA000-Dots.ttf');}
-@font-face {font-family:'0xA000-Dots-Mono';         src: url('0xA000-Dots-Mono.ttf');}
-@font-face {font-family:'0xA000-Pen';       src: url('0xA000-Pen.ttf');}
-@font-face {font-family:'0xA000-Pen-Mono';          src: url('0xA000-Pen-Mono.ttf');}
-@font-face {font-family:'0xA000-Monochrome';src: url('0xA000-Monochrome.ttf');}
-@font-face {font-family:'0xA000-Monochrome-Mono';src: url('0xA000-Monochrome-Mono.ttf');}
 
-
+@import url('0xA000.css');
 
 body       {font-family: '0xA000', 'Sans'; font-size: 21px;
             background-color: #f7f7f7; }

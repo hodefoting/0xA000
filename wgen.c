@@ -273,20 +273,6 @@ int main (int argc, char **argv)
   name ("ve2");
 
   NEW
-  line_to (1, 1);
-  line_to (1, 0);
-  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
-  line_to ((1.0-SLIDE(THICKA,THICKB))-0.25, 0);
-  line_to ((1.0-SLIDE(THICKA,THICKB))-0.25, 0.01);
-  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
-  line_to ((1.0-SLIDE(THICKA,THICKB)), 1);
-  name ("ihack");
-
-  /* this micro serif is a hack to escape abduction from the
-   * baseline
-   */
-
-  NEW
   line_to (0, 1);
   line_to (1, 1);
   line_to (1, (1.0-SLIDE(THICKA,THICKB)));
@@ -535,51 +521,51 @@ int main (int argc, char **argv)
   fprintf (stdout, "\n{ circle\n");
   {
     float scale = SLIDE (0.85, 0.2);
-    vertex_scaled ('c', 0.11, 0.29, scale);
-    vertex_scaled ('c', 0.29, 0.11, scale);
-    vertex_scaled ('C', 0.50, 0.11, scale);
-    vertex_scaled ('c', 0.71, 0.11, scale);
-    vertex_scaled ('c', 0.89, 0.29, scale);
-    vertex_scaled ('C', 0.89, 0.50, scale);
-    vertex_scaled ('c', 0.89, 0.71, scale);
-    vertex_scaled ('c', 0.71, 0.89, scale);
-    vertex_scaled ('C', 0.50, 0.89, scale);
-    vertex_scaled ('c', 0.29, 0.89, scale);
     vertex_scaled ('c', 0.11, 0.71, scale);
+    vertex_scaled ('c', 0.29, 0.89, scale);
+    vertex_scaled ('C', 0.50, 0.89, scale);
+    vertex_scaled ('c', 0.71, 0.89, scale);
+    vertex_scaled ('c', 0.89, 0.71, scale);
+    vertex_scaled ('C', 0.89, 0.50, scale);
+    vertex_scaled ('c', 0.89, 0.29, scale);
+    vertex_scaled ('c', 0.71, 0.11, scale);
+    vertex_scaled ('C', 0.50, 0.11, scale);
+    vertex_scaled ('c', 0.29, 0.11, scale);
+    vertex_scaled ('c', 0.11, 0.29, scale);
     vertex_scaled ('C', 0.11, 0.50, scale);
   }
 
   fprintf (stdout, "\n{ circlec\n");
   {
     float scale = SLIDE (0.85, 0.2);
-    vertex_scaled2 ('c', 0.11, 0.29, scale);
-    vertex_scaled2 ('c', 0.29, 0.11, scale);
-    vertex_scaled2 ('C', 0.50, 0.11, scale);
-    vertex_scaled2 ('c', 0.71, 0.11, scale);
-    vertex_scaled2 ('c', 0.89, 0.29, scale);
-    vertex_scaled2 ('C', 0.89, 0.50, scale);
-    vertex_scaled2 ('c', 0.89, 0.71, scale);
-    vertex_scaled2 ('c', 0.71, 0.89, scale);
-    vertex_scaled2 ('C', 0.50, 0.89, scale);
-    vertex_scaled2 ('c', 0.29, 0.89, scale);
     vertex_scaled2 ('c', 0.11, 0.71, scale);
+    vertex_scaled2 ('c', 0.29, 0.89, scale);
+    vertex_scaled2 ('C', 0.50, 0.89, scale);
+    vertex_scaled2 ('c', 0.71, 0.89, scale);
+    vertex_scaled2 ('c', 0.89, 0.71, scale);
+    vertex_scaled2 ('C', 0.89, 0.50, scale);
+    vertex_scaled2 ('c', 0.89, 0.29, scale);
+    vertex_scaled2 ('c', 0.71, 0.11, scale);
+    vertex_scaled2 ('C', 0.50, 0.11, scale);
+    vertex_scaled2 ('c', 0.29, 0.11, scale);
+    vertex_scaled2 ('c', 0.11, 0.29, scale);
     vertex_scaled2 ('C', 0.11, 0.50, scale);
   }
 
   fprintf (stdout, "\n{ circlecl\n");
   {
     float scale = SLIDE (0.85, 0.2);
-    vertex_scaled3 ('c', 0.11, 0.29, scale);
-    vertex_scaled3 ('c', 0.29, 0.11, scale);
-    vertex_scaled3 ('C', 0.50, 0.11, scale);
-    vertex_scaled3 ('c', 0.71, 0.11, scale);
-    vertex_scaled3 ('c', 0.89, 0.29, scale);
-    vertex_scaled3 ('C', 0.89, 0.50, scale);
-    vertex_scaled3 ('c', 0.89, 0.71, scale);
-    vertex_scaled3 ('c', 0.71, 0.89, scale);
-    vertex_scaled3 ('C', 0.50, 0.89, scale);
-    vertex_scaled3 ('c', 0.29, 0.89, scale);
     vertex_scaled3 ('c', 0.11, 0.71, scale);
+    vertex_scaled3 ('c', 0.29, 0.89, scale);
+    vertex_scaled3 ('C', 0.50, 0.89, scale);
+    vertex_scaled3 ('c', 0.71, 0.89, scale);
+    vertex_scaled3 ('c', 0.89, 0.71, scale);
+    vertex_scaled3 ('C', 0.89, 0.50, scale);
+    vertex_scaled3 ('c', 0.89, 0.29, scale);
+    vertex_scaled3 ('c', 0.71, 0.11, scale);
+    vertex_scaled3 ('C', 0.50, 0.11, scale);
+    vertex_scaled3 ('c', 0.29, 0.11, scale);
+    vertex_scaled3 ('c', 0.11, 0.29, scale);
     vertex_scaled3 ('C', 0.11, 0.50, scale);
   }
 
