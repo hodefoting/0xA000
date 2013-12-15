@@ -40,8 +40,8 @@ for a in `ls $1.ufo/glyphs -1 | sort | uniq | sed s/\.glif//`; do
   description=`echo $line|cut -f 2 -d ';'`
   if [ -n "$description" ]; then
     echo "
-    <div style='float: left; display: box-inline; width: 4em; height: 6em; border: 0px solid red;'>
-      <center><span style='font-size: 4em; border: 1px solid gray; font-family:custom'>&#x$a;</span></center>
+    <div style='float: left; display: box-inline; width: 3em; height: 5em; border: 0px solid red;'>
+      <center><span style='font-size: 3em; border: 1px solid gray; font-family:custom'>&#x$a;</span></center>
     </div>" >> $1.content
   fi
 done
