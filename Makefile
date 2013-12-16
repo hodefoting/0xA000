@@ -9,7 +9,7 @@ all: .dep \
 		 Tech.html                     \
 		 index.html test.html 0xA000.css
 
-0xA000.spacing: 0xA000-Ultralight.ttf
+0xA000.spacing: 0xA000.ttf
 	cp 0xA000.spacing~ 0xA000.spacing
 
 0xA000.css: fonts.list
