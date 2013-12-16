@@ -9,6 +9,9 @@ all: .dep \
 		 Tech.html                     \
 		 index.html test.html 0xA000.css
 
+0xA000.spacing: 0xA000-Ultralight.ttf
+	cp 0xA000.spacing~ 0xA000.spacing
+
 0xA000.css: fonts.list
 	echo "" > $@
 	for a in `cat fonts.list`; do echo "@font-face {font-family:'"$$a"';src:url('"$$a".ttf');}" >> $@; done
