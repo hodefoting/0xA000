@@ -9,7 +9,7 @@ all: .dep \
 		 Tech.html                     \
 		 index.html test.html 0xA000.css
 
-0xA000.spacing: 0xA000.ttf
+0xA000.spacing: 0xA000spacing.ttf
 	cp 0xA000.spacing~ 0xA000.spacing
 
 0xA000.css: fonts.list
@@ -19,23 +19,23 @@ all: .dep \
 components-ultralight.asc: wgen  Makefile
 	./wgen 1.0 > components-ultralight.asc  # 100
 components-thin.asc: wgen  Makefile
-	./wgen 0.75 > components-thin.asc        # 200
+	./wgen 0.8  > components-thin.asc        # 200
 components-light.asc: wgen Makefile
-	./wgen 0.5 > components-light.asc       # 300
+	./wgen 0.6 > components-light.asc       # 300
 components-regular.asc: wgen Makefile
-	./wgen 0.3 > components-regular.asc     # 400
+	./wgen 0.4 > components-regular.asc     # 400
 components-medium.asc: wgen Makefile
-	./wgen 0.2 > components-medium.asc      # 500
+	./wgen 0.3  > components-medium.asc      # 500
 components-semibold.asc: wgen Makefile
-	./wgen 0.1 > components-semibold.asc    # 600
+	./wgen 0.2 > components-semibold.asc    # 600
 components-bold.asc: wgen  Makefile
-	./wgen 0.0 > components-bold.asc        # 700
+	./wgen 0.1 > components-bold.asc        # 700
 components-extra-bold.asc: wgen  Makefile
-	./wgen -0.1 > components-extra-bold.asc # 800
+	./wgen 0.0 > components-extra-bold.asc # 800
 components-heavy.asc: wgen  Makefile
-	./wgen -0.2 > components-heavy.asc      # 800
+	./wgen -0.1 > components-heavy.asc      # 800
 components-ultra-black.asc: wgen  Makefile
-	./wgen -0.3 > components-ultra-black.asc # 900
+	./wgen -0.2 > components-ultra-black.asc # 900
 
 CFLAGS += -O2 -g
 

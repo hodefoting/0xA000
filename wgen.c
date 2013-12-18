@@ -161,7 +161,6 @@ int main (int argc, char **argv)
   name ("lne2");
   rot90 ();
   name ("lnw2");
-  name ("lnw3");
 
   NEW
   line_to (0, SLIDE(THICKA,THICKB));
@@ -198,12 +197,27 @@ int main (int argc, char **argv)
   line_to (1, SLIDE(THICKA,THICKB));
   line_to (1, 0);
   line_to (0, 0);
-
   name ("lse3");
-  /*
   rot90();
+  name ("lne3");
   rot90();
-  name ("lnw3");*/
+  name ("lnw3");
+  rot90();
+  name ("lsw3");
+
+
+  NEW
+  line_to (0, 1);
+  line_to (1, 0);
+  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
+  line_to (0.0, (1.0-SLIDE(THICKA,THICKB)));
+  rot90 ();
+  new_path ();
+  line_to (SLIDE(THICKA,THICKB), 1);
+  line_to (SLIDE(THICKA,THICKB), 0);
+  line_to (0,                    0);
+  line_to (0,                    1);
+  name ("llv");
 
 
   NEW
