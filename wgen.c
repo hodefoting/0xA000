@@ -529,8 +529,24 @@ int main (int argc, char **argv)
   rot90 ();
   name ("v39");
 
+  NEW
+  line_to (0.000000, 0.900000);
+  curve_to (0.440000, 0.700000,
+            0.730000, 0.380000,
+            0.900000, 0.000000);
+  line_to (SLIDE(0.000000, 0.83), 0.000000);
+  curve_to (SLIDE (0.000000, 0.72), SLIDE (0.000000, 0.3),
+            SLIDE (0, 0.3), SLIDE (0, 0.72),
+            SLIDE (0, 0), SLIDE (0, 0.83));
+  new_path ();
+  line_to (0.000000, 0.000000);
+  line_to (1.000000, 1.000000);
+  line_to (1.000000, SLIDE (0.28, 0.950000));
+  line_to (SLIDE(0.72, 0.050000), 0.000000);
+  name ("cnes");
 
   NEW
+
 
   fprintf (stdout, "\n{ circle\n");
   {
