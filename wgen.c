@@ -205,21 +205,6 @@ int main (int argc, char **argv)
   rot90();
   name ("lsw3");
 
-
-  NEW
-  line_to (0, 1);
-  line_to (1, 0);
-  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
-  line_to (0.0, (1.0-SLIDE(THICKA,THICKB)));
-  rot90 ();
-  new_path ();
-  line_to (SLIDE(THICKA,THICKB), 1);
-  line_to (SLIDE(THICKA,THICKB), 0);
-  line_to (0,                    0);
-  line_to (0,                    1);
-  name ("llv");
-
-
   NEW
   line_to ((1.0-SLIDE(THICKA,THICKB)),       0);
   curve_to (SLIDE(0.27,0.95), SLIDE(0.13, 0.51),
