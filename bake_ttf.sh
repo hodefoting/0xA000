@@ -2,6 +2,7 @@
 
 rm -rf $1.ufo
 fontile $1.asc
+#cp feature.fea $1.ufo
 
 # do kerning if the font file contains kernagic instructions
 grep kernagic-options $1.asc && (
@@ -12,7 +13,7 @@ grep kernagic-options $1.asc && (
  rm -rf input$1.ufo
 )
 
-./fontconvert $1.ufo -t > /dev/null 2>&1
+./fontconvert $1.ufo -t # > /dev/null 2>&1
 
 grep ttfautohint-options $1.asc && (
  TTFAHOPTIONS=`grep ttfautohint-options $1.asc | sed s/.*ttfautohint-options://`

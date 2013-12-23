@@ -45,7 +45,7 @@ CFLAGS += -O2 -g
 						0xA000-Boxes.ttf 0xA000-Boxes-Mono.ttf
 	zip $@ *.ttf LICENSE.OFL
 
-%.ttf: %.asc bake_ttf.sh
+%.ttf: %.asc bake_ttf.sh feature.fea
 	./bake_ttf.sh `echo $< | sed s/\.asc//`
 
 %.html: %.content head.html
