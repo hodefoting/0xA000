@@ -26,10 +26,9 @@ grep ttfautohint-options $1.asc && (
 
 echo "<style>@font-face {font-family:'custom'; src: url('$1.ttf');}</style>" > $1.content
 
-echo "<h2 style='font-family:"custom";' contenteditable='true'>
-  fix problem quickly with galvanized jets
+echo "<h2 style='font-family:"custom"; font-size:40px;' contenteditable='true'>
+  fix problem quickly with galvanized jets<br/>
   THE FIVE BOXING WIZARDS JUMP QUICKLY
-  ꜰᴇᴡ ʙʟᴀᴄᴋ ᴛᴀᴚɪꜱ ᴅʀɪᴠᴇ ᴜᴘ ᴍᴀᴊᴏʀ ʀᴏᴀᴅꜱ ᴏɴ ʜᴀᴢʏ Ǫᴜɪᴇᴛ ɴɪɢʜᴛꜱ
 </h2>" >> $1.content
 
 echo "<h2 style='font-family:\"custom\";'><a href='$1.ttf' style='font-family:\"custom\"'>$1.ttf</a> (`ls -sh $1.ttf | cut -f 1 -d ' '`)</h2>" >> $1.content 
