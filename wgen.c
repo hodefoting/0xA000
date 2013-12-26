@@ -152,8 +152,8 @@
 
   NEW
   line_to (0, SLIDE(0.72,0.35));
-  line_to (SLIDE(0.66,0.53), 0);
-  line_to (SLIDE(0.4,0.47),  0);
+  line_to (SLIDE(0.88,0.53), 0);
+  line_to (SLIDE(0.12,0.47),  0);
   line_to (0, SLIDE(0.1,0.30));
   name ("specialSa");
   rot90 ();
