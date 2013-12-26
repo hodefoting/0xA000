@@ -141,10 +141,10 @@
       MORPH = atof (argv[1]);
 
     NEW
-    line_to (SLIDE(0,0), SLIDE(0.22, 0.475));
-    line_to (SLIDE(0.28, 0.95), 0);
-    line_to (1.0, 0);
     line_to (0.0, SLIDE(0.78, 0.525));
+    line_to (1.0, 0);
+    line_to (SLIDE(0.28, 0.95), 0);
+    line_to (SLIDE(0,0), SLIDE(0.22, 0.475));
     name ("specials2");
     rot90 ();
     rot90 ();
