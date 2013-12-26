@@ -1,3 +1,9 @@
 *.ttf
 *.o
 *.ufo
+*.html
+0xA000*.content
+.dep
+0xA000.zip
+0xA000.spacing
+0xA000.spacing~

@@ -3,17 +3,14 @@
    */
 #include <stdlib.h>
 
-  //#define SLIDE(THICKA,THICKB) 0.15
-  //#define SLIDE(THICKA,THICKB) 0.72
+  //#define SLIDE(0.72,0.05) 0.15
+  //#define SLIDE(0.72,0.05) 0.72
   //
   //#define MORPH      0.3
   //
   float MORPH = 0.8;
   //#define MORPH      0.8
 #define SLIDE(VALA, VALB)  (MORPH * VALB + (1.0-MORPH)* VALA)
-
-#define THICKA  0.72
-#define THICKB  0.05
 
   /* helper generator script for generating correctly winded symmetric shapes
    * for the 0xA000 palette.
@@ -153,18 +150,38 @@
     rot90 ();
     name ("specials1");
 
-    NEW
-    line_to (0, 1.0);
-    line_to (1.0, 0);
-    line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
-    line_to (0.0, (1.0-SLIDE(THICKA,THICKB)));
-    name ("lne2");
-    rot90 ();
-    name ("lnw2");
+  NEW
+  line_to (0, SLIDE(0.72,0.35));
+  line_to (SLIDE(0.66,0.53), 0);
+  line_to (SLIDE(0.4,0.47),  0);
+  line_to (0, SLIDE(0.1,0.30));
+  name ("specialSa");
+  rot90 ();
+  rot90 ();
+  name ("specialSb");
 
-    NEW
-    line_to (0, SLIDE(THICKA,THICKB));
-  line_to (SLIDE(THICKA,THICKB), 0);
+  NEW
+  line_to (0, SLIDE(0.9,0.7));
+  line_to (1, 0);
+  line_to (SLIDE(0.28,0.95), 0);
+  line_to (0.0, SLIDE(0.28,0.65));
+  name ("foo");
+  rot90 ();
+  rot90 ();
+  name ("bar");
+
+  NEW
+  line_to (0, 1.0);
+  line_to (1.0, 0);
+  line_to ((1.0-SLIDE(0.72,0.05)), 0);
+  line_to (0.0, (1.0-SLIDE(0.72,0.05)));
+  name ("lne2");
+  rot90 ();
+  name ("lnw2");
+
+  NEW
+  line_to (0, SLIDE(0.72,0.05));
+  line_to (SLIDE(0.72,0.05), 0);
   line_to (0, 0);
   line_to (0.0, 0);
   rot90 ();
@@ -174,8 +191,8 @@
   name ("lse2");
 
   NEW
-  line_to (0, SLIDE(THICKA,THICKB));
-  line_to (SLIDE(THICKA,THICKB), 0);
+  line_to (0, SLIDE(0.72,0.05));
+  line_to (SLIDE(0.72,0.05), 0);
   line_to (0, 0);
   name ("lne");
   rot90 ();
@@ -184,17 +201,16 @@
   NEW
   line_to (0, 1);
   line_to (1, 0);
-  line_to ((1.0-SLIDE(THICKA,THICKB)), 0);
-  line_to (0.0, (1.0-SLIDE(THICKA,THICKB)));
-  name ("foo");
+  line_to ((1.0-SLIDE(0.72,0.05)), 0);
+  line_to (0.0, (1.0-SLIDE(0.72,0.05)));
   rot90 ();
   rot90 ();
   name ("lsw");
   rot90 ();
   name ("lse");
   new_path ();
-  line_to (0, SLIDE(THICKA,THICKB));
-  line_to (1, SLIDE(THICKA,THICKB));
+  line_to (0, SLIDE(0.72,0.05));
+  line_to (1, SLIDE(0.72,0.05));
   line_to (1, 0);
   line_to (0, 0);
   name ("lse3");
@@ -206,7 +222,7 @@
   name ("lsw3");
 
   NEW
-  line_to ((1.0-SLIDE(THICKA,THICKB)),       0);
+  line_to ((1.0-SLIDE(0.72,0.05)),       0);
   curve_to (SLIDE(0.27,0.95), SLIDE(0.13, 0.51),
             SLIDE(0.17,0.51), SLIDE(0.27, 0.95),
             0,                SLIDE(0.27, 0.95));
@@ -241,7 +257,7 @@
 
 
   NEW
-  line_to (0, 1-SLIDE(THICKA,THICKB));
+  line_to (0, 1-SLIDE(0.72,0.05));
   line_to (0, 1);
   line_to (0.5, 0.5);
   line_to (1, 1);
@@ -274,8 +290,8 @@
   NEW
   line_to (0, 1);
   line_to (1, 1);
-  line_to (1, (1.0-SLIDE(THICKA,THICKB)));
-  line_to (0, (1.0-SLIDE(THICKA,THICKB)));
+  line_to (1, (1.0-SLIDE(0.72,0.05)));
+  line_to (0, (1.0-SLIDE(0.72,0.05)));
   name ("solidNorth");
   rot90 ();
   name ("solidWest");
@@ -312,8 +328,8 @@
            SLIDE(1,0.6), SLIDE(0.72,0.37),
            1, SLIDE(0.72,0.05));
   new_path ();
-  line_to (0, SLIDE(THICKA,THICKB));
-  line_to (1, SLIDE(THICKA,THICKB));
+  line_to (0, SLIDE(0.72,0.05));
+  line_to (1, SLIDE(0.72,0.05));
   line_to (1, 0);
   line_to (0, 0);
   name ("cj1");
@@ -337,8 +353,8 @@
             0.44, 0.30,
             0, 0.0);
   new_path ();
-  line_to (0, SLIDE(THICKA,THICKB));
-  line_to (1, SLIDE(THICKA,THICKB));
+  line_to (0, SLIDE(0.72,0.05));
+  line_to (1, SLIDE(0.72,0.05));
   line_to (1, 0);
   line_to (0, 0);
   name ("cj1b");
@@ -369,8 +385,8 @@
   NEW
   line_to (0.1, 0);
   curve_to (0.0, 0.49, 0.0, 0.65, 0.0, 1);
-  line_to (SLIDE(THICKA,THICKB), 1);
-  curve_to (SLIDE(THICKA,THICKB), 0.4,
+  line_to (SLIDE(0.72,0.05), 1);
+  curve_to (SLIDE(0.72,0.05), 0.4,
             SLIDE(0.79, 0.16), 0.3,
             SLIDE(1, 0.16), 0);
   name ("c4b");
@@ -384,8 +400,8 @@
   NEW
   line_to  (SLIDE(1, 0.16), 1);
   curve_to (SLIDE(0.79, 0.16), 0.7,
-            SLIDE(THICKA,THICKB), 0.6,
-            SLIDE(THICKA,THICKB), 0);
+            SLIDE(0.72,0.05), 0.6,
+            SLIDE(0.72,0.05), 0);
   line_to  (0.0, 0);
   curve_to (0.0, 0.35,
             0.0, 0.51,
@@ -400,9 +416,9 @@
 
 
   NEW
-  line_to (0, SLIDE(THICKA,THICKB));
-  line_to (SLIDE(THICKA,THICKB), SLIDE(THICKA,THICKB));
-  line_to (SLIDE(THICKA,THICKB), 0);
+  line_to (0, SLIDE(0.72,0.05));
+  line_to (SLIDE(0.72,0.05), SLIDE(0.72,0.05));
+  line_to (SLIDE(0.72,0.05), 0);
   line_to (0, 0);
   name ("box1");
   rot90 ();
@@ -413,15 +429,15 @@
   name ("box7");
 
   NEW
-  line_to (0, SLIDE(THICKA,THICKB));
-  line_to (1, SLIDE(THICKA,THICKB));
+  line_to (0, SLIDE(0.72,0.05));
+  line_to (1, SLIDE(0.72,0.05));
   line_to (1, 0);
   line_to (0, 0);
   new_path ();
   line_to (0, 0);
   line_to (0, 1);
-  line_to (SLIDE(THICKA,THICKB), 1);
-  line_to (SLIDE(THICKA,THICKB), 0);
+  line_to (SLIDE(0.72,0.05), 1);
+  line_to (SLIDE(0.72,0.05), 0);
   name ("solidSouthWest");
   rot90 ();
   name ("solidSouthEast");
@@ -430,25 +446,15 @@
   rot90 ();
   name ("solidNorthWest");
 
-  NEW
-  line_to (0, SLIDE(0.0, 0.0));
-  line_to (0, SLIDE(THICKA, THICKB));
-  curve_to (SLIDE(0.15, 0.15), SLIDE(THICKA, THICKB),
-            SLIDE(0.85, 0.85), 0,
-            1, 0);
-  name ("specialSa");
-  rot90 ();
-  rot90 ();
-  name ("specialSb");
 
   NEW
   line_to (0, SLIDE(0, 0));
-  line_to (0, SLIDE(THICKA,THICKB));
+  line_to (0, SLIDE(0.72,0.05));
   line_to (1, SLIDE(1, 1));
-  line_to (1, 1.0-SLIDE(THICKA,THICKB));
+  line_to (1, 1.0-SLIDE(0.72,0.05));
   name ("smallcapss");
 
-#define MIDS ((1.0-SLIDE(THICKA,THICKB))/2)
+#define MIDS ((1.0-SLIDE(0.72,0.05))/2)
 
   NEW
   line_to (MIDS, 0);
@@ -467,8 +473,8 @@
   new_path ();
   line_to (0, 1);
   line_to (1, 1);
-  line_to (1, (1.0-SLIDE(THICKA,THICKB)));
-  line_to (0, (1.0-SLIDE(THICKA,THICKB)));
+  line_to (1, (1.0-SLIDE(0.72,0.05)));
+  line_to (0, (1.0-SLIDE(0.72,0.05)));
   name ("solidMiddleNorth");
   rot90 ();
   name ("solidMiddleWest");
