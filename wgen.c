@@ -495,19 +495,19 @@
   name ("middleCross");
 
   NEW
-  line_to (1, SLIDE(0, 0.83));
+  line_to (1, SLIDE(0.01, 0.83));
   curve_to (SLIDE(1, 0.65), SLIDE(0, 0.64),
-            SLIDE(0.6, 0.525), SLIDE( 0, 0.45),
-            SLIDE(0.6,0.525), 0);
-  line_to (SLIDE(0.2,0.475), 0.0);
-  curve_to (SLIDE(0.2,0.475), 0.38,
+            SLIDE(0.86,0.525), SLIDE( 0, 0.45),
+            SLIDE(0.86,0.525), 0);
+  line_to (SLIDE(0.14,0.475), 0.0);
+  curve_to (SLIDE(0.14,0.475), 0.38,
             0.56, 0.70,
             1, 0.9);
   new_path ();
   line_to (0, 0.9);
   curve_to (SLIDE(0.44, 0.44), 0.70,
-            SLIDE(0.90,0.525), SLIDE(0.2, 0.38),
-            SLIDE(0.90,0.525), 0);
+            SLIDE(0.86,0.525), SLIDE(0.2, 0.38),
+            SLIDE(0.86,0.525), 0);
   line_to (SLIDE(0.38, 0.475), 0);
   curve_to (SLIDE(0.38, 0.475), SLIDE(0, 0.45),
             SLIDE(0, 0.35), SLIDE(0, 0.64),
