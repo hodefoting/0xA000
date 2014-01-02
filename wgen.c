@@ -464,6 +464,12 @@
   name ("solidMiddle");
   rot90 ();
   name ("solidMiddleHorizontal");
+  new_path ();
+  line_to (MIDS, 0);
+  line_to (MIDS, 1.05);
+  line_to (1.0-MIDS, 1.05);
+  line_to (1.0-MIDS, 0);
+  name ("middleCross");
 
   NEW
   line_to (MIDS, 0);
