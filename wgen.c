@@ -1,154 +1,153 @@
-  /* There is a total of about 20 tiles; that can be rotated producing 80
-   * variants.
-   */
+/* There is a total of about 20 tiles; that can be rotated producing 80
+ * variants.
+ */
 #include <stdlib.h>
 
-  //#define SLIDE(0.72,0.05) 0.15
-  //#define SLIDE(0.72,0.05) 0.72
-  //
-  //#define MORPH      0.3
-  //
-  float MORPH = 0.8;
-  //#define MORPH      0.8
+//#define SLIDE(0.72,0.05) 0.15
+//#define SLIDE(0.72,0.05) 0.72
+//
+//#define MORPH      0.3
+//
+float MORPH = 0.8;
+//#define MORPH      0.8
 #define SLIDE(VALA, VALB)  (MORPH * VALB + (1.0-MORPH)* VALA)
 
-  /* helper generator script for generating correctly winded symmetric shapes
-   * for the 0xA000 palette.
-   */
+/* helper generator script for generating correctly winded symmetric shapes
+ * for the 0xA000 palette.
+ */
 
 #include <stdio.h>
 
-  typedef struct Vertex {
-    char type;
-    float x;
-    float y;
-  } Vertex;
+typedef struct Vertex {
+  char type;
+  float x;
+  float y;
+} Vertex;
 
-  Vertex shape[64];
-  int n_vertex = 0;
+Vertex shape[64];
+int n_vertex = 0;
 
-  void clear (void)
-  {
-    n_vertex = 0;
-  }
+void clear (void)
+{
+  n_vertex = 0;
+}
 
-  void rot90 (void) /* rotates shape in unit square 90 degrees */
-  {
-    int i;
-    for (i = 0; i < n_vertex; i++)
-      {
-        float u, v;
-        u = shape[i].x;
-        v = shape[i].y;
+void rot90 (void) /* rotates shape in unit square 90 degrees */
+{
+  int i;
+  for (i = 0; i < n_vertex; i++)
+    {
+      float u, v;
+      u = shape[i].x;
+      v = shape[i].y;
 
-        shape[i].x = 1.0-v;
-        shape[i].y = u;
-      }
-  }
+      shape[i].x = 1.0-v;
+      shape[i].y = u;
+    }
+}
 
-  void vertex (char type, float x, float y)
-  {
-    shape[n_vertex].type = type;
-    shape[n_vertex].x = x;
-    shape[n_vertex].y = y;
-    n_vertex++;
-  }
+void vertex (char type, float x, float y)
+{
+  shape[n_vertex].type = type;
+  shape[n_vertex].x = x;
+  shape[n_vertex].y = y;
+  n_vertex++;
+}
 
-  void vertex_scaled (int type, float x, float y, float scale)
-  {
-    x -= 0.5;
-    y -= 0.5;
-    scale *= 1.5;
-    x *= scale;
-    y *= scale;
+void vertex_scaled (int type, float x, float y, float scale)
+{
+  x -= 0.5;
+  y -= 0.5;
+  scale *= 1.5;
+  x *= scale;
+  y *= scale;
 
-    x += 0.5;
-    y += 0.5;
-    x += SLIDE (0.18, 0.44);
+  x += 0.5;
+  y += 0.5;
+  x += SLIDE (0.18, 0.44);
 
-    fprintf (stdout, "%c %f %f\n", type, x, y);
-  }
+  fprintf (stdout, "%c %f %f\n", type, x, y);
+}
 
+void vertex_scaled2 (int type, float x, float y, float scale)
+{
+  x -= 0.5;
+  y -= 0.5;
+  scale *= 1.5;
+  x *= scale;
+  y *= scale;
 
-  void vertex_scaled2 (int type, float x, float y, float scale)
-  {
-    x -= 0.5;
-    y -= 0.5;
-    scale *= 1.5;
-    x *= scale;
-    y *= scale;
+  x += 0.5;
+  y += 0.5;
 
-    x += 0.5;
-    y += 0.5;
+  fprintf (stdout, "%c %f %f\n", type, x, y);
+}
 
-    fprintf (stdout, "%c %f %f\n", type, x, y);
-  }
+void vertex_scaled3 (int type, float x, float y, float scale)
+{
+  x -= 0.5;
+  y -= 0.5;
+  scale *= 1.5;
+  x *= scale;
+  y *= scale;
 
-  void vertex_scaled3 (int type, float x, float y, float scale)
-  {
-    x -= 0.5;
-    y -= 0.5;
-    scale *= 1.5;
-    x *= scale;
-    y *= scale;
+  x += 0.5;
+  y += 0.5;
 
-    x += 0.5;
-    y += 0.5;
+  y -= 0.5;
 
-    y -= 0.5;
+  fprintf (stdout, "%c %f %f\n", type, x, y);
+}
 
-    fprintf (stdout, "%c %f %f\n", type, x, y);
-  }
-
-  void name (const char *name)
-  {
-    int i;
-    fprintf (stdout, "{ %s\n", name);
-    for (i = 0; i < n_vertex; i++)
-      {
-        if (shape[i].type == 'Z')
-          fprintf (stdout, "Z\n");
-        else
-        fprintf (stdout, "%c %f %f\n", shape[i].type, shape[i].x, shape[i].y);
-      }
-    fprintf (stdout, "\n");
-  }
+void name (const char *name)
+{
+  int i;
+  fprintf (stdout, "{ %s\n", name);
+  for (i = 0; i < n_vertex; i++)
+    {
+      if (shape[i].type == 'Z')
+        fprintf (stdout, "Z\n");
+      else
+      fprintf (stdout, "%c %f %f\n", shape[i].type, shape[i].x, shape[i].y);
+    }
+  fprintf (stdout, "\n");
+}
 
 #define NEW clear();
 
-  void line_to (float x, float y)
-  {
-    vertex  ('L', x, y);
-  }
+void line_to (float x, float y)
+{
+  vertex  ('L', x, y);
+}
 
-  void curve_to (float x0, float y0,
-                 float x1, float y1,
-                 float x2, float y2)
-  {
-    vertex ('c', x0, y0);
-    vertex ('c', x1, y1);
-    vertex ('C', x2, y2);
-  }
+void curve_to (float x0, float y0,
+               float x1, float y1,
+               float x2, float y2)
+{
+  vertex ('c', x0, y0);
+  vertex ('c', x1, y1);
+  vertex ('C', x2, y2);
+}
 
-  void new_path ()
-  {
-    vertex ('Z', 0, 0);
-  }
+void new_path ()
+{
+  vertex ('Z', 0, 0);
+}
 
-  int main (int argc, char **argv)
-  {
-    if (argv[1])
-      MORPH = atof (argv[1]);
+int main (int argc, char **argv)
+{
+  if (argv[1])
+    MORPH = atof (argv[1]);
 
-    NEW
-    line_to (0.0, SLIDE(0.78, 0.525));
-    line_to (1.0, 0);
-    line_to (SLIDE(0.28, 0.95), 0);
-    line_to (SLIDE(0,0), SLIDE(0.22, 0.475));
-    name ("specials2");
-    rot90 ();
-    rot90 ();
-    name ("specials1");
+  NEW
+  line_to (0.0, SLIDE(0.78, 0.525));
+  line_to (1.0, 0);
+  line_to (SLIDE(0.28, 0.95), 0);
+  line_to (SLIDE(0,0), SLIDE(0.22, 0.475));
+  name ("specials2");
+  rot90 ();
+  rot90 ();
+  name ("specials1");
 
   NEW
   line_to (0, SLIDE(0.72,0.35));
@@ -271,7 +270,6 @@
   name ("vs");
   rot90 ();
   name ("ve");
-
   NEW
 
   line_to (0, SLIDE(0.76, 0.05));
@@ -315,9 +313,6 @@
   rot90 ();
   name ("Vw");
 
-
-
-
   NEW
   line_to (1, 0.0);
   curve_to (0.56, 0.30,
@@ -339,9 +334,6 @@
   name ("cj9");
   rot90();
   name ("cj7");
-
-
-
 
   NEW
   line_to (0, SLIDE(0.72,0.05));
@@ -414,7 +406,6 @@
   rot90 ();
   name ("c8b");
 
-
   NEW
   line_to (0, SLIDE(0.72,0.05));
   line_to (SLIDE(0.72,0.05), SLIDE(0.72,0.05));
@@ -446,7 +437,6 @@
   rot90 ();
   name ("solidNorthWest");
 
-
   NEW
   line_to (0, SLIDE(0, 0));
   line_to (0, SLIDE(0.72,0.05));
@@ -464,12 +454,6 @@
   name ("solidMiddle");
   rot90 ();
   name ("solidMiddleHorizontal");
-  new_path ();
-  line_to (MIDS, 0);
-  line_to (MIDS, 1.05);
-  line_to (1.0-MIDS, 1.05);
-  line_to (1.0-MIDS, 0);
-  name ("middleCross");
 
   NEW
   line_to (MIDS, 0);
@@ -486,7 +470,6 @@
   name ("solidMiddleWest");
   rot90 ();
   name ("solidMiddleSouth");
-
 
   NEW
   line_to (MIDS, 0);
@@ -527,7 +510,15 @@
   name ("v39");
 
   NEW
+  line_to (0.25, 0.25);
+  line_to (0.75, 0.25);
+  line_to (0.75, 0.75);
+  line_to (0.25, 0.75);
+  name ("eSpecial1");
+  name ("eSpecial2");
+  name ("eSpecial3");
 
+  NEW
   fprintf (stdout, "\n{ circle\n");
   {
     float scale = SLIDE (0.85, 0.2);
@@ -578,6 +569,5 @@
     vertex_scaled3 ('c', 0.11, 0.29, scale);
     vertex_scaled3 ('C', 0.11, 0.50, scale);
   }
-
   return 0;
 }
