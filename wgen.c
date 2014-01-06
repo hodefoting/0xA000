@@ -510,13 +510,26 @@ int main (int argc, char **argv)
   name ("v39");
 
   NEW
-  line_to (0.25, 0.25);
-  line_to (0.75, 0.25);
-  line_to (0.75, 0.75);
-  line_to (0.25, 0.75);
-  name ("eSpecial1");
+  line_to (0.332, 1.0);
+  line_to (0.9,   1.0);
+  line_to (0.0, 0.1);
+  line_to (0.0, 0.668);
   name ("eSpecial2");
+  rot90 ();
+
+  NEW
+  line_to (0.0, 0.668);
+  line_to (0.332, 1.0);
+  line_to (0.9, 1.0);
+  line_to (0.0, 0.1);
   name ("eSpecial3");
+
+  NEW
+  line_to (0.9, 0.0);
+  line_to (0.332, 0.0);
+  line_to (1.0, 0.668);
+  line_to (1.0, 0.1);
+  name ("eSpecial1");
 
   NEW
   fprintf (stdout, "\n{ circle\n");
