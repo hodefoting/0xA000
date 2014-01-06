@@ -515,14 +515,6 @@ int main (int argc, char **argv)
   line_to (0.0, 0.1);
   line_to (0.0, SLIDE(1.0, 0.17));
   name ("eSpecial2");
-  rot90 ();
-
-  NEW
-  line_to (0.0, SLIDE(1.0, 0.17));
-  line_to (SLIDE(0.0, 0.83), 1);
-  line_to (0.9, 1.0);
-  line_to (0.0, 0.1);
-  name ("eSpecial3");
 
   NEW
   line_to (0.9, 0.0);
