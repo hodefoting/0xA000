@@ -510,24 +510,24 @@ int main (int argc, char **argv)
   name ("v39");
 
   NEW
-  line_to (0.332, 1.0);
-  line_to (0.9,   1.0);
+  line_to (SLIDE(0.00, 0.83), 1.0);
+  line_to (0.9, 1.0);
   line_to (0.0, 0.1);
-  line_to (0.0, 0.668);
+  line_to (0.0, SLIDE(1.0, 0.17));
   name ("eSpecial2");
   rot90 ();
 
   NEW
-  line_to (0.0, 0.668);
-  line_to (0.332, 1.0);
+  line_to (0.0, SLIDE(1.0, 0.17));
+  line_to (SLIDE(0.0, 0.83), 1);
   line_to (0.9, 1.0);
   line_to (0.0, 0.1);
   name ("eSpecial3");
 
   NEW
   line_to (0.9, 0.0);
-  line_to (0.332, 0.0);
-  line_to (1.0, 0.668);
+  line_to (SLIDE(0, 0.83), 0.0);
+  line_to (1.0, SLIDE(1.0, 0.17));
   line_to (1.0, 0.1);
   name ("eSpecial1");
 
