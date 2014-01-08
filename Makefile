@@ -39,7 +39,7 @@ components-ultra-black.asc: wgen  Makefile
 
 CFLAGS += -O2 -g
 
-0xA000.zip: 0xA000.ttf 0xA000-Bold.ttf 0xA000-Mono.ttf 0xA000-Mono-Bold.ttf \
+0xA000.zip: 0xA000-Bold.ttf 0xA000-Mono.ttf 0xA000-Mono-Bold.ttf \
 	          0xA000-Monochrome.ttf 0xA000-Monochrome-Mono.ttf \
 						0xA000-Dots.ttf 0xA000-Dots-Mono.ttf \
 						0xA000-Boxes.ttf 0xA000-Boxes-Mono.ttf
