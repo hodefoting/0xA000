@@ -305,7 +305,7 @@ int main (int argc, char **argv)
   line_to (0.5, 0.5);
   line_to (0, 1);
   line_to (SLIDE(0.5, 0.05), 1);
-  line_to (0.5, SLIDE(1, 0.55));
+  line_to (0.5, SLIDE(1.4, 0.55)); /* ugly hack? */
   line_to (SLIDE(0.5, 0.95), 1);
   name ("Vn");
   rot90 ();
