@@ -271,12 +271,14 @@ int main (int argc, char **argv)
   rot90 ();
   name ("ve");
   NEW
-
-  line_to (0, SLIDE(0.76, 0.05));
-  line_to (0.5, SLIDE(0.36, 0.19));
-  line_to (1, SLIDE(0.76, 0.05));
-  line_to (1, 0);
+  line_to (0, SLIDE(0.72, 0.05));
+  line_to (SLIDE(0.72,0.05), 0);
   line_to (0, 0);
+  new_path ();
+
+  line_to (1, 0);
+  line_to (1.0-SLIDE(0.72,0.05), 0);
+  line_to (1, SLIDE(0.72, 0.05));
   name ("vn2");
   rot90 ();
   name ("vw2");
