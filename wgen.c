@@ -512,6 +512,18 @@ int main (int argc, char **argv)
   name ("v39");
 
   NEW
+  line_to (0.540000, 0.600000);
+  curve_to (0.760000,0.500000,
+            0.790000,0.400000,
+            0.900000,0.000000);
+  line_to (SLIDE(0.0,0.830000), 0.000000);
+  curve_to (SLIDE(0,0.720000),0.400000,
+            SLIDE(0,0.690000),SLIDE(0.1,0.450000),
+            SLIDE(0,0.540000),SLIDE(0.1, 0.530000));
+  name ("rSpecial");
+
+
+  NEW
   line_to (SLIDE(0.00, 0.83), 1.0);
   line_to (0.9, 1.0);
   line_to (0.0, 0.1);
