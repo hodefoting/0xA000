@@ -166,8 +166,9 @@
       href='https://github.com/hodefoting/0xA000/'>
       github.com/hodefoting/0xA000</a>. 0xA000 uses
       <a href='https://github.com/hodefoting/fontile'>fontile</a>,
+      <a href='https://github.com/hodefoting/kernagic'>kernagic</a>,
       <a href='http://sourceforge.net/projects/fontforge/'>fontforge</a> and
-      <a href='https://github.com/hodefoting/kernagic'>kernagic</a> to
+      <a href='http://www.freetype.org/ttfautohint/'>ttfautohint</a> to
       transform source text-files into TTF files.
 
 </p>
