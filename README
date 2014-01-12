@@ -1,18 +1,14 @@
 0xA000 is a meta-modular tile-grid based font-family.
 
-The resulting Sans Serif face, as well as mono-spaced variant of it are
-designs that without additional hinting renders legible at small resolutions,
-working well even without anti-aliasing; but taking advantage of any
-additional shape clarity provided by grayscale and RGBA based anti-aliasing
-technologies.
-
 To see the generated fonts in action take a look at
 http://pippin.gimp.org/0xA000/
 
 Dependencies:
   fontile
   kernagic
+  ttfautohint
   font-forge with python bindings
   make
 
-Just running "make" in the checkout of 0xA000 should generate TTFs.
+Just running "make" in the checkout of 0xA000 should generate TTFs, if
+all dependencies are correctly installed.
