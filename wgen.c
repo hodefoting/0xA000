@@ -238,6 +238,21 @@ int main (int argc, char **argv)
   name ("cse");
 
   NEW
+  line_to (1,     SLIDE(0, 0.88));
+  curve_to (0.7,  SLIDE(0.30, 1.04),
+            0.3,  SLIDE(0.30, 1.04),
+            0,    SLIDE(0, 0.88));
+  line_to (0, 0.95);
+  curve_to (0.3, 1.1, 
+            0.7, 1.1,
+            1, 0.95);
+  name ("c8");
+  rot90 ();
+  rot90 ();
+  name ("c2");
+
+
+  NEW
   line_to (1,     SLIDE(0, 0.83));
   curve_to (0.7,  SLIDE(0.28, 0.94),
             0.3,  SLIDE(0.28, 0.94),
@@ -246,14 +261,11 @@ int main (int argc, char **argv)
   curve_to (0.3, 1.0, 
             0.7, 1.0,
             1, 0.9);
-  name ("c8");
   rot90 ();
   name ("c4");
   rot90 ();
-  name ("c2");
   rot90 ();
   name ("c6");
-
 
   NEW
   line_to (0, 1-SLIDE(0.72,0.05));
@@ -360,19 +372,33 @@ int main (int argc, char **argv)
   name ("cj7b");
 
   NEW
-  line_to (1, 0.1);
-  curve_to (0.56, 0.30,
+  line_to (1, 0.05);
+  curve_to (0.56, 0.22,
             0.27, 0.62,
             0.10, 1);
   line_to (SLIDE(1,0.17),  1);
   curve_to (SLIDE(1,0.28), SLIDE(1, 0.70),
             SLIDE(1,0.70), SLIDE(1, 0.28),
-            1,             SLIDE(1, 0.17));
+            1,             SLIDE(1, 0.12));
   name ("c1");
+  rot90 ();
+  rot90 ();
+  name ("c9");
+  rot90 ();
+
+
+  NEW
+  line_to (1, 0.1);
+  curve_to (0.56, 0.30,
+            0.22, 0.62,
+            0.05, 1);
+  line_to (SLIDE(1,0.12),  1);
+  curve_to (SLIDE(1,0.28), SLIDE(1, 0.70),
+            SLIDE(1,0.70), SLIDE(1, 0.28),
+            1,             SLIDE(1, 0.17));
   rot90 ();
   name ("c3");
   rot90 ();
-  name ("c9");
   rot90 ();
   name ("c7");
 
@@ -385,11 +411,38 @@ int main (int argc, char **argv)
             SLIDE(1, 0.16), 0);
   name ("c4b");
   rot90 ();
-  name ("c2b");
   rot90 ();
   name ("c6a");
   rot90 ();
+
+
+  NEW
+  line_to (0.05, 0);
+  curve_to (0.0, 0.49, 0.0, 0.65, 0.0, 1);
+  line_to (SLIDE(0.72,0.05), 1);
+  curve_to (SLIDE(0.72,0.05), 0.4,
+            SLIDE(0.79, 0.16), 0.3,
+            SLIDE(1, 0.16), 0);
+  rot90 ();
+  name ("c2b");
+  rot90 ();
+  rot90 ();
   name ("c8a");
+
+  NEW
+  line_to  (SLIDE(1, 0.16), 1);
+  curve_to (SLIDE(0.79, 0.16), 0.7,
+            SLIDE(0.72,0.05), 0.6,
+            SLIDE(0.72,0.05), 0);
+  line_to  (0.0, 0);
+  curve_to (0.0, 0.35,
+            0.0, 0.51,
+            0.05, 1);
+  rot90 ();
+  name ("c2a");
+  rot90 ();
+  rot90 ();
+  name ("c8b");
 
   NEW
   line_to  (SLIDE(1, 0.16), 1);
@@ -402,11 +455,9 @@ int main (int argc, char **argv)
             0.1, 1);
   name ("c4a");
   rot90 ();
-  name ("c2a");
   rot90 ();
   name ("c6b");
   rot90 ();
-  name ("c8b");
 
   NEW
   line_to (0, SLIDE(0.72,0.05));

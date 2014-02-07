@@ -1,7 +1,7 @@
 
 @import url('0xA000.css');
 
-body       {font-family: '0xA000', 'Sans'; font-size: 21px;
+body       {font-family: '0xA000-Regular', 'Sans'; font-size: 21px;
             background-color: #f7f7f7; }
 tt, pre    {font-family: '0xA000-Mono', 'Sans';}
 b          {font-family: '0xA000-Bold'. 'Sans'; font-weight: normal;}
@@ -23,7 +23,7 @@ a { color: #182; text-decoration:none}
 a:hover    { text-decoration: underline }
 .selected, .faces>a.selected  { color: #000;
                               text-decoration: underline;}
-.sans      {font-family: '0xA000','Sans';}
+.sans      {font-family: '0xA000-Regular','Sans';}
 .monochrome {font-family: '0xA000-Monochrome'.'Sans';}
 .boxes     {font-family: '0xA000-Boxes','Sans';}
 .monosans  {font-family: '0xA000-Mono','Sans';}
@@ -39,7 +39,7 @@ a:hover    { text-decoration: underline }
            */
 
 div.glyph {
-  font-family: '0xA000', 'Sans';
+  font-family: '0xA000-Regular', 'Sans';
   display: block;
   margin-left: 0.2em;
   margin-right: 0.2em;
@@ -110,7 +110,7 @@ div.glyph {
    border: 1px solid gray;
  }
  .rendering {
-   font-family: '0xA000', 'Sans';
+   font-family: '0xA000-Regular', 'Sans';
    border: 1px solid gray;
  }
  .rendering-Dots {
