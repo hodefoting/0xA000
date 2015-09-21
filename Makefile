@@ -7,7 +7,7 @@ all: .dep \
 		 \
 		 Glyphs.html                   \
 		 Tech.html                     \
-		 index.html test.html 0xA000.css
+		 index.html 0xA000.css
 
 0xA000.spacing: 0xA000spacing.ttf
 	cp 0xA000.spacing~ 0xA000.spacing
@@ -40,9 +40,9 @@ components-ultra-black.asc: wgen  Makefile
 CFLAGS += -O2 -g
 
 0xA000.zip: 0xA000-Bold.ttf 0xA000-Mono.ttf 0xA000-Mono-Bold.ttf \
-	          0xA000-Monochrome.ttf 0xA000-Monochrome-Mono.ttf \
+	          0xA000-Monochrome.ttf  \
 						0xA000-Dots.ttf 0xA000-Dots-Mono.ttf \
-						0xA000-Boxes.ttf 0xA000-Boxes-Mono.ttf
+						0xA000-Boxes.ttf
 	zip $@ *.ttf LICENSE.OFL
 
 %.ttf: %.asc bake_ttf.sh feature.fea
@@ -79,7 +79,6 @@ wgen: wgen.c
 	gcc wgen.c -o wgen
 
 fonts.head: fonts.list Makefile
-	echo "<table><tr><td valign='top'><a href='index.html' style='font-family:\"0xA000-Pixelated\";font-size:3.5em'>0xA000</a><br/><span style='font-family:"0xA000-Regular";font-size:11px'>Metamorphic-modular font-family.<ul><li><a href='small-sizes.html'>Sans sharp at small sizes</a></li><li>Minimalistic geometry</li><li>Extended Latin Support</li><li>Dedicated mono-space design</li></ul></span></td><td valign='top'><div style='font-size:1.5em;margin:0 0 0 0;'>" > fonts.head
 	for a in `cat fonts.list`;do \
 		echo "<a style='font-family:\"$$a\";' href='$$a.html'>`echo $$a | sed s/0xA000-// | sed s/0xA000/Regular/`</a> " >> fonts.head;\
 	done;\

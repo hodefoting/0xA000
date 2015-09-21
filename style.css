@@ -1,7 +1,7 @@
 
 @import url('0xA000.css');
 
-body       {font-family: '0xA000-Regular', 'Sans'; font-size: 21px;
+p, body       {font-family: '0xA000-Regular', 'Sans'; font-size: 21px;
             background-color: #f7f7f7; }
 tt, pre    {font-family: '0xA000-Mono', 'Sans';}
 b          {font-family: '0xA000-Bold'. 'Sans'; font-weight: normal;}
@@ -10,18 +10,16 @@ h1         {font-size :  3em; font-family: '0xA000-Bold', 'Sans'; font-weight: n
 h2         {font-size : 42px; font-family: '0xA000-Monochrome'; font-weight: normal; margin: 1.0em 0 0 0}
 h3,h4      {font-size :1.5em; font-weight: normal; margin: 0 0 0 0}
 
-li         {list-style-type: none; list-style: none; }
-li:before  {content: "• "; position: relative -1em; overflow: visible;
-            margin-left: -1.5em;}
+li         {list-style-type: none; list-style: none; margin-left: 0.5em;}/*
+li:before  {content: "• "; position: relative -1em; overflow: visible; margin-left: -1.5em;}*/
 ul         {padding-left: 1em}
 
 em         {font-style: normal; color: #909;}
 div        {margin-top: 1.0em;}
 body       {margin: 0 auto; }
 .waterfall div {margin: 0;padding:0}
-a { color: #182; text-decoration:none}
+a { color: #ab5; text-decoration:none}
 a:hover    { text-decoration: underline }
-.selected, .faces>a.selected  { color: #000;
                               text-decoration: underline;}
 .sans      {font-family: '0xA000-Regular','Sans';}
 .monochrome {font-family: '0xA000-Monochrome'.'Sans';}
@@ -46,8 +44,9 @@ div.glyph {
 }
  .label  {
    margin:0;
-   padding-top:0.3em;
+   padding-top:0.03em;
    background: #eee;
+   font-size: 0.1em;
  }
  .unicode { margin:0; padding-left:0.2em;
  }
@@ -61,7 +60,6 @@ div.glyph {
    padding: 0;
    background: #eee;
    padding-top: 1px;
-   padding-left: 0.2em;
  }
 
 .rendering-Pixelated,
@@ -142,3 +140,42 @@ span.cmt {color: gray;}
 }
 p {
 }
+
+  .foo {
+        width:7em;
+        height:6em;
+        overflow: hidden;
+        clear: both;
+        padding: 1em;
+      }
+      .bar {
+        clear: both;
+        width: 40em;
+        position:relative;top:-7.8em;
+      }
+      .src  {
+        font-family: '0xA000-Mono';
+        white-space: pre;
+        font-size: 20px;
+        display: inline-block; 
+        vertical-align: bottom;
+        letter-spacing: 0.32em;
+        line-height: 1em;
+        color: #000000;
+      }
+      .glyph { 
+        color: #ab5;
+        display: inline-block; 
+        vertical-align: bottom;
+        position: relative;
+        font-size: 120px;
+        top: 0.015em;
+      }
+      .content {
+        padding-left: 0.5em;
+        max-width: 35em;
+        min-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+

@@ -1,4 +1,6 @@
-    <!--
+
+      <div contenteditable='true'>
+<!--
       <div contenteditable='true' style='font-size: 2.0em'>
       <p>
          <span style='font-family:"0xA000-Pixelated"'>
@@ -103,12 +105,6 @@
   </div>
   -->
 
-    0xA000 is a font family designed for screen, inspired and constrained
-    by the pixel raster. A modular sans serif; with
-    accompanying display variants; that renders sharp at small sizes without
-    needing hinting. 
-      <a href='0xA000.zip' style="font-family:'0xA000'">0xA000.zip</a>. Each
-      variant subpage linked above; has links for individual TTFs.
 
       <!--
 
@@ -162,84 +158,112 @@
 
 -->
 
-      <p>The sources for 0xA000 are hosted on <a
-      href='https://github.com/hodefoting/0xA000/'>
-      github.com/hodefoting/0xA000</a>. 0xA000 uses
-      <a href='https://github.com/hodefoting/fontile'>fontile</a>,
-      <a href='https://github.com/hodefoting/kernagic'>kernagic</a>,
-      <a href='http://sourceforge.net/projects/fontforge/'>fontforge</a> and
-      <a href='http://www.freetype.org/ttfautohint/'>ttfautohint</a> to
-      transform source text-files into TTF files.
 
 </p>
 
+<p>
+Design inspiration is often fuelled by constraints. In that spirit, 0xA000 started out as an experiment in trying to create a pixel font with greyscale squares for anti-aliasing. <p>
 
-<div style='line-height: 150%; font-family:"0xA000"' contenteditable='true'>
+<div class='foo' style='float:right'>
+<div class='bar'>
+<div class='glyph' style='font-family: "0xA000-pixelated";position:relative;left:0.0em;'>@</div>
+<div class='src' style='position:relative;left:-7.9em'>
++#####+.
+#.....#.
+#.+##.#.
+#.#.#.#.
+#.+###+.
+#.......
++######.
+</div>
+</div>
+</div>
+  <p>
+  
 
-    <span style='font-size:28px;'>However, </span><span
-    style='font-size:28px;'>this </span><span
-    style='font-size:28px;'>bottle </span><span
-    style='font-size:28px;'>was </span><span
-    style='font-size:28px;'>not </span><span
-    style='font-size:28px;'>marked </span><span
-    style='font-size:28px;'>`poison', </span><span
-    style='font-size:27.5px;'>so </span><span
-    style='font-size:27px;'>Alice </span><span
-    style='font-size:26.5px;'>ventured </span><span
-    style='font-size:26.0px;'>to </span><span
-    style='font-size:25.5px;'>taste </span><span
-    style='font-size:25px;'>it, </span><span
-    style='font-size:24px;'>and </span><span
-    style='font-size:23.5px;'>finding </span><span
-    style='font-size:23px;'>it </span><span
-    style='font-size:22.5px;'>very </span><span
-    style='font-size:22px;'>nice, </span><span
-    style='font-size:21.5px;'>(it </span><span
-    style='font-size:21.25px;'>had, </span><span
-    style='font-size:21px;'>in </span><span
-    style='font-size:20.5px;'>fact, </span><span
-    style='font-size:20px;'>a </span><span
-    style='font-size:19.5px;'>sort </span><span
-    style='font-size:19px;'>of </span><span
-    style='font-size:18.5px;'>mixed </span><span
-    style='font-size:18px;'>flavour </span><span
-    style='font-size:17.5px;'>of </span><span
-    style='font-size:17px;'>cherry-tart, </span><span
-    style='font-size:16.5px;'>custard, </span><span
-    style='font-size:16px;'>pine-apple, </span><span
-    style='font-size:15.5px;'>roast </span><span
-    style='font-size:15.25px;'>turkey, </span><span
-    style='font-size:15px;'>toffee, </span><span
-    style='font-size:14.5px;'>and </span><span
-    style='font-size:14px;'>hot </span><span
-    style='font-size:13.5px;'>buttered </span><span
-    style='font-size:13px;'>toast,) </span><span
-    style='font-size:12.5px;'>she </span><span
-    style='font-size:12px;'>very </span><span
-    style='font-size:11.75px;'>soon </span><span
-    style='font-size:11.5px;'>finished </span><span
-    style='font-size:11.25px;'>it. </span><span
-    style='font-size:11px;'>off. </span>
-<br/>
-    <span style='font-size:10.75px;'>'What </span><span
-    style='font-size:10.5px;'>'a </span><span
-    style='font-size:10.25px;'>curious' </span><span
-    style='font-size:10px;'>feeling!' </span><span
-    style='font-size:9.75px;'>said </span><span
-    style='font-size:9.5px;'>Alice;</span><span
-    style='font-size:9.25px;'>I </span><span
-    style='font-size:8.5px;'>must </span><span
-    style='font-size:8.25px;'>be </span><span
-    style='font-size:8px;'>shutting </span><span
-    style='font-size:7.77px;'>up </span><span
-    style='font-size:7.33px;'>like </span><span
-    style='font-size:7px;'>a telescope.'</span>
-<br/>
-    <span style='font-size:7px;'>
-      And so it was indeed: she was now only ten inches high,
-      and her face brightened up at the thought that she was
-      now the right size for going through the little door
-      into that lovely garden. 
-    </span>
-    </div>
+<p>The initial ASCII set was made first as an image in GIMP and a custom C program to turn the image into a UFO file where each set pixel referenced a component<a href='#note1'>1</a> For easier editing, the program was changed to output an XPM-inspired text file description of the font, where the character mapping for different greyscale pixel values can be controlled.
+</p>
+<div class='foo' style='float:left'>
+<div class='bar'>
+<div class='glyph' style='font-family:"0xA000-Dots";position:relative;left:0.00em;'>@</div>
+<div class='src' style='position:relative;left:-7.8em'>
++#####+.
+#.....#.
+#.+##.#.
+#.#.#.#.
+#.+###+.
+#.......
++######.
+</div>
+</div>
+</div>
 
+<p>By coding/creating/designing a new set of components &mdash;puzzle pieces corresponding to the different characters used to design the glyphs&mdash;new visual variations for the family can be created. 
+</p>
+
+
+
+<div class='foo' style='float:right;clear:none;'>
+<div class='bar'>
+<div class='glyph' style='font-family:"0xA000-bold";position:relative;left:-0.1em;'>@</div>
+<div class='src' style='position:relative;left:-7.7em'>
+7i^^^k9.
+r.....y.
+%.7i}.*.
+%.4.*.h.
+%.1w]s3.
+f.......
+1w&amp;&amp;&amp;&amp;s.
+</div>
+</div>
+</div>
+
+
+<div class='foo' style='float:left'>
+<div class='bar'>
+<div class='glyph' style='font-family:"0xA000-Pixelated";position:relative;left:-0.02em;'>@</div>
+<div class='src' style='position:relative;left:-8.0em'>
+7i^^^k9.
+r.....y.
+%.7i}.*.
+%.4.*.h.
+%.1w]s3.
+f.......
+1w&amp;&amp;&amp;&amp;s.
+</div>
+</div>
+</div>
+
+<p>When doing manual anti-aliased drawing, known as pixeling, one imagines the curvature of the shape intersecting with the pixel's geometric area. The scope and power of expression of the font creation pipeline expand when adding puzzle pieces corresponding to these imagined shapes. It is possible to create semi-legible pixelfonts with a 3px-high lower-case grid, thus the 3x3 set for drawing a lower-case "o" was a starting point. The small set of printable ASCII characters constrained how many puzzle pieces could comfortably be managed.</p>
+
+
+
+<div class='foo' style='width:100%; clear:left'>
+<div class='bar' style='top:-7.2em; left: -1.0em'>
+<div class='glyph' style='font-family: "0xA000-regular";'>p</div
+><div class='glyph' style='font-family: "0xA000-bold";'>p</div
+><div class='glyph' style='font-family: "0xA000-squareish-bold";'>p</div
+><div class='glyph' style='font-family: "0xA000-squareish";'>p</div
+><div class='glyph' style='font-family: "0xA000-pixelated";'>p</div
+><div class='glyph' style='font-family: "0xA000-monochrome";'>p</div
+><div class='glyph' style='font-family: "0xA000-dots";'>p</div
+><div class='glyph' style='font-family: "0xA000-boxes";'>p</div>
+</div>
+</div>
+
+<div id='note1'>
+  <h4>1: Components</h4>
+  <p>
+Many font file formats support components, reusable vector shapes. These are normally used during type design to share vector shapes, like the undecorated base glyphs
+ a, e and o for åâêẽã and ö.
+</p>
+</div>
+
+<div id='note2'>
+  <h4>2: Editable pages</h4>
+  <p>This page and the specimen pages linked to in the header all have content-editable set, this means you can click the text to edit it and show your own sample text.
+</p>
+</div>
+
+
+</div>

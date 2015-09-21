@@ -1,0 +1,28 @@
+
+# GSUB
+
+lookup Smallcaps {
+  lookupflag 0;
+    sub \0061 by \1D00 ;
+} Smallcaps;
+
+
+feature smcp {
+  script DFLT;
+  language dflt;
+  lookup Smallcaps;
+
+  script latn;
+  language dflt ;
+  lookup Smallcaps;
+} smcp;
+
+feature c2sc {
+  script DFLT;
+  language dflt;
+  lookup Smallcaps;
+
+  script latn;
+  language dflt ;
+  lookup Smallcaps;
+} c2sc;

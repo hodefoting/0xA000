@@ -1,0 +1,126 @@
+<h2>ASCII-art type design</h2
+
+<p>The PNG file made in GIMP containing the first anti-aliased AA set for this
+font.</p>
+
+<div style='overflow:hidden'>
+<img src='original.png' />
+</div>
+
+<p>
+A tool was written for generating fonts from the PNG file; using just graylevel
+codes, the authoring was later transitioned to the chunked XPM like format described in the following:
+</p>
+
+<h3><a name='Sans.asc'>Sans.asc</a></h3>
+<pre><span class='cmt'># The format supports comments</span></span>
+<span class='cmt'># 0xA000 will generate a 0xA000-Sans.ufo</span>
+<span class='cmt'># file, which can yield a TTF.</span>
+<em>fontname</em> 0xA000-Sans
+
+<span class='cmt'># Gets encoded in the font, seems to be needed</span>
+<span class='cmt'># for mono variant to show up.</span>
+<em>variant</em> Sans
+
+
+<span class='cmt'># include the full palette, using grayscale or</span>
+<span class='cmt'># other mappings here will yield various effects.</span>
+<em>include</em> <a href='#palette.asc'>palette.asc</a>
+
+<em>!!</em> <span class='cmt'># this marks the start of glyphs</span>
+
+<em>include</em> <a href='#5px.asc'>5px.asc</a>         <span class='cmt'># contains letter shapes</span>
+<em>include</em> 5px-drawing.asc <span class='cmt'># contains box-drawing chars</span>
+</pre>
+
+
+<h3><a name='palette.asc'>palette.asc</a></h3>
+<pre><span class='cmt'># The palette file defines which shapes are used for which
+# ascii char in glyph drawings.</span>
+
+<em>include</em> <a href='#components.asc'>components.asc</a>
+
+<em>.</em> blank    <span class='cmt'>#   0% The possible tile names</span>
+<em>+</em> light    <span class='cmt'>#  25% are hard-coded in 0xA000.c</span>
+<em>H</em> medium   <span class='cmt'>#  50%</span>
+<em>9</em> strong   <span class='cmt'>#  75%</span>
+<em>8</em> solid    <span class='cmt'># 100% </span>
+<em>p</em> cse      <span class='cmt'># cs = curve south east</span>
+<em>q</em> csw
+<em>b</em> cne
+<em>d</em> cnw
+<em>7</em> lse      <span class='cmt'># lse = line south east</span>
+<em>`</em> lsw    
+<em>a</em> lnw   
+<em>e</em> lne      <span class='cmt'># h - might be better</span>
+<em>&lt;</em> ve       <span class='cmt'># ve = v facing east</span>
+<em>&gt;</em> vw
+<em>V</em> vn
+<em>n</em> vs
+</pre>
+
+<h3><a name='components.asc'>components.asc</a></h3>
+<pre><span class='cmt'># custom vector components are defined like thus,
+# they need to be defined before the mappings using them</span>
+
+{ lne
+L 0 1
+L 1 0
+L 0 0
+
+{ cne
+L 0 1
+c 0.5523 1
+c 1 0.5523
+C 1 0
+L 0 0
+</pre>
+
+
+<h3><a name='5px.asc'>5px.asc</a></h3>
+
+<pre><span class='cmt'># this is just an excerpt, link
+# to more complete version: <a href='5px.asc.html'>5px.asc</a></span>
+
+<em>( X )</em>
+8..8.
+`ea7.
+.><..
+a7`e.
+8..8.
+.....
+.....
+
+<em>( 1 )</em>
+...
+a8.
+.8.
+.8.
+ 8.
+...
+...
+
+</pre>
+
+<div style='overflow:hidden; float:right; padding-left: 2em; clear: both;'>
+<img src='terminal-font-source.png' width='140px' />
+</div>
+
+If <em>authormode</em> appears on a line by itself before the !! line, a special
+font with the ascii codes used for components replaced by large versions
+of the components themselves is generated. Using such a font in a terminal
+makes any terminal text editor a WYSIWYG tool.
+</p>
+
+
+      <p>The sources for 0xA000 are hosted on <a
+      href='https://github.com/hodefoting/0xA000/'>
+      github.com/hodefoting/0xA000</a>. 0xA000 uses
+      <a href='https://github.com/hodefoting/fontile'>fontile</a>,
+      <a href='https://github.com/hodefoting/kernagic'>kernagic</a>,
+      <a href='http://sourceforge.net/projects/fontforge/'>fontforge</a> and
+      <a href='http://www.freetype.org/ttfautohint/'>ttfautohint</a> to
+      transform source text-files into TTF files.
+</p>
+
+</ul>

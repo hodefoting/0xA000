@@ -1,0 +1,8 @@
+<p>
+A specimen for 0xA000 created when David Gowers was surveying fonts that
+rasterize to pixeling level cleanliness when rasterized aliased. Useful for
+high framerate eink, gif animations, embedded displays and more. (the variants
+annotated with c-spac = - 1 are rasterized with a spacing override; indicating
+room for improvement in pixel grid-constrained design decisions.) <img
+style='padding-top:2em;' src='font_0xA000.png'/>
+</p>
